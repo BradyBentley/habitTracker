@@ -25,6 +25,8 @@ class Habit {
         static let habitDescriptionKey = "habitDescription"
         static let daysKey = "days"
         static let weeksKey = "weeks"
+        static let userKey = "Users"
+        static let habitsKey = "Habits"
     }
     
     // MARK: - Initialization
@@ -36,6 +38,15 @@ class Habit {
         self.weeks = weeks
         self.timeReminder = timeReminder
         self.locationReminder = locationReminder
+    }
+    
+    convenience init?(firebaseDictionary: [String: Any]) {
+        guard let isNewHabit = firebaseDictionary[Habit.habitKeys.isNewHabitKey] as? Bool,
+        let category = firebaseDictionary[Habit.habitKeys.categoryKey] as? String,
+        let habitDescription = firebaseDictionary[Habit.habitKeys.habitDescriptionKey] as? String,
+        let days = firebaseDictionary[Habit.habitKeys.daysKey] as? Int,
+            let weeks = firebaseDictionary[Habit.habitKeys.weeksKey] as? Int else { return nil }
+        self.init(isNewHabit: isNewHabit, category: category, habitDescription: habitDescription, days: days, weeks: weeks)
     }
 }
 

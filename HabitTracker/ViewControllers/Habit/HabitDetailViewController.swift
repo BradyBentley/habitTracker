@@ -8,38 +8,48 @@
 
 import UIKit
 
-class HabitViewController: UIViewController {
+class HabitDetailViewController: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet weak var iconImageView: UIImageView!
-    @IBOutlet weak var habitTitleLabel: UILabel!
-    @IBOutlet weak var habitdescriptionLabel: UILabel!
+    @IBOutlet weak var habitDescriptionLabel: UILabel!
+    @IBOutlet weak var successLabel: UILabel!
     @IBOutlet weak var percentageCompletionLabel: UILabel!
     @IBOutlet weak var markAsDoneButton: UIButton!
     @IBOutlet weak var habitReminderTableView: UITableView!
     
+    // MARK: - Properties
+    var habit: Habit?
     
     // MARK: - ViewLife Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateViews()
     }
     
     // MARK: - Actions
-    @IBAction func editButtonTapped(_ sender: Any) {
-    }
     @IBAction func markAsDoneButtonTapped(_ sender: Any) {
+    }
+    
+    // MARK: - Setup
+    func updateViews(){
+        guard let habit = habit else { return }
+        habitDescriptionLabel.text = habit.habitDescription
+        successLabel.text = "\(habit.days) days a week for \(habit.weeks)"
+        // TODO: percentage complete label & complete the mark as done.
+        
     }
     
     
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "ToEditHabitDetail" {
+            let destinationVC = segue.destination as? EditHabitViewController
+            destinationVC?.habit = habit
+        }
     }
 }
 
-extension HabitViewController: UITableViewDelegate, UITableViewDataSource{
+extension HabitDetailViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // TODO: number of rows for reminders
         return 0

@@ -9,16 +9,25 @@
 import UIKit
 
 class HabitTableViewCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    // MARK: - IBOutlets
+    @IBOutlet weak var iconImageView: UIImageView!
+    @IBOutlet weak var habitDescriptionLabel: UILabel!
+    @IBOutlet weak var successLabel: UILabel!
+    @IBOutlet weak var percentCompletionLabel: UILabel!
+    
+    // MARK: - Properties
+    var habit: Habit?{
+        didSet {
+            updateViews()
+        }
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    // MARK: - Setup
+    func updateViews() {
+        guard let habit = habit else { return }
+        iconImageView.image = UIImage(named: "\(habit.category)")
+        habitDescriptionLabel.text = habit.habitDescription
+        successLabel.text = "\(habit.days) days a week for \(habit.weeks) weeks"
+        // TODO: percentCompletionLabel
     }
-
 }

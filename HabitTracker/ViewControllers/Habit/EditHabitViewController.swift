@@ -11,8 +11,8 @@ import UIKit
 class EditHabitViewController: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet weak var iconImageView: UIImageView!
-    @IBOutlet weak var habitTitleLabel: UILabel!
     @IBOutlet weak var habitDescriptionLabel: UILabel!
+    @IBOutlet weak var habitSuccessLabel: UILabel!
     @IBOutlet weak var percentageCompletionLabel: UILabel!
     @IBOutlet weak var newHabitButton: UIButton!
     @IBOutlet weak var oldHabitButton: UIButton!
@@ -21,14 +21,22 @@ class EditHabitViewController: UIViewController {
     @IBOutlet weak var remindersTableView: UITableView!
     @IBOutlet weak var checkInTableView: UITableView!
     
+    // MARK: - Properties
+    var habit: Habit?
     
-    
-
     // MARK: - ViewLife Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        updateView()
+    }
+    
+    // MARK: - Setup
+    func updateView() {
+        guard let habit = habit else { return }
+        habitDescriptionLabel.text = habit.habitDescription
+        habitSuccessLabel.text = "\(habit.days) days a week for \(habit.weeks)"
+        daysAWeekTextField.text = "\(habit.days)"
+        weeksTextField.text = "\(habit.weeks)"
     }
     
     // MARK: - Action
@@ -37,13 +45,7 @@ class EditHabitViewController: UIViewController {
     @IBAction func oldHabitButtonTapped(_ sender: Any) {
     }
     @IBAction func saveButtonTapped(_ sender: Any) {
-    }
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+//        guard let habit = habit else { return }
+        // TODO: add the update function
     }
 }

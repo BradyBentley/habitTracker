@@ -291,7 +291,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5yU-Zf-Ucz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117.59999999999999" y="1789.6551724137933"/>
+            <point key="canvasLocation" x="121" y="1806"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="LsN-Co-mQJ">
@@ -494,7 +494,7 @@
                                                     <state key="normal" title="Button"/>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(date and time of check-ins)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WvZ-2Z-p87">
-                                                    <rect key="frame" x="63" y="23" width="216" height="20.5"/>
+                                                    <rect key="frame" x="98" y="23" width="216" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -942,15 +942,75 @@
                                 <rect key="frame" x="0.0" y="20" width="383" height="556"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="89" id="fv2-UX-RPD">
-                                        <rect key="frame" x="0.0" y="28" width="383" height="89"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HabitCell" rowHeight="93" id="fv2-UX-RPD" customClass="HabitTableViewCell" customModule="HabitTracker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="383" height="93"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fv2-UX-RPD" id="3ag-9N-QpZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="383" height="89"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="93"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oBw-kk-B56">
+                                                    <rect key="frame" x="8" y="8" width="72" height="72"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="72" id="bPT-gN-xcq"/>
+                                                        <constraint firstAttribute="width" constant="72" id="dyo-Rc-sQ5"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="e6Q-nw-lhO">
+                                                    <rect key="frame" x="92" y="8" width="283" height="74"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(habit description)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x9X-xK-DL2">
+                                                            <rect key="frame" x="0.0" y="0.0" width="283" height="24"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Nzj-Ps-asz">
+                                                            <rect key="frame" x="0.0" y="32" width="283" height="42"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(success)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erb-ac-VU2">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="283" height="19"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="19" id="yyy-V9-gmh"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(percentage)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QEV-d9-DIq">
+                                                                    <rect key="frame" x="0.0" y="23" width="283" height="19"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="19" id="9qy-pK-sKc"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="42" id="FYs-8a-5ft"/>
+                                                            </constraints>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="74" id="GV5-JZ-0Y1"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="oBw-kk-B56" firstAttribute="top" secondItem="3ag-9N-QpZ" secondAttribute="top" constant="8" id="LMq-hz-Rka"/>
+                                                <constraint firstItem="oBw-kk-B56" firstAttribute="leading" secondItem="3ag-9N-QpZ" secondAttribute="leading" constant="8" id="RTS-1T-MhF"/>
+                                                <constraint firstAttribute="trailing" secondItem="e6Q-nw-lhO" secondAttribute="trailing" constant="8" id="WY2-nS-opg"/>
+                                                <constraint firstItem="e6Q-nw-lhO" firstAttribute="top" secondItem="3ag-9N-QpZ" secondAttribute="top" constant="8" id="m8q-OE-kq9"/>
+                                                <constraint firstItem="e6Q-nw-lhO" firstAttribute="leading" secondItem="oBw-kk-B56" secondAttribute="trailing" constant="12" id="wbO-3V-0a7"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="zQ0-u8-GUY" kind="show" id="aDw-Nr-UPb"/>
+                                            <outlet property="habitDescriptionLabel" destination="x9X-xK-DL2" id="5bS-Kn-d0m"/>
+                                            <outlet property="iconImageView" destination="oBw-kk-B56" id="mhO-a8-fu6"/>
+                                            <outlet property="percentCompletionLabel" destination="QEV-d9-DIq" id="KkM-8c-gbL"/>
+                                            <outlet property="successLabel" destination="erb-ac-VU2" id="hjE-yg-WMt"/>
+                                            <segue destination="Mim-Su-tXY" kind="show" identifier="ToHabitDetail" id="OS9-MJ-uno"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -983,12 +1043,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EUG-0F-L1X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="121" y="1121"/>
+            <point key="canvasLocation" x="120.8" y="1120.3898050974515"/>
         </scene>
-        <!--Habit View Controller-->
+        <!--Habit Detail View Controller-->
         <scene sceneID="FyP-Nv-Fli">
             <objects>
-                <viewController id="Mim-Su-tXY" customClass="HabitViewController" customModule="HabitTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Mim-Su-tXY" customClass="HabitDetailViewController" customModule="HabitTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="k8x-Aa-5FM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1101,7 +1161,7 @@
                                 </state>
                                 <connections>
                                     <action selector="editButtonTapped:" destination="Mim-Su-tXY" eventType="touchUpInside" id="qPh-PA-mcd"/>
-                                    <segue destination="x5g-41-Sts" kind="show" id="faY-lQ-KHl"/>
+                                    <segue destination="x5g-41-Sts" kind="show" identifier="ToEditHabitDetail" id="faY-lQ-KHl"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1116,12 +1176,12 @@
                         <viewLayoutGuide key="safeArea" id="vPy-He-dHR"/>
                     </view>
                     <connections>
+                        <outlet property="habitDescriptionLabel" destination="RGi-Rv-sDR" id="pk0-ml-Grw"/>
                         <outlet property="habitReminderTableView" destination="GCL-AI-SAV" id="CxY-0Z-OP4"/>
-                        <outlet property="habitTitleLabel" destination="RGi-Rv-sDR" id="pk0-ml-Grw"/>
-                        <outlet property="habitdescriptionLabel" destination="ZAz-Aa-Flw" id="xHm-uD-lzo"/>
                         <outlet property="iconImageView" destination="D4q-cz-LEQ" id="zyP-Ce-ljK"/>
                         <outlet property="markAsDoneButton" destination="zTE-Ry-Abg" id="r8X-VQ-aDx"/>
                         <outlet property="percentageCompletionLabel" destination="55A-zz-3cO" id="ZHg-p4-21o"/>
+                        <outlet property="successLabel" destination="ZAz-Aa-Flw" id="xHm-uD-lzo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F8C-48-SwW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1152,7 +1212,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="eqA-g1-Jjj">
-                                                    <rect key="frame" x="20" y="17.5" width="299" height="50"/>
+                                                    <rect key="frame" x="20" y="17.5" width="334" height="50"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Qk6-f0-BeA">
                                                             <rect key="frame" x="0.0" y="0.0" width="108" height="50"/>
@@ -1175,7 +1235,7 @@
                                                             </subviews>
                                                         </stackView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(name)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a7l-vC-iug">
-                                                            <rect key="frame" x="120" y="0.0" width="179" height="50"/>
+                                                            <rect key="frame" x="120" y="0.0" width="214" height="50"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -1226,7 +1286,4 @@
         <image name="Wellness-1" width="51" height="46"/>
         <image name="nil" width="16" height="16"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="aDw-Nr-UPb"/>
-    </inferredMetricsTieBreakers>
 </document>

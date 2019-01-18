@@ -19,27 +19,34 @@ class AddHabitViewController: UIViewController {
         super.viewDidLoad()
         habitsTableView.delegate = self
         habitsTableView.dataSource = self
+        Firebase.shared.fetchHabits { (success) in
+            if success {
+                self.habitsTableView.reloadData()
+            }
+        }
     }
     
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "ToHabitDetail" {
+            guard let indexPath = habitsTableView.indexPathForSelectedRow else { return }
+            let destinationVC = segue.destination as? HabitDetailViewController
+            let habit = HabitController.shared.habits[indexPath.row]
+            destinationVC?.habit = habit
+        }
     }
 }
 
 // MARK: - UITableView
 extension AddHabitViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // TODO: return number of sections
-        return 0
+        return HabitController.shared.habits.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-        // TODO: put in the habit that we want.
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HabitCell", for: indexPath) as! HabitTableViewCell
+        let habit = HabitController.shared.habits[indexPath.row]
+        cell.habit = habit
         return cell
     }
     

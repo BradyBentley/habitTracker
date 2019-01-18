@@ -14,7 +14,7 @@
 		26F0D92C21EFBD3F00D4ADA1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26F0D92B21EFBD3F00D4ADA1 /* GoogleService-Info.plist */; };
 		26F0D93821F0FE2D00D4ADA1 /* AddHabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F0D93721F0FE2D00D4ADA1 /* AddHabitViewController.swift */; };
 		26F0D93D21F1042D00D4ADA1 /* HabitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F0D93C21F1042D00D4ADA1 /* HabitTableViewCell.swift */; };
-		26F0D94321F12D7400D4ADA1 /* HabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F0D94221F12D7400D4ADA1 /* HabitViewController.swift */; };
+		26F0D94321F12D7400D4ADA1 /* HabitDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F0D94221F12D7400D4ADA1 /* HabitDetailViewController.swift */; };
 		26F0D94521F133A500D4ADA1 /* EditHabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F0D94421F133A500D4ADA1 /* EditHabitViewController.swift */; };
 		26F0D94921F1432E00D4ADA1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F0D94821F1432E00D4ADA1 /* User.swift */; };
 		26F0D94B21F143A500D4ADA1 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F0D94A21F143A500D4ADA1 /* Habit.swift */; };
@@ -36,7 +36,7 @@
 		26F0D92B21EFBD3F00D4ADA1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		26F0D93721F0FE2D00D4ADA1 /* AddHabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabitViewController.swift; sourceTree = "<group>"; };
 		26F0D93C21F1042D00D4ADA1 /* HabitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitTableViewCell.swift; sourceTree = "<group>"; };
-		26F0D94221F12D7400D4ADA1 /* HabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewController.swift; sourceTree = "<group>"; };
+		26F0D94221F12D7400D4ADA1 /* HabitDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailViewController.swift; sourceTree = "<group>"; };
 		26F0D94421F133A500D4ADA1 /* EditHabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditHabitViewController.swift; sourceTree = "<group>"; };
 		26F0D94821F1432E00D4ADA1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		26F0D94A21F143A500D4ADA1 /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
@@ -132,7 +132,7 @@
 		26F0D94121F12CE700D4ADA1 /* Habit */ = {
 			isa = PBXGroup;
 			children = (
-				26F0D94221F12D7400D4ADA1 /* HabitViewController.swift */,
+				26F0D94221F12D7400D4ADA1 /* HabitDetailViewController.swift */,
 				26F0D94421F133A500D4ADA1 /* EditHabitViewController.swift */,
 			);
 			path = Habit;
@@ -327,7 +327,7 @@
 				26F0D95121F14D7900D4ADA1 /* LocationReminder.swift in Sources */,
 				26F0D94F21F14D5E00D4ADA1 /* TimeReminder.swift in Sources */,
 				260AAD6121EFAD9000461C1E /* AppDelegate.swift in Sources */,
-				26F0D94321F12D7400D4ADA1 /* HabitViewController.swift in Sources */,
+				26F0D94321F12D7400D4ADA1 /* HabitDetailViewController.swift in Sources */,
 				26F0D94921F1432E00D4ADA1 /* User.swift in Sources */,
 				26F0D94B21F143A500D4ADA1 /* Habit.swift in Sources */,
 				26F0D94D21F145BF00D4ADA1 /* HabitController.swift in Sources */,
