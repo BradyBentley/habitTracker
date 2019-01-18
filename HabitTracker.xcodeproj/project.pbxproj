@@ -12,6 +12,16 @@
 		260AAD6821EFAD9200461C1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 260AAD6721EFAD9200461C1E /* Assets.xcassets */; };
 		260AAD6B21EFAD9200461C1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 260AAD6921EFAD9200461C1E /* LaunchScreen.storyboard */; };
 		26F0D92C21EFBD3F00D4ADA1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26F0D92B21EFBD3F00D4ADA1 /* GoogleService-Info.plist */; };
+		26F0D93821F0FE2D00D4ADA1 /* AddHabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F0D93721F0FE2D00D4ADA1 /* AddHabitViewController.swift */; };
+		26F0D93D21F1042D00D4ADA1 /* HabitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F0D93C21F1042D00D4ADA1 /* HabitTableViewCell.swift */; };
+		26F0D94321F12D7400D4ADA1 /* HabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F0D94221F12D7400D4ADA1 /* HabitViewController.swift */; };
+		26F0D94521F133A500D4ADA1 /* EditHabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F0D94421F133A500D4ADA1 /* EditHabitViewController.swift */; };
+		26F0D94921F1432E00D4ADA1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F0D94821F1432E00D4ADA1 /* User.swift */; };
+		26F0D94B21F143A500D4ADA1 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F0D94A21F143A500D4ADA1 /* Habit.swift */; };
+		26F0D94D21F145BF00D4ADA1 /* HabitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F0D94C21F145BF00D4ADA1 /* HabitController.swift */; };
+		26F0D94F21F14D5E00D4ADA1 /* TimeReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F0D94E21F14D5E00D4ADA1 /* TimeReminder.swift */; };
+		26F0D95121F14D7900D4ADA1 /* LocationReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F0D95021F14D7900D4ADA1 /* LocationReminder.swift */; };
+		26F0D95321F2365700D4ADA1 /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F0D95221F2365700D4ADA1 /* Firebase.swift */; };
 		C8A39C70BFA96E27673A9F0C /* Pods_HabitTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04028353B060E92AB9235DCF /* Pods_HabitTracker.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +34,16 @@
 		260AAD6A21EFAD9200461C1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		260AAD6C21EFAD9200461C1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26F0D92B21EFBD3F00D4ADA1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		26F0D93721F0FE2D00D4ADA1 /* AddHabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabitViewController.swift; sourceTree = "<group>"; };
+		26F0D93C21F1042D00D4ADA1 /* HabitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitTableViewCell.swift; sourceTree = "<group>"; };
+		26F0D94221F12D7400D4ADA1 /* HabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewController.swift; sourceTree = "<group>"; };
+		26F0D94421F133A500D4ADA1 /* EditHabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditHabitViewController.swift; sourceTree = "<group>"; };
+		26F0D94821F1432E00D4ADA1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		26F0D94A21F143A500D4ADA1 /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
+		26F0D94C21F145BF00D4ADA1 /* HabitController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitController.swift; sourceTree = "<group>"; };
+		26F0D94E21F14D5E00D4ADA1 /* TimeReminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeReminder.swift; sourceTree = "<group>"; };
+		26F0D95021F14D7900D4ADA1 /* LocationReminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationReminder.swift; sourceTree = "<group>"; };
+		26F0D95221F2365700D4ADA1 /* Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
 		64796CE9C6B23F336BA88293 /* Pods-HabitTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitTracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-HabitTracker/Pods-HabitTracker.release.xcconfig"; sourceTree = "<group>"; };
 		7E430CF4D2DF39A2F832288E /* Pods-HabitTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitTracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HabitTracker/Pods-HabitTracker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -75,8 +95,66 @@
 				260AAD6921EFAD9200461C1E /* LaunchScreen.storyboard */,
 				260AAD6C21EFAD9200461C1E /* Info.plist */,
 				26F0D92B21EFBD3F00D4ADA1 /* GoogleService-Info.plist */,
+				26F0D95221F2365700D4ADA1 /* Firebase.swift */,
+				26F0D94621F13C9D00D4ADA1 /* Model */,
+				26F0D94721F13CAB00D4ADA1 /* ModelController */,
+				26F0D93521F0F12000D4ADA1 /* ViewControllers */,
 			);
 			path = HabitTracker;
+			sourceTree = "<group>";
+		};
+		26F0D93521F0F12000D4ADA1 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				26F0D93621F0FCFB00D4ADA1 /* HomeScene */,
+				26F0D94121F12CE700D4ADA1 /* Habit */,
+				26F0D93E21F11D7000D4ADA1 /* NewHabit */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		26F0D93621F0FCFB00D4ADA1 /* HomeScene */ = {
+			isa = PBXGroup;
+			children = (
+				26F0D93721F0FE2D00D4ADA1 /* AddHabitViewController.swift */,
+				26F0D93C21F1042D00D4ADA1 /* HabitTableViewCell.swift */,
+			);
+			path = HomeScene;
+			sourceTree = "<group>";
+		};
+		26F0D93E21F11D7000D4ADA1 /* NewHabit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NewHabit;
+			sourceTree = "<group>";
+		};
+		26F0D94121F12CE700D4ADA1 /* Habit */ = {
+			isa = PBXGroup;
+			children = (
+				26F0D94221F12D7400D4ADA1 /* HabitViewController.swift */,
+				26F0D94421F133A500D4ADA1 /* EditHabitViewController.swift */,
+			);
+			path = Habit;
+			sourceTree = "<group>";
+		};
+		26F0D94621F13C9D00D4ADA1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				26F0D94821F1432E00D4ADA1 /* User.swift */,
+				26F0D94A21F143A500D4ADA1 /* Habit.swift */,
+				26F0D94E21F14D5E00D4ADA1 /* TimeReminder.swift */,
+				26F0D95021F14D7900D4ADA1 /* LocationReminder.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		26F0D94721F13CAB00D4ADA1 /* ModelController */ = {
+			isa = PBXGroup;
+			children = (
+				26F0D94C21F145BF00D4ADA1 /* HabitController.swift */,
+			);
+			path = ModelController;
 			sourceTree = "<group>";
 		};
 		A43A8824F2D2B9F7A509F994 /* Pods */ = {
@@ -246,7 +324,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26F0D95121F14D7900D4ADA1 /* LocationReminder.swift in Sources */,
+				26F0D94F21F14D5E00D4ADA1 /* TimeReminder.swift in Sources */,
 				260AAD6121EFAD9000461C1E /* AppDelegate.swift in Sources */,
+				26F0D94321F12D7400D4ADA1 /* HabitViewController.swift in Sources */,
+				26F0D94921F1432E00D4ADA1 /* User.swift in Sources */,
+				26F0D94B21F143A500D4ADA1 /* Habit.swift in Sources */,
+				26F0D94D21F145BF00D4ADA1 /* HabitController.swift in Sources */,
+				26F0D95321F2365700D4ADA1 /* Firebase.swift in Sources */,
+				26F0D94521F133A500D4ADA1 /* EditHabitViewController.swift in Sources */,
+				26F0D93821F0FE2D00D4ADA1 /* AddHabitViewController.swift in Sources */,
+				26F0D93D21F1042D00D4ADA1 /* HabitTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
