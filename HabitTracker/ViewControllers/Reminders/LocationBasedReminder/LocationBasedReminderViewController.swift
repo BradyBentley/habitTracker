@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class LocationBasedReminderViewController: UIViewController, CLLocationManagerDelegate {
+class LocationBasedReminderViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDelegate {
     
     var locationManager = CLLocationManager()
     
@@ -18,10 +18,26 @@ class LocationBasedReminderViewController: UIViewController, CLLocationManagerDe
     
     @IBOutlet weak var locationSearchBar: UISearchBar!
     
+    @IBOutlet weak var saveButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        locationSearchBar.layer.shadowColor = UIColor.darkGray.cgColor
+        locationSearchBar.layer.shadowRadius = 2
+        locationSearchBar.layer.shadowOffset = CGSize(width: 2, height: 2)
+        locationSearchBar.layer.shadowOpacity = 0.4
+        
+        saveButton.layer.shadowColor = UIColor.darkGray.cgColor
+        saveButton.layer.shadowRadius = 2
+        saveButton.layer.shadowOffset = CGSize(width: 2, height: 2)
+        saveButton.layer.shadowOpacity = 0.4
+        //button.backgroundColor = UIColor.greenColor()
+//        saveButton.layer.backgroundColor = UIColor.blue.cgColor
+        
+        locationSearchBar.delegate = self
         mapView.showsUserLocation = true
+        mapView.isZoomEnabled = true
         if CLLocationManager.locationServicesEnabled() == true {
             locationManager.desiredAccuracy = 0.1
             locationManager.delegate = self
@@ -42,6 +58,41 @@ class LocationBasedReminderViewController: UIViewController, CLLocationManagerDe
         
         mapView.addGestureRecognizer(longPressRecognizer)
         mapView.isUserInteractionEnabled = true
+    }
+    
+    @IBAction func mapSaveButtonTap(_ sender: Any) {
+    }
+    
+    @IBAction func exitButtonTapped(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        locationSearchBar.resignFirstResponder()
+        print("Searching...", locationSearchBar.text!)
+            
+            let geocoder = CLGeocoder()
+        geocoder.geocodeAddressString(locationSearchBar.text!) { (placemarks: [CLPlacemark]?, error: Error?) in
+            if error == nil {
+                
+                let placemark = placemarks?.first
+                
+                let annotation = MKPointAnnotation()
+                annotation.coordinate = (placemark?.location?.coordinate)!
+                annotation.title = self.locationSearchBar.text!
+                
+                self.mapView.addAnnotation(annotation)
+                self.mapView.selectAnnotation(annotation, animated: false)
+                
+                let span = MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
+                let region = MKCoordinateRegion(center: (placemark?.location?.coordinate)!, span: span)
+                
+                self.mapView.setRegion(region, animated: true)
+                
+            } else {
+                print(error?.localizedDescription ?? "error")
+            }
+        }
     }
     
     @objc func handleLongPress(recognizer: UILongPressGestureRecognizer) {
