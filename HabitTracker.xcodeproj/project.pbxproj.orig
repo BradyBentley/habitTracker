@@ -366,9 +366,13 @@
 				26F0D95121F14D7900D4ADA1 /* LocationReminder.swift in Sources */,
 				26F0D94F21F14D5E00D4ADA1 /* TimeReminder.swift in Sources */,
 				260AAD6121EFAD9000461C1E /* AppDelegate.swift in Sources */,
+<<<<<<< HEAD
 				26F0D94321F12D7400D4ADA1 /* HabitDetailViewController.swift in Sources */,
+=======
 				F73213D421F25584009A47F0 /* LocationBasedReminderViewController.swift in Sources */,
+				26F0D94321F12D7400D4ADA1 /* HabitViewController.swift in Sources */,
 				F73213CE21F2546C009A47F0 /* ReminderViewController.swift in Sources */,
+>>>>>>> develop
 				26F0D94921F1432E00D4ADA1 /* User.swift in Sources */,
 				F73213D821F255C9009A47F0 /* TimeBasedReminderViewController.swift in Sources */,
 				26F0D94B21F143A500D4ADA1 /* Habit.swift in Sources */,

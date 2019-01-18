@@ -41,5 +41,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Without location services, the location based reminders will not show</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Without location services, the location based reminders will not show</string>
 </dict>
 </plist>
