@@ -75,4 +75,16 @@ class Firebase {
             completion(true)
         }
     }
+    
+    func updateHabitOnFirebase(habit: Habit, isNewHabit: Bool, category: String, habitDescription: String, days: Int, weeks: Int, completion: @escaping successCompletion) {
+        guard let currentUser = currentUser?.uuid else { completion(false) ; return }
+        firestore.collection(Habit.habitKeys.userKey).document(currentUser).collection(Habit.habitKeys.habitsKey).document().updateData(habit.dictionary)
+        completion(true)
+    }
+    
+    func deleteHabit(habit: Habit, completion: @escaping successCompletion) {
+        guard let currentUser = currentUser?.uuid else { completion(false) ; return }
+        firestore.collection(Habit.habitKeys.userKey).document(currentUser).collection(Habit.habitKeys.habitsKey).document().delete()
+        completion(true)
+    }
 }
