@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26084A3621F799440037A221 /* AddHabit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26084A3521F799440037A221 /* AddHabit.storyboard */; };
+		26084A3821F7B7BB0037A221 /* HabitDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26084A3721F7B7BB0037A221 /* HabitDetail.storyboard */; };
+		26084A3A21F7B9980037A221 /* Progress.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26084A3921F7B9980037A221 /* Progress.storyboard */; };
+		26084A3C21F7BA190037A221 /* CheckInPopUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26084A3B21F7BA190037A221 /* CheckInPopUp.storyboard */; };
 		260AAD6121EFAD9000461C1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260AAD6021EFAD9000461C1E /* AppDelegate.swift */; };
 		260AAD6621EFAD9000461C1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 260AAD6421EFAD9000461C1E /* Main.storyboard */; };
 		260AAD6821EFAD9200461C1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 260AAD6721EFAD9200461C1E /* Assets.xcassets */; };
@@ -36,6 +40,10 @@
 
 /* Begin PBXFileReference section */
 		04028353B060E92AB9235DCF /* Pods_HabitTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HabitTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		26084A3521F799440037A221 /* AddHabit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddHabit.storyboard; sourceTree = "<group>"; };
+		26084A3721F7B7BB0037A221 /* HabitDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HabitDetail.storyboard; sourceTree = "<group>"; };
+		26084A3921F7B9980037A221 /* Progress.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Progress.storyboard; sourceTree = "<group>"; };
+		26084A3B21F7BA190037A221 /* CheckInPopUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CheckInPopUp.storyboard; sourceTree = "<group>"; };
 		260AAD5D21EFAD9000461C1E /* HabitTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HabitTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		260AAD6021EFAD9000461C1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		260AAD6521EFAD9000461C1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -86,6 +94,32 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		26084A3D21F7BA790037A221 /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				260AAD6421EFAD9000461C1E /* Main.storyboard */,
+				26084A3B21F7BA190037A221 /* CheckInPopUp.storyboard */,
+				26084A3921F7B9980037A221 /* Progress.storyboard */,
+				260AAD6921EFAD9200461C1E /* LaunchScreen.storyboard */,
+				26084A3521F799440037A221 /* AddHabit.storyboard */,
+				26084A3721F7B7BB0037A221 /* HabitDetail.storyboard */,
+			);
+			path = StoryBoards;
+			sourceTree = "<group>";
+		};
+		26084A3E21F7BA890037A221 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				260AAD6021EFAD9000461C1E /* AppDelegate.swift */,
+				26084A3D21F7BA790037A221 /* StoryBoards */,
+				260AAD6721EFAD9200461C1E /* Assets.xcassets */,
+				260AAD6C21EFAD9200461C1E /* Info.plist */,
+				26F0D92B21EFBD3F00D4ADA1 /* GoogleService-Info.plist */,
+				26F0D95221F2365700D4ADA1 /* Firebase.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		260AAD5421EFAD9000461C1E = {
 			isa = PBXGroup;
 			children = (
@@ -107,14 +141,10 @@
 		260AAD5F21EFAD9000461C1E /* HabitTracker */ = {
 			isa = PBXGroup;
 			children = (
-				260AAD6021EFAD9000461C1E /* AppDelegate.swift */,
-				260AAD6421EFAD9000461C1E /* Main.storyboard */,
-				260AAD6721EFAD9200461C1E /* Assets.xcassets */,
-				260AAD6921EFAD9200461C1E /* LaunchScreen.storyboard */,
-				260AAD6C21EFAD9200461C1E /* Info.plist */,
-				26F0D92B21EFBD3F00D4ADA1 /* GoogleService-Info.plist */,
-				26F0D95221F2365700D4ADA1 /* Firebase.swift */,
-				26F0D94121F12CE700D4ADA1 /* Habit */,
+				26084A3E21F7BA890037A221 /* Resources */,
+				26F0D94621F13C9D00D4ADA1 /* Model */,
+				26F0D94721F13CAB00D4ADA1 /* ModelController */,
+				26F0D93521F0F12000D4ADA1 /* ViewControllers */,
 			);
 			path = HabitTracker;
 			sourceTree = "<group>";
@@ -130,7 +160,8 @@
 				F7791C5721F52DE000337D10 /* CheckinHabit */,
 				F7791C5821F52E0400337D10 /* HabitProgress */,
 			);
-			path = ViewControllers;
+			name = ViewControllers;
+			path = Habit/ViewControllers;
 			sourceTree = "<group>";
 		};
 		26F0D93621F0FCFB00D4ADA1 /* HomeScene */ = {
@@ -147,16 +178,6 @@
 			children = (
 			);
 			path = NewHabit;
-			sourceTree = "<group>";
-		};
-		26F0D94121F12CE700D4ADA1 /* Habit */ = {
-			isa = PBXGroup;
-			children = (
-				26F0D94621F13C9D00D4ADA1 /* Model */,
-				26F0D94721F13CAB00D4ADA1 /* ModelController */,
-				26F0D93521F0F12000D4ADA1 /* ViewControllers */,
-			);
-			path = Habit;
 			sourceTree = "<group>";
 		};
 		26F0D94621F13C9D00D4ADA1 /* Model */ = {
@@ -310,10 +331,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26084A3821F7B7BB0037A221 /* HabitDetail.storyboard in Resources */,
 				260AAD6B21EFAD9200461C1E /* LaunchScreen.storyboard in Resources */,
+				26084A3621F799440037A221 /* AddHabit.storyboard in Resources */,
 				26F0D92C21EFBD3F00D4ADA1 /* GoogleService-Info.plist in Resources */,
+				26084A3A21F7B9980037A221 /* Progress.storyboard in Resources */,
 				260AAD6821EFAD9200461C1E /* Assets.xcassets in Resources */,
 				260AAD6621EFAD9000461C1E /* Main.storyboard in Resources */,
+				26084A3C21F7BA190037A221 /* CheckInPopUp.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
