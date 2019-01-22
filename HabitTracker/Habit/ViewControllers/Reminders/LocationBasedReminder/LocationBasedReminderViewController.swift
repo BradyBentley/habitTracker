@@ -60,7 +60,7 @@ class LocationBasedReminderViewController: UIViewController, CLLocationManagerDe
         mapView.isUserInteractionEnabled = true
     }
     
-    @IBAction func mapSaveButtonTap(_ sender: Any) {
+    @IBAction func mapSaveButtonTapped(_ sender: Any) {
     }
     
     @IBAction func exitButtonTapped(_ sender: Any) {
