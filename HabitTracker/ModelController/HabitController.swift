@@ -35,10 +35,7 @@ class HabitController {
     }
     
     // Update
-    func updateHabit(habit: Habit, isNewHabit: Bool, category: String, habitDescription: String, days: Int, weeks: Int, completion: @escaping SuccessCompletion) {
-        habit.isNewHabit = isNewHabit
-        habit.category = category
-        habit.habitDescription = habitDescription
+    func updateHabit(habit: Habit, habitName: String, days: Int, weeks: Int, completion: @escaping SuccessCompletion) {
         habit.days = days
         habit.weeks = weeks
         completion(true)
