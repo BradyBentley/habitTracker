@@ -59,7 +59,7 @@
                                 <rect key="frame" x="0.0" y="44" width="383" height="643"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="89" id="fv2-UX-RPD" customClass="HabitTableViewCell" customModule="HabitTracker" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Habit" rowHeight="89" id="fv2-UX-RPD" customClass="HabitTableViewCell" customModule="HabitTracker" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="383" height="89"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fv2-UX-RPD" id="3ag-9N-QpZ">
