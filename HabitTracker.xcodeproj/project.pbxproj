@@ -33,9 +33,9 @@
 		F7791C5621F52DDB00337D10 /* HabitCheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7791C5521F52DDB00337D10 /* HabitCheckInViewController.swift */; };
 		F7791C5A21F52E3000337D10 /* HabitProgressDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7791C5921F52E3000337D10 /* HabitProgressDetailViewController.swift */; };
 		F7AA118F21F6311A000B16C6 /* EditHabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AA118E21F6311A000B16C6 /* EditHabitViewController.swift */; };
-		F7AA119121F63351000B16C6 /* CheckInTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AA119021F63351000B16C6 /* CheckInTableViewCell.swift */; };
 		F7AA119321F6352B000B16C6 /* MainCheckInTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AA119221F6352B000B16C6 /* MainCheckInTableViewCell.swift */; };
 		F7AA119521F63627000B16C6 /* ProgressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AA119421F63627000B16C6 /* ProgressTableViewCell.swift */; };
+		F7AA119721F7DA22000B16C6 /* CheckInCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AA119621F7DA22000B16C6 /* CheckInCustomTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,9 +69,9 @@
 		F7791C5521F52DDB00337D10 /* HabitCheckInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCheckInViewController.swift; sourceTree = "<group>"; };
 		F7791C5921F52E3000337D10 /* HabitProgressDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitProgressDetailViewController.swift; sourceTree = "<group>"; };
 		F7AA118E21F6311A000B16C6 /* EditHabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditHabitViewController.swift; sourceTree = "<group>"; };
-		F7AA119021F63351000B16C6 /* CheckInTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInTableViewCell.swift; sourceTree = "<group>"; };
 		F7AA119221F6352B000B16C6 /* MainCheckInTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCheckInTableViewCell.swift; sourceTree = "<group>"; };
 		F7AA119421F63627000B16C6 /* ProgressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressTableViewCell.swift; sourceTree = "<group>"; };
+		F7AA119621F7DA22000B16C6 /* CheckInCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInCustomTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,7 +239,6 @@
 			isa = PBXGroup;
 			children = (
 				F7AA118E21F6311A000B16C6 /* EditHabitViewController.swift */,
-				F7AA119021F63351000B16C6 /* CheckInTableViewCell.swift */,
 			);
 			path = EditHabit;
 			sourceTree = "<group>";
@@ -248,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				26F0D94221F12D7400D4ADA1 /* HabitDetailViewController.swift */,
+				F7AA119621F7DA22000B16C6 /* CheckInCustomTableViewCell.swift */,
 			);
 			path = HabitDetails;
 			sourceTree = "<group>";
@@ -433,10 +433,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7791C5A21F52E3000337D10 /* HabitProgressDetailViewController.swift in Sources */,
+				F7AA119721F7DA22000B16C6 /* CheckInCustomTableViewCell.swift in Sources */,
 				26F0D95121F14D7900D4ADA1 /* LocationReminder.swift in Sources */,
 				F7AA119521F63627000B16C6 /* ProgressTableViewCell.swift in Sources */,
 				26F0D94F21F14D5E00D4ADA1 /* TimeReminder.swift in Sources */,
-				F7AA119121F63351000B16C6 /* CheckInTableViewCell.swift in Sources */,
 				F7AA118F21F6311A000B16C6 /* EditHabitViewController.swift in Sources */,
 				260AAD6121EFAD9000461C1E /* AppDelegate.swift in Sources */,
 				26F0D94321F12D7400D4ADA1 /* HabitDetailViewController.swift in Sources */,
@@ -599,8 +599,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6XHS9MLH4Q;
-				INFOPLIST_FILE = HabitTracker/Info.plist;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "$(SRCROOT)/HabitTracker/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -618,8 +618,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6XHS9MLH4Q;
-				INFOPLIST_FILE = HabitTracker/Info.plist;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "$(SRCROOT)/HabitTracker/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
