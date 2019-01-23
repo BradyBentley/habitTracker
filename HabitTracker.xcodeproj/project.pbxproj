@@ -16,6 +16,9 @@
 		260AAD6621EFAD9000461C1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 260AAD6421EFAD9000461C1E /* Main.storyboard */; };
 		260AAD6821EFAD9200461C1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 260AAD6721EFAD9200461C1E /* Assets.xcassets */; };
 		260AAD6B21EFAD9200461C1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 260AAD6921EFAD9200461C1E /* LaunchScreen.storyboard */; };
+		266DCE0121F8DBB500CDC0F9 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 266DCE0021F8DBB500CDC0F9 /* Login.storyboard */; };
+		266DCE0321F8E8BA00CDC0F9 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266DCE0221F8E8BA00CDC0F9 /* WelcomeViewController.swift */; };
+		266DCE0521F8E98A00CDC0F9 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266DCE0421F8E98A00CDC0F9 /* LogInViewController.swift */; };
 		26F0D92C21EFBD3F00D4ADA1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26F0D92B21EFBD3F00D4ADA1 /* GoogleService-Info.plist */; };
 		26F0D93821F0FE2D00D4ADA1 /* AddHabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F0D93721F0FE2D00D4ADA1 /* AddHabitViewController.swift */; };
 		26F0D93D21F1042D00D4ADA1 /* HabitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F0D93C21F1042D00D4ADA1 /* HabitTableViewCell.swift */; };
@@ -52,6 +55,9 @@
 		260AAD6721EFAD9200461C1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		260AAD6A21EFAD9200461C1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		260AAD6C21EFAD9200461C1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		266DCE0021F8DBB500CDC0F9 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		266DCE0221F8E8BA00CDC0F9 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		266DCE0421F8E98A00CDC0F9 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		26F0D92B21EFBD3F00D4ADA1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		26F0D93721F0FE2D00D4ADA1 /* AddHabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabitViewController.swift; sourceTree = "<group>"; };
 		26F0D93C21F1042D00D4ADA1 /* HabitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitTableViewCell.swift; sourceTree = "<group>"; };
@@ -105,6 +111,7 @@
 				260AAD6921EFAD9200461C1E /* LaunchScreen.storyboard */,
 				26084A3521F799440037A221 /* AddHabit.storyboard */,
 				26084A3721F7B7BB0037A221 /* HabitDetail.storyboard */,
+				266DCE0021F8DBB500CDC0F9 /* Login.storyboard */,
 			);
 			path = StoryBoards;
 			sourceTree = "<group>";
@@ -151,6 +158,15 @@
 			path = HabitTracker;
 			sourceTree = "<group>";
 		};
+		266DCE0721F8E99E00CDC0F9 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				266DCE0221F8E8BA00CDC0F9 /* WelcomeViewController.swift */,
+				266DCE0421F8E98A00CDC0F9 /* LogInViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		26F0D93521F0F12000D4ADA1 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +177,7 @@
 				F7791C4F21F52D3C00337D10 /* EditHabit */,
 				F7791C5721F52DE000337D10 /* CheckinHabit */,
 				F7791C5821F52E0400337D10 /* HabitProgress */,
+				266DCE0721F8E99E00CDC0F9 /* Login */,
 			);
 			name = ViewControllers;
 			path = Habit/ViewControllers;
@@ -342,6 +359,7 @@
 				260AAD6821EFAD9200461C1E /* Assets.xcassets in Resources */,
 				260AAD6621EFAD9000461C1E /* Main.storyboard in Resources */,
 				26084A3C21F7BA190037A221 /* CheckInPopUp.storyboard in Resources */,
+				266DCE0121F8DBB500CDC0F9 /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,10 +466,12 @@
 				F73213CE21F2546C009A47F0 /* ReminderViewController.swift in Sources */,
 				26F0D94921F1432E00D4ADA1 /* User.swift in Sources */,
 				F73213D821F255C9009A47F0 /* TimeBasedReminderViewController.swift in Sources */,
+				266DCE0321F8E8BA00CDC0F9 /* WelcomeViewController.swift in Sources */,
 				26F0D94B21F143A500D4ADA1 /* Habit.swift in Sources */,
 				F73213DA21F255F4009A47F0 /* TimeBasedReminderDetailListTableViewController.swift in Sources */,
 				F7AA119321F6352B000B16C6 /* MainCheckInTableViewCell.swift in Sources */,
 				26F0D94D21F145BF00D4ADA1 /* HabitController.swift in Sources */,
+				266DCE0521F8E98A00CDC0F9 /* LogInViewController.swift in Sources */,
 				26F0D95321F2365700D4ADA1 /* Firebase.swift in Sources */,
 				26084A4221F7D5F40037A221 /* UserController.swift in Sources */,
 				26F0D93821F0FE2D00D4ADA1 /* AddHabitViewController.swift in Sources */,
