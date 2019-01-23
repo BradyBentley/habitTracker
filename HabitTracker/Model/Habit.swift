@@ -15,8 +15,8 @@ class Habit {
     var habitDescription: String
     var days: Int
     var weeks: Int
-    var timeReminder: [TimeReminder]?
-    var locationReminder: [LocationReminder]?
+    var timeReminder: [TimeReminder]
+    var locationReminder: [LocationReminder]
     
     // MARK: - CodingKeys
     enum habitKeys {
@@ -27,6 +27,8 @@ class Habit {
         static let weeksKey = "weeks"
         static let userKey = "Users"
         static let habitsKey = "Habits"
+        static let timeReminderKey = "timeReminder"
+        static let locationReminderKey = "locationReminder"
     }
     
     // MARK: - Initialization
@@ -56,7 +58,9 @@ extension Habit {
                 habitKeys.categoryKey: category,
                 habitKeys.habitDescriptionKey: habitDescription,
                 habitKeys.daysKey: days,
-                habitKeys.weeksKey: weeks
+                habitKeys.weeksKey: weeks,
+                habitKeys.timeReminderKey: timeReminder,
+                habitKeys.locationReminderKey: locationReminder
         ]
     }
 }

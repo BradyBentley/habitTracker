@@ -8,7 +8,7 @@
 
 import Foundation
 
-typealias successCompletion = (_ success: Bool) -> Void
+typealias SuccessCompletion = (_ success: Bool) -> Void
 class HabitController {
     // MARK: - Properties
     static let shared = HabitController()
@@ -16,17 +16,26 @@ class HabitController {
     
     // MARK: - CRUD
     // Create
-    func createHabit(isNewHabit: Bool, category: String, habitDescription: String, days: Int, weeks: Int, completion: @escaping successCompletion) {
+    func createHabit(isNewHabit: Bool, category: String, habitDescription: String, days: Int, weeks: Int, completion: @escaping SuccessCompletion) {
         let newHabit = Habit(isNewHabit: isNewHabit, category: category, habitDescription: habitDescription, days: days, weeks: weeks)
         habits.append(newHabit)
         completion(true)
     }
     
-    // Read/Fetch
-    // TODO: Write a function to pull the data from firebase
+    func createTimeReminder(habit: Habit, day: Date, time: Date, reminderText: String, completion: @escaping SuccessCompletion) {
+        let newTimeReminder = TimeReminder(time: time, day: day, reminderText: reminderText)
+        habit.timeReminder.append(newTimeReminder)
+        completion(true)
+    }
+    
+    func createLocationReminder(habit: Habit, latitude: Float, longitude: Float, reminderText: String, completion: @escaping SuccessCompletion) {
+        let newLocationReminder = LocationReminder(latitude: latitude, longitude: longitude, reminderText: reminderText)
+        habit.locationReminder.append(newLocationReminder)
+        completion(true)
+    }
     
     // Update
-    func updateHabit(habit: Habit, isNewHabit: Bool, category: String, habitDescription: String, days: Int, weeks: Int, completion: @escaping successCompletion) {
+    func updateHabit(habit: Habit, isNewHabit: Bool, category: String, habitDescription: String, days: Int, weeks: Int, completion: @escaping SuccessCompletion) {
         habit.isNewHabit = isNewHabit
         habit.category = category
         habit.habitDescription = habitDescription
@@ -35,11 +44,36 @@ class HabitController {
         completion(true)
     }
     
+    func updateTimeReminder(timeReminder: TimeReminder, day: Date, time: Date, reminderText: String, completion: @escaping SuccessCompletion) {
+        timeReminder.day = day
+        timeReminder.time = time
+        timeReminder.reminderText = reminderText
+        completion(true)
+    }
+    
+    func updateLocationReminder(locationReminder: LocationReminder, latitude: Float, longitude: Float, reminderText: String, completion: @escaping SuccessCompletion) {
+        locationReminder.latitude = latitude
+        locationReminder.longitude = longitude
+        locationReminder.reminderText = reminderText
+        completion(true)
+    }
+    
     // Delete
-    func deleteHabit(habit: Habit, completion: @escaping successCompletion) {
-        if let index = habits.index(of: habit) {
+    func deleteHabit(habit: Habit, completion: @escaping SuccessCompletion) {
+        guard let index = habits.index(of: habit) else { completion(false) ; return }
             habits.remove(at: index)
             completion(true)
-        }
+    }
+    
+    func deleteTimeReminder(timeReminder: TimeReminder, from habit: Habit, completion: @escaping SuccessCompletion) {
+        guard let index = habit.timeReminder.index(of: timeReminder) else { completion(false) ; return }
+        habit.timeReminder.remove(at: index)
+        completion(true)
+    }
+    
+    func deleteLocationReminder(locationReminder: LocationReminder, from habit: Habit, completion: @escaping SuccessCompletion) {
+        guard let index = habit.locationReminder.index(of: locationReminder) else { completion(false) ; return }
+        habit.locationReminder.remove(at: index)
+        completion(true)
     }
 }
