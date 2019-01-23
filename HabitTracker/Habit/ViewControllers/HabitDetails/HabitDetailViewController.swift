@@ -58,7 +58,7 @@ extension HabitDetailViewController: UITableViewDelegate, UITableViewDataSource{
         var count = 0
         
         if tableView == habitReminderTableView {
-            count = habit?.timeReminder!.count ?? 0
+            count = habit?.timeReminder.count ?? 0
         }
         
         if tableView == habitCheckInTableView {
