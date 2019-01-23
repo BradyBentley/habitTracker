@@ -9,13 +9,20 @@
 import Foundation
 
 class TimeReminder {
-    let time: Date
-    let day: Date
-    let reminderText: String
+    var time: Date
+    var day: Date
+    var reminderText: String
     
     init(time: Date, day: Date, reminderText: String){
         self.time = time
         self.day = day
         self.reminderText = reminderText
+    }
+}
+
+// MARK: - Equatable
+extension TimeReminder: Equatable {
+    static func == (lhs: TimeReminder, rhs: TimeReminder) -> Bool {
+        return lhs.day == rhs.day && lhs.time == rhs.time && lhs.reminderText == rhs.reminderText
     }
 }

@@ -11,13 +11,11 @@ import Foundation
 class User {
     // MARK: - Properties
     let uuid: String
-    var isAnonymousUser: Bool
     var habits: [Habit]
     
     // MARK: - Initialization
-    init(uuid: String, habits: [Habit] = [], isAnonymousUser: Bool = true){
+    init(uuid: String, habits: [Habit] = []){
         self.uuid = uuid
         self.habits = habits
-        self.isAnonymousUser = isAnonymousUser
     }
 }
