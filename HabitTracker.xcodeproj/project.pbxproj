@@ -112,9 +112,8 @@
 		26084A3E21F7BA890037A221 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				260AAD6021EFAD9000461C1E /* AppDelegate.swift */,
-				26084A3D21F7BA790037A221 /* StoryBoards */,
 				260AAD6721EFAD9200461C1E /* Assets.xcassets */,
+				260AAD6021EFAD9000461C1E /* AppDelegate.swift */,
 				260AAD6C21EFAD9200461C1E /* Info.plist */,
 				26F0D92B21EFBD3F00D4ADA1 /* GoogleService-Info.plist */,
 				26F0D95221F2365700D4ADA1 /* Firebase.swift */,
@@ -145,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				26084A3E21F7BA890037A221 /* Resources */,
+				26084A3D21F7BA790037A221 /* StoryBoards */,
 				26F0D94621F13C9D00D4ADA1 /* Model */,
 				26F0D94721F13CAB00D4ADA1 /* ModelController */,
 				26F0D93521F0F12000D4ADA1 /* ViewControllers */,
