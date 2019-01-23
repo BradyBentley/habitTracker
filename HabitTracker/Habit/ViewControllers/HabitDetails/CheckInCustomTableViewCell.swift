@@ -1,16 +1,18 @@
 //
-//  CheckInTableViewCell.swift
+//  CheckInCustomTableViewCell.swift
 //  HabitTracker
 //
-//  Created by Karissa McDaris on 1/21/19.
+//  Created by Karissa McDaris on 1/22/19.
 //  Copyright © 2019 HabitGroup. All rights reserved.
 //
 
 import UIKit
 
-class CheckInTableViewCell: UITableViewCell {
+class CheckInCustomTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var checkInButton: UIButton!
+    var check: Habit?
+    
+    @IBOutlet weak var checkButton: UIButton!
     
     @IBOutlet weak var dateAndTimeOfCheckIn: UILabel!
     
@@ -19,12 +21,18 @@ class CheckInTableViewCell: UITableViewCell {
         // Initialization code
     }
 
+    @IBAction func checkButtonTapped(_ sender: Any) {
+    }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
-    @IBAction func checkInButtonTapped(_ sender: Any) {
-    }
     
+    func updateViews() {
+        //guard let check = check else {return}
+        //dateAndTimeOfCheckIn.text = "\(Date)"
+        
+    }
+
 }

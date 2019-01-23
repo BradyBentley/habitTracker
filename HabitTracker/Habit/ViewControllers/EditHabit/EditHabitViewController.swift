@@ -9,6 +9,8 @@
 import UIKit
 
 class EditHabitViewController: UIViewController {
+    
+    var wasTapped: Bool = true
     // MARK: - IBOutlets
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var habitDescriptionLabel: UILabel!
@@ -19,8 +21,7 @@ class EditHabitViewController: UIViewController {
     @IBOutlet weak var daysAWeekTextField: UITextField!
     @IBOutlet weak var weeksTextField: UITextField!
     @IBOutlet weak var remindersTableView: UITableView!
-    @IBOutlet weak var checkInTableView: UITableView!
-    
+
     // MARK: - Properties
     var habit: Habit?
     
@@ -41,11 +42,37 @@ class EditHabitViewController: UIViewController {
     
     // MARK: - Action
     @IBAction func newHabitButtonTapped(_ sender: Any) {
+        changeCheckBoxImage()
     }
     @IBAction func oldHabitButtonTapped(_ sender: Any) {
+        changeCheckBoxImage()
     }
     @IBAction func saveButtonTapped(_ sender: Any) {
         //        guard let habit = habit else { return }
         // TODO: add the update function
     }
+}
+
+extension EditHabitViewController {
+    func changeCheckBoxImage() {
+        if wasTapped == false {
+            oldHabitButton.setImage(#imageLiteral(resourceName: "Filled"), for: .normal)
+            newHabitButton.setImage(#imageLiteral(resourceName: "temp"), for: .normal)
+            wasTapped = true
+        } else {
+            oldHabitButton.setImage(#imageLiteral(resourceName: "temp"), for: .normal)
+            newHabitButton.setImage(#imageLiteral(resourceName: "Filled"), for: .normal)
+            wasTapped = false
+        }
+    }
+    
+//    func changeNewHabitCheckBoxImage() {
+//        if wasTapped == false {
+//            newHabitButton.setImage(#imageLiteral(resourceName: "Filled"), for: .normal)
+//            wasTapped = true
+//        } else {
+//            newHabitButton.setImage(#imageLiteral(resourceName: "temp"), for: .normal)
+//            wasTapped = false
+//        }
+//    }
 }

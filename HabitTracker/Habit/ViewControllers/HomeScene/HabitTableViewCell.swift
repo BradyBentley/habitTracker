@@ -9,7 +9,6 @@
 import UIKit
 
 class HabitTableViewCell: UITableViewCell {
-    // MARK: - IBOutlets
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var habitDescriptionLabel: UILabel!
     @IBOutlet weak var successLabel: UILabel!

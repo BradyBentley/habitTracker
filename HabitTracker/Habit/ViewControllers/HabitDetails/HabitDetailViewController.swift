@@ -16,6 +16,8 @@ class HabitDetailViewController: UIViewController {
     @IBOutlet weak var percentageCompletionLabel: UILabel!
     @IBOutlet weak var markAsDoneButton: UIButton!
     @IBOutlet weak var habitReminderTableView: UITableView!
+    @IBOutlet weak var habitCheckInTableView: UITableView!
+    
     
     // MARK: - Properties
     var habit: Habit?
@@ -52,12 +54,32 @@ class HabitDetailViewController: UIViewController {
 extension HabitDetailViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // TODO: number of rows for reminders
-        return 0
+        
+        var count = 0
+        
+        if tableView == habitReminderTableView {
+            count = habit?.timeReminder!.count ?? 0
+        }
+        
+        if tableView == habitCheckInTableView {
+            count = HabitController.shared.habits.count
+        }
+        return count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "toBeName", for: indexPath)
+        var cell: UITableViewCell!
+        
+        if tableView == habitReminderTableView {
+            cell = tableView.dequeueReusableCell(withIdentifier: "remindCell", for: indexPath)
+        }
+        
+        if tableView == habitCheckInTableView {
+            cell = tableView.dequeueReusableCell(withIdentifier: "checkCell", for: indexPath) as? CheckInCustomTableViewCell
+        }
         // TODO: what needs to be in the cell
         return cell
     }
 }
+
+

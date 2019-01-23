@@ -33,10 +33,10 @@
         <!--CheckInPopUp-->
         <scene sceneID="hVd-Xd-TrO">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MT6-g8-0v3" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardName="CheckInPopUp" id="SYA-UU-R0V" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="NaV-VG-V72"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MT6-g8-0v3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="890" y="435"/>
         </scene>
