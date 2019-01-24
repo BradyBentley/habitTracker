@@ -11,11 +11,9 @@ import Foundation
 class User {
     // MARK: - Properties
     let uuid: String
-    var habits: [Habit]
     
     // MARK: - Initialization
-    init(uuid: String, habits: [Habit] = []){
+    init(uuid: String){
         self.uuid = uuid
-        self.habits = habits
     }
 }
