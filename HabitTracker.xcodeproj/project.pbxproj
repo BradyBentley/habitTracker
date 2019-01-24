@@ -17,6 +17,9 @@
 		260AAD6821EFAD9200461C1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 260AAD6721EFAD9200461C1E /* Assets.xcassets */; };
 		260AAD6B21EFAD9200461C1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 260AAD6921EFAD9200461C1E /* LaunchScreen.storyboard */; };
 		266DCE0521F8E98A00CDC0F9 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266DCE0421F8E98A00CDC0F9 /* LogInViewController.swift */; };
+		266DCE1321FA775600CDC0F9 /* SF-Pro-Text-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 266DCE1221FA774C00CDC0F9 /* SF-Pro-Text-Light.otf */; };
+		266DCE1621FA799A00CDC0F9 /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 266DCE0F21FA770100CDC0F9 /* SF-Pro-Text-Regular.otf */; };
+		266DCE1721FA799E00CDC0F9 /* SF-Pro-Text-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 266DCE1121FA774300CDC0F9 /* SF-Pro-Text-Medium.otf */; };
 		26F0D92C21EFBD3F00D4ADA1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26F0D92B21EFBD3F00D4ADA1 /* GoogleService-Info.plist */; };
 		26F0D93821F0FE2D00D4ADA1 /* AddHabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F0D93721F0FE2D00D4ADA1 /* AddHabitViewController.swift */; };
 		26F0D93D21F1042D00D4ADA1 /* HabitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F0D93C21F1042D00D4ADA1 /* HabitTableViewCell.swift */; };
@@ -41,9 +44,6 @@
 		F7AA119521F63627000B16C6 /* ProgressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AA119421F63627000B16C6 /* ProgressTableViewCell.swift */; };
 		F7AA119721F7DA22000B16C6 /* CheckInCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AA119621F7DA22000B16C6 /* CheckInCustomTableViewCell.swift */; };
 		F7AA119921F8DCCA000B16C6 /* CheckIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AA119821F8DCCA000B16C6 /* CheckIn.swift */; };
-		F7AA119F21F91E1F000B16C6 /* SF-Pro-Text-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7AA119E21F91E1F000B16C6 /* SF-Pro-Text-Light.otf */; };
-		F7AA11A121F91E36000B16C6 /* SF-Pro-Text-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7AA11A021F91E36000B16C6 /* SF-Pro-Text-Medium.otf */; };
-		F7AA11A321F91E45000B16C6 /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7AA11A221F91E45000B16C6 /* SF-Pro-Text-Regular.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +61,9 @@
 		260AAD6C21EFAD9200461C1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		266DCE0221F8E8BA00CDC0F9 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		266DCE0421F8E98A00CDC0F9 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		266DCE0F21FA770100CDC0F9 /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
+		266DCE1121FA774300CDC0F9 /* SF-Pro-Text-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Medium.otf"; sourceTree = "<group>"; };
+		266DCE1221FA774C00CDC0F9 /* SF-Pro-Text-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Light.otf"; sourceTree = "<group>"; };
 		26F0D92B21EFBD3F00D4ADA1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		26F0D93721F0FE2D00D4ADA1 /* AddHabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabitViewController.swift; sourceTree = "<group>"; };
 		26F0D93C21F1042D00D4ADA1 /* HabitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitTableViewCell.swift; sourceTree = "<group>"; };
@@ -128,6 +131,7 @@
 		26084A3E21F7BA890037A221 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				266DCE1521FA790C00CDC0F9 /* Fonts */,
 				260AAD6721EFAD9200461C1E /* Assets.xcassets */,
 				260AAD6021EFAD9000461C1E /* AppDelegate.swift */,
 				260AAD6C21EFAD9200461C1E /* Info.plist */,
@@ -175,6 +179,16 @@
 				266DCE0421F8E98A00CDC0F9 /* LogInViewController.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		266DCE1521FA790C00CDC0F9 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				266DCE0F21FA770100CDC0F9 /* SF-Pro-Text-Regular.otf */,
+				266DCE1221FA774C00CDC0F9 /* SF-Pro-Text-Light.otf */,
+				266DCE1121FA774300CDC0F9 /* SF-Pro-Text-Medium.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		26F0D93521F0F12000D4ADA1 /* ViewControllers */ = {
@@ -373,18 +387,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F7AA11A321F91E45000B16C6 /* SF-Pro-Text-Regular.otf in Resources */,
 				26084A3821F7B7BB0037A221 /* HabitDetail.storyboard in Resources */,
 				260AAD6B21EFAD9200461C1E /* LaunchScreen.storyboard in Resources */,
 				26084A3621F799440037A221 /* AddHabit.storyboard in Resources */,
 				26F0D92C21EFBD3F00D4ADA1 /* GoogleService-Info.plist in Resources */,
 				26084A3A21F7B9980037A221 /* Progress.storyboard in Resources */,
-				F7AA119F21F91E1F000B16C6 /* SF-Pro-Text-Light.otf in Resources */,
 				260AAD6821EFAD9200461C1E /* Assets.xcassets in Resources */,
 				F73C046B21FA680200CEF0BB /* Login.storyboard in Resources */,
 				260AAD6621EFAD9000461C1E /* Main.storyboard in Resources */,
-				F7AA11A121F91E36000B16C6 /* SF-Pro-Text-Medium.otf in Resources */,
+				266DCE1621FA799A00CDC0F9 /* SF-Pro-Text-Regular.otf in Resources */,
 				26084A3C21F7BA190037A221 /* CheckInPopUp.storyboard in Resources */,
+				266DCE1721FA799E00CDC0F9 /* SF-Pro-Text-Medium.otf in Resources */,
+				266DCE1321FA775600CDC0F9 /* SF-Pro-Text-Light.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
