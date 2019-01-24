@@ -38,6 +38,9 @@
 		F7AA119521F63627000B16C6 /* ProgressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AA119421F63627000B16C6 /* ProgressTableViewCell.swift */; };
 		F7AA119721F7DA22000B16C6 /* CheckInCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AA119621F7DA22000B16C6 /* CheckInCustomTableViewCell.swift */; };
 		F7AA119921F8DCCA000B16C6 /* CheckIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AA119821F8DCCA000B16C6 /* CheckIn.swift */; };
+		F7AA119F21F91E1F000B16C6 /* SF-Pro-Text-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7AA119E21F91E1F000B16C6 /* SF-Pro-Text-Light.otf */; };
+		F7AA11A121F91E36000B16C6 /* SF-Pro-Text-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7AA11A021F91E36000B16C6 /* SF-Pro-Text-Medium.otf */; };
+		F7AA11A321F91E45000B16C6 /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7AA11A221F91E45000B16C6 /* SF-Pro-Text-Regular.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +79,9 @@
 		F7AA119421F63627000B16C6 /* ProgressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressTableViewCell.swift; sourceTree = "<group>"; };
 		F7AA119621F7DA22000B16C6 /* CheckInCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInCustomTableViewCell.swift; sourceTree = "<group>"; };
 		F7AA119821F8DCCA000B16C6 /* CheckIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckIn.swift; sourceTree = "<group>"; };
+		F7AA119E21F91E1F000B16C6 /* SF-Pro-Text-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Light.otf"; sourceTree = "<group>"; };
+		F7AA11A021F91E36000B16C6 /* SF-Pro-Text-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Medium.otf"; sourceTree = "<group>"; };
+		F7AA11A221F91E45000B16C6 /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +120,7 @@
 		26084A3E21F7BA890037A221 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F7AA11A421F91EA8000B16C6 /* Font */,
 				26084A3D21F7BA790037A221 /* StoryBoards */,
 				260AAD6021EFAD9000461C1E /* AppDelegate.swift */,
 				260AAD6721EFAD9200461C1E /* Assets.xcassets */,
@@ -276,6 +283,16 @@
 			path = HabitProgress;
 			sourceTree = "<group>";
 		};
+		F7AA11A421F91EA8000B16C6 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				F7AA119E21F91E1F000B16C6 /* SF-Pro-Text-Light.otf */,
+				F7AA11A021F91E36000B16C6 /* SF-Pro-Text-Medium.otf */,
+				F7AA11A221F91E45000B16C6 /* SF-Pro-Text-Regular.otf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -337,13 +354,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7AA11A321F91E45000B16C6 /* SF-Pro-Text-Regular.otf in Resources */,
 				26084A3821F7B7BB0037A221 /* HabitDetail.storyboard in Resources */,
 				260AAD6B21EFAD9200461C1E /* LaunchScreen.storyboard in Resources */,
 				26084A3621F799440037A221 /* AddHabit.storyboard in Resources */,
 				26F0D92C21EFBD3F00D4ADA1 /* GoogleService-Info.plist in Resources */,
 				26084A3A21F7B9980037A221 /* Progress.storyboard in Resources */,
+				F7AA119F21F91E1F000B16C6 /* SF-Pro-Text-Light.otf in Resources */,
 				260AAD6821EFAD9200461C1E /* Assets.xcassets in Resources */,
 				260AAD6621EFAD9000461C1E /* Main.storyboard in Resources */,
+				F7AA11A121F91E36000B16C6 /* SF-Pro-Text-Medium.otf in Resources */,
 				26084A3C21F7BA190037A221 /* CheckInPopUp.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
