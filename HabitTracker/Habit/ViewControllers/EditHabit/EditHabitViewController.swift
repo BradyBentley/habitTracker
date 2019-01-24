@@ -10,7 +10,6 @@ import UIKit
 
 class EditHabitViewController: UIViewController {
     
-    var wasTapped: Bool = true
     // MARK: - IBOutlets
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var daysAWeekTextField: UITextField!
@@ -33,6 +32,7 @@ class EditHabitViewController: UIViewController {
 //        habitSuccessLabel.text = "\(habit.days) days a week for \(habit.weeks)"
         daysAWeekTextField.text = "\(habit.days)"
         weeksTextField.text = "\(habit.weeks)"
+        iconImageView.image = UIImage(named: "\(habit.category)Progress")
     }
     
     // MARK: - Action
@@ -57,30 +57,5 @@ class EditHabitViewController: UIViewController {
                 self.dismiss(animated: true, completion: nil)
             }
         }
-        
     }
-
-
-//extension EditHabitViewController {
-//    func changeCheckBoxImage() {
-//        if wasTapped == false {
-//            oldHabitButton.setImage(#imageLiteral(resourceName: "Filled"), for: .normal)
-//            newHabitButton.setImage(#imageLiteral(resourceName: "temp"), for: .normal)
-//            wasTapped = true
-//        } else {
-//            oldHabitButton.setImage(#imageLiteral(resourceName: "temp"), for: .normal)
-//            newHabitButton.setImage(#imageLiteral(resourceName: "Filled"), for: .normal)
-//            wasTapped = false
-//        }
-//    }
-
-//    func changeNewHabitCheckBoxImage() {
-//        if wasTapped == false {
-//            newHabitButton.setImage(#imageLiteral(resourceName: "Filled"), for: .normal)
-//            wasTapped = true
-//        } else {
-//            newHabitButton.setImage(#imageLiteral(resourceName: "temp"), for: .normal)
-//            wasTapped = false
-//        }
-//    }
 }
