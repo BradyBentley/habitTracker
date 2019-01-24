@@ -16,8 +16,6 @@
 		260AAD6621EFAD9000461C1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 260AAD6421EFAD9000461C1E /* Main.storyboard */; };
 		260AAD6821EFAD9200461C1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 260AAD6721EFAD9200461C1E /* Assets.xcassets */; };
 		260AAD6B21EFAD9200461C1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 260AAD6921EFAD9200461C1E /* LaunchScreen.storyboard */; };
-		266DCE0121F8DBB500CDC0F9 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 266DCE0021F8DBB500CDC0F9 /* Login.storyboard */; };
-		266DCE0321F8E8BA00CDC0F9 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266DCE0221F8E8BA00CDC0F9 /* WelcomeViewController.swift */; };
 		266DCE0521F8E98A00CDC0F9 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266DCE0421F8E98A00CDC0F9 /* LogInViewController.swift */; };
 		26F0D92C21EFBD3F00D4ADA1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26F0D92B21EFBD3F00D4ADA1 /* GoogleService-Info.plist */; };
 		26F0D93821F0FE2D00D4ADA1 /* AddHabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F0D93721F0FE2D00D4ADA1 /* AddHabitViewController.swift */; };
@@ -35,6 +33,7 @@
 		CBD7EC7C21F863670074A6D2 /* ReminderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD7EC7B21F863670074A6D2 /* ReminderTableViewCell.swift */; };
 		F73213CE21F2546C009A47F0 /* ReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73213CD21F2546C009A47F0 /* ReminderViewController.swift */; };
 		F73213D421F25584009A47F0 /* LocationBasedReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73213D321F25584009A47F0 /* LocationBasedReminderViewController.swift */; };
+		F73C046B21FA680200CEF0BB /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F73C046A21FA680200CEF0BB /* Login.storyboard */; };
 		F7791C5621F52DDB00337D10 /* HabitCheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7791C5521F52DDB00337D10 /* HabitCheckInViewController.swift */; };
 		F7791C5A21F52E3000337D10 /* HabitProgressDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7791C5921F52E3000337D10 /* HabitProgressDetailViewController.swift */; };
 		F7AA118F21F6311A000B16C6 /* EditHabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AA118E21F6311A000B16C6 /* EditHabitViewController.swift */; };
@@ -60,7 +59,6 @@
 		260AAD6721EFAD9200461C1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		260AAD6A21EFAD9200461C1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		260AAD6C21EFAD9200461C1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		266DCE0021F8DBB500CDC0F9 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		266DCE0221F8E8BA00CDC0F9 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		266DCE0421F8E98A00CDC0F9 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		26F0D92B21EFBD3F00D4ADA1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -80,6 +78,7 @@
 		CBD7EC7B21F863670074A6D2 /* ReminderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderTableViewCell.swift; sourceTree = "<group>"; };
 		F73213CD21F2546C009A47F0 /* ReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderViewController.swift; sourceTree = "<group>"; };
 		F73213D321F25584009A47F0 /* LocationBasedReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationBasedReminderViewController.swift; sourceTree = "<group>"; };
+		F73C046A21FA680200CEF0BB /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		F7791C5521F52DDB00337D10 /* HabitCheckInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCheckInViewController.swift; sourceTree = "<group>"; };
 		F7791C5921F52E3000337D10 /* HabitProgressDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitProgressDetailViewController.swift; sourceTree = "<group>"; };
 		F7AA118E21F6311A000B16C6 /* EditHabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditHabitViewController.swift; sourceTree = "<group>"; };
@@ -119,9 +118,9 @@
 				26084A3B21F7BA190037A221 /* CheckInPopUp.storyboard */,
 				26084A3921F7B9980037A221 /* Progress.storyboard */,
 				260AAD6921EFAD9200461C1E /* LaunchScreen.storyboard */,
+				F73C046A21FA680200CEF0BB /* Login.storyboard */,
 				26084A3521F799440037A221 /* AddHabit.storyboard */,
 				26084A3721F7B7BB0037A221 /* HabitDetail.storyboard */,
-				266DCE0021F8DBB500CDC0F9 /* Login.storyboard */,
 			);
 			path = StoryBoards;
 			sourceTree = "<group>";
@@ -145,6 +144,7 @@
 				260AAD5E21EFAD9000461C1E /* Products */,
 				A43A8824F2D2B9F7A509F994 /* Pods */,
 				0F79469EFB5CB2FFB2475F69 /* Frameworks */,
+				F73C046921FA676C00CEF0BB /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -267,6 +267,16 @@
 			path = LocationBasedReminder;
 			sourceTree = "<group>";
 		};
+		F73C046921FA676C00CEF0BB /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				F7AA11A221F91E45000B16C6 /* SF-Pro-Text-Regular.otf */,
+				F7AA119E21F91E1F000B16C6 /* SF-Pro-Text-Light.otf */,
+				F7AA11A021F91E36000B16C6 /* SF-Pro-Text-Medium.otf */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		F7791C4F21F52D3C00337D10 /* EditHabit */ = {
 			isa = PBXGroup;
 			children = (
@@ -300,16 +310,6 @@
 				F7AA119421F63627000B16C6 /* ProgressTableViewCell.swift */,
 			);
 			path = HabitProgress;
-			sourceTree = "<group>";
-		};
-		F7AA11A421F91EA8000B16C6 /* Font */ = {
-			isa = PBXGroup;
-			children = (
-				F7AA119E21F91E1F000B16C6 /* SF-Pro-Text-Light.otf */,
-				F7AA11A021F91E36000B16C6 /* SF-Pro-Text-Medium.otf */,
-				F7AA11A221F91E45000B16C6 /* SF-Pro-Text-Regular.otf */,
-			);
-			path = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -381,10 +381,10 @@
 				26084A3A21F7B9980037A221 /* Progress.storyboard in Resources */,
 				F7AA119F21F91E1F000B16C6 /* SF-Pro-Text-Light.otf in Resources */,
 				260AAD6821EFAD9200461C1E /* Assets.xcassets in Resources */,
+				F73C046B21FA680200CEF0BB /* Login.storyboard in Resources */,
 				260AAD6621EFAD9000461C1E /* Main.storyboard in Resources */,
 				F7AA11A121F91E36000B16C6 /* SF-Pro-Text-Medium.otf in Resources */,
 				26084A3C21F7BA190037A221 /* CheckInPopUp.storyboard in Resources */,
-				266DCE0121F8DBB500CDC0F9 /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
