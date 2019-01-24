@@ -116,7 +116,7 @@ class LocationBasedReminderViewController: UIViewController, CLLocationManagerDe
         guard let savedCoordinate = savedCoordinate, let habit = habit else { return }
         if let savedLocationName = locationSearchBar.text {
             let locationReminder = LocationReminder(latitude: Float(savedCoordinate.latitude), longitude: Float(savedCoordinate.longitude), locationName: savedLocationName, reminderText: "")
-            habit.locationReminder?.append(locationReminder)
+            habit.locationReminder.append(locationReminder)
         }
         self.dismiss(animated: true, completion: nil)
     }

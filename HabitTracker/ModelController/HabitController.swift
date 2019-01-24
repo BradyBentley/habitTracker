@@ -22,14 +22,14 @@ class HabitController {
         completion(true)
     }
     
-    func createTimeReminder(habit: Habit, day: Date, time: Date, reminderText: String, completion: @escaping SuccessCompletion) {
+    func createTimeReminder(habit: Habit, day: [Int], time: Date, reminderText: String, completion: @escaping SuccessCompletion) {
         let newTimeReminder = TimeReminder(time: time, day: day, reminderText: reminderText)
         habit.timeReminder.append(newTimeReminder)
         completion(true)
     }
     
-    func createLocationReminder(habit: Habit, latitude: Float, longitude: Float, reminderText: String, completion: @escaping SuccessCompletion) {
-        let newLocationReminder = LocationReminder(latitude: latitude, longitude: longitude, reminderText: reminderText)
+  func createLocationReminder(habit: Habit, latitude: Float, longitude: Float, locationName: String, reminderText: String, completion: @escaping SuccessCompletion) {
+      let newLocationReminder = LocationReminder(latitude: latitude, longitude: longitude, locationName: locationName, reminderText: reminderText)
         habit.locationReminder.append(newLocationReminder)
         completion(true)
     }
@@ -41,7 +41,7 @@ class HabitController {
         completion(true)
     }
     
-    func updateTimeReminder(timeReminder: TimeReminder, day: Date, time: Date, reminderText: String, completion: @escaping SuccessCompletion) {
+    func updateTimeReminder(timeReminder: TimeReminder, day: [Int], time: Date, reminderText: String, completion: @escaping SuccessCompletion) {
         timeReminder.day = day
         timeReminder.time = time
         timeReminder.reminderText = reminderText

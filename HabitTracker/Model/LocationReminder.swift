@@ -10,9 +10,9 @@ import Foundation
 
 class LocationReminder {
     
-    let latitude: Float
-    let longitude: Float
-    let locationName: String
+    var latitude: Float
+    var longitude: Float
+    var locationName: String
     var reminderText: String
     let uuid: String
     

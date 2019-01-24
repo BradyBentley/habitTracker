@@ -35,16 +35,16 @@ class ReminderViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == timeBasedRemindersTableView {
-            return habit?.timeReminder?.count ?? 0
+            return habit?.timeReminder.count ?? 0
         } else {
-            return habit?.locationReminder?.count ?? 0
+            return habit?.locationReminder.count ?? 0
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if tableView == timeBasedRemindersTableView {
             if let cell = timeBasedRemindersTableView.dequeueReusableCell(withIdentifier: "TimeCell", for: indexPath) as? ReminderTableViewCell {
-                if let timeReminder = habit?.timeReminder?[indexPath.row] {
+                if let timeReminder = habit?.timeReminder[indexPath.row] {
                     cell.timeReminder = timeReminder
                     cell.deleteButtonDelegate = self
                     cell.textFieldDelegate = self
@@ -53,7 +53,7 @@ class ReminderViewController: UIViewController, UITableViewDataSource, UITableVi
             }
         } else if tableView == locationBasedRemindersTableView {
             if let cell = locationBasedRemindersTableView.dequeueReusableCell(withIdentifier: "LocationCell", for: indexPath) as? ReminderTableViewCell {
-                if let locationReminder = habit?.locationReminder?[indexPath.row] {
+                if let locationReminder = habit?.locationReminder[indexPath.row] {
                     cell.locationReminder = locationReminder
                     cell.deleteButtonDelegate = self
                     cell.textFieldDelegate = self
@@ -71,14 +71,14 @@ class ReminderViewController: UIViewController, UITableViewDataSource, UITableVi
         if let reminder = cell.timeReminder?.uuid, !reminder.isEmpty {
             if let cellIndexPath = timeBasedRemindersTableView.indexPath(for: cell) {
                 timeBasedRemindersTableView.beginUpdates()
-                habit.timeReminder?.remove(at: cellIndexPath.row)
+                habit.timeReminder.remove(at: cellIndexPath.row)
                 timeBasedRemindersTableView.deleteRows(at: [cellIndexPath], with: .fade)
                 timeBasedRemindersTableView.endUpdates()
             }
         } else {
             if let cellIndexPath = locationBasedRemindersTableView.indexPath(for: cell) {
                 locationBasedRemindersTableView.beginUpdates()
-                habit.locationReminder?.remove(at: cellIndexPath.row)
+                habit.locationReminder.remove(at: cellIndexPath.row)
                 locationBasedRemindersTableView.deleteRows(at: [cellIndexPath], with: .fade)
                 locationBasedRemindersTableView.endUpdates()
             }
@@ -90,13 +90,13 @@ class ReminderViewController: UIViewController, UITableViewDataSource, UITableVi
         if let reminder = cell.timeReminder?.uuid, !reminder.isEmpty {
             if let cellIndexPath = timeBasedRemindersTableView.indexPath(for: cell) {
                 timeBasedRemindersTableView.beginUpdates()
-                habit.timeReminder?[cellIndexPath.row].reminderText = text
+                habit.timeReminder[cellIndexPath.row].reminderText = text
                 timeBasedRemindersTableView.endUpdates()
             }
         } else {
             if let cellIndexPath = locationBasedRemindersTableView.indexPath(for: cell) {
                 locationBasedRemindersTableView.beginUpdates()
-                habit.locationReminder?[cellIndexPath.row].reminderText = text
+                habit.locationReminder[cellIndexPath.row].reminderText = text
                 locationBasedRemindersTableView.endUpdates()
             }
         }

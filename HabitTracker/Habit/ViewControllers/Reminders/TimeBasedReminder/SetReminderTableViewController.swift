@@ -28,7 +28,7 @@ class SetReminderTableViewController: UITableViewController {
         
         let time = timePicker.date
         let timeReminder = TimeReminder(time: time, day: weekdays, reminderText: "")
-        habit.timeReminder?.append(timeReminder)
+        habit.timeReminder.append(timeReminder)
         self.navigationController?.popViewController(animated: true)
     }
     

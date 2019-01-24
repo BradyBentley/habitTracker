@@ -10,8 +10,8 @@ import Foundation
 
 class TimeReminder {
     
-    let time: Date
-    let day: [Int]?
+    var time: Date
+    var day: [Int]?
     var reminderText: String
     let uuid: String
     
