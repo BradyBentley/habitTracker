@@ -30,10 +30,11 @@
 		26F0D95121F14D7900D4ADA1 /* LocationReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F0D95021F14D7900D4ADA1 /* LocationReminder.swift */; };
 		26F0D95321F2365700D4ADA1 /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F0D95221F2365700D4ADA1 /* Firebase.swift */; };
 		C8A39C70BFA96E27673A9F0C /* Pods_HabitTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04028353B060E92AB9235DCF /* Pods_HabitTracker.framework */; };
+		CBB9A23D21F7CA9B00995F73 /* NewHabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9A23C21F7CA9B00995F73 /* NewHabitViewController.swift */; };
+		CBD7EC7A21F830FA0074A6D2 /* SetReminderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD7EC7921F830FA0074A6D2 /* SetReminderTableViewController.swift */; };
+		CBD7EC7C21F863670074A6D2 /* ReminderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD7EC7B21F863670074A6D2 /* ReminderTableViewCell.swift */; };
 		F73213CE21F2546C009A47F0 /* ReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73213CD21F2546C009A47F0 /* ReminderViewController.swift */; };
 		F73213D421F25584009A47F0 /* LocationBasedReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73213D321F25584009A47F0 /* LocationBasedReminderViewController.swift */; };
-		F73213D821F255C9009A47F0 /* TimeBasedReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73213D721F255C9009A47F0 /* TimeBasedReminderViewController.swift */; };
-		F73213DA21F255F4009A47F0 /* TimeBasedReminderDetailListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73213D921F255F4009A47F0 /* TimeBasedReminderDetailListTableViewController.swift */; };
 		F7791C5621F52DDB00337D10 /* HabitCheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7791C5521F52DDB00337D10 /* HabitCheckInViewController.swift */; };
 		F7791C5A21F52E3000337D10 /* HabitProgressDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7791C5921F52E3000337D10 /* HabitProgressDetailViewController.swift */; };
 		F7AA118F21F6311A000B16C6 /* EditHabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AA118E21F6311A000B16C6 /* EditHabitViewController.swift */; };
@@ -74,10 +75,11 @@
 		26F0D95221F2365700D4ADA1 /* Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
 		64796CE9C6B23F336BA88293 /* Pods-HabitTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitTracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-HabitTracker/Pods-HabitTracker.release.xcconfig"; sourceTree = "<group>"; };
 		7E430CF4D2DF39A2F832288E /* Pods-HabitTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitTracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HabitTracker/Pods-HabitTracker.debug.xcconfig"; sourceTree = "<group>"; };
+		CBB9A23C21F7CA9B00995F73 /* NewHabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHabitViewController.swift; sourceTree = "<group>"; };
+		CBD7EC7921F830FA0074A6D2 /* SetReminderTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetReminderTableViewController.swift; sourceTree = "<group>"; };
+		CBD7EC7B21F863670074A6D2 /* ReminderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderTableViewCell.swift; sourceTree = "<group>"; };
 		F73213CD21F2546C009A47F0 /* ReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderViewController.swift; sourceTree = "<group>"; };
 		F73213D321F25584009A47F0 /* LocationBasedReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationBasedReminderViewController.swift; sourceTree = "<group>"; };
-		F73213D721F255C9009A47F0 /* TimeBasedReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeBasedReminderViewController.swift; sourceTree = "<group>"; };
-		F73213D921F255F4009A47F0 /* TimeBasedReminderDetailListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeBasedReminderDetailListTableViewController.swift; sourceTree = "<group>"; };
 		F7791C5521F52DDB00337D10 /* HabitCheckInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCheckInViewController.swift; sourceTree = "<group>"; };
 		F7791C5921F52E3000337D10 /* HabitProgressDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitProgressDetailViewController.swift; sourceTree = "<group>"; };
 		F7AA118E21F6311A000B16C6 /* EditHabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditHabitViewController.swift; sourceTree = "<group>"; };
@@ -127,10 +129,8 @@
 		26084A3E21F7BA890037A221 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F7AA11A421F91EA8000B16C6 /* Font */,
-				26084A3D21F7BA790037A221 /* StoryBoards */,
-				260AAD6021EFAD9000461C1E /* AppDelegate.swift */,
 				260AAD6721EFAD9200461C1E /* Assets.xcassets */,
+				260AAD6021EFAD9000461C1E /* AppDelegate.swift */,
 				260AAD6C21EFAD9200461C1E /* Info.plist */,
 				26F0D92B21EFBD3F00D4ADA1 /* GoogleService-Info.plist */,
 				26F0D95221F2365700D4ADA1 /* Firebase.swift */,
@@ -160,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				26084A3E21F7BA890037A221 /* Resources */,
+				26084A3D21F7BA790037A221 /* StoryBoards */,
 				26F0D94621F13C9D00D4ADA1 /* Model */,
 				26F0D94721F13CAB00D4ADA1 /* ModelController */,
 				26F0D93521F0F12000D4ADA1 /* ViewControllers */,
@@ -180,7 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				26F0D93621F0FCFB00D4ADA1 /* HomeScene */,
-				26F0D93E21F11D7000D4ADA1 /* NewHabit */,
+				CBB9A23B21F7CA6800995F73 /* NewHabit */,
 				F73213CC21F25418009A47F0 /* Reminders */,
 				F7791C5221F52D9000337D10 /* HabitDetails */,
 				F7791C4F21F52D3C00337D10 /* EditHabit */,
@@ -199,13 +200,6 @@
 				26F0D93C21F1042D00D4ADA1 /* HabitTableViewCell.swift */,
 			);
 			path = HomeScene;
-			sourceTree = "<group>";
-		};
-		26F0D93E21F11D7000D4ADA1 /* NewHabit */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = NewHabit;
 			sourceTree = "<group>";
 		};
 		26F0D94621F13C9D00D4ADA1 /* Model */ = {
@@ -238,10 +232,19 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		CBB9A23B21F7CA6800995F73 /* NewHabit */ = {
+			isa = PBXGroup;
+			children = (
+				CBB9A23C21F7CA9B00995F73 /* NewHabitViewController.swift */,
+			);
+			path = NewHabit;
+			sourceTree = "<group>";
+		};
 		F73213CC21F25418009A47F0 /* Reminders */ = {
 			isa = PBXGroup;
 			children = (
 				F73213CD21F2546C009A47F0 /* ReminderViewController.swift */,
+				CBD7EC7B21F863670074A6D2 /* ReminderTableViewCell.swift */,
 				F73213CF21F2550E009A47F0 /* TimeBasedReminder */,
 				F73213D021F25536009A47F0 /* LocationBasedReminder */,
 			);
@@ -251,8 +254,7 @@
 		F73213CF21F2550E009A47F0 /* TimeBasedReminder */ = {
 			isa = PBXGroup;
 			children = (
-				F73213D721F255C9009A47F0 /* TimeBasedReminderViewController.swift */,
-				F73213D921F255F4009A47F0 /* TimeBasedReminderDetailListTableViewController.swift */,
+				CBD7EC7921F830FA0074A6D2 /* SetReminderTableViewController.swift */,
 			);
 			path = TimeBasedReminder;
 			sourceTree = "<group>";
@@ -485,15 +487,15 @@
 				260AAD6121EFAD9000461C1E /* AppDelegate.swift in Sources */,
 				F7AA119921F8DCCA000B16C6 /* CheckIn.swift in Sources */,
 				26F0D94321F12D7400D4ADA1 /* HabitDetailViewController.swift in Sources */,
+				CBB9A23D21F7CA9B00995F73 /* NewHabitViewController.swift in Sources */,
 				F7791C5621F52DDB00337D10 /* HabitCheckInViewController.swift in Sources */,
 				F73213D421F25584009A47F0 /* LocationBasedReminderViewController.swift in Sources */,
 				F73213CE21F2546C009A47F0 /* ReminderViewController.swift in Sources */,
+				CBD7EC7A21F830FA0074A6D2 /* SetReminderTableViewController.swift in Sources */,
 				26F0D94921F1432E00D4ADA1 /* User.swift in Sources */,
-				F73213D821F255C9009A47F0 /* TimeBasedReminderViewController.swift in Sources */,
-				266DCE0321F8E8BA00CDC0F9 /* WelcomeViewController.swift in Sources */,
 				26F0D94B21F143A500D4ADA1 /* Habit.swift in Sources */,
-				F73213DA21F255F4009A47F0 /* TimeBasedReminderDetailListTableViewController.swift in Sources */,
 				F7AA119321F6352B000B16C6 /* MainCheckInTableViewCell.swift in Sources */,
+				CBD7EC7C21F863670074A6D2 /* ReminderTableViewCell.swift in Sources */,
 				26F0D94D21F145BF00D4ADA1 /* HabitController.swift in Sources */,
 				266DCE0521F8E98A00CDC0F9 /* LogInViewController.swift in Sources */,
 				26F0D95321F2365700D4ADA1 /* Firebase.swift in Sources */,
