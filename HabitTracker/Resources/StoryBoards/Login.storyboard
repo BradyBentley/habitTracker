@@ -69,6 +69,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gtC-tD-U1T"/>
                     </view>
+                    <connections>
+                        <segue destination="QMW-mf-uIP" kind="show" identifier="ToHomePage" id="eXB-vJ-iq0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nhj-BL-tyc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -196,10 +199,11 @@
                 <viewControllerPlaceholder storyboardName="Main" id="QMW-mf-uIP" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H73-2k-Ome" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="999" y="104"/>
+            <point key="canvasLocation" x="1003" y="96"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="eXB-vJ-iq0"/>
         <segue reference="fkc-iN-kz4"/>
     </inferredMetricsTieBreakers>
 </document>
