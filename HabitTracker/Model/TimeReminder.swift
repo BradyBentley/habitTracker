@@ -9,15 +9,19 @@
 import Foundation
 
 class TimeReminder {
-    var time: Date
-    var day: Date
-    var reminderText: String
     
-    init(time: Date, day: Date, reminderText: String){
+    var time: Date
+    var day: [Int]?
+    var reminderText: String
+    let uuid: String
+    
+    init(time: Date, day: [Int] = [], reminderText: String, uuid: String = UUID().uuidString) {
         self.time = time
         self.day = day
         self.reminderText = reminderText
+        self.uuid = uuid
     }
+    
 }
 
 // MARK: - Equatable

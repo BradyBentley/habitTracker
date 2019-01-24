@@ -7,15 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26084A3621F799440037A221 /* AddHabit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26084A3521F799440037A221 /* AddHabit.storyboard */; };
+		26084A3821F7B7BB0037A221 /* HabitDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26084A3721F7B7BB0037A221 /* HabitDetail.storyboard */; };
+		26084A3A21F7B9980037A221 /* Progress.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26084A3921F7B9980037A221 /* Progress.storyboard */; };
+		26084A3C21F7BA190037A221 /* CheckInPopUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26084A3B21F7BA190037A221 /* CheckInPopUp.storyboard */; };
+		26084A4221F7D5F40037A221 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26084A4121F7D5F40037A221 /* UserController.swift */; };
 		260AAD6121EFAD9000461C1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260AAD6021EFAD9000461C1E /* AppDelegate.swift */; };
 		260AAD6621EFAD9000461C1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 260AAD6421EFAD9000461C1E /* Main.storyboard */; };
 		260AAD6821EFAD9200461C1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 260AAD6721EFAD9200461C1E /* Assets.xcassets */; };
 		260AAD6B21EFAD9200461C1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 260AAD6921EFAD9200461C1E /* LaunchScreen.storyboard */; };
+		266DCE0121F8DBB500CDC0F9 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 266DCE0021F8DBB500CDC0F9 /* Login.storyboard */; };
+		266DCE0321F8E8BA00CDC0F9 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266DCE0221F8E8BA00CDC0F9 /* WelcomeViewController.swift */; };
+		266DCE0521F8E98A00CDC0F9 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266DCE0421F8E98A00CDC0F9 /* LogInViewController.swift */; };
 		26F0D92C21EFBD3F00D4ADA1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26F0D92B21EFBD3F00D4ADA1 /* GoogleService-Info.plist */; };
 		26F0D93821F0FE2D00D4ADA1 /* AddHabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F0D93721F0FE2D00D4ADA1 /* AddHabitViewController.swift */; };
 		26F0D93D21F1042D00D4ADA1 /* HabitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F0D93C21F1042D00D4ADA1 /* HabitTableViewCell.swift */; };
 		26F0D94321F12D7400D4ADA1 /* HabitDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F0D94221F12D7400D4ADA1 /* HabitDetailViewController.swift */; };
-		26F0D94521F133A500D4ADA1 /* EditHabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F0D94421F133A500D4ADA1 /* EditHabitViewController.swift */; };
 		26F0D94921F1432E00D4ADA1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F0D94821F1432E00D4ADA1 /* User.swift */; };
 		26F0D94B21F143A500D4ADA1 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F0D94A21F143A500D4ADA1 /* Habit.swift */; };
 		26F0D94D21F145BF00D4ADA1 /* HabitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F0D94C21F145BF00D4ADA1 /* HabitController.swift */; };
@@ -23,26 +30,43 @@
 		26F0D95121F14D7900D4ADA1 /* LocationReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F0D95021F14D7900D4ADA1 /* LocationReminder.swift */; };
 		26F0D95321F2365700D4ADA1 /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F0D95221F2365700D4ADA1 /* Firebase.swift */; };
 		C8A39C70BFA96E27673A9F0C /* Pods_HabitTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04028353B060E92AB9235DCF /* Pods_HabitTracker.framework */; };
-		F73213CB21F24D84009A47F0 /* NewHabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73213CA21F24D84009A47F0 /* NewHabitViewController.swift */; };
+		CBB9A23D21F7CA9B00995F73 /* NewHabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9A23C21F7CA9B00995F73 /* NewHabitViewController.swift */; };
+		CBD7EC7A21F830FA0074A6D2 /* SetReminderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD7EC7921F830FA0074A6D2 /* SetReminderTableViewController.swift */; };
+		CBD7EC7C21F863670074A6D2 /* ReminderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD7EC7B21F863670074A6D2 /* ReminderTableViewCell.swift */; };
 		F73213CE21F2546C009A47F0 /* ReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73213CD21F2546C009A47F0 /* ReminderViewController.swift */; };
 		F73213D421F25584009A47F0 /* LocationBasedReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73213D321F25584009A47F0 /* LocationBasedReminderViewController.swift */; };
-		F73213D821F255C9009A47F0 /* TimeBasedReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73213D721F255C9009A47F0 /* TimeBasedReminderViewController.swift */; };
-		F73213DA21F255F4009A47F0 /* TimeBasedReminderDetailListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73213D921F255F4009A47F0 /* TimeBasedReminderDetailListTableViewController.swift */; };
+		F7791C5621F52DDB00337D10 /* HabitCheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7791C5521F52DDB00337D10 /* HabitCheckInViewController.swift */; };
+		F7791C5A21F52E3000337D10 /* HabitProgressDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7791C5921F52E3000337D10 /* HabitProgressDetailViewController.swift */; };
+		F7AA118F21F6311A000B16C6 /* EditHabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AA118E21F6311A000B16C6 /* EditHabitViewController.swift */; };
+		F7AA119321F6352B000B16C6 /* MainCheckInTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AA119221F6352B000B16C6 /* MainCheckInTableViewCell.swift */; };
+		F7AA119521F63627000B16C6 /* ProgressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AA119421F63627000B16C6 /* ProgressTableViewCell.swift */; };
+		F7AA119721F7DA22000B16C6 /* CheckInCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AA119621F7DA22000B16C6 /* CheckInCustomTableViewCell.swift */; };
+		F7AA119921F8DCCA000B16C6 /* CheckIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AA119821F8DCCA000B16C6 /* CheckIn.swift */; };
+		F7AA119F21F91E1F000B16C6 /* SF-Pro-Text-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7AA119E21F91E1F000B16C6 /* SF-Pro-Text-Light.otf */; };
+		F7AA11A121F91E36000B16C6 /* SF-Pro-Text-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7AA11A021F91E36000B16C6 /* SF-Pro-Text-Medium.otf */; };
+		F7AA11A321F91E45000B16C6 /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7AA11A221F91E45000B16C6 /* SF-Pro-Text-Regular.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		04028353B060E92AB9235DCF /* Pods_HabitTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HabitTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		26084A3521F799440037A221 /* AddHabit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddHabit.storyboard; sourceTree = "<group>"; };
+		26084A3721F7B7BB0037A221 /* HabitDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HabitDetail.storyboard; sourceTree = "<group>"; };
+		26084A3921F7B9980037A221 /* Progress.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Progress.storyboard; sourceTree = "<group>"; };
+		26084A3B21F7BA190037A221 /* CheckInPopUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CheckInPopUp.storyboard; sourceTree = "<group>"; };
+		26084A4121F7D5F40037A221 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		260AAD5D21EFAD9000461C1E /* HabitTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HabitTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		260AAD6021EFAD9000461C1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		260AAD6521EFAD9000461C1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		260AAD6721EFAD9200461C1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		260AAD6A21EFAD9200461C1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		260AAD6C21EFAD9200461C1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		266DCE0021F8DBB500CDC0F9 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		266DCE0221F8E8BA00CDC0F9 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		266DCE0421F8E98A00CDC0F9 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		26F0D92B21EFBD3F00D4ADA1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		26F0D93721F0FE2D00D4ADA1 /* AddHabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabitViewController.swift; sourceTree = "<group>"; };
 		26F0D93C21F1042D00D4ADA1 /* HabitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitTableViewCell.swift; sourceTree = "<group>"; };
 		26F0D94221F12D7400D4ADA1 /* HabitDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailViewController.swift; sourceTree = "<group>"; };
-		26F0D94421F133A500D4ADA1 /* EditHabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditHabitViewController.swift; sourceTree = "<group>"; };
 		26F0D94821F1432E00D4ADA1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		26F0D94A21F143A500D4ADA1 /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
 		26F0D94C21F145BF00D4ADA1 /* HabitController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitController.swift; sourceTree = "<group>"; };
@@ -51,11 +75,21 @@
 		26F0D95221F2365700D4ADA1 /* Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
 		64796CE9C6B23F336BA88293 /* Pods-HabitTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitTracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-HabitTracker/Pods-HabitTracker.release.xcconfig"; sourceTree = "<group>"; };
 		7E430CF4D2DF39A2F832288E /* Pods-HabitTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitTracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HabitTracker/Pods-HabitTracker.debug.xcconfig"; sourceTree = "<group>"; };
-		F73213CA21F24D84009A47F0 /* NewHabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewHabitViewController.swift; path = HabitTracker/ViewControllers/NewHabitViewController.swift; sourceTree = SOURCE_ROOT; };
+		CBB9A23C21F7CA9B00995F73 /* NewHabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHabitViewController.swift; sourceTree = "<group>"; };
+		CBD7EC7921F830FA0074A6D2 /* SetReminderTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetReminderTableViewController.swift; sourceTree = "<group>"; };
+		CBD7EC7B21F863670074A6D2 /* ReminderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderTableViewCell.swift; sourceTree = "<group>"; };
 		F73213CD21F2546C009A47F0 /* ReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderViewController.swift; sourceTree = "<group>"; };
 		F73213D321F25584009A47F0 /* LocationBasedReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationBasedReminderViewController.swift; sourceTree = "<group>"; };
-		F73213D721F255C9009A47F0 /* TimeBasedReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeBasedReminderViewController.swift; sourceTree = "<group>"; };
-		F73213D921F255F4009A47F0 /* TimeBasedReminderDetailListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeBasedReminderDetailListTableViewController.swift; sourceTree = "<group>"; };
+		F7791C5521F52DDB00337D10 /* HabitCheckInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCheckInViewController.swift; sourceTree = "<group>"; };
+		F7791C5921F52E3000337D10 /* HabitProgressDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitProgressDetailViewController.swift; sourceTree = "<group>"; };
+		F7AA118E21F6311A000B16C6 /* EditHabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditHabitViewController.swift; sourceTree = "<group>"; };
+		F7AA119221F6352B000B16C6 /* MainCheckInTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCheckInTableViewCell.swift; sourceTree = "<group>"; };
+		F7AA119421F63627000B16C6 /* ProgressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressTableViewCell.swift; sourceTree = "<group>"; };
+		F7AA119621F7DA22000B16C6 /* CheckInCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInCustomTableViewCell.swift; sourceTree = "<group>"; };
+		F7AA119821F8DCCA000B16C6 /* CheckIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckIn.swift; sourceTree = "<group>"; };
+		F7AA119E21F91E1F000B16C6 /* SF-Pro-Text-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Light.otf"; sourceTree = "<group>"; };
+		F7AA11A021F91E36000B16C6 /* SF-Pro-Text-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Medium.otf"; sourceTree = "<group>"; };
+		F7AA11A221F91E45000B16C6 /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +110,41 @@
 				04028353B060E92AB9235DCF /* Pods_HabitTracker.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		26084A3D21F7BA790037A221 /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				260AAD6421EFAD9000461C1E /* Main.storyboard */,
+				26084A3B21F7BA190037A221 /* CheckInPopUp.storyboard */,
+				26084A3921F7B9980037A221 /* Progress.storyboard */,
+				260AAD6921EFAD9200461C1E /* LaunchScreen.storyboard */,
+				26084A3521F799440037A221 /* AddHabit.storyboard */,
+				26084A3721F7B7BB0037A221 /* HabitDetail.storyboard */,
+				266DCE0021F8DBB500CDC0F9 /* Login.storyboard */,
+			);
+			path = StoryBoards;
+			sourceTree = "<group>";
+		};
+		26084A3E21F7BA890037A221 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+<<<<<<< HEAD
+				F7AA11A421F91EA8000B16C6 /* Font */,
+				26084A3D21F7BA790037A221 /* StoryBoards */,
+				260AAD6021EFAD9000461C1E /* AppDelegate.swift */,
+||||||| merged common ancestors
+				260AAD6021EFAD9000461C1E /* AppDelegate.swift */,
+				26084A3D21F7BA790037A221 /* StoryBoards */,
+=======
+>>>>>>> ddfe13428e1a5f5ac88bbc7b55d90eec4f6c8b78
+				260AAD6721EFAD9200461C1E /* Assets.xcassets */,
+				260AAD6021EFAD9000461C1E /* AppDelegate.swift */,
+				260AAD6C21EFAD9200461C1E /* Info.plist */,
+				26F0D92B21EFBD3F00D4ADA1 /* GoogleService-Info.plist */,
+				26F0D95221F2365700D4ADA1 /* Firebase.swift */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		260AAD5421EFAD9000461C1E = {
@@ -99,13 +168,8 @@
 		260AAD5F21EFAD9000461C1E /* HabitTracker */ = {
 			isa = PBXGroup;
 			children = (
-				260AAD6021EFAD9000461C1E /* AppDelegate.swift */,
-				260AAD6421EFAD9000461C1E /* Main.storyboard */,
-				260AAD6721EFAD9200461C1E /* Assets.xcassets */,
-				260AAD6921EFAD9200461C1E /* LaunchScreen.storyboard */,
-				260AAD6C21EFAD9200461C1E /* Info.plist */,
-				26F0D92B21EFBD3F00D4ADA1 /* GoogleService-Info.plist */,
-				26F0D95221F2365700D4ADA1 /* Firebase.swift */,
+				26084A3E21F7BA890037A221 /* Resources */,
+				26084A3D21F7BA790037A221 /* StoryBoards */,
 				26F0D94621F13C9D00D4ADA1 /* Model */,
 				26F0D94721F13CAB00D4ADA1 /* ModelController */,
 				26F0D93521F0F12000D4ADA1 /* ViewControllers */,
@@ -113,15 +177,29 @@
 			path = HabitTracker;
 			sourceTree = "<group>";
 		};
+		266DCE0721F8E99E00CDC0F9 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				266DCE0221F8E8BA00CDC0F9 /* WelcomeViewController.swift */,
+				266DCE0421F8E98A00CDC0F9 /* LogInViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		26F0D93521F0F12000D4ADA1 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				26F0D93621F0FCFB00D4ADA1 /* HomeScene */,
-				26F0D94121F12CE700D4ADA1 /* Habit */,
-				26F0D93E21F11D7000D4ADA1 /* NewHabit */,
+				CBB9A23B21F7CA6800995F73 /* NewHabit */,
 				F73213CC21F25418009A47F0 /* Reminders */,
+				F7791C5221F52D9000337D10 /* HabitDetails */,
+				F7791C4F21F52D3C00337D10 /* EditHabit */,
+				F7791C5721F52DE000337D10 /* CheckinHabit */,
+				F7791C5821F52E0400337D10 /* HabitProgress */,
+				266DCE0721F8E99E00CDC0F9 /* Login */,
 			);
-			path = ViewControllers;
+			name = ViewControllers;
+			path = Habit/ViewControllers;
 			sourceTree = "<group>";
 		};
 		26F0D93621F0FCFB00D4ADA1 /* HomeScene */ = {
@@ -133,28 +211,12 @@
 			path = HomeScene;
 			sourceTree = "<group>";
 		};
-		26F0D93E21F11D7000D4ADA1 /* NewHabit */ = {
-			isa = PBXGroup;
-			children = (
-				F73213CA21F24D84009A47F0 /* NewHabitViewController.swift */,
-			);
-			path = NewHabit;
-			sourceTree = "<group>";
-		};
-		26F0D94121F12CE700D4ADA1 /* Habit */ = {
-			isa = PBXGroup;
-			children = (
-				26F0D94221F12D7400D4ADA1 /* HabitDetailViewController.swift */,
-				26F0D94421F133A500D4ADA1 /* EditHabitViewController.swift */,
-			);
-			path = Habit;
-			sourceTree = "<group>";
-		};
 		26F0D94621F13C9D00D4ADA1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				26F0D94821F1432E00D4ADA1 /* User.swift */,
 				26F0D94A21F143A500D4ADA1 /* Habit.swift */,
+				F7AA119821F8DCCA000B16C6 /* CheckIn.swift */,
 				26F0D94E21F14D5E00D4ADA1 /* TimeReminder.swift */,
 				26F0D95021F14D7900D4ADA1 /* LocationReminder.swift */,
 			);
@@ -165,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				26F0D94C21F145BF00D4ADA1 /* HabitController.swift */,
+				26084A4121F7D5F40037A221 /* UserController.swift */,
 			);
 			path = ModelController;
 			sourceTree = "<group>";
@@ -178,10 +241,19 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		CBB9A23B21F7CA6800995F73 /* NewHabit */ = {
+			isa = PBXGroup;
+			children = (
+				CBB9A23C21F7CA9B00995F73 /* NewHabitViewController.swift */,
+			);
+			path = NewHabit;
+			sourceTree = "<group>";
+		};
 		F73213CC21F25418009A47F0 /* Reminders */ = {
 			isa = PBXGroup;
 			children = (
 				F73213CD21F2546C009A47F0 /* ReminderViewController.swift */,
+				CBD7EC7B21F863670074A6D2 /* ReminderTableViewCell.swift */,
 				F73213CF21F2550E009A47F0 /* TimeBasedReminder */,
 				F73213D021F25536009A47F0 /* LocationBasedReminder */,
 			);
@@ -191,8 +263,7 @@
 		F73213CF21F2550E009A47F0 /* TimeBasedReminder */ = {
 			isa = PBXGroup;
 			children = (
-				F73213D721F255C9009A47F0 /* TimeBasedReminderViewController.swift */,
-				F73213D921F255F4009A47F0 /* TimeBasedReminderDetailListTableViewController.swift */,
+				CBD7EC7921F830FA0074A6D2 /* SetReminderTableViewController.swift */,
 			);
 			path = TimeBasedReminder;
 			sourceTree = "<group>";
@@ -203,6 +274,51 @@
 				F73213D321F25584009A47F0 /* LocationBasedReminderViewController.swift */,
 			);
 			path = LocationBasedReminder;
+			sourceTree = "<group>";
+		};
+		F7791C4F21F52D3C00337D10 /* EditHabit */ = {
+			isa = PBXGroup;
+			children = (
+				F7AA118E21F6311A000B16C6 /* EditHabitViewController.swift */,
+			);
+			path = EditHabit;
+			sourceTree = "<group>";
+		};
+		F7791C5221F52D9000337D10 /* HabitDetails */ = {
+			isa = PBXGroup;
+			children = (
+				26F0D94221F12D7400D4ADA1 /* HabitDetailViewController.swift */,
+				F7AA119621F7DA22000B16C6 /* CheckInCustomTableViewCell.swift */,
+			);
+			path = HabitDetails;
+			sourceTree = "<group>";
+		};
+		F7791C5721F52DE000337D10 /* CheckinHabit */ = {
+			isa = PBXGroup;
+			children = (
+				F7791C5521F52DDB00337D10 /* HabitCheckInViewController.swift */,
+				F7AA119221F6352B000B16C6 /* MainCheckInTableViewCell.swift */,
+			);
+			path = CheckinHabit;
+			sourceTree = "<group>";
+		};
+		F7791C5821F52E0400337D10 /* HabitProgress */ = {
+			isa = PBXGroup;
+			children = (
+				F7791C5921F52E3000337D10 /* HabitProgressDetailViewController.swift */,
+				F7AA119421F63627000B16C6 /* ProgressTableViewCell.swift */,
+			);
+			path = HabitProgress;
+			sourceTree = "<group>";
+		};
+		F7AA11A421F91EA8000B16C6 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				F7AA119E21F91E1F000B16C6 /* SF-Pro-Text-Light.otf */,
+				F7AA11A021F91E36000B16C6 /* SF-Pro-Text-Medium.otf */,
+				F7AA11A221F91E45000B16C6 /* SF-Pro-Text-Regular.otf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,10 +382,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7AA11A321F91E45000B16C6 /* SF-Pro-Text-Regular.otf in Resources */,
+				26084A3821F7B7BB0037A221 /* HabitDetail.storyboard in Resources */,
 				260AAD6B21EFAD9200461C1E /* LaunchScreen.storyboard in Resources */,
+				26084A3621F799440037A221 /* AddHabit.storyboard in Resources */,
 				26F0D92C21EFBD3F00D4ADA1 /* GoogleService-Info.plist in Resources */,
+				26084A3A21F7B9980037A221 /* Progress.storyboard in Resources */,
+				F7AA119F21F91E1F000B16C6 /* SF-Pro-Text-Light.otf in Resources */,
 				260AAD6821EFAD9200461C1E /* Assets.xcassets in Resources */,
 				260AAD6621EFAD9000461C1E /* Main.storyboard in Resources */,
+				F7AA11A121F91E36000B16C6 /* SF-Pro-Text-Medium.otf in Resources */,
+				26084A3C21F7BA190037A221 /* CheckInPopUp.storyboard in Resources */,
+				266DCE0121F8DBB500CDC0F9 /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,24 +487,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7791C5A21F52E3000337D10 /* HabitProgressDetailViewController.swift in Sources */,
+				F7AA119721F7DA22000B16C6 /* CheckInCustomTableViewCell.swift in Sources */,
 				26F0D95121F14D7900D4ADA1 /* LocationReminder.swift in Sources */,
+				F7AA119521F63627000B16C6 /* ProgressTableViewCell.swift in Sources */,
 				26F0D94F21F14D5E00D4ADA1 /* TimeReminder.swift in Sources */,
+				F7AA118F21F6311A000B16C6 /* EditHabitViewController.swift in Sources */,
 				260AAD6121EFAD9000461C1E /* AppDelegate.swift in Sources */,
-<<<<<<< HEAD
+				F7AA119921F8DCCA000B16C6 /* CheckIn.swift in Sources */,
 				26F0D94321F12D7400D4ADA1 /* HabitDetailViewController.swift in Sources */,
-=======
+				CBB9A23D21F7CA9B00995F73 /* NewHabitViewController.swift in Sources */,
+				F7791C5621F52DDB00337D10 /* HabitCheckInViewController.swift in Sources */,
 				F73213D421F25584009A47F0 /* LocationBasedReminderViewController.swift in Sources */,
-				26F0D94321F12D7400D4ADA1 /* HabitViewController.swift in Sources */,
 				F73213CE21F2546C009A47F0 /* ReminderViewController.swift in Sources */,
->>>>>>> develop
+				CBD7EC7A21F830FA0074A6D2 /* SetReminderTableViewController.swift in Sources */,
 				26F0D94921F1432E00D4ADA1 /* User.swift in Sources */,
+<<<<<<< HEAD
 				F73213D821F255C9009A47F0 /* TimeBasedReminderViewController.swift in Sources */,
+				266DCE0321F8E8BA00CDC0F9 /* WelcomeViewController.swift in Sources */,
+||||||| merged common ancestors
+				F73213D821F255C9009A47F0 /* TimeBasedReminderViewController.swift in Sources */,
+=======
+>>>>>>> ddfe13428e1a5f5ac88bbc7b55d90eec4f6c8b78
 				26F0D94B21F143A500D4ADA1 /* Habit.swift in Sources */,
-				F73213DA21F255F4009A47F0 /* TimeBasedReminderDetailListTableViewController.swift in Sources */,
+				F7AA119321F6352B000B16C6 /* MainCheckInTableViewCell.swift in Sources */,
+				CBD7EC7C21F863670074A6D2 /* ReminderTableViewCell.swift in Sources */,
 				26F0D94D21F145BF00D4ADA1 /* HabitController.swift in Sources */,
+				266DCE0521F8E98A00CDC0F9 /* LogInViewController.swift in Sources */,
 				26F0D95321F2365700D4ADA1 /* Firebase.swift in Sources */,
-				F73213CB21F24D84009A47F0 /* NewHabitViewController.swift in Sources */,
-				26F0D94521F133A500D4ADA1 /* EditHabitViewController.swift in Sources */,
+				26084A4221F7D5F40037A221 /* UserController.swift in Sources */,
 				26F0D93821F0FE2D00D4ADA1 /* AddHabitViewController.swift in Sources */,
 				26F0D93D21F1042D00D4ADA1 /* HabitTableViewCell.swift in Sources */,
 			);
@@ -530,7 +665,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = HabitTracker/Info.plist;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "$(SRCROOT)/HabitTracker/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -548,7 +684,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = HabitTracker/Info.plist;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "$(SRCROOT)/HabitTracker/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

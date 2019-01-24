@@ -35,7 +35,7 @@ class UserController {
             }
             guard let uuid = auth?.user.uid else { completion(false) ; return }
             self.currentUser = User(uuid: uuid)
-            completion(false)
+            completion(true)
         }
     }
 }

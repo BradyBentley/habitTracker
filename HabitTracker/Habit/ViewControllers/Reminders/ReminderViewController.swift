@@ -8,30 +8,117 @@
 
 import UIKit
 
-class ReminderViewController: UIViewController {
-
+class ReminderViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, DeleteButtonTableViewCellDelegate, TextFieldTableViewCellDelegate {
+    
     override func viewDidLoad() {
+        timeBasedRemindersTableView.dataSource = self
+        timeBasedRemindersTableView.delegate = self
+        locationBasedRemindersTableView.dataSource = self
+        locationBasedRemindersTableView.delegate = self
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
-    @IBAction func addTimeBasedReminderButtonTapped(_ sender: Any) {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        timeBasedRemindersTableView.reloadData()
+        locationBasedRemindersTableView.reloadData()
     }
     
-    @IBAction func addLocationBasedReminderButtonTapped(_ sender: Any) {
+    // MARK: - Properties
+    
+    @IBOutlet weak var timeBasedRemindersTableView: UITableView!
+    @IBOutlet weak var locationBasedRemindersTableView: UITableView!
+    
+    var habit: Habit?
+    
+    // MARK: - Table view data source
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if tableView == timeBasedRemindersTableView {
+            return habit?.timeReminder.count ?? 0
+        } else {
+            return habit?.locationReminder.count ?? 0
+        }
     }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if tableView == timeBasedRemindersTableView {
+            if let cell = timeBasedRemindersTableView.dequeueReusableCell(withIdentifier: "TimeCell", for: indexPath) as? ReminderTableViewCell {
+                if let timeReminder = habit?.timeReminder[indexPath.row] {
+                    cell.timeReminder = timeReminder
+                    cell.deleteButtonDelegate = self
+                    cell.textFieldDelegate = self
+                    return cell
+                }
+            }
+        } else if tableView == locationBasedRemindersTableView {
+            if let cell = locationBasedRemindersTableView.dequeueReusableCell(withIdentifier: "LocationCell", for: indexPath) as? ReminderTableViewCell {
+                if let locationReminder = habit?.locationReminder[indexPath.row] {
+                    cell.locationReminder = locationReminder
+                    cell.deleteButtonDelegate = self
+                    cell.textFieldDelegate = self
+                    return cell
+                }
+            }
+        }
+        return UITableViewCell()
+    }
     
-
-    /*
+    // MARK: - Table view cell delegate
+    
+    func deleteButtonPushed(cell: ReminderTableViewCell) {
+        guard let habit = habit else { return }
+        if let reminder = cell.timeReminder?.uuid, !reminder.isEmpty {
+            if let cellIndexPath = timeBasedRemindersTableView.indexPath(for: cell) {
+                timeBasedRemindersTableView.beginUpdates()
+                habit.timeReminder.remove(at: cellIndexPath.row)
+                timeBasedRemindersTableView.deleteRows(at: [cellIndexPath], with: .fade)
+                timeBasedRemindersTableView.endUpdates()
+            }
+        } else {
+            if let cellIndexPath = locationBasedRemindersTableView.indexPath(for: cell) {
+                locationBasedRemindersTableView.beginUpdates()
+                habit.locationReminder.remove(at: cellIndexPath.row)
+                locationBasedRemindersTableView.deleteRows(at: [cellIndexPath], with: .fade)
+                locationBasedRemindersTableView.endUpdates()
+            }
+        }
+    }
+    
+    func textFieldTextChanged(cell: ReminderTableViewCell, text: String) {
+        guard let habit = habit else { return }
+        if let reminder = cell.timeReminder?.uuid, !reminder.isEmpty {
+            if let cellIndexPath = timeBasedRemindersTableView.indexPath(for: cell) {
+                timeBasedRemindersTableView.beginUpdates()
+                habit.timeReminder[cellIndexPath.row].reminderText = text
+                timeBasedRemindersTableView.endUpdates()
+            }
+        } else {
+            if let cellIndexPath = locationBasedRemindersTableView.indexPath(for: cell) {
+                locationBasedRemindersTableView.beginUpdates()
+                habit.locationReminder[cellIndexPath.row].reminderText = text
+                locationBasedRemindersTableView.endUpdates()
+            }
+        }
+    }
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "ToSetTimeReminder" {
+            if let destinationVC = segue.destination as? SetReminderTableViewController {
+                if let habit = habit {
+                    destinationVC.habit = habit
+                }
+            }
+        }
+        if segue.identifier == "ToSetLocationReminder" {
+            if let destinationVC = segue.destination as? LocationBasedReminderViewController {
+                if let habit = habit {
+                    destinationVC.habit = habit
+                }
+            }
+        }
     }
-    */
 
 }

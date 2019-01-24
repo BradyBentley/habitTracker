@@ -1,0 +1,42 @@
+//
+//  TimeReminder.swift
+//  HabitTracker
+//
+//  Created by Brady Bentley on 1/17/19.
+//  Copyright © 2019 HabitGroup. All rights reserved.
+//
+
+import Foundation
+
+class TimeReminder {
+<<<<<<< HEAD
+    var time: Date
+    var day: Date
+    var reminderText: String
+||||||| merged common ancestors
+    let time: Date
+    let day: Date
+    let reminderText: String
+=======
+    
+    let time: Date
+    let day: [Int]?
+    let reminderText: String
+    let uuid: String
+>>>>>>> ddfe13428e1a5f5ac88bbc7b55d90eec4f6c8b78
+    
+    init(time: Date, day: [Int] = [], reminderText: String, uuid: String = UUID().uuidString) {
+        self.time = time
+        self.day = day
+        self.reminderText = reminderText
+        self.uuid = uuid
+    }
+    
+}
+
+// MARK: - Equatable
+extension TimeReminder: Equatable {
+    static func == (lhs: TimeReminder, rhs: TimeReminder) -> Bool {
+        return lhs.day == rhs.day && lhs.time == rhs.time && lhs.reminderText == rhs.reminderText
+    }
+}

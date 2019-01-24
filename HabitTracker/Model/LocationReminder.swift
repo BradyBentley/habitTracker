@@ -9,15 +9,21 @@
 import Foundation
 
 class LocationReminder {
+    
     var latitude: Float
     var longitude: Float
+    var locationName: String
     var reminderText: String
+    let uuid: String
     
-    init(latitude: Float, longitude: Float, reminderText: String){
+    init(latitude: Float, longitude: Float, locationName: String, reminderText: String, uuid: String = UUID().uuidString) {
         self.latitude = latitude
         self.longitude = longitude
+        self.locationName = locationName
         self.reminderText = reminderText
+        self.uuid = uuid
     }
+    
 }
 
 // MARK: - Equatable
