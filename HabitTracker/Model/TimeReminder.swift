@@ -12,7 +12,7 @@ class TimeReminder {
     
     let time: Date
     let day: [Int]?
-    let reminderText: String
+    var reminderText: String
     let uuid: String
     
     init(time: Date, day: [Int] = [], reminderText: String, uuid: String = UUID().uuidString) {

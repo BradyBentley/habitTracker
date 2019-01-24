@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ReminderViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, DeleteButtonTableViewCellDelegate {
+class ReminderViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, DeleteButtonTableViewCellDelegate, TextFieldTableViewCellDelegate {
     
     override func viewDidLoad() {
         timeBasedRemindersTableView.dataSource = self
@@ -30,7 +30,7 @@ class ReminderViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var locationBasedRemindersTableView: UITableView!
     
     var habit: Habit?
-
+    
     // MARK: - Table view data source
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -46,7 +46,8 @@ class ReminderViewController: UIViewController, UITableViewDataSource, UITableVi
             if let cell = timeBasedRemindersTableView.dequeueReusableCell(withIdentifier: "TimeCell", for: indexPath) as? ReminderTableViewCell {
                 if let timeReminder = habit?.timeReminder?[indexPath.row] {
                     cell.timeReminder = timeReminder
-                    cell.delegate = self
+                    cell.deleteButtonDelegate = self
+                    cell.textFieldDelegate = self
                     return cell
                 }
             }
@@ -54,7 +55,8 @@ class ReminderViewController: UIViewController, UITableViewDataSource, UITableVi
             if let cell = locationBasedRemindersTableView.dequeueReusableCell(withIdentifier: "LocationCell", for: indexPath) as? ReminderTableViewCell {
                 if let locationReminder = habit?.locationReminder?[indexPath.row] {
                     cell.locationReminder = locationReminder
-                    cell.delegate = self
+                    cell.deleteButtonDelegate = self
+                    cell.textFieldDelegate = self
                     return cell
                 }
             }
@@ -62,10 +64,11 @@ class ReminderViewController: UIViewController, UITableViewDataSource, UITableVi
         return UITableViewCell()
     }
     
-    // MARK: - Delete button table view cell delegate
+    // MARK: - Table view cell delegate
     
     func deleteButtonPushed(cell: ReminderTableViewCell) {
-        if let habit = habit, let reminder = cell.timeReminder?.uuid, !reminder.isEmpty {
+        guard let habit = habit else { return }
+        if let reminder = cell.timeReminder?.uuid, !reminder.isEmpty {
             if let cellIndexPath = timeBasedRemindersTableView.indexPath(for: cell) {
                 timeBasedRemindersTableView.beginUpdates()
                 habit.timeReminder?.remove(at: cellIndexPath.row)
@@ -75,8 +78,25 @@ class ReminderViewController: UIViewController, UITableViewDataSource, UITableVi
         } else {
             if let cellIndexPath = locationBasedRemindersTableView.indexPath(for: cell) {
                 locationBasedRemindersTableView.beginUpdates()
-                habit?.locationReminder?.remove(at: cellIndexPath.row)
+                habit.locationReminder?.remove(at: cellIndexPath.row)
                 locationBasedRemindersTableView.deleteRows(at: [cellIndexPath], with: .fade)
+                locationBasedRemindersTableView.endUpdates()
+            }
+        }
+    }
+    
+    func textFieldTextChanged(cell: ReminderTableViewCell, text: String) {
+        guard let habit = habit else { return }
+        if let reminder = cell.timeReminder?.uuid, !reminder.isEmpty {
+            if let cellIndexPath = timeBasedRemindersTableView.indexPath(for: cell) {
+                timeBasedRemindersTableView.beginUpdates()
+                habit.timeReminder?[cellIndexPath.row].reminderText = text
+                timeBasedRemindersTableView.endUpdates()
+            }
+        } else {
+            if let cellIndexPath = locationBasedRemindersTableView.indexPath(for: cell) {
+                locationBasedRemindersTableView.beginUpdates()
+                habit.locationReminder?[cellIndexPath.row].reminderText = text
                 locationBasedRemindersTableView.endUpdates()
             }
         }
