@@ -73,4 +73,6 @@ class HabitController {
         habit.locationReminder.remove(at: index)
         completion(true)
     }
+    
+    
 }

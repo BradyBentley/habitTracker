@@ -9,11 +9,21 @@
 import Foundation
 
 class LocationReminder {
+<<<<<<< HEAD
+    var latitude: Float
+    var longitude: Float
+    var reminderText: String
+||||||| merged common ancestors
+    let latitude: Float
+    let longitude: Float
+    let reminderText: String
+=======
     
     let latitude: Float
     let longitude: Float
     let reminderText: String
     let uuid: String
+>>>>>>> ddfe13428e1a5f5ac88bbc7b55d90eec4f6c8b78
     
     init(latitude: Float, longitude: Float, reminderText: String, uuid: String = UUID().uuidString) {
         self.latitude = latitude

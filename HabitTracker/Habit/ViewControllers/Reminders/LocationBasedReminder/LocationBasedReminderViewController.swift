@@ -12,14 +12,6 @@ import CoreLocation
 
 class LocationBasedReminderViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDelegate {
     
-    var locationManager = CLLocationManager()
-    
-    @IBOutlet weak var mapView: MKMapView!
-    
-    @IBOutlet weak var locationSearchBar: UISearchBar!
-    
-    @IBOutlet weak var saveButton: UIButton!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,12 +24,10 @@ class LocationBasedReminderViewController: UIViewController, CLLocationManagerDe
         saveButton.layer.shadowRadius = 2
         saveButton.layer.shadowOffset = CGSize(width: 2, height: 2)
         saveButton.layer.shadowOpacity = 0.4
-        //button.backgroundColor = UIColor.greenColor()
+//        button.backgroundColor = UIColor.greenColor()
 //        saveButton.layer.backgroundColor = UIColor.blue.cgColor
         
         locationSearchBar.delegate = self
-        mapView.showsUserLocation = true
-        mapView.isZoomEnabled = true
         if CLLocationManager.locationServicesEnabled() == true {
             locationManager.desiredAccuracy = 0.1
             locationManager.delegate = self
@@ -60,18 +50,34 @@ class LocationBasedReminderViewController: UIViewController, CLLocationManagerDe
         mapView.isUserInteractionEnabled = true
     }
     
+    // MARK: - Properties
+    
+    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var locationSearchBar: UISearchBar!
+    @IBOutlet weak var saveButton: UIButton!
+    
+    var habit: Habit?
+    var savedCoordinate: CLLocationCoordinate2D?
+    var locationManager = CLLocationManager()
+    
     @IBAction func mapSaveButtonTapped(_ sender: Any) {
+        guard let savedCoordinate = savedCoordinate, let habit = habit else { return }
+        let locationReminder = LocationReminder(latitude: Float(savedCoordinate.latitude), longitude: Float(savedCoordinate.longitude), reminderText: "")
+        habit.locationReminder?.append(locationReminder)
+        self.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func exitButtonTapped(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+    @IBAction func exitButtonPushed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
+    
+    // MARK: - Button actions
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         locationSearchBar.resignFirstResponder()
         print("Searching...", locationSearchBar.text!)
             
-            let geocoder = CLGeocoder()
+        let geocoder = CLGeocoder()
         geocoder.geocodeAddressString(locationSearchBar.text!) { (placemarks: [CLPlacemark]?, error: Error?) in
             if error == nil {
                 
@@ -80,6 +86,7 @@ class LocationBasedReminderViewController: UIViewController, CLLocationManagerDe
                 let annotation = MKPointAnnotation()
                 annotation.coordinate = (placemark?.location?.coordinate)!
                 annotation.title = self.locationSearchBar.text!
+                self.savedCoordinate = annotation.coordinate
                 
                 self.mapView.addAnnotation(annotation)
                 self.mapView.selectAnnotation(annotation, animated: false)
@@ -99,39 +106,28 @@ class LocationBasedReminderViewController: UIViewController, CLLocationManagerDe
         if (recognizer.state == UIGestureRecognizer.State.began) {
             let longPressPoint = recognizer.location(in: mapView)
             let coordinate = mapView.convert(longPressPoint, toCoordinateFrom: mapView)
+            savedCoordinate = coordinate
             let pointAnnotation = MKPointAnnotation()
             pointAnnotation.coordinate = coordinate
+            let allPreviousAnnotations = self.mapView.annotations
+            if !allPreviousAnnotations.isEmpty{
+                self.mapView.removeAnnotations(allPreviousAnnotations)
+            }
             mapView.addAnnotation(pointAnnotation)
         }
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
         guard let usersLocation = locations.first else {return}
         
         let center = usersLocation.coordinate
-        
         let span = MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
-        
         let region = MKCoordinateRegion(center: center, span: span)
-        
         self.mapView.setRegion(region, animated: true)
-    
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Unable to access your current location")
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
