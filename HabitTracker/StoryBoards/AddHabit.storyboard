@@ -778,12 +778,35 @@
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter reminder description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8UA-ys-dqc">
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p2L-Dv-ZUq">
                                                                     <rect key="frame" x="0.0" y="32.333333333333336" width="294" height="27.333333333333336"/>
-                                                                    <nil key="textColor"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                                    <textInputTraits key="textInputTraits"/>
-                                                                </textField>
+                                                                    <subviews>
+                                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter reminder description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8UA-ys-dqc">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="244" height="27.333333333333332"/>
+                                                                            <nil key="textColor"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                            <textInputTraits key="textInputTraits"/>
+                                                                        </textField>
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oxA-D8-vby">
+                                                                            <rect key="frame" x="244" y="0.0" width="50" height="27.333333333333332"/>
+                                                                            <state key="normal" title="Save"/>
+                                                                            <connections>
+                                                                                <action selector="timeReminderSaveButtonPushed:" destination="MXf-Xy-jLf" eventType="touchUpInside" id="poc-dl-jvA"/>
+                                                                            </connections>
+                                                                        </button>
+                                                                    </subviews>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <constraints>
+                                                                        <constraint firstItem="8UA-ys-dqc" firstAttribute="leading" secondItem="p2L-Dv-ZUq" secondAttribute="leading" id="1DE-OW-OiV"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="oxA-D8-vby" secondAttribute="trailing" id="6UP-L5-riy"/>
+                                                                        <constraint firstItem="oxA-D8-vby" firstAttribute="top" secondItem="p2L-Dv-ZUq" secondAttribute="top" id="8ep-Bf-GEt"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="8UA-ys-dqc" secondAttribute="bottom" id="JnU-Bg-xK9"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="oxA-D8-vby" secondAttribute="bottom" id="OD6-5L-AIZ"/>
+                                                                        <constraint firstItem="oxA-D8-vby" firstAttribute="leading" secondItem="8UA-ys-dqc" secondAttribute="trailing" id="mqj-ii-nQi"/>
+                                                                        <constraint firstItem="8UA-ys-dqc" firstAttribute="top" secondItem="p2L-Dv-ZUq" secondAttribute="top" id="tYw-Jb-t7I"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="8UA-ys-dqc" secondAttribute="trailing" constant="50" id="xzt-cw-pA7"/>
+                                                                    </constraints>
+                                                                </view>
                                                             </subviews>
                                                         </stackView>
                                                     </subviews>
@@ -799,6 +822,7 @@
                                                 </tableViewCellContentView>
                                                 <connections>
                                                     <outlet property="timeReminderLabel" destination="avh-VT-pFb" id="qVm-IZ-2os"/>
+                                                    <outlet property="timeReminderTextField" destination="8UA-ys-dqc" id="rsc-hX-dRp"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
@@ -872,12 +896,35 @@
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter reminder description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bHT-Cf-BZr">
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KrA-8U-tzG">
                                                                     <rect key="frame" x="0.0" y="32.666666666666664" width="294" height="27.333333333333336"/>
-                                                                    <nil key="textColor"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                    <textInputTraits key="textInputTraits"/>
-                                                                </textField>
+                                                                    <subviews>
+                                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter reminder description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bHT-Cf-BZr">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="244" height="27.333333333333332"/>
+                                                                            <nil key="textColor"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                            <textInputTraits key="textInputTraits"/>
+                                                                        </textField>
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Smw-Th-3gn">
+                                                                            <rect key="frame" x="244" y="0.0" width="50" height="27.333333333333332"/>
+                                                                            <state key="normal" title="Save"/>
+                                                                            <connections>
+                                                                                <action selector="locationReminderSaveButtonPushed:" destination="5el-bE-Eki" eventType="touchUpInside" id="yde-Ty-WRz"/>
+                                                                            </connections>
+                                                                        </button>
+                                                                    </subviews>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="bottom" secondItem="bHT-Cf-BZr" secondAttribute="bottom" id="1YT-G8-WSJ"/>
+                                                                        <constraint firstItem="bHT-Cf-BZr" firstAttribute="leading" secondItem="KrA-8U-tzG" secondAttribute="leading" id="9Zg-KI-Aj7"/>
+                                                                        <constraint firstItem="Smw-Th-3gn" firstAttribute="leading" secondItem="bHT-Cf-BZr" secondAttribute="trailing" id="BSW-BT-3Wv"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="Smw-Th-3gn" secondAttribute="bottom" id="EzL-Kv-8y8"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="bHT-Cf-BZr" secondAttribute="trailing" constant="50" id="Sqa-dm-bax"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="Smw-Th-3gn" secondAttribute="trailing" id="VSm-LM-4ah"/>
+                                                                        <constraint firstItem="Smw-Th-3gn" firstAttribute="top" secondItem="KrA-8U-tzG" secondAttribute="top" id="chf-0w-jVG"/>
+                                                                        <constraint firstItem="bHT-Cf-BZr" firstAttribute="top" secondItem="KrA-8U-tzG" secondAttribute="top" id="sxh-OT-cCL"/>
+                                                                    </constraints>
+                                                                </view>
                                                             </subviews>
                                                         </stackView>
                                                     </subviews>
@@ -893,6 +940,7 @@
                                                 </tableViewCellContentView>
                                                 <connections>
                                                     <outlet property="locationReminderLabel" destination="QBf-0y-zNg" id="y3Z-Pr-hbo"/>
+                                                    <outlet property="locationReminderTextField" destination="bHT-Cf-BZr" id="LXc-XN-nxS"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
@@ -931,9 +979,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="J7b-iE-rjW"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Reminders" id="epi-ob-wSj">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="aUb-JL-GVX"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Reminders" id="epi-ob-wSj"/>
                     <connections>
                         <outlet property="locationBasedRemindersTableView" destination="5jR-E0-twM" id="q0y-Qh-7jH"/>
                         <outlet property="timeBasedRemindersTableView" destination="Rq8-a6-JhE" id="ekN-yz-Goo"/>
@@ -959,7 +1005,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </mapView>
-                            <searchBar contentMode="redraw" backgroundImage="nil" translatesAutoresizingMaskIntoConstraints="NO" id="v6e-sg-zQX">
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="v6e-sg-zQX">
                                 <rect key="frame" x="24" y="144" width="366" height="56"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1001,14 +1047,26 @@
                                     <action selector="exitButtonPushed:" destination="X9H-VB-jb4" eventType="touchUpInside" id="JiV-84-Za9"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LRe-JD-LZD">
+                                <rect key="frame" x="30" y="220" width="354" height="29"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <segments>
+                                    <segment title="When I Arrive"/>
+                                    <segment title="When I Leave"/>
+                                    <segment title="Both"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="LRe-JD-LZD" firstAttribute="top" secondItem="v6e-sg-zQX" secondAttribute="bottom" constant="20" id="Ug0-b6-IuD"/>
                             <constraint firstItem="v6e-sg-zQX" firstAttribute="top" secondItem="Trf-VZ-eI1" secondAttribute="top" constant="100" id="VOb-Xu-Uv0"/>
                             <constraint firstAttribute="trailing" secondItem="tLE-Qu-MHy" secondAttribute="trailing" id="YGI-FX-llK"/>
+                            <constraint firstItem="Trf-VZ-eI1" firstAttribute="trailing" secondItem="LRe-JD-LZD" secondAttribute="trailing" constant="30" id="YYi-KP-gvk"/>
                             <constraint firstItem="v6e-sg-zQX" firstAttribute="trailing" secondItem="Trf-VZ-eI1" secondAttribute="trailing" constant="-24" id="bPI-ga-6Fw"/>
                             <constraint firstItem="tLE-Qu-MHy" firstAttribute="top" secondItem="aQi-Aa-lzQ" secondAttribute="top" id="cAb-N5-Fcp"/>
                             <constraint firstItem="v6e-sg-zQX" firstAttribute="top" secondItem="Flc-nK-Hag" secondAttribute="bottom" constant="24" id="cwK-4o-7wf"/>
+                            <constraint firstItem="LRe-JD-LZD" firstAttribute="leading" secondItem="Trf-VZ-eI1" secondAttribute="leading" constant="30" id="du7-Ib-Ijb"/>
                             <constraint firstItem="Trf-VZ-eI1" firstAttribute="bottom" secondItem="RFQ-NC-BiC" secondAttribute="bottom" constant="32" id="ekV-ZO-Dfg"/>
                             <constraint firstItem="tLE-Qu-MHy" firstAttribute="leading" secondItem="aQi-Aa-lzQ" secondAttribute="leading" id="k2m-mV-NtF"/>
                             <constraint firstItem="Trf-VZ-eI1" firstAttribute="trailing" secondItem="Flc-nK-Hag" secondAttribute="trailing" constant="24" id="kzz-91-MVC"/>
@@ -1054,7 +1112,6 @@
         <image name="fitness" width="300" height="185"/>
         <image name="intellectual" width="300" height="185"/>
         <image name="mindset" width="300" height="185"/>
-        <image name="nil" width="16" height="16"/>
         <image name="nutrition" width="300" height="185"/>
         <image name="other" width="300" height="185"/>
         <image name="productivity" width="300" height="185"/>

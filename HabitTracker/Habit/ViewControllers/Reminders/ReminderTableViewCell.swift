@@ -14,6 +14,8 @@ class ReminderTableViewCell: UITableViewCell {
     
     @IBOutlet weak var timeReminderLabel: UILabel!
     @IBOutlet weak var locationReminderLabel: UILabel!
+    @IBOutlet weak var timeReminderTextField: UITextField!
+    @IBOutlet weak var locationReminderTextField: UITextField!
     
     var timeReminder: TimeReminder? {
         didSet {
@@ -34,7 +36,8 @@ class ReminderTableViewCell: UITableViewCell {
     }()
     
     var reminder: String = ""
-    weak var delegate: DeleteButtonTableViewCellDelegate?
+    weak var deleteButtonDelegate: DeleteButtonTableViewCellDelegate?
+    weak var textFieldDelegate: TextFieldTableViewCellDelegate?
     
     // MARK: - Update Views
     
@@ -63,21 +66,35 @@ class ReminderTableViewCell: UITableViewCell {
             }
         }
         timeReminderLabel.text = reminder
+        timeReminderTextField.text = timeReminder.reminderText
     }
     
     func updateLocationReminderView() {
         guard let locationReminder = locationReminder else { return }
-        locationReminderLabel.text = "\(locationReminder.latitude), \(locationReminder.longitude)"
+        locationReminderLabel.text = !locationReminder.locationName.isEmpty ? locationReminder.locationName : "\(locationReminder.latitude), \(locationReminder.longitude)"
+        locationReminderTextField.text = locationReminder.reminderText
     }
     
     // MARK - Button actions
     
     @IBAction func deleteTimeReminderButtonPushed(_ sender: Any) {
-        delegate?.deleteButtonPushed(cell: self)
+        deleteButtonDelegate?.deleteButtonPushed(cell: self)
     }
     
     @IBAction func deleteLocationReminderButtonPushed(_ sender: Any) {
-        delegate?.deleteButtonPushed(cell: self)
+        deleteButtonDelegate?.deleteButtonPushed(cell: self)
+    }
+    
+    @IBAction func timeReminderSaveButtonPushed(_ sender: Any) {
+        if let timeReminderText = timeReminderTextField.text {
+            textFieldDelegate?.textFieldTextChanged(cell: self, text: timeReminderText)
+        }
+    }
+    
+    @IBAction func locationReminderSaveButtonPushed(_ sender: Any) {
+        if let locationReminderText = locationReminderTextField.text {
+            textFieldDelegate?.textFieldTextChanged(cell: self, text: locationReminderText)
+        }
     }
     
 }
@@ -85,5 +102,11 @@ class ReminderTableViewCell: UITableViewCell {
 protocol DeleteButtonTableViewCellDelegate: class {
     
     func deleteButtonPushed(cell: ReminderTableViewCell)
+    
+}
+
+protocol TextFieldTableViewCellDelegate: class {
+    
+    func textFieldTextChanged(cell: ReminderTableViewCell, text: String)
     
 }
