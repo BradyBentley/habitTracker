@@ -23,22 +23,11 @@
                     <connections>
                         <segue destination="1NV-ND-516" kind="relationship" relationship="viewControllers" id="Yh2-pr-0Cq"/>
                         <segue destination="fwg-og-FMv" kind="relationship" relationship="viewControllers" id="fAj-DN-zJz"/>
-                        <segue destination="SYA-UU-R0V" kind="relationship" relationship="viewControllers" id="Lss-32-uvo"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Scq-Vm-Fes" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="121" y="439"/>
-        </scene>
-        <!--CheckInPopUp-->
-        <scene sceneID="hVd-Xd-TrO">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MT6-g8-0v3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewControllerPlaceholder storyboardName="CheckInPopUp" id="SYA-UU-R0V" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="NaV-VG-V72"/>
-                </viewControllerPlaceholder>
-            </objects>
-            <point key="canvasLocation" x="890" y="435"/>
         </scene>
         <!--AddHabit-->
         <scene sceneID="idU-2u-82H">
@@ -70,7 +59,7 @@
                                 <rect key="frame" x="0.0" y="44" width="383" height="643"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="89" id="fv2-UX-RPD" customClass="HabitTableViewCell" customModule="HabitTracker" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HabitCell" rowHeight="89" id="fv2-UX-RPD" customClass="HabitTableViewCell" customModule="HabitTracker" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="383" height="89"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fv2-UX-RPD" id="3ag-9N-QpZ">
