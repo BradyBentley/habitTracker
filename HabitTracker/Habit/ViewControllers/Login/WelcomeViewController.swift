@@ -7,11 +7,15 @@
 //
 
 import UIKit
+import Firebase
 
 class WelcomeViewController: UIViewController {
     // MARK: - ViewLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        if Auth.auth().currentUser != nil {
+            performSegue(withIdentifier: "ToHomePage", sender: self)
+        }
     }
     
     // MARK: - Navigation

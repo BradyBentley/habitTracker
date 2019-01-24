@@ -18,7 +18,9 @@ class Firebase {
     // MARK: - CRUD
     func saveHabit(habit: Habit, completion: @escaping SuccessCompletion) {
         guard let currentUser = UserController.shared.currentUser?.uuid else { completion(false) ; return }
-        firestore.collection(Habit.habitKeys.userKey).document(currentUser).setData(habit.dictionary)
+        let docRef = firestore.collection(Habit.habitKeys.userKey).document(currentUser).collection(Habit.habitKeys.habitsKey).document(habit.habitDescription)
+        docRef.setData(habit.dictionary)
+        completion(true)
     }
     
     func fetchHabits(completion: @escaping SuccessCompletion) {
@@ -26,9 +28,10 @@ class Firebase {
         firestore.collection(Habit.habitKeys.userKey).document(currentUser).collection(Habit.habitKeys.habitsKey).getDocuments { (query, error) in
             if let error = error {
                 print("Error fetching data: \(error) \(error.localizedDescription)")
+                completion(false)
             }
             guard let documents = query?.documents else { completion(false) ; return }
-            let habits = documents.compactMap{ Habit(firebaseDictionary: $0.data()) }
+            let habits = documents.compactMap{ Habit(firebaseDictionary: $0.data())}
             HabitController.shared.habits = habits
             completion(true)
         }
@@ -36,13 +39,18 @@ class Firebase {
     
     func updateHabitOnFirebase(habit: Habit, habitDescription: String, days: Int, weeks: Int, completion: @escaping SuccessCompletion) {
         guard let currentUser = UserController.shared.currentUser?.uuid else { completion(false) ; return }
-        firestore.collection(Habit.habitKeys.userKey).document(currentUser).setData([Habit.habitKeys.habitDescriptionKey: habitDescription, Habit.habitKeys.daysKey: days, Habit.habitKeys.weeksKey: weeks])
+        let docRef = firestore.collection(Habit.habitKeys.userKey).document(currentUser).collection(Habit.habitKeys.habitsKey).document(habit.habitDescription)
+        docRef.updateData([Habit.habitKeys.habitDescriptionKey: habit.habitDescription,
+                           Habit.habitKeys.daysKey: habit.days,
+                           Habit.habitKeys.weeksKey: habit.weeks
+            ])
         completion(true)
     }
     
     func deleteHabit(habit: Habit, completion: @escaping SuccessCompletion) {
         guard let currentUser = UserController.shared.currentUser?.uuid else { completion(false) ; return }
-        firestore.collection(Habit.habitKeys.userKey).document(currentUser).delete()
+        let docRef = firestore.collection(Habit.habitKeys.userKey).document(currentUser).collection(Habit.habitKeys.habitsKey).document(habit.habitDescription)
+        docRef.delete()
         completion(true)
     }
 }
