@@ -24,7 +24,6 @@ class EditHabitViewController: UIViewController {
     // MARK: - ViewLife Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateView()
     }
     
     // MARK: - Setup

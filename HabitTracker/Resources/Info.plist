@@ -45,5 +45,15 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Without location services, the location based reminders will not show</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Without location services, the location based reminders will not show</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>SF-Pro-Text-Light.otf</string>
+		<string>SF-Pro-Text-Medium.otf</string>
+		<string>SF-Pro-Text-Regular.otf</string>
+	</array>
 </dict>
 </plist>
