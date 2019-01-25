@@ -48,10 +48,6 @@ class LocationBasedReminderViewController: UIViewController, CLLocationManagerDe
         saveButton.layer.shadowRadius = 2
         saveButton.layer.shadowOffset = CGSize(width: 2, height: 2)
         saveButton.layer.shadowOpacity = 0.4
-        /* May use these UI features
-        button.backgroundColor = UIColor.greenColor()
-        saveButton.layer.backgroundColor = UIColor.blue.cgColor
-        */
         
         // Add gesture recognizer to map view
         let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(recognizer:)))
@@ -84,6 +80,9 @@ class LocationBasedReminderViewController: UIViewController, CLLocationManagerDe
             mapView.addAnnotation(pointAnnotation)
             let circle = MKCircle(center: coordinate, radius: geoFenceRadius)
             self.mapView.addOverlay(circle)
+            
+            saveButton.backgroundColor = .green
+            saveButton.titleLabel?.textColor = .black
         }
     }
     
@@ -160,19 +159,9 @@ class LocationBasedReminderViewController: UIViewController, CLLocationManagerDe
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let usersLocation = locations.first else { return }
-        // Geofence current location
         let center = usersLocation.coordinate
-        savedCoordinate = center
-        let geofenceRegionCenter = center
-        let geofenceRegion = CLCircularRegion(center: geofenceRegionCenter, radius: geoFenceRadius, identifier: UUID().uuidString)
-        geofenceRegion.notifyOnEntry = true
-        geofenceRegion.notifyOnExit = true
-        locationManager.startMonitoring(for: geofenceRegion)
-        
         let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
         let region = MKCoordinateRegion(center: center, span: span)
-        let circle = MKCircle(center: center, radius: geoFenceRadius)
-        self.mapView.addOverlay(circle)
         self.mapView.setRegion(region, animated: true)
     }
     

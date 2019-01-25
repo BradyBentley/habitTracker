@@ -18,18 +18,20 @@ class WelcomeViewController: UIViewController {
         }
     }
     
+    
+    
     // MARK: - Navigation
     //IIDOO
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destionationVC = segue.destination as? LogInViewController
+        let destinationVC = segue.destination as? LogInViewController
         if segue.identifier == "ToLogInPage" {
             let isLogInPage = true
-            destionationVC?.isLogInPage = isLogInPage
+            destinationVC?.isLogInPage = isLogInPage
         }
         if segue.identifier == "ToSignUpPage" {
             let isLogInPage = false
-            destionationVC?.isLogInPage = isLogInPage
-            
+            destinationVC?.isLogInPage = isLogInPage
         }
     }
+    
 }
