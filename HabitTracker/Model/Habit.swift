@@ -21,24 +21,26 @@ class Habit {
     var weeks: Int
     var timeReminder: [TimeReminder]
     var locationReminder: [LocationReminder]
+    var daysCheckedIn: Int
     
     // MARK: - CodingKeys
     enum habitKeys {
         static let isNewHabitKey = "isNewHabit"
         static let categoryKey = "category"
         static let habitDescriptionKey = "habitDescription"
+        static let startingDateKey = "startingDate"
         static let daysKey = "days"
+        static let daysCompletedKey = "daysCompleted"
         static let weeksKey = "weeks"
-        static let userKey = "Users"
-        static let habitsKey = "Habits"
         static let timeReminderKey = "timeReminder"
         static let locationReminderKey = "locationReminder"
-        static let startingDateKey = "startingDate"
-        static let daysCompletedKey = "daysCompleted"
+        static let daysCheckedInKey = "daysCheckedInKey"
+        static let userKey = "Users"
+        static let habitsKey = "Habits"
     }
     
     // MARK: - Initialization
-    init(isNewHabit: Bool, category: String, habitDescription: String, days: Int, weeks: Int, timeReminder: [TimeReminder] = [], locationReminder: [LocationReminder] = [], daysCompleted: [CheckIn] = [], startingDate: Date = Date()){
+    init(isNewHabit: Bool, category: String, habitDescription: String, days: Int, weeks: Int, timeReminder: [TimeReminder] = [], locationReminder: [LocationReminder] = [], daysCompleted: [CheckIn] = [], startingDate: Date = Date(), daysCheckedIn: Int = 0){
         self.isNewHabit = isNewHabit
         self.category = category
         self.habitDescription = habitDescription
@@ -48,6 +50,7 @@ class Habit {
         self.locationReminder = locationReminder
         self.daysCompleted = daysCompleted
         self.startingDate = startingDate
+        self.daysCheckedIn = daysCheckedIn
     }
     
     convenience init?(firebaseDictionary: [String: Any]) {
@@ -55,8 +58,13 @@ class Habit {
         let category = firebaseDictionary[Habit.habitKeys.categoryKey] as? String,
         let habitDescription = firebaseDictionary[Habit.habitKeys.habitDescriptionKey] as? String,
         let days = firebaseDictionary[Habit.habitKeys.daysKey] as? Int,
-            let weeks = firebaseDictionary[Habit.habitKeys.weeksKey] as? Int else { return nil }
-        self.init(isNewHabit: isNewHabit, category: category, habitDescription: habitDescription, days: days, weeks: weeks)
+        let weeks = firebaseDictionary[Habit.habitKeys.weeksKey] as? Int,
+        let timeReminder = firebaseDictionary[Habit.habitKeys.timeReminderKey] as? [TimeReminder],
+        let locationReminder = firebaseDictionary[Habit.habitKeys.locationReminderKey] as? [LocationReminder],
+        let daysCompleted = firebaseDictionary[Habit.habitKeys.daysCompletedKey] as? [CheckIn],
+        let daysCheckedIn = firebaseDictionary[Habit.habitKeys.daysCheckedInKey] as? Int,
+        let startingDate = firebaseDictionary[Habit.habitKeys.startingDateKey] as? Date else { return nil }
+        self.init(isNewHabit: isNewHabit, category: category, habitDescription: habitDescription, days: days, weeks: weeks, timeReminder: timeReminder, locationReminder: locationReminder, daysCompleted: daysCompleted, startingDate: startingDate, daysCheckedIn: daysCheckedIn)
     }
 }
 
@@ -70,9 +78,13 @@ extension Habit {
                 habitKeys.timeReminderKey: timeReminder,
                 habitKeys.locationReminderKey: locationReminder,
                 habitKeys.daysCompletedKey: daysCompleted,
-                habitKeys.startingDateKey: startingDate
-            
+                habitKeys.startingDateKey: startingDate,
+                habitKeys.daysCheckedInKey: daysCheckedIn
         ]
+    }
+    
+    var completion: Int {
+        return (daysCheckedIn / days) * 100
     }
 }
 

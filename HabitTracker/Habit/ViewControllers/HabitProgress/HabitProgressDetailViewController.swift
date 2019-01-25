@@ -11,11 +11,14 @@ import Charts
 
 class HabitProgressDetailViewController: UIViewController {
     // MARK: - IBOutlets
-    var habit: Habit?
     @IBOutlet weak var progressTableView: UITableView!
     @IBOutlet weak var progressChartView: LineChartView!
+    @IBOutlet weak var checkInPercentageReportLabel: UILabel!
+    @IBOutlet weak var viewLabel: UILabel!
     
     // MARK: - Properties
+    var habit: Habit?
+    var isThisWeek: Bool = true
     let weeks = ["0", "1", "2", "3", "4"]
     let completionPercent: [Double] = [0.0, 50.0, 80.0, 90.0, 100.0]
     
@@ -27,7 +30,31 @@ class HabitProgressDetailViewController: UIViewController {
         progressTableView.dataSource = self
         setUpLineChart()
         setChartData(weeks: weeks)
+        updateViews()
     }
+    
+    // MARK: - Actions
+    @IBAction func thisWeekSwitch(_ sender: Any) {
+        isThisWeek = !isThisWeek
+        updateViews()
+        
+    }
+    
+    // MARK: - Methods
+    func updateViews() {
+        if isThisWeek {
+            checkInPercentageReportLabel.text = "Check-In Percentage Report"
+            progressChartView.isHidden = false
+            viewLabel.isHidden = false
+        } else {
+            checkInPercentageReportLabel.text = "Check-Ins This Week"
+            progressChartView.isHidden = true
+            viewLabel.isHidden = true
+            
+            
+        }
+    }
+    
 }
 
 // MARK: - UITableView
