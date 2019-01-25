@@ -47,6 +47,10 @@ class NewHabitViewController: UIViewController, UIPickerViewDataSource, UIPicker
     
     // MARK: - Button actions
     
+    @IBAction func cancelButtonPushed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func startHabitButtonClicked(_ sender: Any) {
         if isNewHabit {
             startHabitButton.setImage(UIImage(named: "unchecked"), for: .normal)
@@ -219,6 +223,8 @@ class NewHabitViewController: UIViewController, UIPickerViewDataSource, UIPicker
             if segue.identifier == "ToReminderView" {
                 if let habitName = habitNameTextField.text, !habitName.isEmpty, !category.isEmpty {
                     let habit = Habit(isNewHabit: isNewHabit, category: category, habitDescription: habitName, days: days, weeks: weeks)
+                    HabitController.shared.createHabit(isNewHabit: isNewHabit, category: category, habitDescription: habitName, days: days, weeks: weeks) { (_) in
+                    }
                     destinationVC.habit = habit
                 } else {
                     let missingInformationAlert = UIAlertController(title: "Missing Information", message: "Habit name and category required", preferredStyle: .alert)

@@ -24,7 +24,7 @@ class HabitTableViewCell: UITableViewCell {
     // MARK: - Setup
     func updateViews() {
         guard let habit = habit else { return }
-        iconImageView.image = UIImage(named: "\(habit.category)")
+        iconImageView.image = UIImage(named: "\(habit.category)Progress")
         habitDescriptionLabel.text = habit.habitDescription
         successLabel.text = "\(habit.days) days a week for \(habit.weeks) weeks"
         // TODO: percentCompletionLabel

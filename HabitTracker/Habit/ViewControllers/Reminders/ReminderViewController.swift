@@ -31,6 +31,12 @@ class ReminderViewController: UIViewController, UITableViewDataSource, UITableVi
     
     var habit: Habit?
     
+    // MARK: - Button actions
+    
+    @IBAction func doneButtonPushed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     // MARK: - Table view data source
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

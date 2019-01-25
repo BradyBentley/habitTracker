@@ -58,7 +58,7 @@
                                     <constraint firstAttribute="height" constant="247" id="hr6-2g-thP"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="86" id="j1O-c7-ecd" customClass="MainCheckInTableViewCell" customModule="HabitTracker" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CheckInCell" rowHeight="86" id="j1O-c7-ecd" customClass="MainCheckInTableViewCell" customModule="HabitTracker" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="86"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="j1O-c7-ecd" id="uZS-h3-sMv">
@@ -116,7 +116,7 @@
                                 </prototypes>
                             </tableView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkNav" translatesAutoresizingMaskIntoConstraints="NO" id="2fS-5L-HQm">
-                                <rect key="frame" x="0.0" y="584" width="375" height="83"/>
+                                <rect key="frame" x="0.0" y="583.5" width="375" height="83"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="83" id="DSe-qU-1d2"/>
                                 </constraints>
