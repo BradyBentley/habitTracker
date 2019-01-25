@@ -19,6 +19,8 @@ class HabitController {
     func createHabit(isNewHabit: Bool, category: String, habitDescription: String, days: Int, weeks: Int, completion: @escaping SuccessCompletion) {
         let newHabit = Habit(isNewHabit: isNewHabit, category: category, habitDescription: habitDescription, days: days, weeks: weeks)
         habits.append(newHabit)
+        Firebase.shared.saveHabit(habit: newHabit) { (_) in
+        }
         completion(true)
     }
     

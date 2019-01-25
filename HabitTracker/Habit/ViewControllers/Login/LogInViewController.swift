@@ -39,15 +39,15 @@ class LogInViewController: UIViewController {
                 }
             }
         } else {
-//            UserController.shared.signInUser(email: email, password: password) { (success) in
-//                if success {
-//                    DispatchQueue.main.async {
+            UserController.shared.signInUser(email: email, password: password) { (success) in
+                if success {
+                    DispatchQueue.main.async {
                         self.performSegue(withIdentifier: "ToMainPage", sender: self)
-//                    }
-//                } else {
-//                    print("Error")
-//                }
-//            }
+                    }
+                } else {
+                    print("Error")
+                }
+            }
         }
     }
     

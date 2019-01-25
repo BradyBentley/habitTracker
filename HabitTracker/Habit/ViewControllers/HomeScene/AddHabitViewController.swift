@@ -17,10 +17,10 @@ class AddHabitViewController: UIViewController {
     // MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        HabitController.shared.habits = [
-            Habit(isNewHabit: true, category: "financial", habitDescription: "work out 2 times a week", days: 2, weeks: 10),
-            Habit(isNewHabit: false, category: "wellness", habitDescription: "quit smoking", days: 7, weeks: 7)
-        ]
+//        HabitController.shared.habits = [
+//            Habit(isNewHabit: true, category: "financial", habitDescription: "work out 2 times a week", days: 2, weeks: 10),
+//            Habit(isNewHabit: false, category: "wellness", habitDescription: "quit smoking", days: 7, weeks: 7)
+//        ]
         habitsTableView.delegate = self
         habitsTableView.dataSource = self
         Firebase.shared.fetchHabits { (success) in
