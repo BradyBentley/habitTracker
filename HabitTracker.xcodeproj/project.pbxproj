@@ -47,6 +47,9 @@
 		F7AA119921F8DCCA000B16C6 /* CheckIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AA119821F8DCCA000B16C6 /* CheckIn.swift */; };
 
 		F7AA11A621FA3702000B16C6 /* CategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AA11A521FA3702000B16C6 /* CategoryController.swift */; };
+		F7AA11AC21FA7E27000B16C6 /* SF-Pro-Text-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7AA11A921FA7E27000B16C6 /* SF-Pro-Text-Light.otf */; };
+		F7AA11AD21FA7E27000B16C6 /* SF-Pro-Text-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7AA11AA21FA7E27000B16C6 /* SF-Pro-Text-Medium.otf */; };
+		F7AA11AE21FA7E27000B16C6 /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7AA11AB21FA7E27000B16C6 /* SF-Pro-Text-Regular.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +96,9 @@
 		F7AA119621F7DA22000B16C6 /* CheckInCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInCustomTableViewCell.swift; sourceTree = "<group>"; };
 		F7AA119821F8DCCA000B16C6 /* CheckIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckIn.swift; sourceTree = "<group>"; };
 		F7AA11A521FA3702000B16C6 /* CategoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryController.swift; sourceTree = "<group>"; };
+		F7AA11A921FA7E27000B16C6 /* SF-Pro-Text-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Text-Light.otf"; path = "../../../../../../../Volumes/SF-Font/SF Pro/SF-Pro-Text-Light.otf"; sourceTree = "<group>"; };
+		F7AA11AA21FA7E27000B16C6 /* SF-Pro-Text-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Text-Medium.otf"; path = "../../../../../../../Volumes/SF-Font/SF Pro/SF-Pro-Text-Medium.otf"; sourceTree = "<group>"; };
+		F7AA11AB21FA7E27000B16C6 /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Text-Regular.otf"; path = "../../../../../../../Volumes/SF-Font/SF Pro/SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,7 +138,10 @@
 		26084A3E21F7BA890037A221 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+
+
 				266DCE1521FA790C00CDC0F9 /* Fonts */,
+
 				260AAD6721EFAD9200461C1E /* Assets.xcassets */,
 				260AAD6021EFAD9000461C1E /* AppDelegate.swift */,
 				260AAD6C21EFAD9200461C1E /* Info.plist */,
@@ -317,6 +326,16 @@
 			path = HabitProgress;
 			sourceTree = "<group>";
 		};
+		F7AA11A821FA7C3A000B16C6 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F7AA11A921FA7E27000B16C6 /* SF-Pro-Text-Light.otf */,
+				F7AA11AA21FA7E27000B16C6 /* SF-Pro-Text-Medium.otf */,
+				F7AA11AB21FA7E27000B16C6 /* SF-Pro-Text-Regular.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -382,12 +401,15 @@
 				260AAD6B21EFAD9200461C1E /* LaunchScreen.storyboard in Resources */,
 				26084A3621F799440037A221 /* AddHabit.storyboard in Resources */,
 				26F0D92C21EFBD3F00D4ADA1 /* GoogleService-Info.plist in Resources */,
+				F7AA11AC21FA7E27000B16C6 /* SF-Pro-Text-Light.otf in Resources */,
+				F7AA11AD21FA7E27000B16C6 /* SF-Pro-Text-Medium.otf in Resources */,
+				F7AA11AE21FA7E27000B16C6 /* SF-Pro-Text-Regular.otf in Resources */,
 				26084A3A21F7B9980037A221 /* Progress.storyboard in Resources */,
 				260AAD6821EFAD9200461C1E /* Assets.xcassets in Resources */,
 				F73C046B21FA680200CEF0BB /* Login.storyboard in Resources */,
 				260AAD6621EFAD9000461C1E /* Main.storyboard in Resources */,
-				266DCE1621FA799A00CDC0F9 /* SF-Pro-Text-Regular.otf in Resources */,
 
+				266DCE1621FA799A00CDC0F9 /* SF-Pro-Text-Regular.otf in Resources */,
 				26084A3C21F7BA190037A221 /* CheckInPopUp.storyboard in Resources */,
 				266DCE1721FA799E00CDC0F9 /* SF-Pro-Text-Medium.otf in Resources */,
 				266DCE1321FA775600CDC0F9 /* SF-Pro-Text-Light.otf in Resources */,
