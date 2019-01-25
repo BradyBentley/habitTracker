@@ -28,6 +28,7 @@
 		26F0D95121F14D7900D4ADA1 /* LocationReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F0D95021F14D7900D4ADA1 /* LocationReminder.swift */; };
 		26F0D95321F2365700D4ADA1 /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F0D95221F2365700D4ADA1 /* Firebase.swift */; };
 		C8A39C70BFA96E27673A9F0C /* Pods_HabitTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04028353B060E92AB9235DCF /* Pods_HabitTracker.framework */; };
+		CB0F6DC721FAD58B0031740A /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0F6DC621FAD58B0031740A /* WelcomeViewController.swift */; };
 		CBB9A23D21F7CA9B00995F73 /* NewHabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9A23C21F7CA9B00995F73 /* NewHabitViewController.swift */; };
 		CBD7EC7A21F830FA0074A6D2 /* SetReminderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD7EC7921F830FA0074A6D2 /* SetReminderTableViewController.swift */; };
 		CBD7EC7C21F863670074A6D2 /* ReminderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD7EC7B21F863670074A6D2 /* ReminderTableViewCell.swift */; };
@@ -41,9 +42,6 @@
 		F7AA119521F63627000B16C6 /* ProgressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AA119421F63627000B16C6 /* ProgressTableViewCell.swift */; };
 		F7AA119721F7DA22000B16C6 /* CheckInCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AA119621F7DA22000B16C6 /* CheckInCustomTableViewCell.swift */; };
 		F7AA119921F8DCCA000B16C6 /* CheckIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AA119821F8DCCA000B16C6 /* CheckIn.swift */; };
-		F7AA119F21F91E1F000B16C6 /* SF-Pro-Text-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7AA119E21F91E1F000B16C6 /* SF-Pro-Text-Light.otf */; };
-		F7AA11A121F91E36000B16C6 /* SF-Pro-Text-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7AA11A021F91E36000B16C6 /* SF-Pro-Text-Medium.otf */; };
-		F7AA11A321F91E45000B16C6 /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7AA11A221F91E45000B16C6 /* SF-Pro-Text-Regular.otf */; };
 		F7AA11A621FA3702000B16C6 /* CategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AA11A521FA3702000B16C6 /* CategoryController.swift */; };
 /* End PBXBuildFile section */
 
@@ -60,7 +58,6 @@
 		260AAD6721EFAD9200461C1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		260AAD6A21EFAD9200461C1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		260AAD6C21EFAD9200461C1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		266DCE0221F8E8BA00CDC0F9 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		266DCE0421F8E98A00CDC0F9 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		26F0D92B21EFBD3F00D4ADA1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		26F0D93721F0FE2D00D4ADA1 /* AddHabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabitViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +71,7 @@
 		26F0D95221F2365700D4ADA1 /* Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
 		64796CE9C6B23F336BA88293 /* Pods-HabitTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitTracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-HabitTracker/Pods-HabitTracker.release.xcconfig"; sourceTree = "<group>"; };
 		7E430CF4D2DF39A2F832288E /* Pods-HabitTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitTracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HabitTracker/Pods-HabitTracker.debug.xcconfig"; sourceTree = "<group>"; };
+		CB0F6DC621FAD58B0031740A /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		CBB9A23C21F7CA9B00995F73 /* NewHabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHabitViewController.swift; sourceTree = "<group>"; };
 		CBD7EC7921F830FA0074A6D2 /* SetReminderTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetReminderTableViewController.swift; sourceTree = "<group>"; };
 		CBD7EC7B21F863670074A6D2 /* ReminderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderTableViewCell.swift; sourceTree = "<group>"; };
@@ -87,9 +85,6 @@
 		F7AA119421F63627000B16C6 /* ProgressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressTableViewCell.swift; sourceTree = "<group>"; };
 		F7AA119621F7DA22000B16C6 /* CheckInCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInCustomTableViewCell.swift; sourceTree = "<group>"; };
 		F7AA119821F8DCCA000B16C6 /* CheckIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckIn.swift; sourceTree = "<group>"; };
-		F7AA119E21F91E1F000B16C6 /* SF-Pro-Text-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Light.otf"; sourceTree = "<group>"; };
-		F7AA11A021F91E36000B16C6 /* SF-Pro-Text-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Medium.otf"; sourceTree = "<group>"; };
-		F7AA11A221F91E45000B16C6 /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
 		F7AA11A521FA3702000B16C6 /* CategoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,7 +141,6 @@
 				260AAD5E21EFAD9000461C1E /* Products */,
 				A43A8824F2D2B9F7A509F994 /* Pods */,
 				0F79469EFB5CB2FFB2475F69 /* Frameworks */,
-				F73C046921FA676C00CEF0BB /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -173,8 +167,8 @@
 		266DCE0721F8E99E00CDC0F9 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				266DCE0221F8E8BA00CDC0F9 /* WelcomeViewController.swift */,
 				266DCE0421F8E98A00CDC0F9 /* LogInViewController.swift */,
+				CB0F6DC621FAD58B0031740A /* WelcomeViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -268,16 +262,6 @@
 				F73213D321F25584009A47F0 /* LocationBasedReminderViewController.swift */,
 			);
 			path = LocationBasedReminder;
-			sourceTree = "<group>";
-		};
-		F73C046921FA676C00CEF0BB /* Recovered References */ = {
-			isa = PBXGroup;
-			children = (
-				F7AA11A221F91E45000B16C6 /* SF-Pro-Text-Regular.otf */,
-				F7AA119E21F91E1F000B16C6 /* SF-Pro-Text-Light.otf */,
-				F7AA11A021F91E36000B16C6 /* SF-Pro-Text-Medium.otf */,
-			);
-			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 		F7791C4F21F52D3C00337D10 /* EditHabit */ = {
@@ -376,17 +360,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F7AA11A321F91E45000B16C6 /* SF-Pro-Text-Regular.otf in Resources */,
 				26084A3821F7B7BB0037A221 /* HabitDetail.storyboard in Resources */,
 				260AAD6B21EFAD9200461C1E /* LaunchScreen.storyboard in Resources */,
 				26084A3621F799440037A221 /* AddHabit.storyboard in Resources */,
 				26F0D92C21EFBD3F00D4ADA1 /* GoogleService-Info.plist in Resources */,
 				26084A3A21F7B9980037A221 /* Progress.storyboard in Resources */,
-				F7AA119F21F91E1F000B16C6 /* SF-Pro-Text-Light.otf in Resources */,
 				260AAD6821EFAD9200461C1E /* Assets.xcassets in Resources */,
 				F73C046B21FA680200CEF0BB /* Login.storyboard in Resources */,
 				260AAD6621EFAD9000461C1E /* Main.storyboard in Resources */,
-				F7AA11A121F91E36000B16C6 /* SF-Pro-Text-Medium.otf in Resources */,
 				26084A3C21F7BA190037A221 /* CheckInPopUp.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -481,6 +462,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB0F6DC721FAD58B0031740A /* WelcomeViewController.swift in Sources */,
 				F7791C5A21F52E3000337D10 /* HabitProgressDetailViewController.swift in Sources */,
 				F7AA119721F7DA22000B16C6 /* CheckInCustomTableViewCell.swift in Sources */,
 				26F0D95121F14D7900D4ADA1 /* LocationReminder.swift in Sources */,
