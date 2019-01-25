@@ -63,7 +63,9 @@
                                                     </label>
                                                 </subviews>
                                                 <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="f2u-XJ-ba2" secondAttribute="bottom" id="2i1-do-h6I"/>
                                                     <constraint firstAttribute="height" constant="28" id="SoZ-C0-Eqk"/>
+                                                    <constraint firstItem="f2u-XJ-ba2" firstAttribute="top" secondItem="SWC-t4-xb6" secondAttribute="top" id="vaP-hQ-Nyh"/>
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ItM-32-5vQ">
@@ -87,6 +89,8 @@
                                                     </label>
                                                 </subviews>
                                                 <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="7fu-mC-dBL" secondAttribute="bottom" id="EyS-so-9rs"/>
+                                                    <constraint firstItem="7fu-mC-dBL" firstAttribute="top" secondItem="ItM-32-5vQ" secondAttribute="top" id="c7J-9N-ZrX"/>
                                                     <constraint firstAttribute="height" constant="28" id="sue-9J-GEs"/>
                                                 </constraints>
                                             </stackView>
@@ -498,7 +502,11 @@
                         <viewLayoutGuide key="safeArea" id="vb1-H5-tZ5"/>
                     </view>
                     <navigationItem key="navigationItem" title="New Habit" id="zoP-zz-C1p">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="rxW-8l-cFE"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="rxW-8l-cFE">
+                            <connections>
+                                <action selector="cancelButtonPushed:" destination="n4u-tH-FK3" id="EKD-n4-gax"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" id="QEw-HG-JCA">
                             <connections>
                                 <segue destination="KVo-Wa-Tfm" kind="show" identifier="ToReminderView" id="tBs-tq-RL0"/>
@@ -979,7 +987,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="J7b-iE-rjW"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Reminders" id="epi-ob-wSj"/>
+                    <navigationItem key="navigationItem" title="Reminders" id="epi-ob-wSj">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="9wv-8p-a5h">
+                            <connections>
+                                <action selector="doneButtonPushed:" destination="KVo-Wa-Tfm" id="OPb-tz-53f"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="locationBasedRemindersTableView" destination="5jR-E0-twM" id="q0y-Qh-7jH"/>
                         <outlet property="timeBasedRemindersTableView" destination="Rq8-a6-JhE" id="ekN-yz-Goo"/>
@@ -1012,12 +1026,13 @@
                                 <textInputTraits key="textInputTraits" textContentType="location"/>
                             </searchBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RFQ-NC-BiC">
-                                <rect key="frame" x="49.666666666666657" y="782" width="315" height="48"/>
+                                <rect key="frame" x="87" y="782" width="240" height="48"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="ljk-br-gPU"/>
-                                    <constraint firstAttribute="width" constant="315" id="y7i-eN-zcC"/>
+                                    <constraint firstAttribute="width" constant="240" id="y7i-eN-zcC"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <state key="normal" title="save">
                                     <color key="titleColor" red="0.71244447970000002" green="0.71244447970000002" blue="0.71244447970000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>

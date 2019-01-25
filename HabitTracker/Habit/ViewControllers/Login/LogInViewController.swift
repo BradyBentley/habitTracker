@@ -10,7 +10,7 @@ import UIKit
 
 class LogInViewController: UIViewController {
     // MARK: - Properties
-    var isLogInPage: Bool = false
+    var isLogInPage: Bool?
     
     // MARK: - IBOutlets
     @IBOutlet weak var emailTextField: UITextField!
@@ -28,7 +28,7 @@ class LogInViewController: UIViewController {
     
     // MARK: - Actions
     @IBAction func signInButtonTapped(_ sender: Any) {
-        guard let email = emailTextField.text, let password = passwordTextField.text, !email.isEmpty, !password.isEmpty else { return }
+        guard let email = emailTextField.text, let password = passwordTextField.text, let isLogInPage = isLogInPage, !email.isEmpty, !password.isEmpty else { return }
         if isLogInPage == false {
             guard passwordTextField.text == confirmPasswordTextField.text else { return }
             UserController.shared.createUser(email: email, password: password) { (success) in
@@ -39,20 +39,21 @@ class LogInViewController: UIViewController {
                 }
             }
         } else {
-            UserController.shared.signInUser(email: email, password: password) { (success) in
-                if success {
-                    DispatchQueue.main.async {
+//            UserController.shared.signInUser(email: email, password: password) { (success) in
+//                if success {
+//                    DispatchQueue.main.async {
                         self.performSegue(withIdentifier: "ToMainPage", sender: self)
-                    }
-                } else {
-                    print("Error")
-                }
-            }
+//                    }
+//                } else {
+//                    print("Error")
+//                }
+//            }
         }
     }
     
     @IBAction func alreadyHaveAnLabelTapped(_ sender: Any) {
-        isLogInPage = !isLogInPage
+        guard let islogInPage = isLogInPage else { return }
+        isLogInPage = !islogInPage
         updateViews()
     }
     
@@ -81,11 +82,4 @@ class LogInViewController: UIViewController {
         }
     }
     
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
 }

@@ -32,8 +32,9 @@ class HabitDetailViewController: UIViewController {
         guard let habit = habit else { return }
         habitDescriptionLabel.text = habit.habitDescription
         successLabel.text = "\(habit.days) days a week for \(habit.weeks)"
+        iconImageView.image = UIImage(named: "\(habit.category)Progress")
         
-        // TODO: percentage complete label & complete the mark as done.
+        // TODO: percentage complete label
         
     }
     
@@ -54,6 +55,7 @@ extension HabitDetailViewController: UITableViewDelegate, UITableViewDataSource{
         var count = 0
         
         if tableView == habitReminderTableView {
+            
             count = habit?.timeReminder.count ?? 0
         }
         return count

@@ -9,8 +9,12 @@
 import UIKit
 
 class HabitCheckInViewController: UIViewController {
+    
+    var habit: Habit?
 
     @IBOutlet weak var CheckInTableView: UITableView!
+    
+    @IBOutlet weak var topPartOfView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,8 +22,10 @@ class HabitCheckInViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func saveButtonTapped(_ sender: Any) {
+    @IBAction func doneButtonTapped(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
+    
     
     /*
     // MARK: - Navigation
@@ -31,4 +37,26 @@ class HabitCheckInViewController: UIViewController {
     }
     */
 
+}
+
+extension HabitCheckInViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell: UITableViewCell!
+        
+        if tableView == CheckInTableView {
+            cell = tableView.dequeueReusableCell(withIdentifier: "checkInCell", for: indexPath) as? CheckInCustomTableViewCell
+        }
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        var count = 0
+        
+        if tableView == CheckInTableView {
+            count = HabitController.shared.habits.count
+        }
+        return count
+    }
+    
 }
