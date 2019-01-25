@@ -18,15 +18,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q8Z-0M-Pzf">
+                            <view clipsSubviews="YES" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="q8Z-0M-Pzf" customClass="LineChartView" customModule="Charts">
                                 <rect key="frame" x="16" y="44" width="343" height="232"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rg2-Gf-YpI">
                                 <rect key="frame" x="16" y="284" width="339" height="292"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="86" id="UZi-3r-8F5" customClass="ProgressTableViewCell" customModule="HabitTracker" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProgressHabitCell" rowHeight="86" id="UZi-3r-8F5" customClass="ProgressTableViewCell" customModule="HabitTracker" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="339" height="86"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UZi-3r-8F5" id="tSi-wu-taM">
@@ -39,17 +39,13 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ofb-2X-qn2">
                                                             <rect key="frame" x="0.0" y="0.0" width="108" height="50"/>
                                                             <subviews>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vhM-5L-7AB">
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unchecked" translatesAutoresizingMaskIntoConstraints="NO" id="nzJ-lc-12F">
                                                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" constant="50" id="JsH-qg-WA6"/>
-                                                                        <constraint firstAttribute="height" constant="50" id="Ufe-pB-ZFy"/>
+                                                                        <constraint firstAttribute="height" constant="50" id="G8A-Ej-NhJ"/>
+                                                                        <constraint firstAttribute="width" constant="50" id="eMc-q5-IHf"/>
                                                                     </constraints>
-                                                                    <state key="normal" title="Button"/>
-                                                                    <connections>
-                                                                        <action selector="progressButtonTapped:" destination="UZi-3r-8F5" eventType="touchUpInside" id="mAn-D1-ErQ"/>
-                                                                    </connections>
-                                                                </button>
+                                                                </imageView>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fZt-FF-q7a">
                                                                     <rect key="frame" x="58" y="0.0" width="50" height="50"/>
                                                                     <constraints>
@@ -75,9 +71,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="categoryIcon" destination="fZt-FF-q7a" id="JM8-xv-d51"/>
+                                            <outlet property="categoryColorImageView" destination="nzJ-lc-12F" id="h7E-35-q1r"/>
+                                            <outlet property="categoryIconImageView" destination="fZt-FF-q7a" id="JM8-xv-d51"/>
                                             <outlet property="habitNameLabel" destination="QyP-1L-Kpw" id="85K-dV-Ooc"/>
-                                            <outlet property="progressButton" destination="vhM-5L-7AB" id="9IQ-px-Cxy"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -99,6 +95,7 @@
                     <tabBarItem key="tabBarItem" title="Progress" id="5Ko-VI-Ly2" userLabel="Progress"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="progressChartView" destination="q8Z-0M-Pzf" id="Xmy-zw-10a"/>
                         <outlet property="progressTableView" destination="rg2-Gf-YpI" id="1hJ-7g-jv1"/>
                     </connections>
                 </viewController>
@@ -107,4 +104,7 @@
             <point key="canvasLocation" x="910" y="-235"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="unchecked" width="126" height="148"/>
+    </resources>
 </document>
