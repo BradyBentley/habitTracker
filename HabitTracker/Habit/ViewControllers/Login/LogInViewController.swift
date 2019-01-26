@@ -28,6 +28,8 @@ class LogInViewController: UIViewController {
     
     // MARK: - Actions
     @IBAction func signInButtonTapped(_ sender: Any) {
+        self.performSegue(withIdentifier: "ToMainPage", sender: self) // This line is to bypass login, delete later
+        /* Uncomment for login
         guard let email = emailTextField.text, let password = passwordTextField.text, let isLogInPage = isLogInPage, !email.isEmpty, !password.isEmpty else { return }
         if isLogInPage == false {
             guard passwordTextField.text == confirmPasswordTextField.text else { return }
@@ -39,16 +41,17 @@ class LogInViewController: UIViewController {
                 }
             }
         } else {
-//            UserController.shared.signInUser(email: email, password: password) { (success) in
-//                if success {
-//                    DispatchQueue.main.async {
+            UserController.shared.signInUser(email: email, password: password) { (success) in
+                if success {
+                    DispatchQueue.main.async {
                         self.performSegue(withIdentifier: "ToMainPage", sender: self)
-//                    }
-//                } else {
-//                    print("Error")
-//                }
-//            }
+                    }
+                } else {
+                    print("Error")
+                }
+            }
         }
+        */
     }
     
     @IBAction func alreadyHaveAnLabelTapped(_ sender: Any) {

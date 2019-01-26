@@ -7,15 +7,17 @@
 //
 
 import UIKit
+import UserNotifications
 
-class ReminderViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, DeleteButtonTableViewCellDelegate, TextFieldTableViewCellDelegate {
+class ReminderViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, DeleteButtonTableViewCellDelegate, TextFieldTableViewCellDelegate, TimeReminderScheduler, LocationReminderScheduler {
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         timeBasedRemindersTableView.dataSource = self
         timeBasedRemindersTableView.delegate = self
         locationBasedRemindersTableView.dataSource = self
         locationBasedRemindersTableView.delegate = self
-        super.viewDidLoad()
+        getAuthorizationStatus()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -30,11 +32,42 @@ class ReminderViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var locationBasedRemindersTableView: UITableView!
     
     var habit: Habit?
+    var authorizationStatus: UNAuthorizationStatus?
     
     // MARK: - Button actions
     
     @IBAction func doneButtonPushed(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        if authorizationStatus == .denied {
+            // MARK: - Notification disabled alert
+            DispatchQueue.main.async {
+            let alertController = UIAlertController(title: "Notifications Disabled", message: "Please turn on notifications in settings to receive time or location alerts", preferredStyle: .alert)
+            let settingsAction = UIAlertAction(title: "Settings", style: .default) { (_) -> Void in
+                guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else { return }
+                
+                if UIApplication.shared.canOpenURL(settingsUrl) {
+                    UIApplication.shared.open(settingsUrl, completionHandler: { (_) in
+                        self.dismiss(animated: false, completion: nil)
+                    })
+                }
+            }
+            let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: { (_) in
+                self.dismiss(animated: true, completion: nil)
+            })
+            alertController.addAction(cancelAction)
+            alertController.addAction(settingsAction)
+            self.present(alertController, animated: true, completion: nil)
+            }
+        } else {
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    // MARK: - Authorization status
+    
+    func getAuthorizationStatus() {
+        UNUserNotificationCenter.current().getNotificationSettings { (settings) in
+            self.authorizationStatus = settings.authorizationStatus
+        }
     }
     
     // MARK: - Table view data source
@@ -74,17 +107,20 @@ class ReminderViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func deleteButtonPushed(cell: ReminderTableViewCell) {
         guard let habit = habit else { return }
-        if let reminder = cell.timeReminder?.uuid, !reminder.isEmpty {
+        if let timeReminderUUID = cell.timeReminder?.uuid, !timeReminderUUID.isEmpty {
             if let cellIndexPath = timeBasedRemindersTableView.indexPath(for: cell) {
                 timeBasedRemindersTableView.beginUpdates()
                 habit.timeReminder.remove(at: cellIndexPath.row)
+                cancelTimeNotifications(for: timeReminderUUID)
                 timeBasedRemindersTableView.deleteRows(at: [cellIndexPath], with: .fade)
                 timeBasedRemindersTableView.endUpdates()
             }
         } else {
-            if let cellIndexPath = locationBasedRemindersTableView.indexPath(for: cell) {
+            if let cellIndexPath = locationBasedRemindersTableView.indexPath(for: cell),
+                let locationReminderUUID = cell.locationReminder?.uuid {
                 locationBasedRemindersTableView.beginUpdates()
                 habit.locationReminder.remove(at: cellIndexPath.row)
+                cancelLocationNotifications(for: locationReminderUUID)
                 locationBasedRemindersTableView.deleteRows(at: [cellIndexPath], with: .fade)
                 locationBasedRemindersTableView.endUpdates()
             }
@@ -97,12 +133,14 @@ class ReminderViewController: UIViewController, UITableViewDataSource, UITableVi
             if let cellIndexPath = timeBasedRemindersTableView.indexPath(for: cell) {
                 timeBasedRemindersTableView.beginUpdates()
                 habit.timeReminder[cellIndexPath.row].reminderText = text
+                scheduleUserNotifications(for: habit.timeReminder[cellIndexPath.row])
                 timeBasedRemindersTableView.endUpdates()
             }
         } else {
             if let cellIndexPath = locationBasedRemindersTableView.indexPath(for: cell) {
                 locationBasedRemindersTableView.beginUpdates()
                 habit.locationReminder[cellIndexPath.row].reminderText = text
+                scheduleUserNotifications(for: habit.locationReminder[cellIndexPath.row])
                 locationBasedRemindersTableView.endUpdates()
             }
         }
@@ -110,6 +148,16 @@ class ReminderViewController: UIViewController, UITableViewDataSource, UITableVi
     
     // MARK: - Navigation
 
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "ToSetTimeReminder", authorizationStatus == .authorized {
+            return true
+        }
+        if identifier == "ToSetLocationReminder", authorizationStatus == .authorized {
+            return true
+        }
+        return false
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ToSetTimeReminder" {
             if let destinationVC = segue.destination as? SetReminderTableViewController {

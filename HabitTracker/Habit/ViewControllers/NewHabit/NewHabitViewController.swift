@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class NewHabitViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
@@ -19,6 +20,8 @@ class NewHabitViewController: UIViewController, UIPickerViewDataSource, UIPicker
         dayPickerView.showsSelectionIndicator = true
         weekPickerView.showsSelectionIndicator = true
         navigationItem.rightBarButtonItem?.title = "Next"
+        
+        requestUserNotificationPermissions()
     }
     
     // MARK: - Properties
@@ -44,6 +47,7 @@ class NewHabitViewController: UIViewController, UIPickerViewDataSource, UIPicker
     var category: String = ""
     var days: Int = 1
     var weeks: Int = 1
+    var allowNotifications: Bool?
     
     // MARK: - Button actions
     
@@ -186,6 +190,14 @@ class NewHabitViewController: UIViewController, UIPickerViewDataSource, UIPicker
         productivityButton.setImage(UIImage(named: "productivity"), for: .normal)
         mindsetButton.setImage(UIImage(named: "mindset"), for: .normal)
         otherButton.setImage(UIImage(named: "other"), for: .normal)
+    }
+    
+    // MARK: - User notifications
+    
+    func requestUserNotificationPermissions() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (granted, _) in
+            self.allowNotifications = granted ? true : false
+        }
     }
     
     // MARK: - UIPickerView Source

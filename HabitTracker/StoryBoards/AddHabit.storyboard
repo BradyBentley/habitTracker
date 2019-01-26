@@ -1095,6 +1095,7 @@
                         <outlet property="locationSearchBar" destination="v6e-sg-zQX" id="4V4-pB-W0Y"/>
                         <outlet property="mapView" destination="tLE-Qu-MHy" id="s05-am-3qR"/>
                         <outlet property="saveButton" destination="RFQ-NC-BiC" id="9dl-3l-XPy"/>
+                        <outlet property="segmentControl" destination="LRe-JD-LZD" id="Zh7-rO-3aP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iNl-bj-l8N" userLabel="First Responder" sceneMemberID="firstResponder"/>
