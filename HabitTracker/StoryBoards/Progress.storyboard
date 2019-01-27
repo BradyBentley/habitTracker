@@ -129,7 +129,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jUv-Fg-DQm"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Progress" id="5Ko-VI-Ly2" userLabel="Progress"/>
+                    <tabBarItem key="tabBarItem" title="Progress" image="performanceIncrease" id="5Ko-VI-Ly2" userLabel="Progress"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="checkInPercentageReportLabel" destination="L2v-TU-jL4" id="UAL-Z9-qRR"/>
@@ -144,6 +144,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="unchecked" width="126" height="148"/>
+        <image name="performanceIncrease" width="30" height="29"/>
     </resources>
 </document>
