@@ -145,5 +145,6 @@
     </scenes>
     <resources>
         <image name="performanceIncrease" width="30" height="29"/>
+        <image name="unchecked" width="126" height="148"/>
     </resources>
 </document>

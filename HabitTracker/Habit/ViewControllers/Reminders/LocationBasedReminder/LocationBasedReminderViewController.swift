@@ -181,6 +181,7 @@ class LocationBasedReminderViewController: UIViewController, CLLocationManagerDe
         let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
         let region = MKCoordinateRegion(center: center, span: span)
         self.mapView.setRegion(region, animated: true)
+        locationManager.stopUpdatingLocation()
     }
     
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
