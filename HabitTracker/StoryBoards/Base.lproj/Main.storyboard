@@ -73,19 +73,19 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="e6Q-nw-lhO">
-                                                    <rect key="frame" x="97" y="8" width="230" height="74"/>
+                                                    <rect key="frame" x="97" y="8" width="240" height="74"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(habit description)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x9X-xK-DL2">
-                                                            <rect key="frame" x="0.0" y="0.0" width="230" height="24"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="240" height="24"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Nzj-Ps-asz">
-                                                            <rect key="frame" x="0.0" y="32" width="230" height="42"/>
+                                                            <rect key="frame" x="0.0" y="32" width="240" height="42"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(success)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erb-ac-VU2">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="230" height="19"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="19"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="19" id="yyy-V9-gmh"/>
                                                                     </constraints>
@@ -94,7 +94,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(percentage)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QEV-d9-DIq">
-                                                                    <rect key="frame" x="0.0" y="23" width="230" height="19"/>
+                                                                    <rect key="frame" x="0.0" y="23" width="240" height="19"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="19" id="9qy-pK-sKc"/>
                                                                     </constraints>
@@ -151,7 +151,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="X2T-5S-WJS"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" id="fcg-8F-I8X" userLabel="Check In"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="house" id="fcg-8F-I8X" userLabel="Check In"/>
                     <connections>
                         <outlet property="habitsTableView" destination="5LP-iL-TMH" id="37a-mj-iD1"/>
                     </connections>
@@ -169,4 +169,7 @@
             <point key="canvasLocation" x="896" y="926"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="house" width="30" height="27"/>
+    </resources>
 </document>

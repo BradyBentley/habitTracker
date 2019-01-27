@@ -96,7 +96,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jUv-Fg-DQm"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Progress" id="5Ko-VI-Ly2" userLabel="Progress"/>
+                    <tabBarItem key="tabBarItem" title="Progress" image="performanceIncrease" id="5Ko-VI-Ly2" userLabel="Progress"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="progressTableView" destination="rg2-Gf-YpI" id="1hJ-7g-jv1"/>
@@ -107,4 +107,7 @@
             <point key="canvasLocation" x="910" y="-235"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="performanceIncrease" width="30" height="29"/>
+    </resources>
 </document>
