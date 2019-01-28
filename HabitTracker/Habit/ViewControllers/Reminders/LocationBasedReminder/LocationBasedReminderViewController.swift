@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class LocationBasedReminderViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDelegate, MKMapViewDelegate {
+class LocationBasedReminderViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDelegate, MKMapViewDelegate, LocationReminderScheduler {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,13 +26,14 @@ class LocationBasedReminderViewController: UIViewController, CLLocationManagerDe
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var locationSearchBar: UISearchBar!
+    @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBOutlet weak var saveButton: UIButton!
     
     var habit: Habit?
     var savedCoordinate: CLLocationCoordinate2D?
     var savedLocationName: String?
     var locationManager = CLLocationManager()
-    var geoFenceRadius: Double = 100
+    var geoFenceRadius: Double = 200
     var circle: MKCircle?
     
     // MARK: Update view
@@ -60,14 +61,8 @@ class LocationBasedReminderViewController: UIViewController, CLLocationManagerDe
     @objc func handleLongPress(recognizer: UILongPressGestureRecognizer) {
         if (recognizer.state == UIGestureRecognizer.State.began) {
             let longPressPoint = recognizer.location(in: mapView)
-            // GeoFence
             let coordinate = mapView.convert(longPressPoint, toCoordinateFrom: mapView)
             savedCoordinate = coordinate
-            let geofenceRegionCenter = coordinate
-            let geofenceRegion = CLCircularRegion(center: geofenceRegionCenter, radius: geoFenceRadius, identifier: UUID().uuidString)
-            geofenceRegion.notifyOnEntry = true
-            geofenceRegion.notifyOnExit = true
-            locationManager.startMonitoring(for: geofenceRegion)
             // Remove all previous marks and add current ones
             let pointAnnotation = MKPointAnnotation()
             pointAnnotation.coordinate = coordinate
@@ -87,25 +82,43 @@ class LocationBasedReminderViewController: UIViewController, CLLocationManagerDe
     }
     
     // MARK: - Location services
+    
     func enableLocationServices() {
         switch CLLocationManager.authorizationStatus() {
         case .notDetermined:
             // Request when-in-use authorization initially
-            locationManager.requestWhenInUseAuthorization()
+            locationManager.requestAlwaysAuthorization()
+            break
             
         case .restricted, .denied:
             // Disable location features
+            let alertController = UIAlertController(title: "Location Service Disabled", message: "Please go to Settings and turn on always enabled to receive location based alerts", preferredStyle: .alert)
+            let settingsAction = UIAlertAction(title: "Settings", style: .default) { (_) -> Void in
+                guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else { return }
+                
+                if UIApplication.shared.canOpenURL(settingsUrl) {
+                    UIApplication.shared.open(settingsUrl, completionHandler: { (_) in })
+                }
+            }
+            let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+            alertController.addAction(cancelAction)
+            alertController.addAction(settingsAction)
+            self.present(alertController, animated: true, completion: nil)
             break
             
         case .authorizedWhenInUse:
             // Enable basic location features
-            locationManager.desiredAccuracy = 0.1
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.allowsBackgroundLocationUpdates = true
             locationManager.startUpdatingLocation()
+            break
             
         case .authorizedAlways:
             // Enable all location features
-            locationManager.desiredAccuracy = 0.1
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.allowsBackgroundLocationUpdates = true
             locationManager.startUpdatingLocation()
+            break
         }
     }
     
@@ -114,8 +127,9 @@ class LocationBasedReminderViewController: UIViewController, CLLocationManagerDe
     @IBAction func mapSaveButtonTapped(_ sender: Any) {
         guard let savedCoordinate = savedCoordinate, let habit = habit else { return }
         if let savedLocationName = locationSearchBar.text {
-            let locationReminder = LocationReminder(latitude: Float(savedCoordinate.latitude), longitude: Float(savedCoordinate.longitude), locationName: savedLocationName, reminderText: "")
+            let locationReminder = LocationReminder(latitude: savedCoordinate.latitude, longitude: savedCoordinate.longitude, locationName: savedLocationName, remindOnEntryOrExit: segmentControl.selectedSegmentIndex, reminderText: "")
             habit.locationReminder.append(locationReminder)
+            scheduleUserNotifications(for: locationReminder)
         }
         self.dismiss(animated: true, completion: nil)
     }
@@ -157,12 +171,25 @@ class LocationBasedReminderViewController: UIViewController, CLLocationManagerDe
     
     // MARK: - CLLocation manager delegate
     
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        enableLocationServices()
+    }
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let usersLocation = locations.first else { return }
         let center = usersLocation.coordinate
         let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
         let region = MKCoordinateRegion(center: center, span: span)
         self.mapView.setRegion(region, animated: true)
+        locationManager.stopUpdatingLocation()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
+        print("Entered region")
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
+        print("Exited region")
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
