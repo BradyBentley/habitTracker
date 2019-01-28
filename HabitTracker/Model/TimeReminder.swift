@@ -22,11 +22,29 @@ class TimeReminder {
         self.uuid = uuid
     }
     
+    convenience init?(firebaseDictionary: [String: Any]){
+        guard let time = firebaseDictionary["time"] as? Date,
+        let day = firebaseDictionary["day"] as? [Int],
+            let reminderText = firebaseDictionary["reminderText"] as? String else { return nil }
+        self.init(time: time, day: day, reminderText: reminderText)
+    }
+    
 }
 
 // MARK: - Equatable
 extension TimeReminder: Equatable {
     static func == (lhs: TimeReminder, rhs: TimeReminder) -> Bool {
         return lhs.day == rhs.day && lhs.time == rhs.time && lhs.reminderText == rhs.reminderText
+    }
+}
+
+extension TimeReminder {
+    var dictionary: [String: Any] {
+        return [
+            "time": time,
+            "day": day,
+            "reminderText": reminderText,
+            "uuid": uuid
+        ]
     }
 }
