@@ -59,12 +59,12 @@ class Habit {
         let habitDescription = firebaseDictionary[Habit.habitKeys.habitDescriptionKey] as? String,
         let days = firebaseDictionary[Habit.habitKeys.daysKey] as? Int,
         let weeks = firebaseDictionary[Habit.habitKeys.weeksKey] as? Int,
-        let timeReminder = firebaseDictionary[Habit.habitKeys.timeReminderKey] as? [TimeReminder],
-        let locationReminder = firebaseDictionary[Habit.habitKeys.locationReminderKey] as? [LocationReminder],
+//        let timeReminder = firebaseDictionary[Habit.habitKeys.timeReminderKey] as? [TimeReminder],
+//        let locationReminder = firebaseDictionary[Habit.habitKeys.locationReminderKey] as? [LocationReminder],
         let daysCompleted = firebaseDictionary[Habit.habitKeys.daysCompletedKey] as? [CheckIn],
         let daysCheckedIn = firebaseDictionary[Habit.habitKeys.daysCheckedInKey] as? Int,
         let startingDate = firebaseDictionary[Habit.habitKeys.startingDateKey] as? Date else { return nil }
-        self.init(isNewHabit: isNewHabit, category: category, habitDescription: habitDescription, days: days, weeks: weeks, timeReminder: timeReminder, locationReminder: locationReminder, daysCompleted: daysCompleted, startingDate: startingDate, daysCheckedIn: daysCheckedIn)
+        self.init(isNewHabit: isNewHabit, category: category, habitDescription: habitDescription, days: days, weeks: weeks,   daysCompleted: daysCompleted, startingDate: startingDate, daysCheckedIn: daysCheckedIn)
     }
 }
 

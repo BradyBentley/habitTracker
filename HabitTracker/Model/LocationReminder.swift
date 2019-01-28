@@ -27,11 +27,31 @@ class LocationReminder {
         self.uuid = uuid
     }
     
+    convenience init?(firebaseDictionary: [String: Any]){
+        guard let latitude = firebaseDictionary["latitude"] as? Double,
+        let longitude = firebaseDictionary["longitude"] as? Double,
+        let locationName = firebaseDictionary["locationName"] as? String,
+        let remindOnEntryOrExit = firebaseDictionary["remindOnEntryOrExit"] as? Int,
+            let reminderText = firebaseDictionary["reminderText"] as? String else { return nil }
+        self.init(latitude: latitude, longitude: longitude, locationName: locationName, remindOnEntryOrExit: remindOnEntryOrExit, reminderText: reminderText)
+    }
+    
 }
 
 // MARK: - Equatable
 extension LocationReminder: Equatable {
     static func == (lhs: LocationReminder, rhs: LocationReminder) -> Bool {
         return lhs.latitude == rhs.latitude && lhs.longitude == rhs.longitude && lhs.reminderText == rhs.reminderText
+    }
+}
+
+extension LocationReminder {
+    var dictionary: [String: Any] {
+        return [
+            "latitude": latitude,
+            "longitude": longitude,
+            "locationName": locationName,
+            "remindOnEntryOrExit": remindOnEntryOrExit,
+            "reminderText": reminderText ]
     }
 }

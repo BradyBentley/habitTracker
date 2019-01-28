@@ -125,7 +125,7 @@
                                             <outlet property="iconImageView" destination="oBw-kk-B56" id="pKK-C5-tqo"/>
                                             <outlet property="percentCompletionLabel" destination="QEV-d9-DIq" id="VnD-NN-Lb7"/>
                                             <outlet property="successLabel" destination="erb-ac-VU2" id="4vt-xN-9uE"/>
-                                            <segue destination="X6Q-MO-nyl" kind="show" id="Hgt-cv-aYY"/>
+                                            <segue destination="X6Q-MO-nyl" kind="show" identifier="ToHabitDetail" id="Hgt-cv-aYY"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
