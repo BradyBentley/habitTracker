@@ -18,7 +18,7 @@ class HabitProgressDetailViewController: UIViewController {
     
     // MARK: - Properties
     var habit: Habit?
-    var isThisWeek: Bool = true
+    var isThisWeek: Bool = false
     let weeks = ["0", "1", "2", "3", "4"]
     let completionPercent: [Double] = [0.0, 50.0, 80.0, 90.0, 100.0]
     
@@ -46,12 +46,13 @@ class HabitProgressDetailViewController: UIViewController {
             checkInPercentageReportLabel.text = "Check-In Percentage Report"
             progressChartView.isHidden = false
             viewLabel.isHidden = false
+            progressTableView.reloadData()
+            
         } else {
             checkInPercentageReportLabel.text = "Check-Ins This Week"
             progressChartView.isHidden = true
             viewLabel.isHidden = true
-            
-            
+            progressTableView.reloadData()
         }
     }
     
@@ -66,8 +67,14 @@ extension HabitProgressDetailViewController: UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProgressHabitCell", for: indexPath) as! ProgressTableViewCell
         let habit = HabitController.shared.habits[indexPath.row]
-        cell.habit = habit
-        return cell
+        if isThisWeek {
+            cell.monthlyHabit = habit
+            return cell
+        } else {
+            cell.habit = habit
+            return cell
+        }
+        
     }
 }
 
@@ -81,6 +88,9 @@ extension HabitProgressDetailViewController: ChartViewDelegate {
         lXAxis.valueFont = .systemFont(ofSize: 10)
         progressChartView.xAxis.drawGridLinesEnabled = false
         progressChartView.xAxis.labelPosition = .bottom
+        progressChartView.xAxis.axisMinimum = 0
+        progressChartView.xAxis.axisLineColor = .darkGray
+        progressChartView.xAxis.gridColor = .darkGray
         progressChartView.xAxis.setLabelCount(4, force: false)
         let leftAxis = progressChartView.leftAxis
         leftAxis.removeAllLimitLines()

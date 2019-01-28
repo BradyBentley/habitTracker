@@ -10,9 +10,15 @@ import UIKit
 import Firebase
 
 class WelcomeViewController: UIViewController {
+    // MARK: - IBOutlets
+    @IBOutlet weak var logInButton: UIButton!
+    @IBOutlet weak var signInButton: UIButton!
+    
     // MARK: - ViewLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        logInButton.layer.cornerRadius = 20
+        signInButton.layer.cornerRadius = 20
         if Auth.auth().currentUser != nil {
             performSegue(withIdentifier: "ToHomePage", sender: self)
         }

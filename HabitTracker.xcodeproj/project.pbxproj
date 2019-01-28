@@ -135,6 +135,7 @@
 		26084A3E21F7BA890037A221 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+
 				CBBC71E621FE4D4F00AEE51F /* Fonts */,
 				260AAD6721EFAD9200461C1E /* Assets.xcassets */,
 				260AAD6021EFAD9000461C1E /* AppDelegate.swift */,
@@ -153,6 +154,7 @@
 				A43A8824F2D2B9F7A509F994 /* Pods */,
 				0F79469EFB5CB2FFB2475F69 /* Frameworks */,
 				CBBC71DE21FE48C300AEE51F /* Recovered References */,
+
 			);
 			sourceTree = "<group>";
 		};
@@ -174,6 +176,16 @@
 				26F0D93521F0F12000D4ADA1 /* ViewControllers */,
 			);
 			path = HabitTracker;
+			sourceTree = "<group>";
+		};
+		2649EB1B21FBD6B20030EB4A /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				F7AA11A921FA7E27000B16C6 /* SF-Pro-Text-Light.otf */,
+				F7AA11AA21FA7E27000B16C6 /* SF-Pro-Text-Medium.otf */,
+				F7AA11AB21FA7E27000B16C6 /* SF-Pro-Text-Regular.otf */,
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 		266DCE0721F8E99E00CDC0F9 /* Login */ = {
@@ -405,6 +417,8 @@
 				260AAD6821EFAD9200461C1E /* Assets.xcassets in Resources */,
 				F73C046B21FA680200CEF0BB /* Login.storyboard in Resources */,
 				260AAD6621EFAD9000461C1E /* Main.storyboard in Resources */,
+				266DCE1621FA799A00CDC0F9 /* SF-Pro-Text-Regular.otf in Resources */,
+
 				26084A3C21F7BA190037A221 /* CheckInPopUp.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
