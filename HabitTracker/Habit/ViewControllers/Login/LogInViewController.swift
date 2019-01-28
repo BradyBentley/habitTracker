@@ -23,6 +23,7 @@ class LogInViewController: UIViewController {
     // MARK: - ViewLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        signInButton.layer.cornerRadius = 20
         updateViews()
     }
     
