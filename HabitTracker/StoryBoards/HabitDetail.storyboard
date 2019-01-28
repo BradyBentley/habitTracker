@@ -159,11 +159,8 @@
                     </view>
                     <connections>
                         <outlet property="daysAWeekTextField" destination="zol-30-NEq" id="17y-IK-voQ"/>
-                        <outlet property="habitCategoryIcon" destination="p0r-Xh-x7F" id="itg-H7-mxM"/>
                         <outlet property="iconImageView" destination="p0r-Xh-x7F" id="1Ft-fH-fba"/>
                         <outlet property="nameTextField" destination="hL3-Bc-3GA" id="uBY-EU-ZKP"/>
-                        <outlet property="numberOfWeeksTextField" destination="zao-V0-hIc" id="R1a-di-rFG"/>
-                        <outlet property="reminderTableView" destination="X8m-jW-dMl" id="jyr-I4-0Cb"/>
                         <outlet property="remindersTableView" destination="X8m-jW-dMl" id="1gq-47-Eks"/>
                         <outlet property="weeksTextField" destination="zao-V0-hIc" id="XgN-ez-sbC"/>
                     </connections>

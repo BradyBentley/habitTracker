@@ -17,21 +17,25 @@ class HabitDetailViewController: UIViewController {
     @IBOutlet weak var habitReminderTableView: UITableView!
     
     // MARK: - Properties
-    var habit: Habit?
+    var habit: Habit? 
     
     // MARK: - ViewLife Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViews()
-    }
+        ///UCOMMENT BELOW
+        ///percentageCompletionLabel.text = "\(habit.completion)%"
+        //cell.textLabel?.text = REMINDER TITLE
+        //cell.detailTextLabel?.text = REMINDER DATES
     
+    }
     // MARK: - Actions
     
     // MARK: - Setup
     func updateViews(){
         guard let habit = habit else { return }
         habitDescriptionLabel.text = habit.habitDescription
-        successLabel.text = "\(habit.days) days a week for \(habit.weeks)"
+        successLabel.text = habit.category
         iconImageView.image = UIImage(named: "\(habit.category)Progress")
         
         // TODO: percentage complete label
