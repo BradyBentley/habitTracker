@@ -30,6 +30,7 @@
 		C8A39C70BFA96E27673A9F0C /* Pods_HabitTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04028353B060E92AB9235DCF /* Pods_HabitTracker.framework */; };
 		CB0F6DC721FAD58B0031740A /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0F6DC621FAD58B0031740A /* WelcomeViewController.swift */; };
 		CBB9A23D21F7CA9B00995F73 /* NewHabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9A23C21F7CA9B00995F73 /* NewHabitViewController.swift */; };
+		CBD52D2821FC4171005A92D7 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBD52D2721FC4171005A92D7 /* MapKit.framework */; };
 		CBD7EC7A21F830FA0074A6D2 /* SetReminderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD7EC7921F830FA0074A6D2 /* SetReminderTableViewController.swift */; };
 		CBD7EC7C21F863670074A6D2 /* ReminderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD7EC7B21F863670074A6D2 /* ReminderTableViewCell.swift */; };
 		F73213CE21F2546C009A47F0 /* ReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73213CD21F2546C009A47F0 /* ReminderViewController.swift */; };
@@ -43,9 +44,6 @@
 		F7AA119721F7DA22000B16C6 /* CheckInCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AA119621F7DA22000B16C6 /* CheckInCustomTableViewCell.swift */; };
 		F7AA119921F8DCCA000B16C6 /* CheckIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AA119821F8DCCA000B16C6 /* CheckIn.swift */; };
 		F7AA11A621FA3702000B16C6 /* CategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AA11A521FA3702000B16C6 /* CategoryController.swift */; };
-		F7AA11AC21FA7E27000B16C6 /* SF-Pro-Text-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7AA11A921FA7E27000B16C6 /* SF-Pro-Text-Light.otf */; };
-		F7AA11AD21FA7E27000B16C6 /* SF-Pro-Text-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7AA11AA21FA7E27000B16C6 /* SF-Pro-Text-Medium.otf */; };
-		F7AA11AE21FA7E27000B16C6 /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7AA11AB21FA7E27000B16C6 /* SF-Pro-Text-Regular.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,9 +60,6 @@
 		260AAD6A21EFAD9200461C1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		260AAD6C21EFAD9200461C1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		266DCE0421F8E98A00CDC0F9 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
-		266DCE0F21FA770100CDC0F9 /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
-		266DCE1121FA774300CDC0F9 /* SF-Pro-Text-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Medium.otf"; sourceTree = "<group>"; };
-		266DCE1221FA774C00CDC0F9 /* SF-Pro-Text-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Light.otf"; sourceTree = "<group>"; };
 		26F0D92B21EFBD3F00D4ADA1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		26F0D93721F0FE2D00D4ADA1 /* AddHabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabitViewController.swift; sourceTree = "<group>"; };
 		26F0D93C21F1042D00D4ADA1 /* HabitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitTableViewCell.swift; sourceTree = "<group>"; };
@@ -79,6 +74,10 @@
 		7E430CF4D2DF39A2F832288E /* Pods-HabitTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitTracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HabitTracker/Pods-HabitTracker.debug.xcconfig"; sourceTree = "<group>"; };
 		CB0F6DC621FAD58B0031740A /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		CBB9A23C21F7CA9B00995F73 /* NewHabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHabitViewController.swift; sourceTree = "<group>"; };
+		CBBC71ED21FE4DBF00AEE51F /* SF-Pro-Text-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Light.otf"; sourceTree = "<group>"; };
+		CBBC71EE21FE4DBF00AEE51F /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
+		CBBC71EF21FE4DBF00AEE51F /* SF-Pro-Text-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Medium.otf"; sourceTree = "<group>"; };
+		CBD52D2721FC4171005A92D7 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		CBD7EC7921F830FA0074A6D2 /* SetReminderTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetReminderTableViewController.swift; sourceTree = "<group>"; };
 		CBD7EC7B21F863670074A6D2 /* ReminderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderTableViewCell.swift; sourceTree = "<group>"; };
 		F73213CD21F2546C009A47F0 /* ReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBD52D2821FC4171005A92D7 /* MapKit.framework in Frameworks */,
 				C8A39C70BFA96E27673A9F0C /* Pods_HabitTracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -112,6 +112,7 @@
 		0F79469EFB5CB2FFB2475F69 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CBD52D2721FC4171005A92D7 /* MapKit.framework */,
 				04028353B060E92AB9235DCF /* Pods_HabitTracker.framework */,
 			);
 			name = Frameworks;
@@ -134,7 +135,10 @@
 		26084A3E21F7BA890037A221 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				266DCE1521FA790C00CDC0F9 /* Fonts */,
+
+
+				CBBC71E621FE4D4F00AEE51F /* Fonts */,
+
 				260AAD6721EFAD9200461C1E /* Assets.xcassets */,
 				260AAD6021EFAD9000461C1E /* AppDelegate.swift */,
 				260AAD6C21EFAD9200461C1E /* Info.plist */,
@@ -151,7 +155,10 @@
 				260AAD5E21EFAD9000461C1E /* Products */,
 				A43A8824F2D2B9F7A509F994 /* Pods */,
 				0F79469EFB5CB2FFB2475F69 /* Frameworks */,
-				F77F65F621FBCC1600BCE41F /* Recovered References */,
+
+				CBBC71DE21FE48C300AEE51F /* Recovered References */,
+
+
 			);
 			sourceTree = "<group>";
 		};
@@ -175,6 +182,16 @@
 			path = HabitTracker;
 			sourceTree = "<group>";
 		};
+		2649EB1B21FBD6B20030EB4A /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				F7AA11A921FA7E27000B16C6 /* SF-Pro-Text-Light.otf */,
+				F7AA11AA21FA7E27000B16C6 /* SF-Pro-Text-Medium.otf */,
+				F7AA11AB21FA7E27000B16C6 /* SF-Pro-Text-Regular.otf */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		266DCE0721F8E99E00CDC0F9 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,16 +199,6 @@
 				CB0F6DC621FAD58B0031740A /* WelcomeViewController.swift */,
 			);
 			path = Login;
-			sourceTree = "<group>";
-		};
-		266DCE1521FA790C00CDC0F9 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				266DCE0F21FA770100CDC0F9 /* SF-Pro-Text-Regular.otf */,
-				266DCE1221FA774C00CDC0F9 /* SF-Pro-Text-Light.otf */,
-				266DCE1121FA774300CDC0F9 /* SF-Pro-Text-Medium.otf */,
-			);
-			path = Fonts;
 			sourceTree = "<group>";
 		};
 		26F0D93521F0F12000D4ADA1 /* ViewControllers */ = {
@@ -258,6 +265,26 @@
 			path = NewHabit;
 			sourceTree = "<group>";
 		};
+		CBBC71DE21FE48C300AEE51F /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				F7AA11A921FA7E27000B16C6 /* SF-Pro-Text-Light.otf */,
+				F7AA11AA21FA7E27000B16C6 /* SF-Pro-Text-Medium.otf */,
+				F7AA11AB21FA7E27000B16C6 /* SF-Pro-Text-Regular.otf */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		CBBC71E621FE4D4F00AEE51F /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				CBBC71ED21FE4DBF00AEE51F /* SF-Pro-Text-Light.otf */,
+				CBBC71EF21FE4DBF00AEE51F /* SF-Pro-Text-Medium.otf */,
+				CBBC71EE21FE4DBF00AEE51F /* SF-Pro-Text-Regular.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		F73213CC21F25418009A47F0 /* Reminders */ = {
 			isa = PBXGroup;
 			children = (
@@ -320,16 +347,7 @@
 			path = HabitProgress;
 			sourceTree = "<group>";
 		};
-		F77F65F621FBCC1600BCE41F /* Recovered References */ = {
-			isa = PBXGroup;
-			children = (
-				F7AA11A921FA7E27000B16C6 /* SF-Pro-Text-Light.otf */,
-				F7AA11AA21FA7E27000B16C6 /* SF-Pro-Text-Medium.otf */,
-				F7AA11AB21FA7E27000B16C6 /* SF-Pro-Text-Regular.otf */,
-			);
-			name = "Recovered References";
-			sourceTree = "<group>";
-		};
+
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -365,6 +383,11 @@
 				TargetAttributes = {
 					260AAD5C21EFAD9000461C1E = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -395,13 +418,13 @@
 				260AAD6B21EFAD9200461C1E /* LaunchScreen.storyboard in Resources */,
 				26084A3621F799440037A221 /* AddHabit.storyboard in Resources */,
 				26F0D92C21EFBD3F00D4ADA1 /* GoogleService-Info.plist in Resources */,
-				F7AA11AC21FA7E27000B16C6 /* SF-Pro-Text-Light.otf in Resources */,
-				F7AA11AD21FA7E27000B16C6 /* SF-Pro-Text-Medium.otf in Resources */,
-				F7AA11AE21FA7E27000B16C6 /* SF-Pro-Text-Regular.otf in Resources */,
 				26084A3A21F7B9980037A221 /* Progress.storyboard in Resources */,
 				260AAD6821EFAD9200461C1E /* Assets.xcassets in Resources */,
 				F73C046B21FA680200CEF0BB /* Login.storyboard in Resources */,
 				260AAD6621EFAD9000461C1E /* Main.storyboard in Resources */,
+
+				266DCE1621FA799A00CDC0F9 /* SF-Pro-Text-Regular.otf in Resources */,
+
 				26084A3C21F7BA190037A221 /* CheckInPopUp.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

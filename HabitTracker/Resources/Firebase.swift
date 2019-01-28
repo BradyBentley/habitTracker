@@ -47,6 +47,17 @@ class Firebase {
         completion(true)
     }
     
+    func updateTimeReminders(habit: Habit, timeReminder: TimeReminder, completion: @escaping SuccessCompletion) {
+        guard let currentUser = UserController.shared.currentUser?.uuid else { completion(false) ; return }
+        let docRef = firestore.collection(Habit.habitKeys.userKey).document(currentUser).collection(Habit.habitKeys.habitsKey).document(habit.habitDescription)
+        docRef.updateData([Habit.habitKeys.timeReminderKey: FieldValue.arrayUnion(["\(timeReminder.uuid)"])])
+        
+    }
+    
+    func updateLocationReminders(habit: Habit, completion: @escaping SuccessCompletion) {
+        
+    }
+    
     func deleteHabit(habit: Habit, completion: @escaping SuccessCompletion) {
         guard let currentUser = UserController.shared.currentUser?.uuid else { completion(false) ; return }
         let docRef = firestore.collection(Habit.habitKeys.userKey).document(currentUser).collection(Habit.habitKeys.habitsKey).document(habit.habitDescription)

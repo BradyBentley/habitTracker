@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Text-Regular.otf">
+            <string>SFProText-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Welcome View Controller-->
         <scene sceneID="Sqg-QD-0D3">
@@ -19,11 +24,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome To Habit Tracker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1e1-6g-Ds4">
-                                <rect key="frame" x="53.333333333333343" y="194" width="268.33333333333326" height="29"/>
+                                <rect key="frame" x="39.333333333333343" y="194" width="296.66666666666663" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="MJa-MJ-dw0"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -33,7 +38,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="a0P-jH-sIJ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="16"/>
                                 <state key="normal" title="Log In">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -47,7 +52,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="8l3-Wb-Hoz"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="16"/>
                                 <state key="normal" title="Sign Up">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -70,6 +75,8 @@
                         <viewLayoutGuide key="safeArea" id="gtC-tD-U1T"/>
                     </view>
                     <connections>
+                        <outlet property="logInButton" destination="7LJ-pk-sDc" id="wEv-Xx-sIA"/>
+                        <outlet property="signInButton" destination="5Qh-u6-IbT" id="2RE-6v-wqb"/>
                         <segue destination="QMW-mf-uIP" kind="show" identifier="ToHomePage" id="eXB-vJ-iq0"/>
                     </connections>
                 </viewController>
@@ -86,11 +93,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome To Habit Tracker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZW-Yv-phK">
-                                <rect key="frame" x="53.333333333333343" y="194" width="268.33333333333326" height="29"/>
+                                <rect key="frame" x="39.333333333333343" y="194" width="296.66666666666663" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="9tO-l2-Erz"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -103,7 +110,7 @@
                                             <constraint firstAttribute="height" constant="32" id="Fq3-Gr-sls"/>
                                         </constraints>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Izb-LV-7qf">
@@ -112,7 +119,7 @@
                                             <constraint firstAttribute="height" constant="32" id="Dut-bc-aOK"/>
                                         </constraints>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kb7-F2-VUG">
@@ -121,7 +128,7 @@
                                             <constraint firstAttribute="height" constant="32" id="pjK-uV-5Ph"/>
                                         </constraints>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                 </subviews>
@@ -141,22 +148,23 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="GBT-Ul-CQV">
-                                <rect key="frame" x="77.666666666666671" y="635" width="219.66666666666663" height="19"/>
+                                <rect key="frame" x="77.000000000000014" y="635" width="221.33333333333337" height="19"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Crf-yx-4j1">
-                                        <rect key="frame" x="0.0" y="0.0" width="165.66666666666666" height="19"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="169.33333333333334" height="19"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="19" id="7fg-v7-hol"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vqj-Cc-wJ2">
-                                        <rect key="frame" x="173.66666666666669" y="0.0" width="46" height="19"/>
+                                        <rect key="frame" x="177.33333333333334" y="0.0" width="44" height="19"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="19" id="8by-W8-lCv"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="alreadyHaveAnLabelTapped:" destination="wOL-pm-zhf" eventType="touchUpInside" id="Ebs-hu-d4t"/>
@@ -203,7 +211,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="eXB-vJ-iq0"/>
+        <segue reference="csQ-um-YSb"/>
         <segue reference="fkc-iN-kz4"/>
     </inferredMetricsTieBreakers>
 </document>
