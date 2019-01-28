@@ -106,14 +106,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NTc-Sp-Wo5">
-                                                    <rect key="frame" x="15" y="7" width="32" height="20"/>
+                                                    <rect key="frame" x="15" y="6" width="35" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7ff-qk-nbQ">
-                                                    <rect key="frame" x="15" y="30" width="58" height="20"/>
+                                                    <rect key="frame" x="15" y="29.5" width="62" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -159,11 +159,8 @@
                     </view>
                     <connections>
                         <outlet property="daysAWeekTextField" destination="zol-30-NEq" id="17y-IK-voQ"/>
-                        <outlet property="habitCategoryIcon" destination="p0r-Xh-x7F" id="itg-H7-mxM"/>
                         <outlet property="iconImageView" destination="p0r-Xh-x7F" id="1Ft-fH-fba"/>
                         <outlet property="nameTextField" destination="hL3-Bc-3GA" id="uBY-EU-ZKP"/>
-                        <outlet property="numberOfWeeksTextField" destination="zao-V0-hIc" id="R1a-di-rFG"/>
-                        <outlet property="reminderTableView" destination="X8m-jW-dMl" id="jyr-I4-0Cb"/>
                         <outlet property="remindersTableView" destination="X8m-jW-dMl" id="1gq-47-Eks"/>
                         <outlet property="weeksTextField" destination="zao-V0-hIc" id="XgN-ez-sbC"/>
                     </connections>
@@ -181,11 +178,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pgN-LE-uM7">
-                                <rect key="frame" x="16" y="139" width="343" height="182"/>
+                                <rect key="frame" x="16" y="139" width="343" height="181.5"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Reminders" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qD3-C3-5cM">
-                                <rect key="frame" x="16" y="329" width="110" height="20"/>
+                                <rect key="frame" x="16" y="328.5" width="114" height="20.5"/>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -275,7 +272,7 @@
                                 <rect key="frame" x="0.0" y="582" width="375" height="89"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oeF-Ai-pcE">
-                                <rect key="frame" x="242" y="569" width="117" height="31"/>
+                                <rect key="frame" x="238" y="569" width="121" height="32"/>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="16"/>
                                 <state key="normal" title="+ Add Reminder">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

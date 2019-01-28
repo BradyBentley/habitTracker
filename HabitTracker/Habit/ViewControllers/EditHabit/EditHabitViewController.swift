@@ -23,15 +23,16 @@ class EditHabitViewController: UIViewController {
     // MARK: - ViewLife Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateView()
     }
     
     // MARK: - Setup
     func updateView() {
         guard let habit = habit else { return }
-//        habitDescriptionLabel.text = habit.habitDescription
+        nameTextField.text = habit.habitDescription
 //        habitSuccessLabel.text = "\(habit.days) days a week for \(habit.weeks)"
-        daysAWeekTextField.text = "\(habit.days)"
-        weeksTextField.text = "\(habit.weeks)"
+        //daysAWeekTextField.text = "\(habit.days)"
+        //weeksTextField.text = "\(habit.weeks)"
         iconImageView.image = UIImage(named: "\(habit.category)Progress")
     }
     
