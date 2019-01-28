@@ -53,6 +53,7 @@ class EditHabitViewController: UIViewController {
             let daysInt = Int(days),
             let weeks = weeksTextField.text,
             let weeksInt = Int(weeks) else {return}
+        ///TODO: CHANGE THE UPDATE FUNCTION
         HabitController.shared.updateHabit(habit: habit, habitName: name, days: daysInt, weeks: weeksInt) { (success) in
             if success {
                 self.dismiss(animated: true, completion: nil)
