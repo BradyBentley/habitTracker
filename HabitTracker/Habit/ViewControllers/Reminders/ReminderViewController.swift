@@ -37,6 +37,8 @@ class ReminderViewController: UIViewController, UITableViewDataSource, UITableVi
     // MARK: - Button actions
     
     @IBAction func doneButtonPushed(_ sender: Any) {
+        guard let habit = habit else { return }
+        
         if authorizationStatus == .denied {
             // MARK: - Notification disabled alert
             DispatchQueue.main.async {
@@ -58,6 +60,16 @@ class ReminderViewController: UIViewController, UITableViewDataSource, UITableVi
             self.present(alertController, animated: true, completion: nil)
             }
         } else {
+            HabitController.shared.createHabit(isNewHabit: habit.isNewHabit, category: habit.category, habitDescription: habit.habitDescription, days: habit.days, weeks: habit.weeks) { (_) in
+                for timeReminder in habit.timeReminder {
+                    HabitController.shared.createTimeReminder(habit: habit, day: timeReminder.day, time: timeReminder.time, reminderText: timeReminder.reminderText) { (_) in
+                    }
+                }
+                for locationReminder in habit.locationReminder {
+                    HabitController.shared.createLocationReminder(habit: habit, latitude: locationReminder.longitude, longitude: locationReminder.longitude, locationName: "", remindOnEntryOrExit: locationReminder.remindOnEntryOrExit, reminderText: locationReminder.reminderText) { (_) in
+                    }
+                }
+            }
             self.dismiss(animated: true, completion: nil)
         }
     }

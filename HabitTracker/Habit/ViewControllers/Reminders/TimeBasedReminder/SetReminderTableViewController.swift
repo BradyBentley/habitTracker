@@ -24,7 +24,7 @@ class SetReminderTableViewController: UITableViewController, TimeReminderSchedul
     // MARK: - Button actions
     
     @IBAction func saveButtonPushed(_ sender: Any) {
-        guard let habit = habit else { return }
+        guard let habit = habit, weekdays.count != 0 else { return }
         
         let time = timePicker.date
         let timeReminder = TimeReminder(time: time, day: weekdays, reminderText: "")

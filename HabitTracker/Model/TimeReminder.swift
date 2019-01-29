@@ -11,11 +11,11 @@ import Foundation
 class TimeReminder {
     
     var time: Date
-    var day: [Int]?
+    var day: [Int]
     var reminderText: String
     let uuid: String
     
-    init(time: Date, day: [Int] = [], reminderText: String, uuid: String = UUID().uuidString) {
+    init(time: Date, day: [Int], reminderText: String, uuid: String = UUID().uuidString) {
         self.time = time
         self.day = day
         self.reminderText = reminderText
@@ -34,7 +34,7 @@ class TimeReminder {
 // MARK: - Equatable
 extension TimeReminder: Equatable {
     static func == (lhs: TimeReminder, rhs: TimeReminder) -> Bool {
-        return lhs.day == rhs.day && lhs.time == rhs.time && lhs.reminderText == rhs.reminderText
+        return lhs.uuid == rhs.uuid
     }
 }
 
