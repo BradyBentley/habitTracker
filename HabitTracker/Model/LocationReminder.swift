@@ -41,7 +41,7 @@ class LocationReminder {
 // MARK: - Equatable
 extension LocationReminder: Equatable {
     static func == (lhs: LocationReminder, rhs: LocationReminder) -> Bool {
-        return lhs.latitude == rhs.latitude && lhs.longitude == rhs.longitude && lhs.reminderText == rhs.reminderText
+        return lhs.uuid == rhs.uuid
     }
 }
 

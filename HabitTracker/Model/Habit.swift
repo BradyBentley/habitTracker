@@ -62,8 +62,8 @@ class Habit {
         let habitDescription = firebaseDictionary[Habit.habitKeys.habitDescriptionKey] as? String,
         let days = firebaseDictionary[Habit.habitKeys.daysKey] as? Int,
         let weeks = firebaseDictionary[Habit.habitKeys.weeksKey] as? Int,
-//        let timeReminder = firebaseDictionary[Habit.habitKeys.timeReminderKey] as? [TimeReminder],
-//        let locationReminder = firebaseDictionary[Habit.habitKeys.locationReminderKey] as? [LocationReminder],
+        let timeReminder = firebaseDictionary[Habit.habitKeys.timeReminderKey] as? [TimeReminder],
+        let locationReminder = firebaseDictionary[Habit.habitKeys.locationReminderKey] as? [LocationReminder],
         let daysCompleted = firebaseDictionary[Habit.habitKeys.daysCompletedKey] as? [CheckIn],
         let daysCheckedIn = firebaseDictionary[Habit.habitKeys.daysCheckedInKey] as? Int,
         let startingDate = firebaseDictionary[Habit.habitKeys.startingDateKey] as? Date,
@@ -98,7 +98,7 @@ extension Habit {
 // MARK: - Equatable
 extension Habit: Equatable {
     static func == (lhs: Habit, rhs: Habit) -> Bool {
-        return lhs.category == rhs.category && lhs.habitDescription == rhs.habitDescription && lhs.isNewHabit == rhs.isNewHabit && lhs.days == rhs.days && lhs.weeks == rhs.weeks && lhs.daysCompleted == rhs.daysCompleted && lhs.startingDate == rhs.startingDate
+        return lhs.category == rhs.category && lhs.habitDescription == rhs.habitDescription && lhs.isNewHabit == rhs.isNewHabit && lhs.days == rhs.days && lhs.weeks == rhs.weeks
     }
 }
 
