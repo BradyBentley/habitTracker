@@ -47,15 +47,90 @@ class Firebase {
         completion(true)
     }
     
-    func updateTimeReminders(habit: Habit, timeReminder: TimeReminder, completion: @escaping SuccessCompletion) {
+    func createTimeReminders(habit: Habit, timeReminder: TimeReminder, completion: @escaping SuccessCompletion) {
         guard let currentUser = UserController.shared.currentUser?.uuid else { completion(false) ; return }
         let docRef = firestore.collection(Habit.habitKeys.userKey).document(currentUser).collection(Habit.habitKeys.habitsKey).document(habit.habitDescription)
-        docRef.updateData([Habit.habitKeys.timeReminderKey: FieldValue.arrayUnion(["\(timeReminder.uuid)"])])
-        
+        docRef.updateData([Habit.habitKeys.timeReminderKey: FieldValue.arrayUnion([timeReminder.uuid])])
+        let timeRef = firestore.collection(Habit.habitKeys.userKey).document(currentUser).collection(Habit.habitKeys.timeReminderKey).document(timeReminder.uuid)
+        timeRef.setData(timeReminder.dictionary)
+        completion(true)
     }
     
-    func updateLocationReminders(habit: Habit, completion: @escaping SuccessCompletion) {
-        
+    func fetchTimeReminder(habit: Habit, timeReminder: TimeReminder, completion: @escaping SuccessCompletion) {
+        guard let currentUser = UserController.shared.currentUser?.uuid else { completion(false) ; return }
+        let timeUuid: [String] = [timeReminder.uuid]
+        for uuid in timeUuid {
+            let timeRef = firestore.collection(Habit.habitKeys.userKey).document(currentUser).collection(Habit.habitKeys.timeReminderKey).document(uuid)
+            timeRef.getDocument { (document, error) in
+                if let error = error {
+                    print("Error fetching Time Reminders: \(error) \(error.localizedDescription)")
+                    completion(false)
+                }
+                guard let document = document?.data(),
+                let timeReminder = TimeReminder(firebaseDictionary: document) else { completion(false) ; return }
+                habit.timeReminder.append(timeReminder)
+            }
+            
+        }
+    }
+    
+    func updateTimeReminder(habit: Habit, timeReminder: TimeReminder, reminderText: String, completion: @escaping SuccessCompletion) {
+        guard let currentUser = UserController.shared.currentUser?.uuid else { completion(false) ; return }
+        let timeRef = firestore.collection(Habit.habitKeys.userKey).document(currentUser).collection(Habit.habitKeys.timeReminderKey).document(timeReminder.uuid)
+        timeRef.updateData(["reminderText": reminderText])
+        completion(true)
+    }
+    
+    func deleteTimeReminder(habit: Habit, timeReminder: TimeReminder, completion: @escaping SuccessCompletion) {
+        guard let currentUser = UserController.shared.currentUser?.uuid else { completion(false) ; return }
+        let docRef = firestore.collection(Habit.habitKeys.userKey).document(currentUser).collection(Habit.habitKeys.habitsKey).document(habit.habitDescription)
+        docRef.updateData([Habit.habitKeys.timeReminderKey: FieldValue.arrayRemove([timeReminder.uuid])])
+        let timeRef = firestore.collection(Habit.habitKeys.userKey).document(currentUser).collection(Habit.habitKeys.timeReminderKey).document(timeReminder.uuid)
+        timeRef.delete()
+        completion(true)
+    }
+    
+    func createLocationReminder(habit: Habit, locationReminder: LocationReminder, completion: @escaping SuccessCompletion){
+        guard let currentUser = UserController.shared.currentUser?.uuid else { completion(false) ; return }
+        let docRef = firestore.collection(Habit.habitKeys.userKey).document(currentUser).collection(Habit.habitKeys.habitsKey).document(habit.habitDescription)
+        docRef.updateData([Habit.habitKeys.locationReminderKey: FieldValue.arrayUnion([locationReminder.uuid])])
+        let locRef = firestore.collection(Habit.habitKeys.userKey).document(currentUser).collection(Habit.habitKeys.locationReminderKey).document(locationReminder.uuid)
+        locRef.setData(locationReminder.dictionary)
+        completion(true)
+    }
+    
+    func fetchLocationReminders(habit: Habit, locationReminder: LocationReminder, completion: @escaping SuccessCompletion){
+        guard let currentUser = UserController.shared.currentUser?.uuid else { completion(false) ; return }
+        let locationUuid: [String] = [locationReminder.uuid]
+        for uuid in locationUuid {
+            let locRef = firestore.collection(Habit.habitKeys.userKey).document(currentUser).collection(Habit.habitKeys.locationReminderKey).document(uuid)
+            locRef.getDocument { (document, error) in
+                if let error = error {
+                    print("Error fetching Location Reminders: \(error) \(error.localizedDescription)")
+                    completion(false)
+                }
+                guard let document = document?.data(),
+                    let locationReminder = LocationReminder(firebaseDictionary: document) else { completion(false) ; return }
+                habit.locationReminder.append(locationReminder)
+            }
+            
+        }
+    }
+    
+    func updateLocationReminders(habit: Habit, locationReminder: LocationReminder, reminderText: String, completion: @escaping SuccessCompletion) {
+        guard let currentUser = UserController.shared.currentUser?.uuid else { completion(false) ; return }
+        let locationRef = firestore.collection(Habit.habitKeys.userKey).document(currentUser).collection(Habit.habitKeys.locationReminderKey).document(locationReminder.uuid)
+        locationRef.updateData(["reminderText": reminderText])
+        completion(true)
+    }
+    
+    func deleteLocationReminder(habit: Habit, locationReminder: LocationReminder, completion: @escaping SuccessCompletion){
+        guard let currentUser = UserController.shared.currentUser?.uuid else { completion(false) ; return }
+        let docRef = firestore.collection(Habit.habitKeys.userKey).document(currentUser).collection(Habit.habitKeys.habitsKey).document(habit.habitDescription)
+        docRef.updateData([Habit.habitKeys.locationReminderKey: FieldValue.arrayRemove([locationReminder.uuid])])
+        let locationRef = firestore.collection(Habit.habitKeys.userKey).document(currentUser).collection(Habit.habitKeys.locationReminderKey).document(locationReminder.uuid)
+        locationRef.delete()
+        completion(true)
     }
     
     func deleteHabit(habit: Habit, completion: @escaping SuccessCompletion) {

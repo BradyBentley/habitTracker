@@ -21,20 +21,25 @@ class HabitController {
     func createHabit(isNewHabit: Bool, category: String, habitDescription: String, days: Int, weeks: Int, completion: @escaping SuccessCompletion) {
         let newHabit = Habit(isNewHabit: isNewHabit, category: category, habitDescription: habitDescription, days: days, weeks: weeks)
         habits.append(newHabit)
-        Firebase.shared.saveHabit(habit: newHabit) { (_) in
-        }
+        Firebase.shared.saveHabit(habit: newHabit) { (_) in }
         completion(true)
     }
     
     func createTimeReminder(habit: Habit, day: [Int], time: Date, reminderText: String, completion: @escaping SuccessCompletion) {
         let newTimeReminder = TimeReminder(time: time, day: day, reminderText: reminderText)
-        habit.timeReminder.append(newTimeReminder)
+        if let indexOfHabit = habits.index(of: habit) {
+            habits[indexOfHabit].timeReminder.append(newTimeReminder)
+        }
+        Firebase.shared.createTimeReminders(habit: habit, timeReminder: newTimeReminder) { (_) in }
         completion(true)
     }
     
-  func createLocationReminder(habit: Habit, latitude: Double, longitude: Double, locationName: String, reminderText: String, completion: @escaping SuccessCompletion) {
-    let newLocationReminder = LocationReminder(latitude: latitude, longitude: longitude, locationName: locationName, remindOnEntryOrExit: 2, reminderText: reminderText)
-        habit.locationReminder.append(newLocationReminder)
+    func createLocationReminder(habit: Habit, latitude: Double, longitude: Double, locationName: String, remindOnEntryOrExit: Int, reminderText: String, completion: @escaping SuccessCompletion) {
+        let newLocationReminder = LocationReminder(latitude: latitude, longitude: longitude, locationName: locationName, remindOnEntryOrExit: remindOnEntryOrExit, reminderText: reminderText)
+        if let indexOfHabit = habits.index(of: habit) {
+            habits[indexOfHabit].locationReminder.append(newLocationReminder)
+        }
+        Firebase.shared.createLocationReminder(habit: habit, locationReminder: newLocationReminder) { (_) in }
         completion(true)
     }
     
@@ -62,19 +67,25 @@ class HabitController {
     // Delete
     func deleteHabit(habit: Habit, completion: @escaping SuccessCompletion) {
         guard let index = habits.index(of: habit) else { completion(false) ; return }
-            habits.remove(at: index)
-            completion(true)
+        habits.remove(at: index)
+        Firebase.shared.deleteHabit(habit: habit) { (_) in }
+        completion(true)
     }
     
     func deleteTimeReminder(timeReminder: TimeReminder, from habit: Habit, completion: @escaping SuccessCompletion) {
-        guard let index = habit.timeReminder.index(of: timeReminder) else { completion(false) ; return }
-        habit.timeReminder.remove(at: index)
+        print("Test")
+        guard let indexOfHabit = habits.index(of: habit),
+            let indexOfTimeReminder = habit.timeReminder.index(of: timeReminder) else { print("Failed"); completion(false) ; return }
+        habit.timeReminder.remove(at: indexOfTimeReminder)
+        habits[indexOfHabit] = habit
+        Firebase.shared.deleteTimeReminder(habit: habit, timeReminder: timeReminder) { (_) in }
         completion(true)
     }
     
     func deleteLocationReminder(locationReminder: LocationReminder, from habit: Habit, completion: @escaping SuccessCompletion) {
         guard let index = habit.locationReminder.index(of: locationReminder) else { completion(false) ; return }
         habit.locationReminder.remove(at: index)
+        Firebase.shared.deleteLocationReminder(habit: habit, locationReminder: locationReminder) { (_) in }
         completion(true)
     }
     
@@ -90,7 +101,7 @@ protocol TimeReminderScheduler {
 extension TimeReminderScheduler {
     
     func scheduleUserNotifications(for timeReminder: TimeReminder) {
-        guard let days = timeReminder.day else { return }
+        let days = timeReminder.day
         // creates the content of the notification
         let content = UNMutableNotificationContent()
         content.title = "It's Habit Time!"

@@ -45,24 +45,23 @@ class ReminderTableViewCell: UITableViewCell {
         guard let timeReminder = timeReminder else { return }
         let time = timeFormatter.string(from: timeReminder.time)
         reminder = time + " - "
-        if let days = timeReminder.day {
-            for day in days {
-                switch day {
-                case 0:
-                    reminder.append("Sun ")
-                case 1:
-                    reminder.append("Mon ")
-                case 2:
-                    reminder.append("Tue ")
-                case 3:
-                    reminder.append("Wed ")
-                case 4:
-                    reminder.append("Thu ")
-                case 5:
-                    reminder.append("Fri ")
-                default:
-                    reminder.append("Sat ")
-                }
+        let days = timeReminder.day
+        for day in days {
+            switch day {
+            case 0:
+                reminder.append("Sun ")
+            case 1:
+                reminder.append("Mon ")
+            case 2:
+                reminder.append("Tue ")
+            case 3:
+                reminder.append("Wed ")
+            case 4:
+                reminder.append("Thu ")
+            case 5:
+                reminder.append("Fri ")
+            default:
+                reminder.append("Sat ")
             }
         }
         timeReminderLabel.text = reminder

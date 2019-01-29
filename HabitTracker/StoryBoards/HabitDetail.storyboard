@@ -188,9 +188,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pgN-LE-uM7">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pgN-LE-uM7" customClass="LineChartView" customModule="Charts">
                                 <rect key="frame" x="16" y="208" width="343" height="159"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Reminders" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qD3-C3-5cM">
                                 <rect key="frame" x="16" y="375" width="110" height="20"/>
@@ -213,14 +213,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="W5J-bO-8m6">
-                                                    <rect key="frame" x="15" y="9" width="32" height="20"/>
+                                                    <rect key="frame" x="15" y="9" width="35" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fYu-aK-V90">
-                                                    <rect key="frame" x="15" y="32" width="58" height="20"/>
+                                                    <rect key="frame" x="15" y="32.5" width="62" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -321,6 +321,7 @@
                         <outlet property="habitReminderTableView" destination="4RE-I0-8lM" id="mZk-tq-gkO"/>
                         <outlet property="iconImageView" destination="i4Z-5K-ijJ" id="1FW-bl-NE3"/>
                         <outlet property="percentageCompletionLabel" destination="WNT-v9-GAa" id="eap-lL-o59"/>
+                        <outlet property="progressChartView" destination="pgN-LE-uM7" id="0WH-ys-DOu"/>
                         <outlet property="successLabel" destination="XSM-Ej-zz4" id="sob-wG-bxk"/>
                     </connections>
                 </viewController>
