@@ -17,6 +17,8 @@
 		260AAD6821EFAD9200461C1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 260AAD6721EFAD9200461C1E /* Assets.xcassets */; };
 		260AAD6B21EFAD9200461C1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 260AAD6921EFAD9200461C1E /* LaunchScreen.storyboard */; };
 		266DCE0521F8E98A00CDC0F9 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266DCE0421F8E98A00CDC0F9 /* LogInViewController.swift */; };
+		26A044EC21FFC57800E13CC3 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A044EB21FFC57800E13CC3 /* DateExtension.swift */; };
+		26A2E44821FFB3FF002B6EE6 /* LineChartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A2E44721FFB3FF002B6EE6 /* LineChartController.swift */; };
 		26F0D92C21EFBD3F00D4ADA1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26F0D92B21EFBD3F00D4ADA1 /* GoogleService-Info.plist */; };
 		26F0D93821F0FE2D00D4ADA1 /* AddHabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F0D93721F0FE2D00D4ADA1 /* AddHabitViewController.swift */; };
 		26F0D93D21F1042D00D4ADA1 /* HabitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F0D93C21F1042D00D4ADA1 /* HabitTableViewCell.swift */; };
@@ -60,6 +62,8 @@
 		260AAD6A21EFAD9200461C1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		260AAD6C21EFAD9200461C1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		266DCE0421F8E98A00CDC0F9 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		26A044EB21FFC57800E13CC3 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		26A2E44721FFB3FF002B6EE6 /* LineChartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartController.swift; sourceTree = "<group>"; };
 		26F0D92B21EFBD3F00D4ADA1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		26F0D93721F0FE2D00D4ADA1 /* AddHabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabitViewController.swift; sourceTree = "<group>"; };
 		26F0D93C21F1042D00D4ADA1 /* HabitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitTableViewCell.swift; sourceTree = "<group>"; };
@@ -135,10 +139,7 @@
 		26084A3E21F7BA890037A221 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-
-
 				CBBC71E621FE4D4F00AEE51F /* Fonts */,
-
 				260AAD6721EFAD9200461C1E /* Assets.xcassets */,
 				260AAD6021EFAD9000461C1E /* AppDelegate.swift */,
 				260AAD6C21EFAD9200461C1E /* Info.plist */,
@@ -155,10 +156,7 @@
 				260AAD5E21EFAD9000461C1E /* Products */,
 				A43A8824F2D2B9F7A509F994 /* Pods */,
 				0F79469EFB5CB2FFB2475F69 /* Frameworks */,
-
 				CBBC71DE21FE48C300AEE51F /* Recovered References */,
-
-
 			);
 			sourceTree = "<group>";
 		};
@@ -180,16 +178,6 @@
 				26F0D93521F0F12000D4ADA1 /* ViewControllers */,
 			);
 			path = HabitTracker;
-			sourceTree = "<group>";
-		};
-		2649EB1B21FBD6B20030EB4A /* Recovered References */ = {
-			isa = PBXGroup;
-			children = (
-				F7AA11A921FA7E27000B16C6 /* SF-Pro-Text-Light.otf */,
-				F7AA11AA21FA7E27000B16C6 /* SF-Pro-Text-Medium.otf */,
-				F7AA11AB21FA7E27000B16C6 /* SF-Pro-Text-Regular.otf */,
-			);
-			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 		266DCE0721F8E99E00CDC0F9 /* Login */ = {
@@ -234,6 +222,7 @@
 				F7AA119821F8DCCA000B16C6 /* CheckIn.swift */,
 				26F0D94E21F14D5E00D4ADA1 /* TimeReminder.swift */,
 				26F0D95021F14D7900D4ADA1 /* LocationReminder.swift */,
+				26A044EB21FFC57800E13CC3 /* DateExtension.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -244,6 +233,7 @@
 				26F0D94C21F145BF00D4ADA1 /* HabitController.swift */,
 				26084A4121F7D5F40037A221 /* UserController.swift */,
 				F7AA11A521FA3702000B16C6 /* CategoryController.swift */,
+				26A2E44721FFB3FF002B6EE6 /* LineChartController.swift */,
 			);
 			path = ModelController;
 			sourceTree = "<group>";
@@ -347,7 +337,6 @@
 			path = HabitProgress;
 			sourceTree = "<group>";
 		};
-
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -422,9 +411,6 @@
 				260AAD6821EFAD9200461C1E /* Assets.xcassets in Resources */,
 				F73C046B21FA680200CEF0BB /* Login.storyboard in Resources */,
 				260AAD6621EFAD9000461C1E /* Main.storyboard in Resources */,
-
-				266DCE1621FA799A00CDC0F9 /* SF-Pro-Text-Regular.otf in Resources */,
-
 				26084A3C21F7BA190037A221 /* CheckInPopUp.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -522,6 +508,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB0F6DC721FAD58B0031740A /* WelcomeViewController.swift in Sources */,
+				26A044EC21FFC57800E13CC3 /* DateExtension.swift in Sources */,
 				F7791C5A21F52E3000337D10 /* HabitProgressDetailViewController.swift in Sources */,
 				F7AA119721F7DA22000B16C6 /* CheckInCustomTableViewCell.swift in Sources */,
 				26F0D95121F14D7900D4ADA1 /* LocationReminder.swift in Sources */,
@@ -529,6 +516,7 @@
 				26F0D94F21F14D5E00D4ADA1 /* TimeReminder.swift in Sources */,
 				F7AA118F21F6311A000B16C6 /* EditHabitViewController.swift in Sources */,
 				260AAD6121EFAD9000461C1E /* AppDelegate.swift in Sources */,
+				26A2E44821FFB3FF002B6EE6 /* LineChartController.swift in Sources */,
 				F7AA11A621FA3702000B16C6 /* CategoryController.swift in Sources */,
 				F7AA119921F8DCCA000B16C6 /* CheckIn.swift in Sources */,
 				26F0D94321F12D7400D4ADA1 /* HabitDetailViewController.swift in Sources */,
