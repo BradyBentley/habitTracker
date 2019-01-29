@@ -58,6 +58,4 @@ extension AddHabitViewController: UITableViewDelegate, UITableViewDataSource {
         cell.habit = habit
         return cell
     }
-    
-    
 }

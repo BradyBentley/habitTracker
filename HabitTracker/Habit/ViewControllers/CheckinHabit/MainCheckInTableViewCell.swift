@@ -44,10 +44,13 @@ extension MainCheckInTableViewCell {
         guard let habit = habit else {return}
         if wasTapped == false {
             habitCheckInButton.setImage(UIImage(named: "\(habit.category)Checkmark"), for: .normal)
+            habit.daysCheckedIn += 1
             ///TODO: Add a save function
             wasTapped = true
         } else {
             habitCheckInButton.setImage(UIImage(named: "temp"), for: .normal)
+            habit.daysCheckedIn -= 1
+            
             ///TODO: Add a save function
             wasTapped = false
         }
