@@ -40,9 +40,9 @@ class Firebase {
     func updateHabitOnFirebase(habit: Habit, habitDescription: String, days: Int, weeks: Int, completion: @escaping SuccessCompletion) {
         guard let currentUser = UserController.shared.currentUser?.uuid else { completion(false) ; return }
         let docRef = firestore.collection(Habit.habitKeys.userKey).document(currentUser).collection(Habit.habitKeys.habitsKey).document(habit.habitDescription)
-        docRef.updateData([Habit.habitKeys.habitDescriptionKey: habit.habitDescription,
-                           Habit.habitKeys.daysKey: habit.days,
-                           Habit.habitKeys.weeksKey: habit.weeks
+        docRef.updateData([Habit.habitKeys.habitDescriptionKey: habitDescription,
+                           Habit.habitKeys.daysKey: days,
+                           Habit.habitKeys.weeksKey: weeks
             ])
         completion(true)
     }
@@ -138,5 +138,11 @@ class Firebase {
         let docRef = firestore.collection(Habit.habitKeys.userKey).document(currentUser).collection(Habit.habitKeys.habitsKey).document(habit.habitDescription)
         docRef.delete()
         completion(true)
+    }
+    
+    func updateCompletePercent(habit: Habit, completePercent: [Double], completion: @escaping SuccessCompletion) {
+        guard let currentUser = UserController.shared.currentUser?.uuid else { completion(false) ; return }
+        let docRef = firestore.collection(Habit.habitKeys.userKey).document(currentUser).collection(Habit.habitKeys.habitsKey).document(habit.habitDescription)
+        docRef.updateData([Habit.habitKeys.completionPercent: habit.completionPercent])
     }
 }
