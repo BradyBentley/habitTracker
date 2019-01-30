@@ -10,69 +10,127 @@ import UIKit
 import Charts
 
 class HabitDetailViewController: UIViewController {
+    
     // MARK: - IBOutlets
+    
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var habitDescriptionLabel: UILabel!
     @IBOutlet weak var successLabel: UILabel!
     @IBOutlet weak var percentageCompletionLabel: UILabel!
     @IBOutlet weak var habitReminderTableView: UITableView!
+    @IBOutlet weak var habitLocationTableView: UITableView!
     @IBOutlet weak var progressChartView: LineChartView!
     
     // MARK: - Properties
+    
     var habit: Habit?
-
+    
+    let timeFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "h:mm a"
+        return formatter
+    }()
     
     // MARK: - ViewLife Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        habitReminderTableView.dataSource = self
+        habitReminderTableView.delegate = self
+        habitLocationTableView.dataSource = self
+        habitLocationTableView.delegate = self
+        navigationItem.leftBarButtonItem?.title = "Back"
         updateViews()
-        ///UCOMMENT BELOW
-        //cell.textLabel?.text = REMINDER TITLE
-        //cell.detailTextLabel?.text = REMINDER DATES
-    
     }
+    
     // MARK: - Actions
     @IBAction func cancelButtonTapped(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func doneButtonPushed(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     // MARK: - Setup
-    func updateViews(){
+    func updateViews() {
         guard let habit = habit else { return }
         habitDescriptionLabel.text = habit.habitDescription
-        successLabel.text = habit.category
+        successLabel.text = habit.category.uppercased()
         iconImageView.image = UIImage(named: "\(habit.category)Progress")
         percentageCompletionLabel.text = "\(Int(habit.completion))%"
         setChartData(completionPercent: habit.completionPercent)
         LineChartController.shared.setup(chartView: progressChartView)
     }
     
-    
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ToEditHabitDetail" {
-            let destinationVC = segue.destination as? EditHabitViewController
-            destinationVC?.habit = habit
+            if let destinationVC = segue.destination as? EditHabitViewController {
+                if let habit = habit {
+                    destinationVC.habit = habit
+                }
+            }
         }
     }
 }
 
 extension HabitDetailViewController: UITableViewDelegate, UITableViewDataSource{
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let habit = habit else { return 0 }
-        let count = habit.locationReminder.count + habit.timeReminder.count
-        return count
+        
+        if tableView == habitReminderTableView {
+            return habit?.timeReminder.count ?? 0
+        }
+        if tableView == habitLocationTableView {
+            return habit?.locationReminder.count ?? 0
+        }
+        return habit?.daysCompleted.count ?? 0
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell: UITableViewCell!
+        guard let habit = habit else { return UITableViewCell() }
         
         if tableView == habitReminderTableView {
-            cell = tableView.dequeueReusableCell(withIdentifier: "remindCell", for: indexPath)
+            let cell = habitReminderTableView.dequeueReusableCell(withIdentifier: "TimeReminderCell", for: indexPath)
+            let timeReminder = habit.timeReminder[indexPath.row]
+            let time = timeFormatter.string(from: timeReminder.time)
+            var reminder = time + " - "
+            let days = timeReminder.day
+            for day in days {
+                switch day {
+                case 0:
+                    reminder.append("Sun ")
+                case 1:
+                    reminder.append("Mon ")
+                case 2:
+                    reminder.append("Tue ")
+                case 3:
+                    reminder.append("Wed ")
+                case 4:
+                    reminder.append("Thu ")
+                case 5:
+                    reminder.append("Fri ")
+                default:
+                    reminder.append("Sat ")
+                }
+            }
+            cell.textLabel?.text = timeReminder.reminderText
+            cell.detailTextLabel?.text = reminder
+            return cell
+        } else if tableView == habitLocationTableView {
+            let cell = habitLocationTableView.dequeueReusableCell(withIdentifier: "LocationReminderCell", for: indexPath)
+                let locationReminder = habit.locationReminder[indexPath.row]
+                cell.textLabel?.text = locationReminder.reminderText
+                cell.detailTextLabel?.text = !locationReminder.locationName.isEmpty ? locationReminder.locationName : "\(locationReminder.latitude), \(locationReminder.longitude)"
+                return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CheckInCell", for: indexPath)
+            return cell
         }
-        // TODO: Update the reminder cell and populate it with info
-        return cell
     }
+    
 }
 
 // MARK: - ChartViewDelegate

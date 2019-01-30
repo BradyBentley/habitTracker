@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import UserNotifications
 
 class LocationReminder {
     
@@ -29,11 +28,13 @@ class LocationReminder {
     
     convenience init?(firebaseDictionary: [String: Any]){
         guard let latitude = firebaseDictionary["latitude"] as? Double,
-        let longitude = firebaseDictionary["longitude"] as? Double,
-        let locationName = firebaseDictionary["locationName"] as? String,
-        let remindOnEntryOrExit = firebaseDictionary["remindOnEntryOrExit"] as? Int,
-            let reminderText = firebaseDictionary["reminderText"] as? String else { return nil }
-        self.init(latitude: latitude, longitude: longitude, locationName: locationName, remindOnEntryOrExit: remindOnEntryOrExit, reminderText: reminderText)
+            let longitude = firebaseDictionary["longitude"] as? Double,
+            let locationName = firebaseDictionary["locationName"] as? String,
+            let remindOnEntryOrExit = firebaseDictionary["remindOnEntryOrExit"] as? Int,
+            let reminderText = firebaseDictionary["reminderText"] as? String,
+            let uuid = firebaseDictionary["uuid"] as? String else { return nil }
+        
+        self.init(latitude: latitude, longitude: longitude, locationName: locationName, remindOnEntryOrExit: remindOnEntryOrExit, reminderText: reminderText, uuid: uuid)
     }
     
 }
@@ -52,6 +53,8 @@ extension LocationReminder {
             "longitude": longitude,
             "locationName": locationName,
             "remindOnEntryOrExit": remindOnEntryOrExit,
-            "reminderText": reminderText ]
+            "reminderText": reminderText,
+            "uuid": uuid
+        ]
     }
 }

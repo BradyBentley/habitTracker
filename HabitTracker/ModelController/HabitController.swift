@@ -45,9 +45,13 @@ class HabitController {
     
     // Update
     func updateHabit(habit: Habit, habitName: String, days: Int, weeks: Int, completion: @escaping SuccessCompletion) {
-        habit.habitDescription = habitName
-        habit.days = days
-        habit.weeks = weeks
+        if let indexOfHabit = habits.index(of: habit) {
+            Firebase.shared.updateHabitOnFirebase(habit: habit, habitDescription: habitName, days: days, weeks: weeks) { (_) in
+                self.habits[indexOfHabit].habitDescription = habitName
+                self.habits[indexOfHabit].days = days
+                self.habits[indexOfHabit].weeks = weeks
+            }
+        }
         completion(true)
     }
     
@@ -74,19 +78,24 @@ class HabitController {
     }
     
     func deleteTimeReminder(timeReminder: TimeReminder, from habit: Habit, completion: @escaping SuccessCompletion) {
-        print("Test")
         guard let indexOfHabit = habits.index(of: habit),
-            let indexOfTimeReminder = habit.timeReminder.index(of: timeReminder) else { print("Failed"); completion(false) ; return }
-        habit.timeReminder.remove(at: indexOfTimeReminder)
-        habits[indexOfHabit] = habit
-        Firebase.shared.deleteTimeReminder(habit: habit, timeReminder: timeReminder) { (_) in }
+            let indexOfTimeReminder = habit.timeReminder.index(of: timeReminder) else { completion(false) ; return }
+        Firebase.shared.deleteTimeReminder(habit: habit, timeReminder: timeReminder) { (_) in
+            habit.timeReminder.remove(at: indexOfTimeReminder)
+            self.habits[indexOfHabit] = habit
+            print("Deleted time reminder")
+        }
         completion(true)
     }
     
     func deleteLocationReminder(locationReminder: LocationReminder, from habit: Habit, completion: @escaping SuccessCompletion) {
-        guard let index = habit.locationReminder.index(of: locationReminder) else { completion(false) ; return }
-        habit.locationReminder.remove(at: index)
-        Firebase.shared.deleteLocationReminder(habit: habit, locationReminder: locationReminder) { (_) in }
+        guard let indexOfHabit = habits.index(of: habit),
+            let indexOfLocationReminder = habit.locationReminder.index(of: locationReminder) else { completion(false) ; return }
+        Firebase.shared.deleteLocationReminder(habit: habit, locationReminder: locationReminder) { (_) in
+            habit.locationReminder.remove(at: indexOfLocationReminder)
+            self.habits[indexOfHabit] = habit
+            print("Deleted location reminder")
+        }
         completion(true)
     }
     
