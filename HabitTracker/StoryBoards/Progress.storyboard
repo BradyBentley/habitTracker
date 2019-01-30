@@ -15,10 +15,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Progress-->
+        <!--HabitProgressDetailViewController-->
         <scene sceneID="7CI-Gw-q0l">
             <objects>
-                <viewController id="pKR-oq-W70" customClass="HabitProgressDetailViewController" customModule="HabitTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HabitProgressDetailViewController" title="HabitProgressDetailViewController" id="pKR-oq-W70" customClass="HabitProgressDetailViewController" customModule="HabitTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="a8Q-Ui-Uoi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -68,10 +68,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="TKw-QF-KkL">
-                                                    <rect key="frame" x="8" y="8" width="343" height="88"/>
+                                                    <rect key="frame" x="8" y="8" width="382" height="88"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Mvl-vf-J1D">
-                                                            <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ofb-2X-qn2">
                                                                     <rect key="frame" x="0.0" y="0.0" width="108" height="50"/>
@@ -121,16 +121,16 @@
                                                                     </subviews>
                                                                 </stackView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="aKp-xz-fMj">
-                                                                    <rect key="frame" x="120" y="0.0" width="215" height="50"/>
+                                                                    <rect key="frame" x="120" y="0.0" width="254" height="50"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(name)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QyP-1L-Kpw">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="215" height="31"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="254" height="31"/>
                                                                             <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="16"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="(number of days a week" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mm8-bj-6tn">
-                                                                            <rect key="frame" x="0.0" y="31" width="215" height="19"/>
+                                                                            <rect key="frame" x="0.0" y="31" width="254" height="19"/>
                                                                             <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="10"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
