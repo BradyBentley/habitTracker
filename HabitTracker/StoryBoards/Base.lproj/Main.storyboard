@@ -115,8 +115,12 @@
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="Nzj-Ps-asz" secondAttribute="trailing" constant="25.333333333333371" id="1Es-yT-aFl"/>
-                                                <constraint firstItem="jXS-vP-Xr7" firstAttribute="leading" secondItem="3ag-9N-QpZ" secondAttribute="leading" constant="31" id="q8Y-6a-lFt"/>
+
+                                                <constraint firstItem="oBw-kk-B56" firstAttribute="centerY" secondItem="3ag-9N-QpZ" secondAttribute="centerY" id="QBA-wd-MvZ"/>
+                                                <constraint firstAttribute="trailing" secondItem="Nzj-Ps-asz" secondAttribute="trailing" constant="25" id="QCw-b6-Wup"/>
+                                                <constraint firstItem="oBw-kk-B56" firstAttribute="leading" secondItem="3ag-9N-QpZ" secondAttribute="leading" constant="25" id="RTS-1T-MhF"/>
+                                                <constraint firstItem="Nzj-Ps-asz" firstAttribute="centerY" secondItem="3ag-9N-QpZ" secondAttribute="centerY" id="q9D-7z-tmd"/>
+                                                <constraint firstItem="Nzj-Ps-asz" firstAttribute="leading" secondItem="oBw-kk-B56" secondAttribute="trailing" constant="15" id="xKY-ZH-Z1V"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
