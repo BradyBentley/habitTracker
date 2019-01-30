@@ -222,9 +222,9 @@ class NewHabitViewController: UIViewController, UIPickerViewDataSource, UIPicker
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView == dayPickerView {
-            days = row
+            days = row + 1
         } else {
-            weeks = row
+            weeks = row + 1
         }
     }
     
@@ -235,8 +235,6 @@ class NewHabitViewController: UIViewController, UIPickerViewDataSource, UIPicker
             if segue.identifier == "ToReminderView" {
                 if let habitName = habitNameTextField.text, !habitName.isEmpty, !category.isEmpty {
                     let habit = Habit(isNewHabit: isNewHabit, category: category, habitDescription: habitName, days: days, weeks: weeks)
-                    HabitController.shared.createHabit(isNewHabit: isNewHabit, category: category, habitDescription: habitName, days: days, weeks: weeks) { (_) in
-                    }
                     destinationVC.habit = habit
                 } else {
                     let missingInformationAlert = UIAlertController(title: "Missing Information", message: "Habit name and category required", preferredStyle: .alert)

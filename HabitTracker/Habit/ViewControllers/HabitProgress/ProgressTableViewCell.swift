@@ -15,7 +15,7 @@ class ProgressTableViewCell: UITableViewCell {
     @IBOutlet weak var habitNameLabel: UILabel!
     @IBOutlet weak var oneImageView: UIImageView!
     @IBOutlet weak var twoImageView: UIImageView!
-    @IBOutlet weak var threeImageVIew: UIImageView!
+    @IBOutlet weak var threeImageView: UIImageView!
     @IBOutlet weak var fourImageView: UIImageView!
     @IBOutlet weak var fiveImageView: UIImageView!
     @IBOutlet weak var sixImageView: UIImageView!
@@ -52,7 +52,7 @@ class ProgressTableViewCell: UITableViewCell {
         case 1:
             oneImageView.isHidden = false
             twoImageView.isHidden = true
-            threeImageVIew.isHidden = true
+            threeImageView.isHidden = true
             fourImageView.isHidden = true
             fiveImageView.isHidden = true
             sixImageView.isHidden = true
@@ -60,7 +60,7 @@ class ProgressTableViewCell: UITableViewCell {
         case 2:
             oneImageView.isHidden = false
             twoImageView.isHidden = false
-            threeImageVIew.isHidden = true
+            threeImageView.isHidden = true
             fourImageView.isHidden = true
             fiveImageView.isHidden = true
             sixImageView.isHidden = true
@@ -68,7 +68,7 @@ class ProgressTableViewCell: UITableViewCell {
         case 3:
             oneImageView.isHidden = false
             twoImageView.isHidden = false
-            threeImageVIew.isHidden = false
+            threeImageView.isHidden = false
             fourImageView.isHidden = true
             fiveImageView.isHidden = true
             sixImageView.isHidden = true
@@ -76,7 +76,7 @@ class ProgressTableViewCell: UITableViewCell {
         case 4:
             oneImageView.isHidden = false
             twoImageView.isHidden = false
-            threeImageVIew.isHidden = false
+            threeImageView.isHidden = false
             fourImageView.isHidden = false
             fiveImageView.isHidden = true
             sixImageView.isHidden = true
@@ -84,7 +84,7 @@ class ProgressTableViewCell: UITableViewCell {
         case 5:
             oneImageView.isHidden = false
             twoImageView.isHidden = false
-            threeImageVIew.isHidden = false
+            threeImageView.isHidden = false
             fourImageView.isHidden = false
             fiveImageView.isHidden = false
             sixImageView.isHidden = true
@@ -92,7 +92,7 @@ class ProgressTableViewCell: UITableViewCell {
         case 6:
             oneImageView.isHidden = false
             twoImageView.isHidden = false
-            threeImageVIew.isHidden = false
+            threeImageView.isHidden = false
             fourImageView.isHidden = false
             fiveImageView.isHidden = false
             sixImageView.isHidden = false
@@ -100,7 +100,7 @@ class ProgressTableViewCell: UITableViewCell {
         case 7:
             oneImageView.isHidden = false
             twoImageView.isHidden = false
-            threeImageVIew.isHidden = false
+            threeImageView.isHidden = false
             fourImageView.isHidden = false
             fiveImageView.isHidden = false
             sixImageView.isHidden = false
@@ -108,7 +108,7 @@ class ProgressTableViewCell: UITableViewCell {
         default:
             oneImageView.isHidden = true
             twoImageView.isHidden = true
-            threeImageVIew.isHidden = true
+            threeImageView.isHidden = true
             fourImageView.isHidden = true
             fiveImageView.isHidden = true
             sixImageView.isHidden = true
@@ -132,42 +132,43 @@ class ProgressTableViewCell: UITableViewCell {
         
         guard let habit = habit else { return }
         let numberOfDaysCheckedIn = habit.daysCheckedIn
+        let image = UIImage(named: "\(habit.category)Checkmark")
         switch numberOfDaysCheckedIn {
         case 1:
-            oneImageView.image = UIImage(named: "\(habit.category)CheckMark")
+            oneImageView.image = image
         case 2:
-            oneImageView.image = UIImage(named: "\(habit.category)CheckMark")
-            twoImageView.image = UIImage(named: "\(habit.category)CheckMark")
+            oneImageView.image = image
+            twoImageView.image = image
         case 3:
-            oneImageView.image = UIImage(named: "\(habit.category)CheckMark")
-            twoImageView.image = UIImage(named: "\(habit.category)CheckMark")
-            threeImageVIew.image = UIImage(named: "\(habit.category)CheckMark")
+            oneImageView.image = image
+            twoImageView.image = image
+            threeImageView.image = image
         case 4:
-            oneImageView.image = UIImage(named: "\(habit.category)CheckMark")
-            twoImageView.image = UIImage(named: "\(habit.category)CheckMark")
-            threeImageVIew.image = UIImage(named: "\(habit.category)CheckMark")
-            fourImageView.image = UIImage(named: "\(habit.category)CheckMark")
+            oneImageView.image = image
+            twoImageView.image = image
+            threeImageView.image = image
+            fourImageView.image = image
         case 5:
-            oneImageView.image = UIImage(named: "\(habit.category)CheckMark")
-            twoImageView.image = UIImage(named: "\(habit.category)CheckMark")
-            threeImageVIew.image = UIImage(named: "\(habit.category)CheckMark")
-            fourImageView.image = UIImage(named: "\(habit.category)CheckMark")
-            fiveImageView.image = UIImage(named: "\(habit.category)CheckMark")
+            oneImageView.image = image
+            twoImageView.image = image
+            threeImageView.image = image
+            fourImageView.image = image
+            fiveImageView.image = image
         case 6:
-            oneImageView.image = UIImage(named: "\(habit.category)CheckMark")
-            twoImageView.image = UIImage(named: "\(habit.category)CheckMark")
-            threeImageVIew.image = UIImage(named: "\(habit.category)CheckMark")
-            fourImageView.image = UIImage(named: "\(habit.category)CheckMark")
-            fiveImageView.image = UIImage(named: "\(habit.category)CheckMark")
-            sixImageView.image = UIImage(named: "\(habit.category)CheckMark")
+            oneImageView.image = image
+            twoImageView.image = image
+            threeImageView.image = image
+            fourImageView.image = image
+            fiveImageView.image = image
+            sixImageView.image = image
         case 7:
-            oneImageView.image = UIImage(named: "\(habit.category)CheckMark")
-            twoImageView.image = UIImage(named: "\(habit.category)CheckMark")
-            threeImageVIew.image = UIImage(named: "\(habit.category)CheckMark")
-            fourImageView.image = UIImage(named: "\(habit.category)CheckMark")
-            fiveImageView.image = UIImage(named: "\(habit.category)CheckMark")
-            sixImageView.image = UIImage(named: "\(habit.category)CheckMark")
-            sevenImageView.image = UIImage(named: "\(habit.category)CheckMark")
+            oneImageView.image = image
+            twoImageView.image = image
+            threeImageView.image = image
+            fourImageView.image = image
+            fiveImageView.image = image
+            sixImageView.image = image
+            sevenImageView.image = image
         default:
             break
             

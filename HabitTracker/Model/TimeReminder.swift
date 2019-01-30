@@ -7,19 +7,30 @@
 //
 
 import Foundation
+import Firebase
 
 class TimeReminder {
     
     var time: Date
-    var day: [Int]?
+    var day: [Int]
     var reminderText: String
     let uuid: String
     
-    init(time: Date, day: [Int] = [], reminderText: String, uuid: String = UUID().uuidString) {
+    init(time: Date, day: [Int], reminderText: String, uuid: String = UUID().uuidString) {
         self.time = time
         self.day = day
         self.reminderText = reminderText
         self.uuid = uuid
+    }
+    
+    convenience init?(firebaseDictionary: [String: Any]) {
+        guard let timestamp = firebaseDictionary["time"] as? Timestamp,
+            let day = firebaseDictionary["day"] as? [Int],
+            let reminderText = firebaseDictionary["reminderText"] as? String,
+            let uuid = firebaseDictionary["uuid"] as? String else { return nil }
+        
+        let time = timestamp.dateValue()
+        self.init(time: time, day: day, reminderText: reminderText, uuid: uuid)
     }
     
 }
@@ -27,6 +38,17 @@ class TimeReminder {
 // MARK: - Equatable
 extension TimeReminder: Equatable {
     static func == (lhs: TimeReminder, rhs: TimeReminder) -> Bool {
-        return lhs.day == rhs.day && lhs.time == rhs.time && lhs.reminderText == rhs.reminderText
+        return lhs.uuid == rhs.uuid
+    }
+}
+
+extension TimeReminder {
+    var dictionary: [String: Any] {
+        return [
+            "time": time,
+            "day": day,
+            "reminderText": reminderText,
+            "uuid": uuid
+        ]
     }
 }
