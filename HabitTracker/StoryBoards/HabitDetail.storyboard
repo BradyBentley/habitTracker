@@ -232,7 +232,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fdr-pn-16P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5384.8000000000002" y="1119.4581280788177"/>
+            <point key="canvasLocation" x="6327.1999999999998" y="1119.4581280788177"/>
         </scene>
         <!--Habit Detail-->
         <scene sceneID="P3S-Mz-wxf">
@@ -306,13 +306,13 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Reminders" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qD3-C3-5cM">
-                                <rect key="frame" x="25" y="379" width="325" height="23.333333333333314"/>
+                                <rect key="frame" x="25" y="379" width="325" height="24"/>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="35" estimatedRowHeight="35" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4RE-I0-8lM">
-                                <rect key="frame" x="25" y="407.33333333333331" width="325" height="179.99999999999994"/>
+                                <rect key="frame" x="25" y="408" width="325" height="180"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="180" id="1PE-3I-Jd7"/>
@@ -369,13 +369,13 @@
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Check-Ins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N6P-YE-q0Y">
-                                <rect key="frame" x="25" y="602.33333333333337" width="325" height="23.333333333333371"/>
+                                <rect key="frame" x="25" y="603" width="325" height="24"/>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="35" estimatedRowHeight="35" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="skv-mi-1DI">
-                                <rect key="frame" x="25" y="630.66666666666663" width="325" height="120"/>
+                                <rect key="frame" x="25" y="632" width="325" height="120"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="A30-cH-Qxq"/>
@@ -447,7 +447,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NSS-TX-maW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4572" y="1119.4581280788177"/>
+            <point key="canvasLocation" x="5514.3999999999996" y="1119.4581280788177"/>
         </scene>
     </scenes>
 </document>
