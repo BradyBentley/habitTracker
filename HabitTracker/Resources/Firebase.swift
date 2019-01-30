@@ -38,11 +38,12 @@ class Firebase {
     }
     
     func updateHabitOnFirebase(habit: Habit, habitDescription: String, days: Int, weeks: Int, completion: @escaping SuccessCompletion) {
+        print(habit.habitDescription)
         guard let currentUser = UserController.shared.currentUser?.uuid else { completion(false) ; return }
         let docRef = firestore.collection(Habit.habitKeys.userKey).document(currentUser).collection(Habit.habitKeys.habitsKey).document(habit.habitDescription)
-        docRef.updateData([Habit.habitKeys.habitDescriptionKey: habit.habitDescription,
-                           Habit.habitKeys.daysKey: habit.days,
-                           Habit.habitKeys.weeksKey: habit.weeks
+        docRef.updateData([Habit.habitKeys.habitDescriptionKey: habitDescription,
+                           Habit.habitKeys.daysKey: days,
+                           Habit.habitKeys.weeksKey: weeks
             ])
         completion(true)
     }
@@ -56,21 +57,22 @@ class Firebase {
         completion(true)
     }
     
-    func fetchTimeReminder(habit: Habit, timeReminder: TimeReminder, completion: @escaping SuccessCompletion) {
-        guard let currentUser = UserController.shared.currentUser?.uuid else { completion(false) ; return }
-        let timeUuid: [String] = [timeReminder.uuid]
-        for uuid in timeUuid {
+    func fetchTimeReminder(timeReminderUUID: [String], completion: @escaping ([TimeReminder]) -> Void) {
+        guard let currentUser = UserController.shared.currentUser?.uuid else { completion([]) ; return }
+        
+        var timeReminders: [TimeReminder] = []
+        for uuid in timeReminderUUID {
             let timeRef = firestore.collection(Habit.habitKeys.userKey).document(currentUser).collection(Habit.habitKeys.timeReminderKey).document(uuid)
             timeRef.getDocument { (document, error) in
                 if let error = error {
                     print("Error fetching Time Reminders: \(error) \(error.localizedDescription)")
-                    completion(false)
+                    completion([])
                 }
                 guard let document = document?.data(),
-                let timeReminder = TimeReminder(firebaseDictionary: document) else { completion(false) ; return }
-                habit.timeReminder.append(timeReminder)
+                    let timeReminder = TimeReminder(firebaseDictionary: document) else { completion([]) ; return }
+                timeReminders.append(timeReminder)
+                completion(timeReminders)
             }
-            
         }
     }
     
@@ -99,19 +101,21 @@ class Firebase {
         completion(true)
     }
     
-    func fetchLocationReminders(habit: Habit, locationReminder: LocationReminder, completion: @escaping SuccessCompletion){
-        guard let currentUser = UserController.shared.currentUser?.uuid else { completion(false) ; return }
-        let locationUuid: [String] = [locationReminder.uuid]
-        for uuid in locationUuid {
+    func fetchLocationReminders(locationReminderUUID: [String], completion: @escaping ([LocationReminder]) -> Void) {
+        guard let currentUser = UserController.shared.currentUser?.uuid else { completion([]) ; return }
+        
+        var locationReminders: [LocationReminder] = []
+        for uuid in locationReminderUUID {
             let locRef = firestore.collection(Habit.habitKeys.userKey).document(currentUser).collection(Habit.habitKeys.locationReminderKey).document(uuid)
             locRef.getDocument { (document, error) in
                 if let error = error {
                     print("Error fetching Location Reminders: \(error) \(error.localizedDescription)")
-                    completion(false)
+                    completion([])
                 }
                 guard let document = document?.data(),
-                    let locationReminder = LocationReminder(firebaseDictionary: document) else { completion(false) ; return }
-                habit.locationReminder.append(locationReminder)
+                    let locationReminder = LocationReminder(firebaseDictionary: document) else { completion([]) ; return }
+                locationReminders.append(locationReminder)
+                completion(locationReminders)
             }
             
         }

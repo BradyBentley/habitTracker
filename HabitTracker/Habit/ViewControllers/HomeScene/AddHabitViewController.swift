@@ -22,6 +22,14 @@ class AddHabitViewController: UIViewController, TimeReminderScheduler, LocationR
         habitsTableView.dataSource = self
         Firebase.shared.fetchHabits { (success) in
             if success {
+                for habit in HabitController.shared.habits {
+                    Firebase.shared.fetchTimeReminder(timeReminderUUID: habit.timeReminderUUID, completion: { (timeReminders) in
+                        habit.timeReminder = timeReminders
+                    })
+                    Firebase.shared.fetchLocationReminders(locationReminderUUID: habit.locationReminderUUID, completion: { (locationReminders) in
+                        habit.locationReminder = locationReminders
+                    })
+                }
                 self.habitsTableView.reloadData()
             }
         }
@@ -36,9 +44,10 @@ class AddHabitViewController: UIViewController, TimeReminderScheduler, LocationR
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ToHabitDetail" {
             guard let indexPath = habitsTableView.indexPathForSelectedRow else { return }
-            let destinationVC = segue.destination as? HabitDetailViewController
-            let habit = HabitController.shared.habits[indexPath.row]
-            destinationVC?.habit = habit
+            if let destinationVC = segue.destination as? HabitDetailViewController {
+                let habit = HabitController.shared.habits[indexPath.row]
+                destinationVC.habit = habit
+            }
         }
     }
 }
