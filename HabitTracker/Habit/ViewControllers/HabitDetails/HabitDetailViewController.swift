@@ -58,8 +58,8 @@ class HabitDetailViewController: UIViewController {
         successLabel.text = habit.category.uppercased()
         iconImageView.image = UIImage(named: "\(habit.category)Progress")
         percentageCompletionLabel.text = "\(Int(habit.completion))%"
-        //setChartData(completionPercent: habit.completionPercent)
-        //LineChartController.shared.setup(chartView: progressChartView)
+        setChartData(completionPercent: habit.completionPercent)
+        LineChartController.shared.setup(chartView: progressChartView)
     }
     
     // MARK: - Navigation
@@ -141,7 +141,7 @@ extension HabitDetailViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
 }
-/*
+
 // MARK: - ChartViewDelegate
 extension HabitDetailViewController: ChartViewDelegate {
     func setChartData(completionPercent: [Double]) {
@@ -164,6 +164,5 @@ extension HabitDetailViewController: ChartViewDelegate {
         self.detailProgressChartView.data = data1
     }
 }
-*/
 
 
