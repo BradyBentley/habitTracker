@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class LocationBasedReminderViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDelegate, MKMapViewDelegate, LocationReminderScheduler {
+class LocationBasedReminderViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDelegate, UITextFieldDelegate, MKMapViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +19,7 @@ class LocationBasedReminderViewController: UIViewController, CLLocationManagerDe
         
         locationManager.delegate = self
         locationSearchBar.delegate = self
+        locationNameTextField.delegate = self
         mapView.delegate = self
     }
     
@@ -27,11 +28,11 @@ class LocationBasedReminderViewController: UIViewController, CLLocationManagerDe
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var locationSearchBar: UISearchBar!
     @IBOutlet weak var segmentControl: UISegmentedControl!
+    @IBOutlet weak var locationNameTextField: UITextField!
     @IBOutlet weak var saveButton: UIButton!
     
     var habit: Habit?
     var savedCoordinate: CLLocationCoordinate2D?
-    var savedLocationName: String?
     var locationManager = CLLocationManager()
     var geoFenceRadius: Double = 200
     var circle: MKCircle?
@@ -76,8 +77,10 @@ class LocationBasedReminderViewController: UIViewController, CLLocationManagerDe
             let circle = MKCircle(center: coordinate, radius: geoFenceRadius)
             self.mapView.addOverlay(circle)
             
-            saveButton.backgroundColor = .green
-            saveButton.titleLabel?.textColor = .black
+            if let locationName = locationNameTextField.text, !locationName.isEmpty {
+                saveButton.backgroundColor = .green
+                saveButton.titleLabel?.textColor = .black
+            }
         }
     }
     
@@ -125,17 +128,32 @@ class LocationBasedReminderViewController: UIViewController, CLLocationManagerDe
     // MARK: - Button actions
     
     @IBAction func mapSaveButtonTapped(_ sender: Any) {
-        guard let savedCoordinate = savedCoordinate, let habit = habit else { return }
-        if let savedLocationName = locationSearchBar.text {
-            let locationReminder = LocationReminder(latitude: savedCoordinate.latitude, longitude: savedCoordinate.longitude, locationName: savedLocationName, remindOnEntryOrExit: segmentControl.selectedSegmentIndex, reminderText: "")
-            habit.locationReminder.append(locationReminder)
-            scheduleUserNotifications(for: locationReminder)
-        }
+        guard let savedCoordinate = savedCoordinate, let habit = habit,
+            let locationName = locationNameTextField.text, !locationName.isEmpty else { return }
+        
+        let locationReminder = LocationReminder(latitude: savedCoordinate.latitude, longitude: savedCoordinate.longitude, locationName: locationName, remindOnEntryOrExit: segmentControl.selectedSegmentIndex, reminderText: "")
+        habit.locationReminder.append(locationReminder)
         self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func exitButtonPushed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    // MARK: - Textfield delegate
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if let locationName = textField.text, !locationName.isEmpty, mapView.annotations.count != 0 {
+            saveButton.backgroundColor = .green
+            saveButton.titleLabel?.textColor = .black
+        } else {
+            saveButton.backgroundColor = .white
+            saveButton.titleLabel?.textColor = .lightGray
+        }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return textField.resignFirstResponder()
     }
     
     // MARK: - Search bar delegate

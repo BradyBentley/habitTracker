@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SetReminderTableViewController: UITableViewController, TimeReminderScheduler {
+class SetReminderTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +29,6 @@ class SetReminderTableViewController: UITableViewController, TimeReminderSchedul
         let time = timePicker.date
         let timeReminder = TimeReminder(time: time, day: weekdays, reminderText: "")
         habit.timeReminder.append(timeReminder)
-        scheduleUserNotifications(for: timeReminder)
         self.navigationController?.popViewController(animated: true)
     }
     

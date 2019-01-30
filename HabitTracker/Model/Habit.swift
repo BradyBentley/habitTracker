@@ -83,6 +83,7 @@ class Habit {
     }
 }
 
+// MARK: - Converting to firebase dictionary
 extension Habit {
     var dictionary: [String: Any] {
         return [habitKeys.isNewHabitKey: isNewHabit,

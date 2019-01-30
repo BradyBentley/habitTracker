@@ -63,10 +63,12 @@ class ReminderViewController: UIViewController, UITableViewDataSource, UITableVi
             HabitController.shared.createHabit(isNewHabit: habit.isNewHabit, category: habit.category, habitDescription: habit.habitDescription, days: habit.days, weeks: habit.weeks) { (_) in
                 for timeReminder in habit.timeReminder {
                     HabitController.shared.createTimeReminder(habit: habit, day: timeReminder.day, time: timeReminder.time, reminderText: timeReminder.reminderText) { (_) in
+                        self.scheduleUserNotifications(for: timeReminder)
                     }
                 }
                 for locationReminder in habit.locationReminder {
-                    HabitController.shared.createLocationReminder(habit: habit, latitude: locationReminder.longitude, longitude: locationReminder.longitude, locationName: "", remindOnEntryOrExit: locationReminder.remindOnEntryOrExit, reminderText: locationReminder.reminderText) { (_) in
+                    HabitController.shared.createLocationReminder(habit: habit, latitude: locationReminder.longitude, longitude: locationReminder.longitude, locationName: locationReminder.locationName, remindOnEntryOrExit: locationReminder.remindOnEntryOrExit, reminderText: locationReminder.reminderText) { (_) in
+                        self.scheduleUserNotifications(for: locationReminder)
                     }
                 }
             }
@@ -123,16 +125,13 @@ class ReminderViewController: UIViewController, UITableViewDataSource, UITableVi
             if let cellIndexPath = timeBasedRemindersTableView.indexPath(for: cell) {
                 timeBasedRemindersTableView.beginUpdates()
                 habit.timeReminder.remove(at: cellIndexPath.row)
-                cancelTimeNotifications(for: timeReminderUUID)
                 timeBasedRemindersTableView.deleteRows(at: [cellIndexPath], with: .fade)
                 timeBasedRemindersTableView.endUpdates()
             }
         } else {
-            if let cellIndexPath = locationBasedRemindersTableView.indexPath(for: cell),
-                let locationReminderUUID = cell.locationReminder?.uuid {
+            if let cellIndexPath = locationBasedRemindersTableView.indexPath(for: cell) {
                 locationBasedRemindersTableView.beginUpdates()
                 habit.locationReminder.remove(at: cellIndexPath.row)
-                cancelLocationNotifications(for: locationReminderUUID)
                 locationBasedRemindersTableView.deleteRows(at: [cellIndexPath], with: .fade)
                 locationBasedRemindersTableView.endUpdates()
             }
@@ -145,14 +144,12 @@ class ReminderViewController: UIViewController, UITableViewDataSource, UITableVi
             if let cellIndexPath = timeBasedRemindersTableView.indexPath(for: cell) {
                 timeBasedRemindersTableView.beginUpdates()
                 habit.timeReminder[cellIndexPath.row].reminderText = text
-                scheduleUserNotifications(for: habit.timeReminder[cellIndexPath.row])
                 timeBasedRemindersTableView.endUpdates()
             }
         } else {
             if let cellIndexPath = locationBasedRemindersTableView.indexPath(for: cell) {
                 locationBasedRemindersTableView.beginUpdates()
                 habit.locationReminder[cellIndexPath.row].reminderText = text
-                scheduleUserNotifications(for: habit.locationReminder[cellIndexPath.row])
                 locationBasedRemindersTableView.endUpdates()
             }
         }

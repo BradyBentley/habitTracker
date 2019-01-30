@@ -18,7 +18,6 @@ class HabitDetailViewController: UIViewController {
     @IBOutlet weak var successLabel: UILabel!
     @IBOutlet weak var percentageCompletionLabel: UILabel!
     @IBOutlet weak var habitReminderTableView: UITableView!
-    @IBOutlet weak var habitLocationTableView: UITableView!
     @IBOutlet weak var progressChartView: LineChartView!
     
     // MARK: - Properties
@@ -37,9 +36,6 @@ class HabitDetailViewController: UIViewController {
         super.viewDidLoad()
         habitReminderTableView.dataSource = self
         habitReminderTableView.delegate = self
-        habitLocationTableView.dataSource = self
-        habitLocationTableView.delegate = self
-        navigationItem.leftBarButtonItem?.title = "Back"
         updateViews()
     }
     
@@ -59,8 +55,8 @@ class HabitDetailViewController: UIViewController {
         successLabel.text = habit.category.uppercased()
         iconImageView.image = UIImage(named: "\(habit.category)Progress")
         percentageCompletionLabel.text = "\(Int(habit.completion))%"
-        setChartData(completionPercent: habit.completionPercent)
-        LineChartController.shared.setup(chartView: progressChartView)
+        //setChartData(completionPercent: habit.completionPercent)
+        //LineChartController.shared.setup(chartView: progressChartView)
     }
     
     // MARK: - Navigation
@@ -77,54 +73,64 @@ class HabitDetailViewController: UIViewController {
 
 extension HabitDetailViewController: UITableViewDelegate, UITableViewDataSource{
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
+    func numberOfSections(in tableView: UITableView) -> Int {
         if tableView == habitReminderTableView {
-            return habit?.timeReminder.count ?? 0
+            return 2
+        } else {
+            return 1
         }
-        if tableView == habitLocationTableView {
-            return habit?.locationReminder.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if tableView == habitReminderTableView {
+            if section == 0 {
+                return habit?.timeReminder.count ?? 0
+            } else {
+                return habit?.locationReminder.count ?? 0
+            }
+        } else {
+            return habit?.daysCompleted.count ?? 0
         }
-        return habit?.daysCompleted.count ?? 0
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let habit = habit else { return UITableViewCell() }
         
         if tableView == habitReminderTableView {
-            let cell = habitReminderTableView.dequeueReusableCell(withIdentifier: "TimeReminderCell", for: indexPath)
-            let timeReminder = habit.timeReminder[indexPath.row]
-            let time = timeFormatter.string(from: timeReminder.time)
-            var reminder = time + " - "
-            let days = timeReminder.day
-            for day in days {
-                switch day {
-                case 0:
-                    reminder.append("Sun ")
-                case 1:
-                    reminder.append("Mon ")
-                case 2:
-                    reminder.append("Tue ")
-                case 3:
-                    reminder.append("Wed ")
-                case 4:
-                    reminder.append("Thu ")
-                case 5:
-                    reminder.append("Fri ")
-                default:
-                    reminder.append("Sat ")
+            var cell: UITableViewCell
+            if indexPath.section == 0 {
+                cell = tableView.dequeueReusableCell(withIdentifier: "TimeReminderCell", for: indexPath)
+                let timeReminder = habit.timeReminder[indexPath.row]
+                let time = timeFormatter.string(from: timeReminder.time)
+                var reminder = time + " - "
+                let days = timeReminder.day
+                for day in days {
+                    switch day {
+                    case 0:
+                        reminder.append("Sun ")
+                    case 1:
+                        reminder.append("Mon ")
+                    case 2:
+                        reminder.append("Tue ")
+                    case 3:
+                        reminder.append("Wed ")
+                    case 4:
+                        reminder.append("Thu ")
+                    case 5:
+                        reminder.append("Fri ")
+                    default:
+                        reminder.append("Sat ")
+                    }
                 }
-            }
-            cell.textLabel?.text = timeReminder.reminderText
-            cell.detailTextLabel?.text = reminder
-            return cell
-        } else if tableView == habitLocationTableView {
-            let cell = habitLocationTableView.dequeueReusableCell(withIdentifier: "LocationReminderCell", for: indexPath)
+                cell.textLabel?.text = timeReminder.reminderText
+                cell.detailTextLabel?.text = reminder
+            } else {
+                cell = tableView.dequeueReusableCell(withIdentifier: "LocationReminderCell", for: indexPath)
                 let locationReminder = habit.locationReminder[indexPath.row]
                 cell.textLabel?.text = locationReminder.reminderText
-                cell.detailTextLabel?.text = !locationReminder.locationName.isEmpty ? locationReminder.locationName : "\(locationReminder.latitude), \(locationReminder.longitude)"
-                return cell
+                cell.detailTextLabel?.text = locationReminder.locationName
+            }
+            return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CheckInCell", for: indexPath)
             return cell
@@ -132,7 +138,7 @@ extension HabitDetailViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
 }
-
+/*
 // MARK: - ChartViewDelegate
 extension HabitDetailViewController: ChartViewDelegate {
     func setChartData(completionPercent: [Double]) {
@@ -155,6 +161,6 @@ extension HabitDetailViewController: ChartViewDelegate {
         self.progressChartView.data = data
     }
 }
-
+*/
 
 

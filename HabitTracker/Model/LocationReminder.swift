@@ -46,6 +46,7 @@ extension LocationReminder: Equatable {
     }
 }
 
+// MARK: - Converting to Firebase dictionary
 extension LocationReminder {
     var dictionary: [String: Any] {
         return [

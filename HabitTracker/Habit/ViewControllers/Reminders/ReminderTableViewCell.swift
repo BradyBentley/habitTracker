@@ -70,7 +70,7 @@ class ReminderTableViewCell: UITableViewCell {
     
     func updateLocationReminderView() {
         guard let locationReminder = locationReminder else { return }
-        locationReminderLabel.text = !locationReminder.locationName.isEmpty ? locationReminder.locationName : "\(locationReminder.latitude), \(locationReminder.longitude)"
+        locationReminderLabel.text = locationReminder.locationName
         locationReminderTextField.text = locationReminder.reminderText
     }
     

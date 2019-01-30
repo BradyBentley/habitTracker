@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EditHabitViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class EditHabitViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPickerViewDataSource, UIPickerViewDelegate, TimeReminderScheduler, LocationReminderScheduler {
     
     // MARK: - IBOutlets
     @IBOutlet weak var iconImageView: UIImageView!
@@ -22,6 +22,12 @@ class EditHabitViewController: UIViewController, UIPickerViewDataSource, UIPicke
     var days: Int = 1
     var weeks: Int = 1
     
+    let timeFormatter: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "h:mm a"
+    return formatter
+    }()
+    
     // MARK: - ViewLife Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +35,8 @@ class EditHabitViewController: UIViewController, UIPickerViewDataSource, UIPicke
         dayPickerView.delegate = self
         weekPickerView.dataSource = self
         weekPickerView.delegate = self
+        remindersTableView.dataSource = self
+        remindersTableView.delegate = self
         updateView()
     }
     
@@ -58,8 +66,19 @@ class EditHabitViewController: UIViewController, UIPickerViewDataSource, UIPicke
     
     @IBAction func deleteButtonTapped(_ sender: Any) {
         guard let habit = habit else {return}
-        HabitController.shared.deleteHabit(habit: habit) { (success) in
-            if success {
+        for timeReminder in habit.timeReminder {
+            HabitController.shared.deleteTimeReminder(timeReminder: timeReminder, from: habit, completion: { (_) in
+                self.cancelTimeNotifications(for: timeReminder.uuid)
+            })
+        }
+        for locationReminder in habit.locationReminder {
+            HabitController.shared.deleteLocationReminder(locationReminder: locationReminder, from: habit, completion: { (_) in
+                self.cancelLocationNotifications(for: locationReminder.uuid)
+            })
+        }
+        HabitController.shared.deleteHabit(habit: habit) { (_) in
+            if let viewControllers: [UIViewController] = self.navigationController?.viewControllers {
+                self.navigationController?.popToViewController(viewControllers[viewControllers.count - 3], animated: true)
             }
         }
     }
@@ -92,5 +111,60 @@ class EditHabitViewController: UIViewController, UIPickerViewDataSource, UIPicke
             weeks = row + 1
         }
     }
+    
+    // MARK: - Table view data source
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 {
+            return habit?.timeReminder.count ?? 0
+        } else {
+            return habit?.locationReminder.count ?? 0
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let habit = habit else { return UITableViewCell() }
+        
+        var cell: UITableViewCell
+        if indexPath.section == 0 {
+            cell = tableView.dequeueReusableCell(withIdentifier: "TimeReminderCell", for: indexPath)
+            let timeReminder = habit.timeReminder[indexPath.row]
+            let time = timeFormatter.string(from: timeReminder.time)
+            var reminder = time + " - "
+            let days = timeReminder.day
+            for day in days {
+                switch day {
+                case 0:
+                    reminder.append("Sun ")
+                case 1:
+                    reminder.append("Mon ")
+                case 2:
+                    reminder.append("Tue ")
+                case 3:
+                    reminder.append("Wed ")
+                case 4:
+                    reminder.append("Thu ")
+                case 5:
+                    reminder.append("Fri ")
+                default:
+                    reminder.append("Sat ")
+                }
+            }
+            cell.textLabel?.text = timeReminder.reminderText
+            cell.detailTextLabel?.text = reminder
+        } else {
+            cell = tableView.dequeueReusableCell(withIdentifier: "LocationReminderCell", for: indexPath)
+            let locationReminder = habit.locationReminder[indexPath.row]
+            cell.textLabel?.text = locationReminder.reminderText
+            cell.detailTextLabel?.text = locationReminder.locationName
+        }
+        return cell
+    }
+    
+    // MARK: - Table view delegate
     
 }
