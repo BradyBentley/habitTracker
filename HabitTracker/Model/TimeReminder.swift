@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Firebase
 
 class TimeReminder {
     
@@ -22,11 +23,14 @@ class TimeReminder {
         self.uuid = uuid
     }
     
-    convenience init?(firebaseDictionary: [String: Any]){
-        guard let time = firebaseDictionary["time"] as? Date,
-        let day = firebaseDictionary["day"] as? [Int],
-            let reminderText = firebaseDictionary["reminderText"] as? String else { return nil }
-        self.init(time: time, day: day, reminderText: reminderText)
+    convenience init?(firebaseDictionary: [String: Any]) {
+        guard let timestamp = firebaseDictionary["time"] as? Timestamp,
+            let day = firebaseDictionary["day"] as? [Int],
+            let reminderText = firebaseDictionary["reminderText"] as? String,
+            let uuid = firebaseDictionary["uuid"] as? String else { return nil }
+        
+        let time = timestamp.dateValue()
+        self.init(time: time, day: day, reminderText: reminderText, uuid: uuid)
     }
     
 }

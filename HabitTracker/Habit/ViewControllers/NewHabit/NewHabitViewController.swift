@@ -222,9 +222,9 @@ class NewHabitViewController: UIViewController, UIPickerViewDataSource, UIPicker
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView == dayPickerView {
-            days = row
+            days = row + 1
         } else {
-            weeks = row
+            weeks = row + 1
         }
     }
     
