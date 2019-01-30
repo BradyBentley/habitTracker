@@ -10,8 +10,15 @@ import UIKit
 import UserNotifications
 
 class AddHabitViewController: UIViewController, TimeReminderScheduler, LocationReminderScheduler {
+    
+    var habit: Habit?
+    
+    let shapeLayer = CAShapeLayer()
+    let trackLayer = CAShapeLayer()
+    
     // MARK: - IBOutlets
     @IBOutlet weak var habitsTableView: UITableView!
+    @IBOutlet weak var categoryIcon: UIImageView!
     
     // MARK: - Properties
     
@@ -67,8 +74,6 @@ extension AddHabitViewController: UITableViewDelegate, UITableViewDataSource {
         cell.habit = habit
         return cell
     }
-<<<<<<< HEAD
-=======
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -88,6 +93,5 @@ extension AddHabitViewController: UITableViewDelegate, UITableViewDataSource {
             })
         }
     }
-    
->>>>>>> develop
 }
+
