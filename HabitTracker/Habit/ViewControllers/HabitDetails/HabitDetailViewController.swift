@@ -19,6 +19,7 @@ class HabitDetailViewController: UIViewController {
     @IBOutlet weak var percentageCompletionLabel: UILabel!
     @IBOutlet weak var habitReminderTableView: UITableView!
     @IBOutlet weak var progressChartView: LineChartView!
+    @IBOutlet weak var detailProgressChartView: LineChartView!
     
     // MARK: - Properties
     
@@ -34,9 +35,9 @@ class HabitDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateViews()
         habitReminderTableView.dataSource = self
         habitReminderTableView.delegate = self
-        updateViews()
     }
     
     // MARK: - Actions
@@ -51,6 +52,8 @@ class HabitDetailViewController: UIViewController {
     // MARK: - Setup
     func updateViews() {
         guard let habit = habit else { return }
+        setChartData(completionPercent: habit.completionPercent)
+        LineChartController.shared.setup(chartView: detailProgressChartView)
         habitDescriptionLabel.text = habit.habitDescription
         successLabel.text = habit.category.uppercased()
         iconImageView.image = UIImage(named: "\(habit.category)Progress")
@@ -153,12 +156,12 @@ extension HabitDetailViewController: ChartViewDelegate {
         set1.setCircleColor(UIColor(named: "\(habit.category)Color") ?? .red)
         set1.lineWidth = 2.0
         set1.circleRadius = 6.0
-        set1.fillColor = UIColor.red
-        set1.circleHoleColor = UIColor.red
+        set1.fillColor = UIColor(named: "\(habit.category)Color") ?? .red
+        set1.circleHoleColor = UIColor(named: "\(habit.category)Color") ?? .red
         set1.drawValuesEnabled = false
         
-        let data = LineChartData(dataSet: set1)
-        self.progressChartView.data = data
+        let data1 = LineChartData(dataSet: set1)
+        self.detailProgressChartView.data = data1
     }
 }
 */
