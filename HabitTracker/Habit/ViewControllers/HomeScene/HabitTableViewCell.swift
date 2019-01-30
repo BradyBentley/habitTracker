@@ -27,6 +27,6 @@ class HabitTableViewCell: UITableViewCell {
         iconImageView.image = UIImage(named: "\(habit.category)Progress")
         habitDescriptionLabel.text = habit.habitDescription
         successLabel.text = "\(habit.days) days a week for \(habit.weeks) weeks"
-        percentCompletionLabel.text = "\(habit.completion)%"
+        percentCompletionLabel.text = "\(Int(habit.completion))%"
     }
 }

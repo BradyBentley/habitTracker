@@ -295,14 +295,18 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="W5J-bO-8m6">
+
                                                     <rect key="frame" x="15" y="2" width="29" height="17"/>
+
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fYu-aK-V90">
+
                                                     <rect key="frame" x="14.999999999999996" y="19" width="43.666666666666664" height="14.333333333333334"/>
+
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -444,6 +448,7 @@
                         <outlet property="habitReminderTableView" destination="4RE-I0-8lM" id="mZk-tq-gkO"/>
                         <outlet property="iconImageView" destination="i4Z-5K-ijJ" id="1FW-bl-NE3"/>
                         <outlet property="percentageCompletionLabel" destination="WNT-v9-GAa" id="eap-lL-o59"/>
+                        <outlet property="progressChartView" destination="pgN-LE-uM7" id="0WH-ys-DOu"/>
                         <outlet property="successLabel" destination="XSM-Ej-zz4" id="sob-wG-bxk"/>
                     </connections>
                 </viewController>

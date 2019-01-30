@@ -23,6 +23,7 @@ class Habit {
     var timeReminder: [TimeReminder]
     var locationReminder: [LocationReminder]
     var daysCheckedIn: Int
+    var completionPercent: [Double]
     
     var timeReminderUUID: [String] = []
     var locationReminderUUID: [String] = []
@@ -42,10 +43,11 @@ class Habit {
         static let daysCheckedInKey = "daysCheckedInKey"
         static let userKey = "Users"
         static let habitsKey = "Habits"
+        static let completionPercent = "completionPercent"
     }
     
     // MARK: - Initialization
-    init(isNewHabit: Bool, category: String, habitDescription: String, days: Int, weeks: Int, timeReminder: [TimeReminder] = [], locationReminder: [LocationReminder] = [], daysCompleted: [CheckIn] = [], startingDate: Date = Date(), daysCheckedIn: Int = 0) {
+    init(isNewHabit: Bool, category: String, habitDescription: String, days: Int, weeks: Int, timeReminder: [TimeReminder] = [], locationReminder: [LocationReminder] = [], daysCompleted: [CheckIn] = [], startingDate: Date = Date(), daysCheckedIn: Int = 0, completionPercent: [Double] = [0.0, 0.0, 0.0, 0.0]) {
         self.isNewHabit = isNewHabit
         self.category = category
         self.habitDescription = habitDescription
@@ -56,6 +58,7 @@ class Habit {
         self.daysCompleted = daysCompleted
         self.startingDate = startingDate
         self.daysCheckedIn = daysCheckedIn
+        self.completionPercent = completionPercent
     }
     
     convenience init?(firebaseDictionary: [String: Any]) {
@@ -68,10 +71,11 @@ class Habit {
         let locationReminderUUID = firebaseDictionary[Habit.habitKeys.locationReminderKey] as? [String],
         let daysCompletedUUID = firebaseDictionary[Habit.habitKeys.daysCompletedKey] as? [String],
         let daysCheckedIn = firebaseDictionary[Habit.habitKeys.daysCheckedInKey] as? Int,
-        let timeStamp = firebaseDictionary[Habit.habitKeys.startingDateKey] as? Timestamp else { return nil }
+        let timeStamp = firebaseDictionary[Habit.habitKeys.startingDateKey] as? Timestamp,
+        let completionPercent = firebaseDictionary[Habit.habitKeys.completionPercent] as? [Double]else { return nil }
         
         let startingDate = timeStamp.dateValue()
-        self.init(isNewHabit: isNewHabit, category: category, habitDescription: habitDescription, days: days, weeks: weeks, startingDate: startingDate, daysCheckedIn: daysCheckedIn)
+        self.init(isNewHabit: isNewHabit, category: category, habitDescription: habitDescription, days: days, weeks: weeks, startingDate: startingDate, daysCheckedIn: daysCheckedIn, completionPercent: completionPercent)
         
         self.timeReminderUUID = timeReminderUUID
         self.locationReminderUUID = locationReminderUUID
@@ -90,13 +94,16 @@ extension Habit {
                 habitKeys.locationReminderKey: locationReminder,
                 habitKeys.daysCompletedKey: daysCompleted,
                 habitKeys.startingDateKey: startingDate,
-                habitKeys.daysCheckedInKey: daysCheckedIn
+                habitKeys.daysCheckedInKey: daysCheckedIn,
+                habitKeys.completionPercent: completionPercent
         ]
     }
     
-    var completion: Int {
-        return (daysCheckedIn / days) * 100
+    var completion: Double {
+        let percentage = Double(Double(daysCheckedIn) / Double(days) * 100)
+        return percentage
     }
+    
 }
 
 // MARK: - Equatable
