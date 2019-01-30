@@ -143,4 +143,10 @@ class Firebase {
         docRef.delete()
         completion(true)
     }
+    
+    func updateCompletePercent(habit: Habit, completePercent: [Double], completion: @escaping SuccessCompletion) {
+        guard let currentUser = UserController.shared.currentUser?.uuid else { completion(false) ; return }
+        let docRef = firestore.collection(Habit.habitKeys.userKey).document(currentUser).collection(Habit.habitKeys.habitsKey).document(habit.habitDescription)
+        docRef.updateData([Habit.habitKeys.completionPercent: habit.completionPercent])
+    }
 }

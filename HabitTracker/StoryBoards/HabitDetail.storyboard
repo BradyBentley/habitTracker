@@ -201,7 +201,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fdr-pn-16P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+
             <point key="canvasLocation" x="5384.8000000000002" y="1119.4581280788177"/>
+
         </scene>
         <!--Habit Detail-->
         <scene sceneID="P3S-Mz-wxf">
@@ -211,6 +213,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oz0-tJ-MLq">
                                 <rect key="frame" x="0.0" y="59" width="375" height="90"/>
                                 <subviews>
@@ -275,8 +278,10 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Reminders" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qD3-C3-5cM">
+
                                 <rect key="frame" x="25" y="379" width="325" height="24"/>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="20"/>
+
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -287,8 +292,10 @@
                                     <constraint firstAttribute="height" constant="100" id="1PE-3I-Jd7"/>
                                 </constraints>
                                 <prototypes>
+
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="TimeReminderCell" textLabel="W5J-bO-8m6" detailTextLabel="fYu-aK-V90" style="IBUITableViewCellStyleSubtitle" id="h0g-w4-LXY">
                                         <rect key="frame" x="0.0" y="28" width="325" height="35"/>
+
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="h0g-w4-LXY" id="wWv-xv-6xO">
                                             <rect key="frame" x="0.0" y="0.0" width="325" height="35"/>
@@ -309,6 +316,30 @@
 
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="locationRemindCell" textLabel="Yu5-AG-fsz" detailTextLabel="GCR-qL-r0n" rowHeight="64" style="IBUITableViewCellStyleSubtitle" id="JcZ-PO-Pq7">
+                                        <rect key="frame" x="0.0" y="92" width="343" height="64"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JcZ-PO-Pq7" id="7Ho-MH-7zw">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="64"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Yu5-AG-fsz">
+                                                    <rect key="frame" x="15" y="9" width="35" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GCR-qL-r0n">
+                                                    <rect key="frame" x="15" y="32.5" width="62" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -380,6 +411,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="110" id="A30-cH-Qxq"/>
                                 </constraints>
+
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CheckInCell" textLabel="KbI-PG-6U4" style="IBUITableViewCellStyleDefault" id="czA-oq-56E">
                                         <rect key="frame" x="0.0" y="28" width="325" height="35"/>
@@ -430,6 +462,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EMZ-NO-Sv5"/>
                     </view>
+
                     <navigationItem key="navigationItem" title="Habit Detail" id="hEE-mS-5Zx">
                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="AiY-q4-EhP">
                             <connections>

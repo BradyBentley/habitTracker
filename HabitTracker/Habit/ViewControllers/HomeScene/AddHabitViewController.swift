@@ -18,6 +18,8 @@ class AddHabitViewController: UIViewController, TimeReminderScheduler, LocationR
     // MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        LineChartController.shared.addToAllHabitArrays(habits: HabitController.shared.habits) { (_) in
+        }
         habitsTableView.delegate = self
         habitsTableView.dataSource = self
         Firebase.shared.fetchHabits { (success) in

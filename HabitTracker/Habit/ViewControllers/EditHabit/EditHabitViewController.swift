@@ -60,11 +60,11 @@ class EditHabitViewController: UIViewController, UIPickerViewDataSource, UIPicke
         guard let habit = habit else {return}
         HabitController.shared.deleteHabit(habit: habit) { (success) in
             if success {
-                self.dismiss(animated: true, completion: nil)
             }
         }
     }
     
+
     // MARK: - UIPickerView Source
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

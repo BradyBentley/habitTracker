@@ -44,6 +44,9 @@ class HabitDetailViewController: UIViewController {
     }
     
     // MARK: - Actions
+    @IBAction func cancelButtonTapped(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func doneButtonPushed(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
@@ -56,8 +59,8 @@ class HabitDetailViewController: UIViewController {
         successLabel.text = habit.category.uppercased()
         iconImageView.image = UIImage(named: "\(habit.category)Progress")
         percentageCompletionLabel.text = "\(Int(habit.completion))%"
-        setChartData(weeks: LineChartController.shared.weeks, completionPercent: habit.completionPercent)
-        setUpLineChart()
+        setChartData(completionPercent: habit.completionPercent)
+        LineChartController.shared.setup(chartView: progressChartView)
     }
     
     // MARK: - Navigation
@@ -132,32 +135,8 @@ extension HabitDetailViewController: UITableViewDelegate, UITableViewDataSource{
 
 // MARK: - ChartViewDelegate
 extension HabitDetailViewController: ChartViewDelegate {
-    func setUpLineChart() {
-        self.progressChartView.noDataText = "Haven't check in yet"
-        let lXAxis = ChartLimitLine(limit: 5, label: "Weeks")
-        lXAxis.lineWidth = 5
-        lXAxis.labelPosition = .rightBottom
-        lXAxis.valueFont = .systemFont(ofSize: 10)
-        progressChartView.xAxis.drawGridLinesEnabled = false
-        progressChartView.xAxis.labelPosition = .bottom
-        progressChartView.xAxis.axisMinimum = 0
-        progressChartView.xAxis.axisLineColor = .darkGray
-        progressChartView.xAxis.gridColor = .darkGray
-        progressChartView.xAxis.granularity = 1
-        progressChartView.xAxis.granularityEnabled = true
-        progressChartView.xAxis.labelCount = 5
-        let leftAxis = progressChartView.leftAxis
-        leftAxis.removeAllLimitLines()
-        leftAxis.axisMaximum = 105
-        leftAxis.axisMinimum = 0
-        leftAxis.drawLimitLinesBehindDataEnabled = true
-        progressChartView.rightAxis.enabled = false
-        progressChartView.legend.enabled = false
-    }
-    
-    
-    func setChartData(weeks: [String], completionPercent: [Double]) {
-        let values = (0..<weeks.count).map { (i) -> ChartDataEntry in
+    func setChartData(completionPercent: [Double]) {
+        let values = (0..<completionPercent.count).map { (i) -> ChartDataEntry in
             let val = completionPercent
             return ChartDataEntry(x: Double(i) + 1, y: val[i])
         }
@@ -170,6 +149,7 @@ extension HabitDetailViewController: ChartViewDelegate {
         set1.circleRadius = 6.0
         set1.fillColor = UIColor.red
         set1.circleHoleColor = UIColor.red
+        set1.drawValuesEnabled = false
         
         let data = LineChartData(dataSet: set1)
         self.progressChartView.data = data
