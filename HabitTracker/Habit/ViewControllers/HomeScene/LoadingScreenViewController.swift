@@ -10,7 +10,7 @@ import UIKit
 
 class LoadingScreenViewController: UIViewController {
     
-    let homeTabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+    let loginPage = UIStoryboard(name: "Login", bundle: nil).instantiateInitialViewController()
     
     @IBOutlet weak var shadowWidth: NSLayoutConstraint!
     
@@ -32,7 +32,7 @@ class LoadingScreenViewController: UIViewController {
         super.viewWillAppear(animated)
         animateOpeningPage()
         animatingOfShadow()
-        self.present(homeTabBarController!, animated: true, completion: nil)
+        self.present(loginPage!, animated: true, completion: nil)
         //let homeVC = self.storyboard?.instantiateViewController(withIdentifier: "AddHabitViewController") as! AddHabitViewController
         //self.present(homeVC, animated: true, completion: nil)
         //self.presentingViewController?.dismiss(animated: false, completion:nil)
@@ -50,7 +50,7 @@ class LoadingScreenViewController: UIViewController {
     func animatingOfShadow() {
         
         Timer.scheduledTimer(withTimeInterval: 10, repeats: false) { (_) in
-            self.present(self.homeTabBarController!, animated: true, completion: nil)
+            self.present(self.loginPage!, animated: true, completion: nil)
         }
     
         shadowWidth.constant = 100
