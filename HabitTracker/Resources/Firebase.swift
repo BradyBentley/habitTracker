@@ -147,7 +147,8 @@ class Firebase {
     func updateCompletePercent(habit: Habit, completePercent: [Double], completion: @escaping SuccessCompletion) {
         guard let currentUser = UserController.shared.currentUser?.uuid else { completion(false) ; return }
         let docRef = firestore.collection(Habit.habitKeys.userKey).document(currentUser).collection(Habit.habitKeys.habitsKey).document(habit.habitDescription)
-        docRef.updateData([Habit.habitKeys.completionPercent: habit.completionPercent])
+        docRef.updateData([Habit.habitKeys.completionPercent: FieldValue.delete()])
+        docRef.updateData([Habit.habitKeys.completionPercent: FieldValue.arrayUnion(completePercent)])
         completion(true)
     }
     
@@ -156,5 +157,17 @@ class Firebase {
         let docRef = firestore.collection(Habit.habitKeys.userKey).document(currentUser).collection(Habit.habitKeys.habitsKey).document(habit.habitDescription)
         docRef.updateData([Habit.habitKeys.daysCheckedInKey: daysCheckedIn])
         completion(true)
+    }
+    
+    func updateDaysComplete(habit: Habit, completion: @escaping SuccessCompletion) {
+        guard let currentUser = UserController.shared.currentUser?.uuid else { completion(false) ; return }
+        let docRef = firestore.collection(Habit.habitKeys.userKey).document(currentUser).collection(Habit.habitKeys.habitsKey).document(habit.habitDescription)
+        docRef.updateData([Habit.habitKeys.daysCompletedKey: FieldValue.arrayUnion([Date().dateWithoutTime])])
+    }
+    
+    func removeDaysComplete(habit: Habit, completion: @escaping SuccessCompletion) {
+        guard let currentUser = UserController.shared.currentUser?.uuid else { completion(false) ; return }
+        let docRef = firestore.collection(Habit.habitKeys.userKey).document(currentUser).collection(Habit.habitKeys.habitsKey).document(habit.habitDescription)
+        docRef.updateData([Habit.habitKeys.daysCompletedKey: FieldValue.arrayRemove([Date().dateWithoutTime])])
     }
 }

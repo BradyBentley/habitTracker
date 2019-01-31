@@ -30,7 +30,6 @@ class AddHabitViewController: UIViewController, TimeReminderScheduler, LocationR
         
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         activityIndicator.startAnimating()
-        LineChartController.shared.addToAllHabitArrays(habits: HabitController.shared.habits) { (_) in }
         Firebase.shared.fetchHabits { (success) in
             if success {
                 for habit in HabitController.shared.habits {

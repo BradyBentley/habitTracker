@@ -12,7 +12,6 @@ class HabitCheckInViewController: UIViewController {
     
     // MARK: - IB Outlets
     @IBOutlet weak var CheckInTableView: UITableView!
-    @IBOutlet weak var topPartOfView: UIView!
 
     // MARK: - Properties
     var habit: Habit?
@@ -22,14 +21,12 @@ class HabitCheckInViewController: UIViewController {
         super.viewDidLoad()
         CheckInTableView.delegate = self
         CheckInTableView.dataSource = self
-        CheckInTableView.tableFooterView = UIView()
     }
     
     // MARK: - Action
-    @IBAction func exitTapGesture(_ sender: UITapGestureRecognizer) {
+    @IBAction func exitTappedGesture(_ sender: UITapGestureRecognizer) {
         handleTap(sender: sender)
     }
-    
 }
 
 extension HabitCheckInViewController: UITableViewDelegate, UITableViewDataSource {
@@ -49,7 +46,9 @@ extension HabitCheckInViewController: UITableViewDelegate, UITableViewDataSource
 extension HabitCheckInViewController: UIGestureRecognizerDelegate {
     func handleTap(sender: UITapGestureRecognizer) {
         if sender.state == .ended {
-            self.dismiss(animated: true, completion: nil)
+            self.dismiss(animated: true) {
+                
+            }
         }
     }
 }

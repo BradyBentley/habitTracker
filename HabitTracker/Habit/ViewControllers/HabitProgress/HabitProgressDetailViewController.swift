@@ -27,8 +27,15 @@ class HabitProgressDetailViewController: UIViewController {
         progressTableView.delegate = self
         progressTableView.dataSource = self
         LineChartController.shared.setup(chartView: progressChartView)
+        LineChartController.shared.addToAllHabitArrays(habits: HabitController.shared.habits) { (_) in }
         setChartData(habits: HabitController.shared.habits)
         updateViews()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        progressTableView.reloadData()
+        
     }
     
     // MARK: - Actions
@@ -82,7 +89,8 @@ extension HabitProgressDetailViewController: ChartViewDelegate {
     func setChartData(habits: [Habit]) {
         var dataSets = [LineChartDataSet]()
         for habit in habits {
-            let val = habit.completionPercent
+            let reversed = habit.completionPercent.reversed()
+            let val = Array(reversed)
             let values = (0..<val.count).map { (i) -> ChartDataEntry in
                 return ChartDataEntry(x: Double(i) + 1, y: val[i])
         }
