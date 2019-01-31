@@ -47,7 +47,7 @@ class Habit {
     }
     
     // MARK: - Initialization
-    init(isNewHabit: Bool, category: String, habitDescription: String, days: Int, weeks: Int, timeReminder: [TimeReminder] = [], locationReminder: [LocationReminder] = [], daysCompleted: [CheckIn] = [], startingDate: Date = Date(), daysCheckedIn: Int = 0, completionPercent: [Double] = [0.0, 0.0, 0.0, 0.0]) {
+    init(isNewHabit: Bool, category: String, habitDescription: String, days: Int, weeks: Int, timeReminder: [TimeReminder] = [], locationReminder: [LocationReminder] = [], daysCompleted: [CheckIn] = [], startingDate: Date = Date(), daysCheckedIn: Int = 5, completionPercent: [Double] = [0.0, 0.0, 0.0, 0.0]) {
         self.isNewHabit = isNewHabit
         self.category = category
         self.habitDescription = habitDescription
