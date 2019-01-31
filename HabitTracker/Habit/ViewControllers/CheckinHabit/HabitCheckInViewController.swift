@@ -23,8 +23,6 @@ class HabitCheckInViewController: UIViewController {
         CheckInTableView.delegate = self
         CheckInTableView.dataSource = self
         CheckInTableView.tableFooterView = UIView()
-        view.backgroundColor = UIColor.clear
-        view.isOpaque = true
     }
     
     // MARK: - Action
