@@ -36,6 +36,7 @@ class HabitDetailViewController: UIViewController {
         super.viewDidLoad()
         habitReminderTableView.dataSource = self
         habitReminderTableView.delegate = self
+        habitReminderTableView.tableFooterView = UIView()
         updateViews()
     }
     

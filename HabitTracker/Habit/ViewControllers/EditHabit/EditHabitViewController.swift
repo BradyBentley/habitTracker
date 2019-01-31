@@ -38,6 +38,7 @@ class EditHabitViewController: UIViewController, UITableViewDelegate, UITableVie
         weekPickerView.delegate = self
         remindersTableView.dataSource = self
         remindersTableView.delegate = self
+        remindersTableView.tableFooterView = UIView()
         updateView()
     }
     
