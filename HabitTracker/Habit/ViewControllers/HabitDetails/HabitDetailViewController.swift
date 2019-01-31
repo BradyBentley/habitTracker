@@ -18,7 +18,6 @@ class HabitDetailViewController: UIViewController {
     @IBOutlet weak var successLabel: UILabel!
     @IBOutlet weak var percentageCompletionLabel: UILabel!
     @IBOutlet weak var habitReminderTableView: UITableView!
-    @IBOutlet weak var progressChartView: LineChartView!
     @IBOutlet weak var detailProgressChartView: LineChartView!
     
     // MARK: - Properties
@@ -35,18 +34,15 @@ class HabitDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateViews()
         habitReminderTableView.dataSource = self
         habitReminderTableView.delegate = self
+        updateViews()
     }
     
     // MARK: - Actions
-    @IBAction func cancelButtonTapped(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
     
     @IBAction func doneButtonPushed(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+       self.dismiss(animated: true, completion: nil)
     }
     
     // MARK: - Setup
@@ -59,7 +55,7 @@ class HabitDetailViewController: UIViewController {
         iconImageView.image = UIImage(named: "\(habit.category)Progress")
         percentageCompletionLabel.text = "\(Int(habit.completion))%"
         setChartData(completionPercent: habit.completionPercent)
-        LineChartController.shared.setup(chartView: progressChartView)
+        LineChartController.shared.setup(chartView: detailProgressChartView)
     }
     
     // MARK: - Navigation

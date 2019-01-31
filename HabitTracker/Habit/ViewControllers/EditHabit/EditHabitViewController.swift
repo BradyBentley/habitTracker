@@ -16,6 +16,7 @@ class EditHabitViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var dayPickerView: UIPickerView!
     @IBOutlet weak var weekPickerView: UIPickerView!
+    @IBOutlet weak var backButton: UIBarButtonItem!
     
     // MARK: - Properties
     var habit: Habit?
