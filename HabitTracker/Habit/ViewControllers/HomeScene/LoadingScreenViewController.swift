@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LoadingScreenViewController: UIViewController {
     
@@ -26,6 +27,12 @@ class LoadingScreenViewController: UIViewController {
         
 
         // Do any additional setup after loading the view.
+        Auth.auth().addStateDidChangeListener { (auth, user) in
+            if let user = user {
+                let uuid = user.uid
+                UserController.shared.currentUser = User(uuid: uuid)
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
