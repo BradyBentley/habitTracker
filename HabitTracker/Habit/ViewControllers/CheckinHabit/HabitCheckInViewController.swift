@@ -22,7 +22,7 @@ class HabitCheckInViewController: UIViewController {
         super.viewDidLoad()
         CheckInTableView.delegate = self
         CheckInTableView.dataSource = self
-        
+        CheckInTableView.tableFooterView = UIView()
     }
     
     // MARK: - Action
