@@ -28,6 +28,7 @@ class CustomTabBarController: UITabBarController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         let progressSB = UIStoryboard(name: "Progress", bundle: nil)
+        
         let habitVC = storyboard.instantiateViewController(withIdentifier: "AddHabitViewController") as! AddHabitViewController
         habitVC.tabBarItem = homeTabButton
 
