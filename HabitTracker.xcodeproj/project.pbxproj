@@ -10,13 +10,13 @@
 		26084A3621F799440037A221 /* AddHabit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26084A3521F799440037A221 /* AddHabit.storyboard */; };
 		26084A3821F7B7BB0037A221 /* HabitDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26084A3721F7B7BB0037A221 /* HabitDetail.storyboard */; };
 		26084A3A21F7B9980037A221 /* Progress.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26084A3921F7B9980037A221 /* Progress.storyboard */; };
-		26084A3C21F7BA190037A221 /* CheckInPopUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26084A3B21F7BA190037A221 /* CheckInPopUp.storyboard */; };
 		26084A4221F7D5F40037A221 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26084A4121F7D5F40037A221 /* UserController.swift */; };
 		260AAD6121EFAD9000461C1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260AAD6021EFAD9000461C1E /* AppDelegate.swift */; };
 		260AAD6621EFAD9000461C1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 260AAD6421EFAD9000461C1E /* Main.storyboard */; };
 		260AAD6821EFAD9200461C1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 260AAD6721EFAD9200461C1E /* Assets.xcassets */; };
 		260AAD6B21EFAD9200461C1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 260AAD6921EFAD9200461C1E /* LaunchScreen.storyboard */; };
 		266DCE0521F8E98A00CDC0F9 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266DCE0421F8E98A00CDC0F9 /* LogInViewController.swift */; };
+		267F039D22036E1200372480 /* CheckInPopUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 267F039C22036E1200372480 /* CheckInPopUp.storyboard */; };
 		26A044EC21FFC57800E13CC3 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A044EB21FFC57800E13CC3 /* DateExtension.swift */; };
 		26A2E44821FFB3FF002B6EE6 /* LineChartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A2E44721FFB3FF002B6EE6 /* LineChartController.swift */; };
 		26F0D92C21EFBD3F00D4ADA1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26F0D92B21EFBD3F00D4ADA1 /* GoogleService-Info.plist */; };
@@ -54,7 +54,6 @@
 		26084A3521F799440037A221 /* AddHabit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddHabit.storyboard; sourceTree = "<group>"; };
 		26084A3721F7B7BB0037A221 /* HabitDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HabitDetail.storyboard; sourceTree = "<group>"; };
 		26084A3921F7B9980037A221 /* Progress.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Progress.storyboard; sourceTree = "<group>"; };
-		26084A3B21F7BA190037A221 /* CheckInPopUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CheckInPopUp.storyboard; sourceTree = "<group>"; };
 		26084A4121F7D5F40037A221 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		260AAD5D21EFAD9000461C1E /* HabitTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HabitTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		260AAD6021EFAD9000461C1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +62,7 @@
 		260AAD6A21EFAD9200461C1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		260AAD6C21EFAD9200461C1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		266DCE0421F8E98A00CDC0F9 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		267F039C22036E1200372480 /* CheckInPopUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CheckInPopUp.storyboard; sourceTree = "<group>"; };
 		26A044EB21FFC57800E13CC3 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		26A2E44721FFB3FF002B6EE6 /* LineChartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartController.swift; sourceTree = "<group>"; };
 		26F0D92B21EFBD3F00D4ADA1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -128,12 +128,12 @@
 			isa = PBXGroup;
 			children = (
 				260AAD6421EFAD9000461C1E /* Main.storyboard */,
-				26084A3B21F7BA190037A221 /* CheckInPopUp.storyboard */,
 				26084A3921F7B9980037A221 /* Progress.storyboard */,
 				260AAD6921EFAD9200461C1E /* LaunchScreen.storyboard */,
 				F73C046A21FA680200CEF0BB /* Login.storyboard */,
 				26084A3521F799440037A221 /* AddHabit.storyboard */,
 				26084A3721F7B7BB0037A221 /* HabitDetail.storyboard */,
+				267F039C22036E1200372480 /* CheckInPopUp.storyboard */,
 			);
 			path = StoryBoards;
 			sourceTree = "<group>";
@@ -410,10 +410,10 @@
 				26084A3621F799440037A221 /* AddHabit.storyboard in Resources */,
 				26F0D92C21EFBD3F00D4ADA1 /* GoogleService-Info.plist in Resources */,
 				26084A3A21F7B9980037A221 /* Progress.storyboard in Resources */,
+				267F039D22036E1200372480 /* CheckInPopUp.storyboard in Resources */,
 				260AAD6821EFAD9200461C1E /* Assets.xcassets in Resources */,
 				F73C046B21FA680200CEF0BB /* Login.storyboard in Resources */,
 				260AAD6621EFAD9000461C1E /* Main.storyboard in Resources */,
-				26084A3C21F7BA190037A221 /* CheckInPopUp.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

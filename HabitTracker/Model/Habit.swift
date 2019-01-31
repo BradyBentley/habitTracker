@@ -9,7 +9,7 @@
 import Foundation
 import Firebase
 
-typealias CheckIn = Date
+typealias CheckIn = String
 
 class Habit {
     // MARK: - Properties
@@ -47,7 +47,7 @@ class Habit {
     }
     
     // MARK: - Initialization
-    init(isNewHabit: Bool, category: String, habitDescription: String, days: Int, weeks: Int, timeReminder: [TimeReminder] = [], locationReminder: [LocationReminder] = [], daysCompleted: [CheckIn] = [], startingDate: Date = Date(), daysCheckedIn: Int = 5, completionPercent: [Double] = [0.0, 0.0, 0.0, 0.0]) {
+    init(isNewHabit: Bool, category: String, habitDescription: String, days: Int, weeks: Int, timeReminder: [TimeReminder] = [], locationReminder: [LocationReminder] = [], daysCompleted: [CheckIn] = [], startingDate: Date = Date(), daysCheckedIn: Int = 0, completionPercent: [Double] = [0.0, 0.0, 0.0, 0.0]) {
         self.isNewHabit = isNewHabit
         self.category = category
         self.habitDescription = habitDescription
@@ -69,17 +69,16 @@ class Habit {
         let weeks = firebaseDictionary[Habit.habitKeys.weeksKey] as? Int,
         let timeReminderUUID = firebaseDictionary[Habit.habitKeys.timeReminderKey] as? [String],
         let locationReminderUUID = firebaseDictionary[Habit.habitKeys.locationReminderKey] as? [String],
-        let daysCompletedUUID = firebaseDictionary[Habit.habitKeys.daysCompletedKey] as? [String],
+        let daysCompleted = firebaseDictionary[Habit.habitKeys.daysCompletedKey] as? [String],
         let daysCheckedIn = firebaseDictionary[Habit.habitKeys.daysCheckedInKey] as? Int,
         let timeStamp = firebaseDictionary[Habit.habitKeys.startingDateKey] as? Timestamp,
         let completionPercent = firebaseDictionary[Habit.habitKeys.completionPercent] as? [Double]else { return nil }
         
         let startingDate = timeStamp.dateValue()
-        self.init(isNewHabit: isNewHabit, category: category, habitDescription: habitDescription, days: days, weeks: weeks, startingDate: startingDate, daysCheckedIn: daysCheckedIn, completionPercent: completionPercent)
+        self.init(isNewHabit: isNewHabit, category: category, habitDescription: habitDescription, days: days, weeks: weeks, daysCompleted: daysCompleted, startingDate: startingDate, daysCheckedIn: daysCheckedIn, completionPercent: completionPercent)
         
         self.timeReminderUUID = timeReminderUUID
         self.locationReminderUUID = locationReminderUUID
-        self.daysCompletedUUID = daysCompletedUUID
     }
 }
 

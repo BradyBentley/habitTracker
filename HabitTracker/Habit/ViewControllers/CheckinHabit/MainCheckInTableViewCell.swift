@@ -9,52 +9,62 @@
 import UIKit
 
 class MainCheckInTableViewCell: UITableViewCell {
+
+    // MARK: - IBOutlets
+    @IBOutlet weak var habitNameLabel: UILabel!
+    @IBOutlet weak var habitCheckInButton: UIButton!
     
+    // MARK: - Properties
+    var wasTapped: Bool?
     var habit: Habit? {
     didSet {
         updateViews()
         }
     }
     
-    var wasTapped: Bool = false
-    
-    @IBOutlet weak var habitNameLabel: UILabel!
-    
-    @IBOutlet weak var habitCheckInButton: UIButton!
-    
-    
-    
-    
+    // MARK: - Actions
     @IBAction func habitCheckInButtonTapped(_ sender: Any) {
         changeCheckBoxImage()
     }
     
+    // MARK: - Methods
     func updateViews() {
         guard let habit = habit else {return}
         self.habitNameLabel.text = habit.habitDescription
-        self.habitCheckInButton.setImage(UIImage(named: "unchecked"), for: .normal)
+        if habit.daysCompleted.contains(Date().dateWithoutTime) {
+            self.habitCheckInButton.setImage(UIImage(named: "\(habit.category)Checkmark"), for: .normal)
+            wasTapped = false
+        } else {
+            self.habitCheckInButton.setImage(UIImage(named: "unchecked"), for: .normal)
+            wasTapped = true
+        }
     }
 }
 
 extension MainCheckInTableViewCell {
     func changeCheckBoxImage() {
-        guard let habit = habit else {return}
+        guard let habit = habit, var wasTapped = wasTapped else { return }
+        wasTapped = !wasTapped
         if wasTapped == false {
             habitCheckInButton.setImage(UIImage(named: "\(habit.category)Checkmark"), for: .normal)
             if habit.daysCheckedIn < habit.days{
                 habit.daysCheckedIn += 1
-                Firebase.shared.updateDaysCheckedIn(habit: habit, daysCheckedIn: habit.daysCheckedIn) { (_) in
+                Firebase.shared.updateDaysCheckedIn(habit: habit, daysCheckedIn: habit.daysCheckedIn) { (success) in
+                    habit.daysCompleted.append(Date().dateWithoutTime)
+                    Firebase.shared.updateDaysComplete(habit: habit, completion: { (_) in
+                    })
                 }
             }
-            wasTapped = true
         } else {
             habitCheckInButton.setImage(UIImage(named: "unchecked"), for: .normal)
             if habit.daysCheckedIn > 0 {
                 habit.daysCheckedIn -= 1
-                Firebase.shared.updateDaysCheckedIn(habit: habit, daysCheckedIn: habit.daysCheckedIn) { (_) in
+                Firebase.shared.updateDaysCheckedIn(habit: habit, daysCheckedIn: habit.daysCheckedIn) { (success) in
+                    habit.daysCompleted.removeLast()
+                    Firebase.shared.removeDaysComplete(habit: habit, completion: { (_) in
+                    })
                 }
             }
-            wasTapped = false
         }
     }
 }
