@@ -14,6 +14,7 @@ class CustomTabBarController: UITabBarController {
     var progressTabButton: UITabBarItem!
     var checkInTabButton: UIButton!
     let tabBarHeight: CGFloat = 70
+    let checkInSB = UIStoryboard(name: "CheckInPopUp", bundle: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,8 +31,8 @@ class CustomTabBarController: UITabBarController {
         let progressSB = UIStoryboard(name: "Progress", bundle: nil)
         let habitVC = storyboard.instantiateViewController(withIdentifier: "AddHabitViewController") as! AddHabitViewController
         habitVC.tabBarItem = homeTabButton
-
-        let checkInVC = UIViewController()
+        
+        let checkInVC = checkInSB.instantiateViewController(withIdentifier: "HabitCheckInViewController") as! HabitCheckInViewController
 
         let progressVC = progressSB.instantiateViewController(withIdentifier: "HabitProgressDetailViewController") as! HabitProgressDetailViewController
         progressVC.tabBarItem = progressTabButton
@@ -71,6 +72,7 @@ class CustomTabBarController: UITabBarController {
         
         self.tabBar.layoutIfNeeded()
         self.view.layoutIfNeeded()
+        checkInTabButton.addTarget(self, action: #selector(checkInButtonTapped(sender:)), for: .touchUpInside)
     }
     
     func setUpTabBarElements() {
@@ -82,5 +84,12 @@ class CustomTabBarController: UITabBarController {
         self.progressTabButton.image = UIImage(named: "11")?.withRenderingMode(.alwaysOriginal)
         
         self.progressTabButton.selectedImage = UIImage(named: "8")?.withRenderingMode(.alwaysOriginal)
+    }
+    
+    @objc func checkInButtonTapped(sender: UIButton) {
+        let modalVC = checkInSB.instantiateViewController(withIdentifier: "HabitCheckInViewController")
+        modalVC.modalPresentationStyle = .overCurrentContext
+        self.present(modalVC, animated: true, completion: nil)
+        
     }
 }

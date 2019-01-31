@@ -19,8 +19,12 @@ class WelcomeViewController: UIViewController {
         super.viewDidLoad()
         logInButton.layer.cornerRadius = 20
         signInButton.layer.cornerRadius = 20
-        if Auth.auth().currentUser != nil {
-            performSegue(withIdentifier: "ToHomePage", sender: self)
+        Auth.auth().addStateDidChangeListener { (auth, user) in
+            if let user = user {
+                let uuid = user.uid
+                UserController.shared.currentUser = User(uuid: uuid)
+                self.performSegue(withIdentifier: "ToHomePage", sender: self)
+            }
         }
     }
     
