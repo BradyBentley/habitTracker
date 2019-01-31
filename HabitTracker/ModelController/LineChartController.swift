@@ -15,23 +15,22 @@ class LineChartController {
     var habit: Habit?
     
     func addWeekProgressToArray(habit: Habit, completion: @escaping SuccessCompletion){
-        var nextWeeksDate = habit.startingDate.addingTimeInterval(604800)
+        let nextWeeksDate = habit.startingDate.addingTimeInterval(604800)
         let today = Date()
         if today.dateWithoutTime > nextWeeksDate.dateWithoutTime {
             habit.completionPercent.append(habit.completion)
             habit.completionPercent.removeFirst()
             print(habit.completionPercent)
-            nextWeeksDate = habit.startingDate
+            habit.startingDate = nextWeeksDate
+            Firebase.shared.updateCompletePercent(habit: habit, newDate: nextWeeksDate) { (success) in
+                habit.daysCheckedIn = 0
+            }
         }
     }
     
     func addToAllHabitArrays(habits: [Habit], completion: @escaping SuccessCompletion){
         for habit in habits {
-            addWeekProgressToArray(habit: habit) { (success) in
-                if success {
-                    Firebase.shared.updateCompletePercent(habit: habit, completePercent: habit.completionPercent, completion: { (_) in
-                    })
-                }
+            addWeekProgressToArray(habit: habit) { (_) in
             }
         }
     }

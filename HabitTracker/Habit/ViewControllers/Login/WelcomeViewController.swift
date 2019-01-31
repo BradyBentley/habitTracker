@@ -23,9 +23,6 @@ class WelcomeViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if Auth.auth().currentUser != nil {
-            performSegue(withIdentifier: "ToHomePage", sender: nil)
-        }
     }
     
     
