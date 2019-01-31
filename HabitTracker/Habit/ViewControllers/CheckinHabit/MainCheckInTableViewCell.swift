@@ -41,14 +41,18 @@ extension MainCheckInTableViewCell {
         guard let habit = habit else {return}
         if wasTapped == false {
             habitCheckInButton.setImage(UIImage(named: "\(habit.category)Checkmark"), for: .normal)
-            habit.daysCheckedIn += 1
-            Firebase.shared.updateDaysCheckedIn(habit: habit, daysCheckedIn: habit.daysCheckedIn) { (_) in
+            if habit.daysCheckedIn < habit.days{
+                habit.daysCheckedIn += 1
+                Firebase.shared.updateDaysCheckedIn(habit: habit, daysCheckedIn: habit.daysCheckedIn) { (_) in
+                }
             }
             wasTapped = true
         } else {
-            habitCheckInButton.setImage(UIImage(named: "temp"), for: .normal)
-            habit.daysCheckedIn -= 1
-            Firebase.shared.updateDaysCheckedIn(habit: habit, daysCheckedIn: habit.daysCheckedIn) { (_) in
+            habitCheckInButton.setImage(UIImage(named: "unchecked"), for: .normal)
+            if habit.daysCheckedIn > 0 {
+                habit.daysCheckedIn -= 1
+                Firebase.shared.updateDaysCheckedIn(habit: habit, daysCheckedIn: habit.daysCheckedIn) { (_) in
+                }
             }
             wasTapped = false
         }

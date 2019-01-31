@@ -18,7 +18,7 @@ class LineChartController {
         var nextWeeksDate = habit.startingDate.addingTimeInterval(604800)
         let today = Date()
         if today.dateWithoutTime > nextWeeksDate.dateWithoutTime {
-            habit.completionPercent.append(habit.completion)
+            habit.completionPercent.insert(habit.completion, at: 0)
             habit.completionPercent.remove(at: 4)
             nextWeeksDate = habit.startingDate
         }
