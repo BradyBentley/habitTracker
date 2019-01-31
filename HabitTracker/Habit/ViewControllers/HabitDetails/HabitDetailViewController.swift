@@ -11,8 +11,18 @@ import Charts
 
 class HabitDetailViewController: UIViewController {
     
+    let shapeLayer = CAShapeLayer()
+    let trackLayer = CAShapeLayer()
+    
+    var fullShapeLayer: CAShapeLayer!
+    var outerShapeLayer: CAShapeLayer!
+    
+    let quarterCircle = (CGFloat.pi / 2)
+    let fullCircle = (CGFloat.pi * 2)
+    
     // MARK: - IBOutlets
     
+    @IBOutlet weak var progressView: UIView!
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var habitDescriptionLabel: UILabel!
     @IBOutlet weak var successLabel: UILabel!
@@ -53,11 +63,59 @@ class HabitDetailViewController: UIViewController {
         LineChartController.shared.setup(chartView: detailProgressChartView)
         habitDescriptionLabel.text = habit.habitDescription
         successLabel.text = habit.category.uppercased()
-        iconImageView.image = UIImage(named: "\(habit.category)Progress")
+        iconImageView.image = UIImage(named: "\(habit.category)Selected")
         percentageCompletionLabel.text = "\(Int(habit.completion))%"
         setChartData(completionPercent: habit.completionPercent)
         LineChartController.shared.setup(chartView: detailProgressChartView)
+        
+        fullShapeLayer = animateProgressBar(percentage: 1, strokeEnd: 1, strokeColor: UIColor(named: "\(habit.category)Track")?.cgColor)
+        
+        outerShapeLayer = animateProgressBar(percentage: CGFloat(habit.completion / 100), strokeEnd: 0, strokeColor: UIColor(named: "\(habit.category)Color")?.cgColor)
     }
+    
+    func animateProgressBar(percentage: CGFloat, strokeEnd: CGFloat, strokeColor: CGColor?) -> CAShapeLayer{
+        
+        
+        let center = progressView.center
+        let circularPathTakeTwo = UIBezierPath(arcCenter: center, radius: 28, startAngle: -quarterCircle, endAngle: ((fullCircle * percentage) - quarterCircle), clockwise: true)
+        trackLayer.path = circularPathTakeTwo.cgPath
+        trackLayer.strokeColor = strokeColor
+        trackLayer.lineWidth = 4
+        trackLayer.lineCap = CAShapeLayerLineCap.round
+        trackLayer.strokeEnd = strokeEnd
+        trackLayer.fillColor = UIColor.clear.cgColor
+        
+        progressView.layer.addSublayer(trackLayer)
+        
+        shapeLayer.path = circularPathTakeTwo.cgPath
+        shapeLayer.strokeColor = strokeColor
+        shapeLayer.lineWidth = 4
+        shapeLayer.lineCap = CAShapeLayerLineCap.round
+        shapeLayer.strokeEnd = strokeEnd
+        shapeLayer.fillColor = UIColor.clear.cgColor
+        
+        progressView.layer.addSublayer(shapeLayer)
+        
+        UIView.animate(withDuration: 1) {
+            self.animation()
+        }
+        
+        return shapeLayer
+    }
+    
+    func animation() {
+        let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
+        
+        //basicAnimation.fromValue = 0.0
+        basicAnimation.toValue = 1
+        basicAnimation.duration = 1
+        basicAnimation.fillMode = CAMediaTimingFillMode.forwards
+        
+        basicAnimation.isRemovedOnCompletion = false
+        
+        shapeLayer.add(basicAnimation, forKey: "basic")
+    }
+
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
