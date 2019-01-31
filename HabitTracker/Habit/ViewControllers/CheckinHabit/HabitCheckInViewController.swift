@@ -10,53 +10,47 @@ import UIKit
 
 class HabitCheckInViewController: UIViewController {
     
-    var habit: Habit?
-
+    // MARK: - IB Outlets
     @IBOutlet weak var CheckInTableView: UITableView!
-    
     @IBOutlet weak var topPartOfView: UIView!
+
+    // MARK: - Properties
+    var habit: Habit?
     
+    // MARK: - ViewLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        CheckInTableView.delegate = self
+        CheckInTableView.dataSource = self
+        view.backgroundColor = UIColor.clear
+        view.isOpaque = true
     }
     
-    @IBAction func doneButtonTapped(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+    // MARK: - Action
+    @IBAction func exitTapGesture(_ sender: UITapGestureRecognizer) {
+        handleTap(sender: sender)
     }
     
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension HabitCheckInViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell: UITableViewCell!
-        
-        if tableView == CheckInTableView {
-            cell = tableView.dequeueReusableCell(withIdentifier: "checkInCell", for: indexPath) as? CheckInCustomTableViewCell
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CheckInCell", for: indexPath) as! MainCheckInTableViewCell
+        let habit = HabitController.shared.habits[indexPath.row]
+        cell.habit = habit
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        var count = 0
-        
-        if tableView == CheckInTableView {
-            count = HabitController.shared.habits.count
-        }
-        return count
+        return HabitController.shared.habits.count
     }
-    
+}
+
+// MARK: - TapGestureRecognizer
+extension HabitCheckInViewController: UIGestureRecognizerDelegate {
+    func handleTap(sender: UITapGestureRecognizer) {
+        if sender.state == .ended {
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
 }

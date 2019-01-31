@@ -17,8 +17,6 @@ class MainCheckInTableViewCell: UITableViewCell {
     }
     
     var wasTapped: Bool = false
-
-    @IBOutlet weak var categoryIcon: UIImageView!
     
     @IBOutlet weak var habitNameLabel: UILabel!
     
@@ -33,9 +31,8 @@ class MainCheckInTableViewCell: UITableViewCell {
     
     func updateViews() {
         guard let habit = habit else {return}
-        self.categoryIcon.image = UIImage(named: "\(habit.category)Progress")
         self.habitNameLabel.text = habit.habitDescription
-        self.habitCheckInButton.setImage(UIImage(named: "temp"), for: .normal)
+        self.habitCheckInButton.setImage(UIImage(named: "unchecked"), for: .normal)
     }
 }
 
@@ -45,13 +42,14 @@ extension MainCheckInTableViewCell {
         if wasTapped == false {
             habitCheckInButton.setImage(UIImage(named: "\(habit.category)Checkmark"), for: .normal)
             habit.daysCheckedIn += 1
-            ///TODO: Add a save function
+            Firebase.shared.updateDaysCheckedIn(habit: habit, daysCheckedIn: habit.daysCheckedIn) { (_) in
+            }
             wasTapped = true
         } else {
             habitCheckInButton.setImage(UIImage(named: "temp"), for: .normal)
             habit.daysCheckedIn -= 1
-            
-            ///TODO: Add a save function
+            Firebase.shared.updateDaysCheckedIn(habit: habit, daysCheckedIn: habit.daysCheckedIn) { (_) in
+            }
             wasTapped = false
         }
     }

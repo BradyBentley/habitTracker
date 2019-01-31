@@ -148,5 +148,13 @@ class Firebase {
         guard let currentUser = UserController.shared.currentUser?.uuid else { completion(false) ; return }
         let docRef = firestore.collection(Habit.habitKeys.userKey).document(currentUser).collection(Habit.habitKeys.habitsKey).document(habit.habitDescription)
         docRef.updateData([Habit.habitKeys.completionPercent: habit.completionPercent])
+        completion(true)
+    }
+    
+    func updateDaysCheckedIn(habit: Habit, daysCheckedIn: Int, completion: @escaping SuccessCompletion) {
+        guard let currentUser = UserController.shared.currentUser?.uuid else { completion(false) ; return }
+        let docRef = firestore.collection(Habit.habitKeys.userKey).document(currentUser).collection(Habit.habitKeys.habitsKey).document(habit.habitDescription)
+        docRef.updateData([Habit.habitKeys.daysCheckedInKey: daysCheckedIn])
+        completion(true)
     }
 }

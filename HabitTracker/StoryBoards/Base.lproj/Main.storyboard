@@ -10,6 +10,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--CheckInPopUp-->
+        <scene sceneID="VvJ-Wc-FYl">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CheckInPopUp" id="0FA-Gi-c6I" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MkN-Tr-dhw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1345" y="1343"/>
+        </scene>
         <!--AddHabit-->
         <scene sceneID="idU-2u-82H">
             <objects>
