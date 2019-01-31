@@ -48,6 +48,7 @@
                         <outlet property="shadowWidth" destination="dzy-fB-65O" id="Mc8-9C-Rk3"/>
                         <outlet property="shrinkingShadowAnimation" destination="ViK-aX-qKO" id="HfA-fK-A6V"/>
                         <segue destination="cTU-np-SWt" kind="show" identifier="toLogin" id="oUo-or-uNP"/>
+                        <segue destination="DAw-Ge-zs6" kind="show" identifier="ToMainHabitScreen" id="od4-OE-Cb0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6k1-Fm-zr6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -61,6 +62,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pfp-gz-1Ct" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1753" y="191"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="uX5-FL-PfS">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="DAw-Ge-zs6" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B9X-pR-fyZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1761" y="276"/>
         </scene>
     </scenes>
     <resources>

@@ -31,6 +31,7 @@ class LoadingScreenViewController: UIViewController {
             if let user = user {
                 let uuid = user.uid
                 UserController.shared.currentUser = User(uuid: uuid)
+                self.performSegue(withIdentifier: "ToMainHabitScreen", sender: nil)
             }
         }
     }
