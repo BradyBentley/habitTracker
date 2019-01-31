@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="51R-kF-AEU">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Loading Screen View Controller-->
+        <scene sceneID="wsW-E2-zeb">
+            <objects>
+                <viewController id="51R-kF-AEU" customClass="LoadingScreenViewController" customModule="HabitTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="J9U-gz-N0c">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="oval" translatesAutoresizingMaskIntoConstraints="NO" id="ViK-aX-qKO">
+                                <rect key="frame" x="162.5" y="421.5" width="50" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="dzy-fB-65O"/>
+                                    <constraint firstAttribute="height" constant="21" id="fAC-rQ-eQt"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loadingImage" translatesAutoresizingMaskIntoConstraints="NO" id="4ec-gP-lut">
+                                <rect key="frame" x="137.5" y="273.5" width="100" height="140"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="cNa-UW-eua"/>
+                                    <constraint firstAttribute="width" constant="100" id="mxm-pl-YgF"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="4ec-gP-lut" firstAttribute="centerY" secondItem="KFB-i4-zxn" secondAttribute="centerY" id="8Bn-ue-pIh"/>
+                            <constraint firstItem="ViK-aX-qKO" firstAttribute="centerX" secondItem="KFB-i4-zxn" secondAttribute="centerX" id="Gea-kc-OKz"/>
+                            <constraint firstItem="4ec-gP-lut" firstAttribute="centerX" secondItem="KFB-i4-zxn" secondAttribute="centerX" id="cZH-MF-LaQ"/>
+                            <constraint firstItem="ViK-aX-qKO" firstAttribute="top" secondItem="4ec-gP-lut" secondAttribute="bottom" constant="8" id="fCZ-Kc-TcI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="KFB-i4-zxn"/>
+                    </view>
+                    <connections>
+                        <outlet property="floatingManAnimation" destination="4ec-gP-lut" id="ooL-Uj-wYM"/>
+                        <outlet property="shadowHeight" destination="fAC-rQ-eQt" id="gAk-tP-Gad"/>
+                        <outlet property="shadowWidth" destination="dzy-fB-65O" id="Mc8-9C-Rk3"/>
+                        <outlet property="shrinkingShadowAnimation" destination="ViK-aX-qKO" id="HfA-fK-A6V"/>
+                        <segue destination="cTU-np-SWt" kind="show" identifier="toLogin" id="oUo-or-uNP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6k1-Fm-zr6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1084" y="194"/>
+        </scene>
+        <!--Login-->
+        <scene sceneID="lRL-Vt-dY6">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Login" id="cTU-np-SWt" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pfp-gz-1Ct" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1753" y="191"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="loadingImage" width="115" height="184"/>
+        <image name="oval" width="100" height="31"/>
+    </resources>
+</document>

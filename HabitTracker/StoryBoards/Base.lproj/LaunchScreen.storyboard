@@ -19,10 +19,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loadingImage" translatesAutoresizingMaskIntoConstraints="NO" id="B56-5R-gZx">
-                                <rect key="frame" x="130" y="241.5" width="115" height="184"/>
+                                <rect key="frame" x="137.5" y="263.5" width="100" height="140"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="A8V-aZ-Zin"/>
+                                    <constraint firstAttribute="height" constant="140" id="KQ4-Vn-I4q"/>
+                                </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="oval" translatesAutoresizingMaskIntoConstraints="NO" id="Z3A-YJ-6wT">
-                                <rect key="frame" x="137.5" y="435.5" width="100" height="31"/>
+                                <rect key="frame" x="162.5" y="413.5" width="50" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="TxS-YS-aIl"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
