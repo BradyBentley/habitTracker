@@ -41,6 +41,8 @@
 		F7791C5621F52DDB00337D10 /* HabitCheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7791C5521F52DDB00337D10 /* HabitCheckInViewController.swift */; };
 		F7791C5A21F52E3000337D10 /* HabitProgressDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7791C5921F52E3000337D10 /* HabitProgressDetailViewController.swift */; };
 		F7A51E182201623700C1356A /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A51E172201623700C1356A /* CustomTabBarController.swift */; };
+		F7A51E1A2203634100C1356A /* LoadingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A51E192203634100C1356A /* LoadingScreenViewController.swift */; };
+		F7A51E1C22036FC800C1356A /* Loading.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7A51E1B22036FC800C1356A /* Loading.storyboard */; };
 		F7AA118F21F6311A000B16C6 /* EditHabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AA118E21F6311A000B16C6 /* EditHabitViewController.swift */; };
 		F7AA119321F6352B000B16C6 /* MainCheckInTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AA119221F6352B000B16C6 /* MainCheckInTableViewCell.swift */; };
 		F7AA119521F63627000B16C6 /* ProgressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AA119421F63627000B16C6 /* ProgressTableViewCell.swift */; };
@@ -91,6 +93,8 @@
 		F7791C5521F52DDB00337D10 /* HabitCheckInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCheckInViewController.swift; sourceTree = "<group>"; };
 		F7791C5921F52E3000337D10 /* HabitProgressDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitProgressDetailViewController.swift; sourceTree = "<group>"; };
 		F7A51E172201623700C1356A /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		F7A51E192203634100C1356A /* LoadingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreenViewController.swift; sourceTree = "<group>"; };
+		F7A51E1B22036FC800C1356A /* Loading.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Loading.storyboard; sourceTree = "<group>"; };
 		F7AA118E21F6311A000B16C6 /* EditHabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditHabitViewController.swift; sourceTree = "<group>"; };
 		F7AA119221F6352B000B16C6 /* MainCheckInTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCheckInTableViewCell.swift; sourceTree = "<group>"; };
 		F7AA119421F63627000B16C6 /* ProgressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressTableViewCell.swift; sourceTree = "<group>"; };
@@ -134,6 +138,7 @@
 				F73C046A21FA680200CEF0BB /* Login.storyboard */,
 				26084A3521F799440037A221 /* AddHabit.storyboard */,
 				26084A3721F7B7BB0037A221 /* HabitDetail.storyboard */,
+				F7A51E1B22036FC800C1356A /* Loading.storyboard */,
 			);
 			path = StoryBoards;
 			sourceTree = "<group>";
@@ -213,6 +218,7 @@
 				26F0D93721F0FE2D00D4ADA1 /* AddHabitViewController.swift */,
 				26F0D93C21F1042D00D4ADA1 /* HabitTableViewCell.swift */,
 				F7A51E172201623700C1356A /* CustomTabBarController.swift */,
+				F7A51E192203634100C1356A /* LoadingScreenViewController.swift */,
 			);
 			path = HomeScene;
 			sourceTree = "<group>";
@@ -408,6 +414,7 @@
 				26084A3821F7B7BB0037A221 /* HabitDetail.storyboard in Resources */,
 				260AAD6B21EFAD9200461C1E /* LaunchScreen.storyboard in Resources */,
 				26084A3621F799440037A221 /* AddHabit.storyboard in Resources */,
+				F7A51E1C22036FC800C1356A /* Loading.storyboard in Resources */,
 				26F0D92C21EFBD3F00D4ADA1 /* GoogleService-Info.plist in Resources */,
 				26084A3A21F7B9980037A221 /* Progress.storyboard in Resources */,
 				260AAD6821EFAD9200461C1E /* Assets.xcassets in Resources */,
@@ -504,6 +511,7 @@
 				F7791C5621F52DDB00337D10 /* HabitCheckInViewController.swift in Sources */,
 				F73213D421F25584009A47F0 /* LocationBasedReminderViewController.swift in Sources */,
 				F73213CE21F2546C009A47F0 /* ReminderViewController.swift in Sources */,
+				F7A51E1A2203634100C1356A /* LoadingScreenViewController.swift in Sources */,
 				CBD7EC7A21F830FA0074A6D2 /* SetReminderTableViewController.swift in Sources */,
 				26F0D94921F1432E00D4ADA1 /* User.swift in Sources */,
 				26F0D94B21F143A500D4ADA1 /* Habit.swift in Sources */,
