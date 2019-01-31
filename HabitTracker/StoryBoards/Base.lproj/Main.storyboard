@@ -27,7 +27,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="90" estimatedRowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5LP-iL-TMH">
-                                <rect key="frame" x="0.0" y="59" width="375" height="659"/>
+                                <rect key="frame" x="0.0" y="59" width="375" height="639"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="HabitCell" id="fv2-UX-RPD" customClass="HabitTableViewCell" customModule="HabitTracker" customModuleProvider="target">
@@ -102,8 +102,12 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="lpr-GZ-YWK">
+                                <rect key="frame" x="169" y="387.66666666666669" width="37" height="37"/>
+                                <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mCT-g6-QgE">
-                                <rect key="frame" x="25" y="728" width="79" height="30"/>
+                                <rect key="frame" x="25" y="708" width="79" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Y7-eV-tBu">
                                         <rect key="frame" x="0.0" y="0.0" width="79" height="30"/>
@@ -117,16 +121,12 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="3LU-lf-6mS"/>
+                                    <constraint firstAttribute="bottom" secondItem="2Y7-eV-tBu" secondAttribute="bottom" id="9Qk-8u-Z8M"/>
                                     <constraint firstAttribute="trailing" secondItem="2Y7-eV-tBu" secondAttribute="trailing" id="BH3-rR-Zk3"/>
                                     <constraint firstItem="2Y7-eV-tBu" firstAttribute="top" secondItem="mCT-g6-QgE" secondAttribute="top" id="EVt-o0-2v7"/>
                                     <constraint firstItem="2Y7-eV-tBu" firstAttribute="leading" secondItem="mCT-g6-QgE" secondAttribute="leading" id="r1O-Nz-R5G"/>
-                                    <constraint firstAttribute="bottom" secondItem="2Y7-eV-tBu" secondAttribute="bottom" id="zFr-Nm-iT8"/>
                                 </constraints>
                             </view>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="lpr-GZ-YWK">
-                                <rect key="frame" x="169" y="387.66666666666669" width="37" height="37"/>
-                                <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -135,7 +135,7 @@
                             <constraint firstItem="X2T-5S-WJS" firstAttribute="trailing" secondItem="5LP-iL-TMH" secondAttribute="trailing" id="SfS-J6-OXd"/>
                             <constraint firstItem="lpr-GZ-YWK" firstAttribute="centerY" secondItem="RPK-yO-pGJ" secondAttribute="centerY" id="acV-as-GtU"/>
                             <constraint firstItem="mCT-g6-QgE" firstAttribute="leading" secondItem="X2T-5S-WJS" secondAttribute="leading" constant="25" id="oNh-MU-07k"/>
-                            <constraint firstItem="X2T-5S-WJS" firstAttribute="bottom" secondItem="mCT-g6-QgE" secondAttribute="bottom" constant="20" id="qax-tM-stk"/>
+                            <constraint firstItem="X2T-5S-WJS" firstAttribute="bottom" secondItem="mCT-g6-QgE" secondAttribute="bottom" constant="40" id="qax-tM-stk"/>
                             <constraint firstItem="5LP-iL-TMH" firstAttribute="top" secondItem="X2T-5S-WJS" secondAttribute="top" constant="15" id="xt4-mj-4wX"/>
                             <constraint firstItem="lpr-GZ-YWK" firstAttribute="centerX" secondItem="RPK-yO-pGJ" secondAttribute="centerX" id="ysc-qo-QLG"/>
                         </constraints>
@@ -149,7 +149,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EUG-0F-L1X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="948" y="876"/>
+            <point key="canvasLocation" x="948" y="875.61576354679812"/>
         </scene>
         <!--HabitDetail-->
         <scene sceneID="QA6-uH-78u">
