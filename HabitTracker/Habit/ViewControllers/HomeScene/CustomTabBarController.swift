@@ -32,13 +32,14 @@ class CustomTabBarController: UITabBarController {
         
         let habitVC = storyboard.instantiateViewController(withIdentifier: "AddHabitViewController") as! AddHabitViewController
         habitVC.tabBarItem = homeTabButton
-        
+        let embedHabitVC = UINavigationController(rootViewController: habitVC)
+
         let checkInVC = checkInSB.instantiateViewController(withIdentifier: "HabitCheckInViewController") as! HabitCheckInViewController
 
         let progressVC = progressSB.instantiateViewController(withIdentifier: "HabitProgressDetailViewController") as! HabitProgressDetailViewController
         progressVC.tabBarItem = progressTabButton
         
-        self.viewControllers = [habitVC, checkInVC, progressVC]
+        self.viewControllers = [embedHabitVC, checkInVC, progressVC]
 
         setUpMiddleButton()
     }

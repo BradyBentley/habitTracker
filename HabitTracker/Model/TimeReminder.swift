@@ -42,6 +42,7 @@ extension TimeReminder: Equatable {
     }
 }
 
+// MARK: - Converting to Firebase dictionary
 extension TimeReminder {
     var dictionary: [String: Any] {
         return [

@@ -101,6 +101,7 @@ class HabitController {
     
 }
 
+// MARK: - Notification protocols
 protocol TimeReminderScheduler {
     
     func scheduleUserNotifications(for timeReminder: TimeReminder)
