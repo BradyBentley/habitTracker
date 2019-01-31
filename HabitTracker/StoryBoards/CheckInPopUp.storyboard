@@ -26,113 +26,122 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="iIw-RC-Fr6">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fb5-rI-e1u">
                                 <rect key="frame" x="0.0" y="516" width="414" height="380"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fb5-rI-e1u">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="380"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="cbG-xQ-rZ0">
-                                                <rect key="frame" x="36" y="23" width="332" height="50.5"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check In" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nLK-pM-CJ8">
-                                                        <rect key="frame" x="0.0" y="0.0" width="99" height="29"/>
-                                                        <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="24"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Were you successful in your habits today?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uQX-ZA-8cS">
-                                                        <rect key="frame" x="0.0" y="30" width="332" height="20.5"/>
-                                                        <fontDescription key="fontDescription" name="SFProText-Light" family="SF Pro Text" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                            </stackView>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="udh-6V-Jr1">
-                                                <rect key="frame" x="36" y="101.5" width="351" height="253.5"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CheckInCell" rowHeight="86" id="j1O-c7-ecd" customClass="MainCheckInTableViewCell" customModule="HabitTracker" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="28" width="351" height="86"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
-                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="j1O-c7-ecd" id="uZS-h3-sMv">
-                                                            <rect key="frame" x="0.0" y="0.0" width="351" height="85.5"/>
-                                                            <autoresizingMask key="autoresizingMask"/>
-                                                            <subviews>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="e4D-8O-IoY">
-                                                                    <rect key="frame" x="20" y="17" width="311" height="50"/>
-                                                                    <subviews>
-                                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="3Be-GP-amR">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="249" height="50"/>
-                                                                            <subviews>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(name)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mbi-eM-OSV">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="249" height="50"/>
-                                                                                    <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
-                                                                                    <nil key="textColor"/>
-                                                                                    <nil key="highlightedColor"/>
-                                                                                </label>
-                                                                            </subviews>
-                                                                        </stackView>
-                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="khk-q2-I53">
-                                                                            <rect key="frame" x="261" y="0.0" width="50" height="50"/>
-                                                                            <constraints>
-                                                                                <constraint firstAttribute="width" constant="50" id="FxJ-CM-NAq"/>
-                                                                                <constraint firstAttribute="height" constant="50" id="Mk6-aN-HZg"/>
-                                                                            </constraints>
-                                                                            <state key="normal" title="Button"/>
-                                                                            <connections>
-                                                                                <action selector="habitCheckInButtonTapped:" destination="j1O-c7-ecd" eventType="touchUpInside" id="YT0-BM-iha"/>
-                                                                            </connections>
-                                                                        </button>
-                                                                    </subviews>
-                                                                </stackView>
-                                                            </subviews>
-                                                            <constraints>
-                                                                <constraint firstAttribute="bottom" secondItem="e4D-8O-IoY" secondAttribute="bottom" constant="18.5" id="0Na-SN-2Br"/>
-                                                                <constraint firstAttribute="trailing" secondItem="e4D-8O-IoY" secondAttribute="trailing" constant="20" id="0wX-2s-hGW"/>
-                                                                <constraint firstItem="e4D-8O-IoY" firstAttribute="leading" secondItem="uZS-h3-sMv" secondAttribute="leading" constant="20" id="LSe-nY-eBN"/>
-                                                                <constraint firstItem="e4D-8O-IoY" firstAttribute="top" secondItem="uZS-h3-sMv" secondAttribute="top" constant="17" id="dLo-6r-hkE"/>
-                                                            </constraints>
-                                                        </tableViewCellContentView>
-                                                        <connections>
-                                                            <outlet property="habitCheckInButton" destination="khk-q2-I53" id="CFT-Fy-2OO"/>
-                                                            <outlet property="habitNameLabel" destination="Mbi-eM-OSV" id="EHU-0k-nNS"/>
-                                                        </connections>
-                                                    </tableViewCell>
-                                                </prototypes>
-                                            </tableView>
-                                        </subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7k2-u6-HTY">
+                                        <rect key="frame" x="5" y="5" width="404" height="370"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstItem="cbG-xQ-rZ0" firstAttribute="top" secondItem="fb5-rI-e1u" secondAttribute="top" constant="23" id="81E-fF-gXJ"/>
-                                            <constraint firstItem="udh-6V-Jr1" firstAttribute="top" secondItem="cbG-xQ-rZ0" secondAttribute="bottom" constant="28" id="CE0-cB-vMm"/>
-                                            <constraint firstItem="cbG-xQ-rZ0" firstAttribute="leading" secondItem="fb5-rI-e1u" secondAttribute="leading" constant="36" id="EPQ-ql-Ux3"/>
-                                            <constraint firstAttribute="bottom" secondItem="udh-6V-Jr1" secondAttribute="bottom" constant="25" id="Ufa-kR-uW2"/>
-                                            <constraint firstAttribute="height" constant="380" id="jio-N3-qMk"/>
-                                            <constraint firstAttribute="trailing" secondItem="udh-6V-Jr1" secondAttribute="trailing" constant="27" id="kj6-bd-0TG"/>
-                                            <constraint firstItem="udh-6V-Jr1" firstAttribute="leading" secondItem="fb5-rI-e1u" secondAttribute="leading" constant="36" id="qcm-Xb-iWp"/>
-                                        </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="8"/>
+                                                <integer key="value" value="30"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="cbG-xQ-rZ0">
+                                        <rect key="frame" x="30" y="25" width="354" height="50.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check In" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nLK-pM-CJ8">
+                                                <rect key="frame" x="0.0" y="0.0" width="99" height="29"/>
+                                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="24"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Were you successful in your habits today?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uQX-ZA-8cS">
+                                                <rect key="frame" x="0.0" y="30" width="332" height="20.5"/>
+                                                <fontDescription key="fontDescription" name="SFProText-Light" family="SF Pro Text" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" estimatedRowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="udh-6V-Jr1">
+                                        <rect key="frame" x="30" y="100.5" width="354" height="254.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CheckInCell" rowHeight="86" id="j1O-c7-ecd" customClass="MainCheckInTableViewCell" customModule="HabitTracker" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="354" height="86"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="j1O-c7-ecd" id="uZS-h3-sMv">
+                                                    <rect key="frame" x="0.0" y="0.0" width="354" height="85.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="e4D-8O-IoY">
+                                                            <rect key="frame" x="20" y="18" width="314" height="50"/>
+                                                            <subviews>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="3Be-GP-amR">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="252" height="50"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(name)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mbi-eM-OSV">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="252" height="50"/>
+                                                                            <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                </stackView>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="khk-q2-I53">
+                                                                    <rect key="frame" x="264" y="0.0" width="50" height="50"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="50" id="FxJ-CM-NAq"/>
+                                                                        <constraint firstAttribute="height" constant="50" id="Mk6-aN-HZg"/>
+                                                                    </constraints>
+                                                                    <state key="normal" title="Button"/>
+                                                                    <connections>
+                                                                        <action selector="habitCheckInButtonTapped:" destination="j1O-c7-ecd" eventType="touchUpInside" id="YT0-BM-iha"/>
+                                                                    </connections>
+                                                                </button>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="khk-q2-I53" firstAttribute="top" secondItem="e4D-8O-IoY" secondAttribute="top" id="9Et-Uj-Kgb"/>
+                                                                <constraint firstAttribute="bottom" secondItem="khk-q2-I53" secondAttribute="bottom" id="QNo-lY-Jwq"/>
+                                                                <constraint firstAttribute="trailing" secondItem="khk-q2-I53" secondAttribute="trailing" id="tjC-b1-p5Z"/>
+                                                            </constraints>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="e4D-8O-IoY" secondAttribute="trailing" constant="20" id="0wX-2s-hGW"/>
+                                                        <constraint firstItem="e4D-8O-IoY" firstAttribute="leading" secondItem="uZS-h3-sMv" secondAttribute="leading" constant="20" id="LSe-nY-eBN"/>
+                                                        <constraint firstItem="e4D-8O-IoY" firstAttribute="centerY" secondItem="uZS-h3-sMv" secondAttribute="centerY" id="qnd-J1-LlW"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="habitCheckInButton" destination="khk-q2-I53" id="CFT-Fy-2OO"/>
+                                                    <outlet property="habitNameLabel" destination="Mbi-eM-OSV" id="EHU-0k-nNS"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
                                 </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="fb5-rI-e1u" secondAttribute="bottom" id="Blw-Qz-UjJ"/>
-                                    <constraint firstAttribute="bottom" secondItem="fb5-rI-e1u" secondAttribute="bottom" id="MKl-q1-9ZI"/>
+                                    <constraint firstItem="cbG-xQ-rZ0" firstAttribute="top" secondItem="fb5-rI-e1u" secondAttribute="top" constant="25" id="81E-fF-gXJ"/>
+                                    <constraint firstAttribute="height" constant="380" id="A0e-25-Lb7"/>
+                                    <constraint firstItem="udh-6V-Jr1" firstAttribute="top" secondItem="cbG-xQ-rZ0" secondAttribute="bottom" constant="25" id="CE0-cB-vMm"/>
+                                    <constraint firstItem="cbG-xQ-rZ0" firstAttribute="leading" secondItem="fb5-rI-e1u" secondAttribute="leading" constant="30" id="EPQ-ql-Ux3"/>
+                                    <constraint firstAttribute="trailing" secondItem="cbG-xQ-rZ0" secondAttribute="trailing" constant="30" id="Ogf-Ao-pzg"/>
+                                    <constraint firstAttribute="bottom" secondItem="udh-6V-Jr1" secondAttribute="bottom" constant="25" id="Ufa-kR-uW2"/>
+                                    <constraint firstAttribute="trailing" secondItem="7k2-u6-HTY" secondAttribute="trailing" constant="5" id="YPE-F1-cE7"/>
+                                    <constraint firstItem="7k2-u6-HTY" firstAttribute="top" secondItem="fb5-rI-e1u" secondAttribute="top" constant="5" id="e7C-sx-4F8"/>
+                                    <constraint firstItem="7k2-u6-HTY" firstAttribute="leading" secondItem="fb5-rI-e1u" secondAttribute="leading" constant="5" id="jYf-Tu-8y1"/>
+                                    <constraint firstAttribute="trailing" secondItem="udh-6V-Jr1" secondAttribute="trailing" constant="30" id="kj6-bd-0TG"/>
+                                    <constraint firstItem="udh-6V-Jr1" firstAttribute="leading" secondItem="fb5-rI-e1u" secondAttribute="leading" constant="30" id="qcm-Xb-iWp"/>
+                                    <constraint firstAttribute="bottom" secondItem="7k2-u6-HTY" secondAttribute="bottom" constant="5" id="uzf-wz-1CU"/>
                                 </constraints>
-                            </stackView>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="iIw-RC-Fr6" firstAttribute="leading" secondItem="ejm-aY-18S" secondAttribute="leading" id="QxR-hk-3o2"/>
-                            <constraint firstItem="iIw-RC-Fr6" firstAttribute="trailing" secondItem="ejm-aY-18S" secondAttribute="trailing" id="ipm-KW-fy3"/>
-                            <constraint firstAttribute="bottom" secondItem="iIw-RC-Fr6" secondAttribute="bottom" id="jkx-WH-Que"/>
+                            <constraint firstItem="fb5-rI-e1u" firstAttribute="leading" secondItem="ejm-aY-18S" secondAttribute="leading" id="CGR-Q5-gV1"/>
+                            <constraint firstAttribute="bottom" secondItem="fb5-rI-e1u" secondAttribute="bottom" id="Ycm-PO-AFp"/>
+                            <constraint firstItem="fb5-rI-e1u" firstAttribute="trailing" secondItem="ejm-aY-18S" secondAttribute="trailing" id="fGM-PZ-WVe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ejm-aY-18S"/>
                         <connections>

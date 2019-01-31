@@ -18,17 +18,19 @@ class AddHabitViewController: UIViewController, TimeReminderScheduler, LocationR
     
     // MARK: - IBOutlets
     @IBOutlet weak var habitsTableView: UITableView!
-    @IBOutlet weak var categoryIcon: UIImageView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     // MARK: - Properties
     
     // MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        LineChartController.shared.addToAllHabitArrays(habits: HabitController.shared.habits) { (_) in
-        }
         habitsTableView.delegate = self
         habitsTableView.dataSource = self
+        
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        activityIndicator.startAnimating()
+        LineChartController.shared.addToAllHabitArrays(habits: HabitController.shared.habits) { (_) in }
         Firebase.shared.fetchHabits { (success) in
             if success {
                 for habit in HabitController.shared.habits {
@@ -39,6 +41,8 @@ class AddHabitViewController: UIViewController, TimeReminderScheduler, LocationR
                         habit.locationReminder = locationReminders
                     })
                 }
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                self.activityIndicator.stopAnimating()
                 self.habitsTableView.reloadData()
             }
         }
