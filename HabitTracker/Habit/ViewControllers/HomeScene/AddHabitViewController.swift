@@ -11,16 +11,12 @@ import UserNotifications
 
 class AddHabitViewController: UIViewController, TimeReminderScheduler, LocationReminderScheduler {
     
+    // MARK: - Properties
     var habit: Habit?
-    
-    let shapeLayer = CAShapeLayer()
-    let trackLayer = CAShapeLayer()
     
     // MARK: - IBOutlets
     @IBOutlet weak var habitsTableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    
-    // MARK: - Properties
     
     // MARK: - View LifeCycle
     override func viewDidLoad() {
