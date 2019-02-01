@@ -109,7 +109,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="X8m-jW-dMl">
-                                <rect key="frame" x="25" y="337" width="364" height="435"/>
+                                <rect key="frame" x="25" y="337" width="364" height="425"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="TimeReminderCell" textLabel="NTc-Sp-Wo5" detailTextLabel="7ff-qk-nbQ" rowHeight="59" style="IBUITableViewCellStyleSubtitle" id="qWy-Ov-CmP">
@@ -384,7 +384,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="35" estimatedRowHeight="35" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="skv-mi-1DI">
-                                <rect key="frame" x="25" y="696" width="364" height="116"/>
+                                <rect key="frame" x="25" y="696" width="364" height="106"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CheckInCell" textLabel="KbI-PG-6U4" style="IBUITableViewCellStyleDefault" id="czA-oq-56E">
@@ -425,7 +425,7 @@
                             <constraint firstItem="4RE-I0-8lM" firstAttribute="top" secondItem="qD3-C3-5cM" secondAttribute="bottom" constant="5" id="e3e-R1-2CX"/>
                             <constraint firstItem="qD3-C3-5cM" firstAttribute="leading" secondItem="EMZ-NO-Sv5" secondAttribute="leading" constant="25" id="iqZ-1A-DBs"/>
                             <constraint firstItem="skv-mi-1DI" firstAttribute="top" secondItem="N6P-YE-q0Y" secondAttribute="bottom" constant="5" id="jXO-Wa-97J"/>
-                            <constraint firstItem="EMZ-NO-Sv5" firstAttribute="bottom" secondItem="skv-mi-1DI" secondAttribute="bottom" constant="50" id="jjN-12-tJz"/>
+                            <constraint firstItem="EMZ-NO-Sv5" firstAttribute="bottom" secondItem="skv-mi-1DI" secondAttribute="bottom" constant="60" id="jjN-12-tJz"/>
                             <constraint firstItem="pgN-LE-uM7" firstAttribute="top" secondItem="Oz0-tJ-MLq" secondAttribute="bottom" constant="15" id="n4C-Ps-Pis"/>
                             <constraint firstItem="EMZ-NO-Sv5" firstAttribute="trailing" secondItem="N6P-YE-q0Y" secondAttribute="trailing" constant="25" id="ous-43-DNj"/>
                             <constraint firstItem="EMZ-NO-Sv5" firstAttribute="trailing" secondItem="4RE-I0-8lM" secondAttribute="trailing" constant="25" id="sOx-1T-laA"/>

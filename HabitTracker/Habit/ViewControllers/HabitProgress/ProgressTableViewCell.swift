@@ -41,7 +41,7 @@ class ProgressTableViewCell: UITableViewCell {
     func updateViews() {
         guard let habit = habit else { return }
         habitNameLabel.text = habit.habitDescription
-        categoryIconImageView.image = UIImage(named: "\(habit.category)")
+        categoryIconImageView.image = UIImage(named: "\(habit.category)Selected")
         numberOfDaysLabel.text = "\(habit.days) days per week"
         numberOfDaysLabel.isHidden = false
         imagesStackView.isHidden = false
