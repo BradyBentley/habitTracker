@@ -42,6 +42,11 @@ class EditHabitViewController: UIViewController, UITableViewDelegate, UITableVie
         updateView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        remindersTableView.reloadData()
+    }
+    
     // MARK: - Setup
     func updateView() {
         guard let habit = habit else { return }
@@ -175,6 +180,40 @@ class EditHabitViewController: UIViewController, UITableViewDelegate, UITableVie
         return cell
     }
     // MARK: - Table view delegate
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "ToEditTime":
+            if let destinationVC = segue.destination as? SetReminderTableViewController, let habit = habit {
+                if let indexPath = remindersTableView.indexPathForSelectedRow {
+                    destinationVC.habit = habit
+                    destinationVC.reminder = habit.timeReminder[indexPath.row]
+                    destinationVC.addingNewHabit = false
+                }
+            }
+        case "ToAddTime":
+            if let destinationVC = segue.destination as? SetReminderTableViewController, let habit = habit {
+                destinationVC.habit = habit
+                destinationVC.addingNewHabit = false
+            }
+        case "ToEditLocation":
+            if let destinationVC = segue.destination as? LocationBasedReminderViewController, let habit = habit {
+                if let indexPath = remindersTableView.indexPathForSelectedRow {
+                    destinationVC.habit = habit
+                    destinationVC.reminder = habit.locationReminder[indexPath.row]
+                    destinationVC.addingNewHabit = false
+                }
+            }
+        case "ToAddLocation":
+            if let destinationVC = segue.destination as? LocationBasedReminderViewController, let habit = habit {
+                destinationVC.habit = habit
+                destinationVC.addingNewHabit = false
+            }
+        default:
+            print("Edit segue issues")
+        }
+    }
     
 }
 

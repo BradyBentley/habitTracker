@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LogInViewController: UIViewController {
+class LogInViewController: UIViewController, UITextFieldDelegate {
     // MARK: - Properties
     var isLogInPage: Bool?
     
@@ -25,6 +25,16 @@ class LogInViewController: UIViewController {
         super.viewDidLoad()
         signInButton.layer.cornerRadius = 20
         updateViews()
+        
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
+        tapGesture.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {
+        self.view.endEditing(true)
     }
     
     // MARK: - Actions
@@ -82,6 +92,12 @@ class LogInViewController: UIViewController {
         } else {
             logInPage()
         }
+    }
+    
+    // MARK: - Textfield delegate
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
 }

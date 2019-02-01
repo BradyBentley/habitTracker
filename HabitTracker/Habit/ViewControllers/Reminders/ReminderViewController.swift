@@ -36,31 +36,31 @@ class ReminderViewController: UIViewController, UITableViewDataSource, UITableVi
     
     // MARK: - Button actions
     
-    @IBAction func doneButtonPushed(_ sender: Any) {
+    @IBAction func saveButtonPushed(_ sender: Any) {
         guard let habit = habit else { return }
         
         if authorizationStatus == .denied {
             // MARK: - Notification disabled alert
             DispatchQueue.main.async {
-            let alertController = UIAlertController(title: "Notifications Disabled", message: "Please turn on notifications in settings to receive time or location alerts", preferredStyle: .alert)
-            let settingsAction = UIAlertAction(title: "Settings", style: .default) { (_) -> Void in
-                guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else { return }
+                let alertController = UIAlertController(title: "Notifications Disabled", message: "Please turn on notifications in settings to receive time or location alerts", preferredStyle: .alert)
+                let settingsAction = UIAlertAction(title: "Settings", style: .default) { (_) -> Void in
+                    guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else { return }
                 
-                if UIApplication.shared.canOpenURL(settingsUrl) {
-                    UIApplication.shared.open(settingsUrl, completionHandler: { (_) in
-                        self.dismiss(animated: false, completion: nil)
-                    })
+                    if UIApplication.shared.canOpenURL(settingsUrl) {
+                        UIApplication.shared.open(settingsUrl, completionHandler: { (_) in
+                            self.dismiss(animated: false, completion: nil)
+                        })
+                    }
                 }
-            }
-            let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: { (_) in
-                self.dismiss(animated: true, completion: nil)
-            })
-            alertController.addAction(cancelAction)
-            alertController.addAction(settingsAction)
-            self.present(alertController, animated: true, completion: nil)
+                let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: { (_) in
+                    self.dismiss(animated: true, completion: nil)
+                })
+                alertController.addAction(cancelAction)
+                alertController.addAction(settingsAction)
+                self.present(alertController, animated: true, completion: nil)
             }
         } else {
-            HabitController.shared.createHabit(isNewHabit: habit.isNewHabit, category: habit.category, habitDescription: habit.habitDescription, days: habit.days, weeks: habit.weeks) { (_) in
+            HabitController.shared.createHabit(isNewHabit: habit.isNewHabit, category: habit.category, habitDescription: habit.habitDescription, days: habit.days, weeks: habit.weeks, uuid: habit.uuid) { (_) in
                 for timeReminder in habit.timeReminder {
                     HabitController.shared.createTimeReminder(habit: habit, day: timeReminder.day, time: timeReminder.time, reminderText: timeReminder.reminderText) { (_) in
                         self.scheduleUserNotifications(for: timeReminder)
@@ -68,7 +68,7 @@ class ReminderViewController: UIViewController, UITableViewDataSource, UITableVi
                 }
                 for locationReminder in habit.locationReminder {
                     HabitController.shared.createLocationReminder(habit: habit, latitude: locationReminder.longitude, longitude: locationReminder.longitude, locationName: locationReminder.locationName, remindOnEntryOrExit: locationReminder.remindOnEntryOrExit, reminderText: locationReminder.reminderText) { (_) in
-                        self.scheduleUserNotifications(for: locationReminder)
+                    self.scheduleUserNotifications(for: locationReminder)
                     }
                 }
             }

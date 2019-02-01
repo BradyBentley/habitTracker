@@ -548,7 +548,7 @@
         <!--Set Reminder-->
         <scene sceneID="O5A-IX-Cuo">
             <objects>
-                <tableViewController id="7oP-x4-pSK" customClass="SetReminderTableViewController" customModule="HabitTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="TimeReminderViewController" id="7oP-x4-pSK" customClass="SetReminderTableViewController" customModule="HabitTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="20" sectionFooterHeight="20" id="rp7-d9-o1h">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -731,12 +731,12 @@
         <!--Reminders-->
         <scene sceneID="Uqy-gY-kwf">
             <objects>
-                <viewController storyboardIdentifier="ReminderViewController" id="KVo-Wa-Tfm" customClass="ReminderViewController" customModule="HabitTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="KVo-Wa-Tfm" customClass="ReminderViewController" customModule="HabitTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zk4-ei-H55">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WwV-m0-4am">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WwV-m0-4am">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="ekX-h5-IxN">
@@ -1011,9 +1011,9 @@
                         <viewLayoutGuide key="safeArea" id="J7b-iE-rjW"/>
                     </view>
                     <navigationItem key="navigationItem" title="Reminders" id="epi-ob-wSj">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="9wv-8p-a5h">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="9wv-8p-a5h">
                             <connections>
-                                <action selector="doneButtonPushed:" destination="KVo-Wa-Tfm" id="OPb-tz-53f"/>
+                                <action selector="saveButtonPushed:" destination="KVo-Wa-Tfm" id="49f-V8-kKg"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1029,7 +1029,7 @@
         <!--Location Based Reminder View Controller-->
         <scene sceneID="yM6-s7-5vs">
             <objects>
-                <viewController id="X9H-VB-jb4" customClass="LocationBasedReminderViewController" customModule="HabitTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LocationReminderViewController" id="X9H-VB-jb4" customClass="LocationBasedReminderViewController" customModule="HabitTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aQi-Aa-lzQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

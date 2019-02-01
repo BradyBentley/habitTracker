@@ -59,7 +59,6 @@ class Firebase {
     
     func fetchTimeReminder(timeReminderUUID: [String], completion: @escaping ([TimeReminder]) -> Void) {
         guard let currentUser = UserController.shared.currentUser?.uuid else { completion([]) ; return }
-        
         var timeReminders: [TimeReminder] = []
         for uuid in timeReminderUUID {
             let timeRef = firestore.collection(Habit.habitKeys.userKey).document(currentUser).collection(Habit.habitKeys.timeReminderKey).document(uuid)
@@ -76,10 +75,12 @@ class Firebase {
         }
     }
     
-    func updateTimeReminder(habit: Habit, timeReminder: TimeReminder, reminderText: String, completion: @escaping SuccessCompletion) {
+    func updateTimeReminder(habit: Habit, timeReminder: TimeReminder, completion: @escaping SuccessCompletion) {
         guard let currentUser = UserController.shared.currentUser?.uuid else { completion(false) ; return }
         let timeRef = firestore.collection(Habit.habitKeys.userKey).document(currentUser).collection(Habit.habitKeys.timeReminderKey).document(timeReminder.uuid)
-        timeRef.updateData(["reminderText": reminderText])
+        timeRef.updateData(["time": timeReminder.time,
+                            "day": timeReminder.day,
+                            "reminderText": timeReminder.reminderText])
         completion(true)
     }
     
@@ -121,10 +122,14 @@ class Firebase {
         }
     }
     
-    func updateLocationReminders(habit: Habit, locationReminder: LocationReminder, reminderText: String, completion: @escaping SuccessCompletion) {
+    func updateLocationReminder(habit: Habit, locationReminder: LocationReminder, completion: @escaping SuccessCompletion) {
         guard let currentUser = UserController.shared.currentUser?.uuid else { completion(false) ; return }
         let locationRef = firestore.collection(Habit.habitKeys.userKey).document(currentUser).collection(Habit.habitKeys.locationReminderKey).document(locationReminder.uuid)
-        locationRef.updateData(["reminderText": reminderText])
+        locationRef.updateData(["latitude": locationReminder.latitude,
+                                "longitude" : locationReminder.longitude,
+                                "locationName" : locationReminder.locationName,
+                                "remindOnEntryOrExit" : locationReminder.remindOnEntryOrExit,
+                                "reminderText": locationReminder.reminderText])
         completion(true)
     }
     
