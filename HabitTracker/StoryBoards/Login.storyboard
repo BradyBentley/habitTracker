@@ -25,7 +25,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome To Habitual" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1e1-6g-Ds4">
-                                <rect key="frame" x="68.333333333333329" y="194" width="238.66666666666669" height="29"/>
+                                <rect key="frame" x="74.333333333333329" y="194" width="226.33333333333337" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="MJa-MJ-dw0"/>
                                 </constraints>
@@ -94,7 +94,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome To Habitual" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZW-Yv-phK">
-                                <rect key="frame" x="68.333333333333329" y="194" width="238.66666666666669" height="29"/>
+                                <rect key="frame" x="74.333333333333329" y="194" width="226.33333333333337" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="9tO-l2-Erz"/>
                                 </constraints>
@@ -150,10 +150,10 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="GBT-Ul-CQV">
-                                <rect key="frame" x="77.000000000000014" y="635" width="221.33333333333337" height="19"/>
+                                <rect key="frame" x="81.000000000000014" y="635" width="213.33333333333337" height="19"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Crf-yx-4j1">
-                                        <rect key="frame" x="0.0" y="0.0" width="169.33333333333334" height="19"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="162.33333333333334" height="19"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="19" id="7fg-v7-hol"/>
                                         </constraints>
@@ -162,7 +162,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vqj-Cc-wJ2">
-                                        <rect key="frame" x="177.33333333333334" y="0.0" width="44" height="19"/>
+                                        <rect key="frame" x="170.33333333333334" y="0.0" width="43" height="19"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="19" id="8by-W8-lCv"/>
                                         </constraints>

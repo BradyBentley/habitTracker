@@ -25,14 +25,7 @@ class WelcomeViewController: UIViewController {
         super.viewDidAppear(animated)
     }
     
-    // MARK: - Actions
-    @IBAction func unwindToLogInVC(segue: UIStoryboardSegue){
-        
-    }
-    
-    
     // MARK: - Navigation
-    //IIDOO
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationVC = segue.destination as? LogInViewController
         if segue.identifier == "ToLogInPage" {
