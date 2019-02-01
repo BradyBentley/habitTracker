@@ -9,8 +9,9 @@
 import UIKit
 import MapKit
 import CoreLocation
+import UserNotifications
 
-class LocationBasedReminderViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDelegate, UITextFieldDelegate, MKMapViewDelegate {
+class LocationBasedReminderViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDelegate, UITextFieldDelegate, MKMapViewDelegate, LocationReminderScheduler {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +22,14 @@ class LocationBasedReminderViewController: UIViewController, CLLocationManagerDe
         locationSearchBar.delegate = self
         locationNameTextField.delegate = self
         mapView.delegate = self
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
+        tapGesture.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {
+        self.view.endEditing(true)
     }
     
     // MARK: - Properties
@@ -32,6 +41,8 @@ class LocationBasedReminderViewController: UIViewController, CLLocationManagerDe
     @IBOutlet weak var saveButton: UIButton!
     
     var habit: Habit?
+    var reminder: LocationReminder?
+    var addingNewHabit: Bool?
     var savedCoordinate: CLLocationCoordinate2D?
     var locationManager = CLLocationManager()
     var geoFenceRadius: Double = 200
@@ -129,10 +140,29 @@ class LocationBasedReminderViewController: UIViewController, CLLocationManagerDe
     
     @IBAction func mapSaveButtonTapped(_ sender: Any) {
         guard let savedCoordinate = savedCoordinate, let habit = habit,
+            let addingNewHabit = addingNewHabit,
             let locationName = locationNameTextField.text, !locationName.isEmpty else { return }
         
         let locationReminder = LocationReminder(latitude: savedCoordinate.latitude, longitude: savedCoordinate.longitude, locationName: locationName, remindOnEntryOrExit: segmentControl.selectedSegmentIndex, reminderText: "")
-        habit.locationReminder.append(locationReminder)
+        
+        if !addingNewHabit {
+            if let reminder = reminder {
+                reminder.latitude = savedCoordinate.latitude
+                reminder.longitude = savedCoordinate.longitude
+                reminder.locationName = locationName
+                reminder.remindOnEntryOrExit = segmentControl.selectedSegmentIndex
+                HabitController.shared.updateLocationReminder(habit: habit, locationReminder: reminder) { (_) in
+                    self.scheduleUserNotifications(for: locationReminder)
+                }
+            } else {
+                HabitController.shared.createLocationReminder(habit: habit, latitude: savedCoordinate.latitude, longitude: savedCoordinate.longitude, locationName: locationName, remindOnEntryOrExit: segmentControl.selectedSegmentIndex, reminderText: "", completion: { (_) in
+                    self.scheduleUserNotifications(for: locationReminder)
+                })
+            }
+        } else {
+            habit.locationReminder.append(locationReminder)
+        }
+        
         self.dismiss(animated: true, completion: nil)
     }
     

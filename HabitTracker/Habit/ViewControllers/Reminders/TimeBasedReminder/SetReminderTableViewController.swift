@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import UserNotifications
 
-class SetReminderTableViewController: UITableViewController {
+class SetReminderTableViewController: UITableViewController, TimeReminderScheduler {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateView()
     }
 
     // MARK: - Properties
@@ -19,16 +21,40 @@ class SetReminderTableViewController: UITableViewController {
     @IBOutlet weak var timePicker: UIDatePicker!
     
     var habit: Habit?
+    var reminder: TimeReminder?
+    var addingNewHabit: Bool?
     var weekdays: [Int] = []
+    
+    func updateView() {
+        guard let timeReminder = reminder else { return }
+        timePicker.date = timeReminder.time
+        weekdays = timeReminder.day
+    }
     
     // MARK: - Button actions
     
     @IBAction func saveButtonPushed(_ sender: Any) {
-        guard let habit = habit, weekdays.count != 0 else { return }
+        guard let habit = habit, weekdays.count != 0, let addingNewHabit = addingNewHabit else { return }
         
         let time = timePicker.date
         let timeReminder = TimeReminder(time: time, day: weekdays, reminderText: "")
-        habit.timeReminder.append(timeReminder)
+        
+        if !addingNewHabit {
+            if let reminder = reminder {
+                reminder.time = timePicker.date
+                reminder.day = weekdays
+                HabitController.shared.updateTimeReminder(habit: habit, timeReminder: reminder) { (_) in
+                    self.scheduleUserNotifications(for: timeReminder)
+                }
+            } else {
+                HabitController.shared.createTimeReminder(habit: habit, day: weekdays, time: time, reminderText: "", completion: { (_) in
+                    self.scheduleUserNotifications(for: timeReminder)
+                })
+            }
+        } else {
+            habit.timeReminder.append(timeReminder)
+        }
+        
         self.navigationController?.popViewController(animated: true)
     }
     

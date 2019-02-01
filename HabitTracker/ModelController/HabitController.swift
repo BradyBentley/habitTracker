@@ -18,8 +18,8 @@ class HabitController {
     
     // MARK: - CRUD
     // Create
-    func createHabit(isNewHabit: Bool, category: String, habitDescription: String, days: Int, weeks: Int, completion: @escaping SuccessCompletion) {
-        let newHabit = Habit(isNewHabit: isNewHabit, category: category, habitDescription: habitDescription, days: days, weeks: weeks)
+    func createHabit(isNewHabit: Bool, category: String, habitDescription: String, days: Int, weeks: Int, uuid: String, completion: @escaping SuccessCompletion) {
+        let newHabit = Habit(isNewHabit: isNewHabit, category: category, habitDescription: habitDescription, days: days, weeks: weeks, uuid: uuid)
         habits.append(newHabit)
         Firebase.shared.saveHabit(habit: newHabit) { (_) in }
         completion(true)
@@ -55,17 +55,25 @@ class HabitController {
         completion(true)
     }
     
-    func updateTimeReminder(timeReminder: TimeReminder, day: [Int], time: Date, reminderText: String, completion: @escaping SuccessCompletion) {
-        timeReminder.day = day
-        timeReminder.time = time
-        timeReminder.reminderText = reminderText
+    func updateTimeReminder(habit: Habit, timeReminder: TimeReminder, completion: @escaping SuccessCompletion) {
+        if let indexOfHabit = habits.index(of: habit) {
+            if let indexOfTimeReminder = habits[indexOfHabit].timeReminder.index(of: timeReminder) {
+                Firebase.shared.updateTimeReminder(habit: habit, timeReminder: timeReminder, completion: { (_) in
+                    self.habits[indexOfHabit].timeReminder[indexOfTimeReminder] = timeReminder
+                })
+            }
+        }
         completion(true)
     }
     
-    func updateLocationReminder(locationReminder: LocationReminder, latitude: Double, longitude: Double, reminderText: String, completion: @escaping SuccessCompletion) {
-        locationReminder.latitude = latitude
-        locationReminder.longitude = longitude
-        locationReminder.reminderText = reminderText
+    func updateLocationReminder(habit: Habit, locationReminder: LocationReminder, completion: @escaping SuccessCompletion) {
+        if let indexOfHabit = habits.index(of: habit) {
+            if let indexOfLocationReminder = habits[indexOfHabit].locationReminder.index(of: locationReminder) {
+                Firebase.shared.updateLocationReminder(habit: habit, locationReminder: locationReminder, completion: { (_) in
+                    self.habits[indexOfHabit].locationReminder[indexOfLocationReminder] = locationReminder
+                })
+            }
+        }
         completion(true)
     }
     
