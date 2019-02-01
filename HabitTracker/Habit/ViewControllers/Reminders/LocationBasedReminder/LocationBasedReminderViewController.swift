@@ -17,6 +17,7 @@ class LocationBasedReminderViewController: UIViewController, CLLocationManagerDe
         super.viewDidLoad()
         updateView()
         enableLocationServices()
+        registerKeyboardNotifications()
         
         locationManager.delegate = self
         locationSearchBar.delegate = self
@@ -26,9 +27,11 @@ class LocationBasedReminderViewController: UIViewController, CLLocationManagerDe
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
         tapGesture.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tapGesture)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        unregisterKeyboardNotifications()
     }
     
     // MARK: - Properties
@@ -67,6 +70,26 @@ class LocationBasedReminderViewController: UIViewController, CLLocationManagerDe
         mapView.addGestureRecognizer(longPressRecognizer)
     }
     
+    // MARK: - Keyboard showing / hiding
+    
+    func registerKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    func unregisterKeyboardNotifications() {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification){
+        guard let keyboardFrame = notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
+        self.view.frame.origin.y -= view.convert(keyboardFrame.cgRectValue, from: nil).size.height
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification){
+        self.view.frame.origin.y = 0
+    }
     // MARK: Gesture recognizer
     
     @objc func handleLongPress(recognizer: UILongPressGestureRecognizer) {
@@ -183,20 +206,6 @@ class LocationBasedReminderViewController: UIViewController, CLLocationManagerDe
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         return textField.resignFirstResponder()
-    }
-    
-    @objc func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y == 0 {
-                self.view.frame.origin.y -= keyboardSize.height
-            }
-        }
-    }
-    
-    @objc func keyboardWillHide(notification: NSNotification) {
-        if self.view.frame.origin.y != 0 {
-            self.view.frame.origin.y = 0
-        }
     }
     
     @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {

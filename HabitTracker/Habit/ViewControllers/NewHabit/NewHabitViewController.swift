@@ -22,7 +22,13 @@ class NewHabitViewController: UIViewController, UITextFieldDelegate, UIPickerVie
         weekPickerView.showsSelectionIndicator = true
         navigationItem.rightBarButtonItem?.title = "Next"
         
+        registerKeyboardNotifications()
         requestUserNotificationPermissions()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        unregisterKeyboardNotifications()
     }
     
     // MARK: - Properties
@@ -39,6 +45,7 @@ class NewHabitViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     @IBOutlet weak var mindsetButton: UIButton!
     @IBOutlet weak var otherButton: UIButton!
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var habitNameTextField: UITextField!
     @IBOutlet weak var dayPickerView: UIPickerView!
     @IBOutlet weak var weekPickerView: UIPickerView!
@@ -49,6 +56,27 @@ class NewHabitViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     var days: Int = 1
     var weeks: Int = 1
     var allowNotifications: Bool?
+    
+    // MARK: - Keyboard showing / hiding
+    
+    func registerKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    func unregisterKeyboardNotifications() {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        guard let keyboardFrame = notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
+        scrollView.contentInset.bottom = view.convert(keyboardFrame.cgRectValue, from: nil).size.height + 20
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        scrollView.contentInset.bottom = 0
+    }
     
     // MARK: - Button actions
     
