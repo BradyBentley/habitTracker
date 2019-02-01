@@ -157,6 +157,7 @@ class Firebase {
         guard let currentUser = UserController.shared.currentUser?.uuid else { completion(false) ; return }
         let docRef = firestore.collection(Habit.habitKeys.userKey).document(currentUser).collection(Habit.habitKeys.habitsKey).document(habit.uuid)
         docRef.updateData([Habit.habitKeys.daysCheckedInKey: daysCheckedIn])
+        docRef.updateData([Habit.habitKeys.completionPercent: habit.completionPercent])
         completion(true)
     }
     
