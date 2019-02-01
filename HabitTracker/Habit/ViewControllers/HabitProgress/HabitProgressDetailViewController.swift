@@ -26,6 +26,7 @@ class HabitProgressDetailViewController: UIViewController {
         self.progressChartView.delegate = self
         progressTableView.delegate = self
         progressTableView.dataSource = self
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadTableView), name: Notification.Name("habitsUpdatedNotification"), object: nil)
         LineChartController.shared.setup(chartView: progressChartView)
         LineChartController.shared.addToAllHabitArrays(habits: HabitController.shared.habits) { (_) in }
         setChartData(habits: HabitController.shared.habits)
@@ -58,6 +59,18 @@ class HabitProgressDetailViewController: UIViewController {
             progressChartView.isHidden = true
             viewLabel.isHidden = true
             progressTableView.reloadData()
+        }
+    }
+    
+    @objc func reloadTableView(){
+        if isThisWeek {
+            DispatchQueue.main.async {
+                self.setChartData(habits: HabitController.shared.habits)
+            }
+        } else {
+            DispatchQueue.main.async {
+                self.progressTableView.reloadData()
+            }
         }
     }
     

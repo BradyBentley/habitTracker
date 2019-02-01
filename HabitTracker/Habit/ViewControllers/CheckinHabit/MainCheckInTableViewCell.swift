@@ -15,7 +15,6 @@ class MainCheckInTableViewCell: UITableViewCell {
     @IBOutlet weak var habitCheckInButton: UIButton!
     
     // MARK: - Properties
-    var wasTapped: Bool?
     var habit: Habit? {
     didSet {
         updateViews()
@@ -33,31 +32,28 @@ class MainCheckInTableViewCell: UITableViewCell {
         self.habitNameLabel.text = habit.habitDescription
         if habit.daysCompleted.contains(Date().dateWithoutTime) {
             self.habitCheckInButton.setImage(UIImage(named: "\(habit.category)Checkmark"), for: .normal)
-            wasTapped = false
         } else {
             self.habitCheckInButton.setImage(UIImage(named: "unchecked"), for: .normal)
-            wasTapped = true
         }
     }
 }
 
 extension MainCheckInTableViewCell {
     func changeCheckBoxImage() {
-        guard let habit = habit, var wasTapped = wasTapped else { return }
-        wasTapped = !wasTapped
-        if wasTapped == false {
+        guard let habit = habit else { return }
+        if !habit.daysCompleted.contains(Date().dateWithoutTime) {
             habitCheckInButton.setImage(UIImage(named: "\(habit.category)Checkmark"), for: .normal)
             if habit.daysCheckedIn < habit.days{
                 habit.daysCheckedIn += 1
                 let percent = habit.completion
                 habit.completionPercent.removeLast()
                 habit.completionPercent.append(percent)
+                NotificationCenter.default.post(name: NSNotification.Name("habitsUpdatedNotification"), object: nil)
                 Firebase.shared.updateDaysCheckedIn(habit: habit, daysCheckedIn: habit.daysCheckedIn) { (success) in
                     habit.daysCompleted.append(Date().dateWithoutTime)
                     Firebase.shared.updateDaysComplete(habit: habit, completion: { (_) in
                     })
                 }
-                
             }
         } else {
             habitCheckInButton.setImage(UIImage(named: "unchecked"), for: .normal)
@@ -66,6 +62,7 @@ extension MainCheckInTableViewCell {
                 let percent = habit.completion
                 habit.completionPercent.removeLast()
                 habit.completionPercent.append(percent)
+                NotificationCenter.default.post(name: NSNotification.Name("habitsUpdatedNotification"), object: nil)
                 Firebase.shared.updateDaysCheckedIn(habit: habit, daysCheckedIn: habit.daysCheckedIn) { (success) in
                     habit.daysCompleted.removeLast()
                     Firebase.shared.removeDaysComplete(habit: habit, completion: { (_) in
