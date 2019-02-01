@@ -31,6 +31,7 @@
 		26F0D95321F2365700D4ADA1 /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F0D95221F2365700D4ADA1 /* Firebase.swift */; };
 		C8A39C70BFA96E27673A9F0C /* Pods_HabitTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04028353B060E92AB9235DCF /* Pods_HabitTracker.framework */; };
 		CB0F6DC721FAD58B0031740A /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0F6DC621FAD58B0031740A /* WelcomeViewController.swift */; };
+		CBABDF1B2203DAC900AA1979 /* NewHabitNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBABDF1A2203DAC900AA1979 /* NewHabitNavigationController.swift */; };
 		CBB9A23D21F7CA9B00995F73 /* NewHabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9A23C21F7CA9B00995F73 /* NewHabitViewController.swift */; };
 		CBD52D2821FC4171005A92D7 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBD52D2721FC4171005A92D7 /* MapKit.framework */; };
 		CBD7EC7A21F830FA0074A6D2 /* SetReminderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD7EC7921F830FA0074A6D2 /* SetReminderTableViewController.swift */; };
@@ -80,6 +81,7 @@
 		64796CE9C6B23F336BA88293 /* Pods-HabitTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitTracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-HabitTracker/Pods-HabitTracker.release.xcconfig"; sourceTree = "<group>"; };
 		7E430CF4D2DF39A2F832288E /* Pods-HabitTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitTracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HabitTracker/Pods-HabitTracker.debug.xcconfig"; sourceTree = "<group>"; };
 		CB0F6DC621FAD58B0031740A /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		CBABDF1A2203DAC900AA1979 /* NewHabitNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHabitNavigationController.swift; sourceTree = "<group>"; };
 		CBB9A23C21F7CA9B00995F73 /* NewHabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHabitViewController.swift; sourceTree = "<group>"; };
 		CBBC71ED21FE4DBF00AEE51F /* SF-Pro-Text-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Light.otf"; sourceTree = "<group>"; };
 		CBBC71EE21FE4DBF00AEE51F /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				CBB9A23C21F7CA9B00995F73 /* NewHabitViewController.swift */,
+				CBABDF1A2203DAC900AA1979 /* NewHabitNavigationController.swift */,
 			);
 			path = NewHabit;
 			sourceTree = "<group>";
@@ -520,6 +523,7 @@
 				26F0D94D21F145BF00D4ADA1 /* HabitController.swift in Sources */,
 				266DCE0521F8E98A00CDC0F9 /* LogInViewController.swift in Sources */,
 				26F0D95321F2365700D4ADA1 /* Firebase.swift in Sources */,
+				CBABDF1B2203DAC900AA1979 /* NewHabitNavigationController.swift in Sources */,
 				F7A51E182201623700C1356A /* CustomTabBarController.swift in Sources */,
 				26084A4221F7D5F40037A221 /* UserController.swift in Sources */,
 				26F0D93821F0FE2D00D4ADA1 /* AddHabitViewController.swift in Sources */,

@@ -9,7 +9,7 @@
 import UIKit
 import UserNotifications
 
-class NewHabitViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class NewHabitViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +17,7 @@ class NewHabitViewController: UIViewController, UIPickerViewDataSource, UIPicker
         dayPickerView.delegate = self
         weekPickerView.dataSource = self
         weekPickerView.delegate = self
+        habitNameTextField.delegate = self
         dayPickerView.showsSelectionIndicator = true
         weekPickerView.showsSelectionIndicator = true
         navigationItem.rightBarButtonItem?.title = "Next"
@@ -200,7 +201,14 @@ class NewHabitViewController: UIViewController, UIPickerViewDataSource, UIPicker
         }
     }
     
-    // MARK: - UIPickerView Source
+    // MARK: - UITextfield delegate
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    // MARK: - UIPickerView source
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -218,7 +226,7 @@ class NewHabitViewController: UIViewController, UIPickerViewDataSource, UIPicker
         return "\(row + 1)"
     }
     
-    // MARK: - UIPickerView Delegate
+    // MARK: - UIPickerView delegate
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView == dayPickerView {
