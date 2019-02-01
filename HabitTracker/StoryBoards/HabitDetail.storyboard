@@ -109,7 +109,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="X8m-jW-dMl">
-                                <rect key="frame" x="25" y="337" width="364" height="445"/>
+                                <rect key="frame" x="25" y="337" width="364" height="421"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="TimeReminderCell" textLabel="NTc-Sp-Wo5" detailTextLabel="7ff-qk-nbQ" rowHeight="59" style="IBUITableViewCellStyleSubtitle" id="qWy-Ov-CmP">
@@ -163,7 +163,7 @@
                                 </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H6w-GC-7y9">
-                                <rect key="frame" x="25" y="792" width="364" height="30"/>
+                                <rect key="frame" x="25" y="778" width="364" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vom-1P-0V3">
                                         <rect key="frame" x="0.0" y="0.0" width="47" height="30"/>
@@ -175,29 +175,24 @@
                                             <action selector="deleteButtonTapped:" destination="wJm-Bt-M2l" eventType="touchUpInside" id="5JV-bf-Jbl"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ErM-oq-26U">
-                                        <rect key="frame" x="217" y="0.0" width="50" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <state key="normal" title="+ Time"/>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bHe-Eq-d9J">
-                                        <rect key="frame" x="287" y="0.0" width="77" height="30"/>
+                                        <rect key="frame" x="280" y="0.0" width="84" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <state key="normal" title="+ Location"/>
+                                        <state key="normal" title="+ Reminder"/>
+                                        <connections>
+                                            <segue destination="1Na-O0-cCQ" kind="show" id="gBA-jZ-osx"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="vom-1P-0V3" firstAttribute="top" secondItem="H6w-GC-7y9" secondAttribute="top" id="CY3-mU-XwG"/>
-                                    <constraint firstAttribute="bottom" secondItem="ErM-oq-26U" secondAttribute="bottom" id="W9p-LN-KcR"/>
                                     <constraint firstAttribute="height" constant="30" id="Zc5-ZN-6Or"/>
                                     <constraint firstItem="bHe-Eq-d9J" firstAttribute="top" secondItem="H6w-GC-7y9" secondAttribute="top" id="Zk0-BV-AXv"/>
                                     <constraint firstAttribute="bottom" secondItem="bHe-Eq-d9J" secondAttribute="bottom" id="i4i-9a-059"/>
-                                    <constraint firstItem="ErM-oq-26U" firstAttribute="top" secondItem="H6w-GC-7y9" secondAttribute="top" id="ieV-Fy-Nfb"/>
                                     <constraint firstAttribute="trailing" secondItem="bHe-Eq-d9J" secondAttribute="trailing" id="lNU-LA-Fyw"/>
                                     <constraint firstAttribute="bottom" secondItem="vom-1P-0V3" secondAttribute="bottom" id="nIq-gw-E42"/>
                                     <constraint firstItem="vom-1P-0V3" firstAttribute="leading" secondItem="H6w-GC-7y9" secondAttribute="leading" id="tWu-8Y-SVg"/>
-                                    <constraint firstItem="bHe-Eq-d9J" firstAttribute="leading" secondItem="ErM-oq-26U" secondAttribute="trailing" constant="20" id="zdN-3C-XKW"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -211,14 +206,14 @@
                             <constraint firstItem="Hoe-J1-JQB" firstAttribute="leading" secondItem="ZRI-SZ-Cgu" secondAttribute="leading" constant="25" id="TZD-x6-ALy"/>
                             <constraint firstItem="ZRI-SZ-Cgu" firstAttribute="trailing" secondItem="H6w-GC-7y9" secondAttribute="trailing" constant="25" id="VgL-9s-xy1"/>
                             <constraint firstItem="TdX-Qe-YdR" firstAttribute="top" secondItem="ZRI-SZ-Cgu" secondAttribute="top" constant="15" id="gs5-tv-9L0"/>
-                            <constraint firstItem="ZRI-SZ-Cgu" firstAttribute="bottom" secondItem="H6w-GC-7y9" secondAttribute="bottom" constant="40" id="hKK-jf-yTY"/>
+                            <constraint firstItem="ZRI-SZ-Cgu" firstAttribute="bottom" secondItem="H6w-GC-7y9" secondAttribute="bottom" constant="54" id="hKK-jf-yTY"/>
                             <constraint firstItem="ZRI-SZ-Cgu" firstAttribute="trailing" secondItem="X8m-jW-dMl" secondAttribute="trailing" constant="25" id="iLM-VC-umg"/>
                             <constraint firstItem="TdX-Qe-YdR" firstAttribute="leading" secondItem="ZRI-SZ-Cgu" secondAttribute="leading" id="m2i-NA-e7R"/>
                             <constraint firstItem="ZRI-SZ-Cgu" firstAttribute="trailing" secondItem="XjH-qh-Ri3" secondAttribute="trailing" id="ndy-jW-CwB"/>
                             <constraint firstItem="X8m-jW-dMl" firstAttribute="leading" secondItem="ZRI-SZ-Cgu" secondAttribute="leading" constant="25" id="tO3-sV-jWc"/>
                             <constraint firstItem="XjH-qh-Ri3" firstAttribute="leading" secondItem="ZRI-SZ-Cgu" secondAttribute="leading" id="thA-S5-jyO"/>
                             <constraint firstItem="XjH-qh-Ri3" firstAttribute="top" secondItem="TdX-Qe-YdR" secondAttribute="bottom" constant="50" id="vXA-Ah-Ba8"/>
-                            <constraint firstItem="H6w-GC-7y9" firstAttribute="top" secondItem="X8m-jW-dMl" secondAttribute="bottom" constant="10" id="wrF-3a-ZZF"/>
+                            <constraint firstItem="H6w-GC-7y9" firstAttribute="top" secondItem="X8m-jW-dMl" secondAttribute="bottom" constant="20" id="wrF-3a-ZZF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZRI-SZ-Cgu"/>
                     </view>
@@ -240,6 +235,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fdr-pn-16P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="9966.6666666666679" y="1118.9732142857142"/>
+        </scene>
+        <!--ReminderViewController-->
+        <scene sceneID="yZw-4G-KJZ">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="ReminderViewController" storyboardName="AddHabit" referencedIdentifier="ReminderViewController" id="1Na-O0-cCQ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hOa-cr-apI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="10772" y="1119"/>
         </scene>
         <!--Habit Detail-->
         <scene sceneID="P3S-Mz-wxf">
