@@ -203,7 +203,8 @@ extension HabitDetailViewController: UITableViewDelegate, UITableViewDataSource{
 extension HabitDetailViewController: ChartViewDelegate {
     func setChartData(completionPercent: [Double]) {
         let values = (0..<completionPercent.count).map { (i) -> ChartDataEntry in
-            let val = completionPercent
+            let reversed = completionPercent.reversed()
+            let val = Array(reversed)
             return ChartDataEntry(x: Double(i) + 1, y: val[i])
         }
         let set1: LineChartDataSet = LineChartDataSet(values: values, label: nil)
