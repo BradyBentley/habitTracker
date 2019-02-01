@@ -120,7 +120,7 @@ class ProgressTableViewCell: UITableViewCell {
     func updateMonthlyViews(){
         guard let habit = monthlyHabit else { return }
         habitNameLabel.text = habit.habitDescription
-        categoryIconImageView.image = UIImage(named: "\(habit.category)")
+        categoryIconImageView.image = UIImage(named: "\(habit.category)Selected")
         categoryColorImageView.image = UIImage(named: "\(habit.category)Checkmark")
         imagesStackView.isHidden = true
         numberOfDaysLabel.isHidden = true
