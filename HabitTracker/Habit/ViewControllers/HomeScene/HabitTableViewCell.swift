@@ -42,18 +42,17 @@ class HabitTableViewCell: UITableViewCell {
         successLabel.text = "\(habit.days) days a week for \(habit.weeks) weeks"
         percentCompletionLabel.text = "\(Int(habit.completion))%"
         
-        fullShapeLayer = animateProgressBar(percentage: 1, strokeEnd: 1, strokeColor: UIColor(named: "\(habit.category)Track")?.cgColor)
+        self.fullShapeLayer = self.animateProgressBar(percentage: 1, strokeEnd: 1, strokeColor: UIColor(named: "\(habit.category)Track")?.cgColor)
         
-        outerShapeLayer = animateProgressBar(percentage: CGFloat(habit.completion / 100), strokeEnd: 0, strokeColor: UIColor(named: "\(habit.category)Color")?.cgColor)
-        
-        animation()
+        self.outerShapeLayer = self.animateProgressBar(percentage: CGFloat(habit.completion / 100), strokeEnd: 0, strokeColor: UIColor(named: "\(habit.category)Color")?.cgColor)
+        self.animation()
     }
     
     func animateProgressBar(percentage: CGFloat, strokeEnd: CGFloat, strokeColor: CGColor?) -> CAShapeLayer{
         
         let shapeLayer = CAShapeLayer()
         
-            let center = progressView.center
+            let center = CGPoint(x: progressView.center.x, y: progressView.center.y - 37)
         
             let circularPathTakeTwo = UIBezierPath(arcCenter: center, radius: 28, startAngle: -quarterCircle, endAngle: ((fullCircle * percentage) - quarterCircle), clockwise: true)
             
