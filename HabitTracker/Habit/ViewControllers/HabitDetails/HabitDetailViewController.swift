@@ -209,6 +209,7 @@ extension HabitDetailViewController: UITableViewDelegate, UITableViewDataSource{
             let cell = tableView.dequeueReusableCell(withIdentifier: "CheckInCell", for: indexPath)
             let date = habit.daysCompleted[indexPath.row]
             cell.textLabel?.text = date
+            cell.imageView?.image = UIImage(named: "checkmark")
             return cell
         }
     }
