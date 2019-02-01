@@ -11,8 +11,8 @@ import Charts
 
 class HabitDetailViewController: UIViewController {
     
-    let shapeLayer = CAShapeLayer()
-    let trackLayer = CAShapeLayer()
+    
+    //let trackLayer = CAShapeLayer()
     
     var fullShapeLayer: CAShapeLayer!
     var outerShapeLayer: CAShapeLayer!
@@ -71,21 +71,23 @@ class HabitDetailViewController: UIViewController {
         fullShapeLayer = animateProgressBar(percentage: 1, strokeEnd: 1, strokeColor: UIColor(named: "\(habit.category)Track")?.cgColor)
         
         outerShapeLayer = animateProgressBar(percentage: CGFloat(habit.completion / 100), strokeEnd: 0, strokeColor: UIColor(named: "\(habit.category)Color")?.cgColor)
+        
+        animation()
     }
     
     func animateProgressBar(percentage: CGFloat, strokeEnd: CGFloat, strokeColor: CGColor?) -> CAShapeLayer{
-        
+        let shapeLayer = CAShapeLayer()
         
         let center = progressView.center
         let circularPathTakeTwo = UIBezierPath(arcCenter: center, radius: 28, startAngle: -quarterCircle, endAngle: ((fullCircle * percentage) - quarterCircle), clockwise: true)
-        trackLayer.path = circularPathTakeTwo.cgPath
-        trackLayer.strokeColor = strokeColor
-        trackLayer.lineWidth = 4
-        trackLayer.lineCap = CAShapeLayerLineCap.round
-        trackLayer.strokeEnd = strokeEnd
-        trackLayer.fillColor = UIColor.clear.cgColor
-        
-        progressView.layer.addSublayer(trackLayer)
+//        trackLayer.path = circularPathTakeTwo.cgPath
+//        trackLayer.strokeColor = strokeColor
+//        trackLayer.lineWidth = 4
+//        trackLayer.lineCap = CAShapeLayerLineCap.round
+//        trackLayer.strokeEnd = strokeEnd
+//        trackLayer.fillColor = UIColor.clear.cgColor
+//
+//        progressView.layer.addSublayer(trackLayer)
         
         shapeLayer.path = circularPathTakeTwo.cgPath
         shapeLayer.strokeColor = strokeColor
@@ -96,11 +98,11 @@ class HabitDetailViewController: UIViewController {
         
         progressView.layer.addSublayer(shapeLayer)
         
-        UIView.animate(withDuration: 1) {
-            self.animation()
-        }
-        
+//        UIView.animate(withDuration: 1) {
+//            self.animation()
+//        }
         return shapeLayer
+        
     }
     
     func animation() {
@@ -113,7 +115,7 @@ class HabitDetailViewController: UIViewController {
         
         basicAnimation.isRemovedOnCompletion = false
         
-        shapeLayer.add(basicAnimation, forKey: "basic")
+        outerShapeLayer.add(basicAnimation, forKey: "basic")
     }
 
     
