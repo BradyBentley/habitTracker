@@ -40,7 +40,7 @@ class LoadingScreenViewController: UIViewController {
         super.viewWillAppear(animated)
         animateOpeningPage()
         animatingOfShadow()
-        self.present(loginPage!, animated: true, completion: nil)
+        //self.present(loginPage!, animated: true, completion: nil)
         //let homeVC = self.storyboard?.instantiateViewController(withIdentifier: "AddHabitViewController") as! AddHabitViewController
         //self.present(homeVC, animated: true, completion: nil)
         //self.presentingViewController?.dismiss(animated: false, completion:nil)
@@ -74,7 +74,7 @@ class LoadingScreenViewController: UIViewController {
      
         }), completion: { success in
 //
-            print("adsf")
+            print("Successfully loaded login screen")
         })
         
         
