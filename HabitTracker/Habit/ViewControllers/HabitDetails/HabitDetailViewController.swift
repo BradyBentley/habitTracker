@@ -29,6 +29,7 @@ class HabitDetailViewController: UIViewController {
     @IBOutlet weak var percentageCompletionLabel: UILabel!
     @IBOutlet weak var habitReminderTableView: UITableView!
     @IBOutlet weak var detailProgressChartView: LineChartView!
+    @IBOutlet weak var checkInsTableView: UITableView!
     
     // MARK: - Properties
     
@@ -46,6 +47,8 @@ class HabitDetailViewController: UIViewController {
         super.viewDidLoad()
         habitReminderTableView.dataSource = self
         habitReminderTableView.delegate = self
+        checkInsTableView.dataSource = self
+        checkInsTableView.delegate = self
         habitReminderTableView.tableFooterView = UIView()
         updateViews()
     }
@@ -193,6 +196,8 @@ extension HabitDetailViewController: UITableViewDelegate, UITableViewDataSource{
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CheckInCell", for: indexPath)
+            let date = habit.daysCompleted[indexPath.row]
+            cell.textLabel?.text = date
             return cell
         }
     }
