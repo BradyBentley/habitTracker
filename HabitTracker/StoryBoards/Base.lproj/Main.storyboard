@@ -27,7 +27,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="90" estimatedRowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5LP-iL-TMH">
-                                <rect key="frame" x="0.0" y="59" width="375" height="659"/>
+                                <rect key="frame" x="0.0" y="59" width="375" height="629"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="HabitCell" id="fv2-UX-RPD" customClass="HabitTableViewCell" customModule="HabitTracker" customModuleProvider="target">
@@ -103,7 +103,7 @@
                                 </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mCT-g6-QgE">
-                                <rect key="frame" x="25" y="728" width="79" height="30"/>
+                                <rect key="frame" x="25" y="698" width="79" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Y7-eV-tBu">
                                         <rect key="frame" x="0.0" y="0.0" width="79" height="30"/>
@@ -135,7 +135,7 @@
                             <constraint firstItem="X2T-5S-WJS" firstAttribute="trailing" secondItem="5LP-iL-TMH" secondAttribute="trailing" id="SfS-J6-OXd"/>
                             <constraint firstItem="lpr-GZ-YWK" firstAttribute="centerY" secondItem="RPK-yO-pGJ" secondAttribute="centerY" id="acV-as-GtU"/>
                             <constraint firstItem="mCT-g6-QgE" firstAttribute="leading" secondItem="X2T-5S-WJS" secondAttribute="leading" constant="25" id="oNh-MU-07k"/>
-                            <constraint firstItem="X2T-5S-WJS" firstAttribute="bottom" secondItem="mCT-g6-QgE" secondAttribute="bottom" constant="20" id="qax-tM-stk"/>
+                            <constraint firstItem="X2T-5S-WJS" firstAttribute="bottom" secondItem="mCT-g6-QgE" secondAttribute="bottom" constant="50" id="qax-tM-stk"/>
                             <constraint firstItem="5LP-iL-TMH" firstAttribute="top" secondItem="X2T-5S-WJS" secondAttribute="top" constant="15" id="xt4-mj-4wX"/>
                             <constraint firstItem="lpr-GZ-YWK" firstAttribute="centerX" secondItem="RPK-yO-pGJ" secondAttribute="centerX" id="ysc-qo-QLG"/>
                         </constraints>
