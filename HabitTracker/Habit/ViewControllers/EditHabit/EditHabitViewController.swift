@@ -174,7 +174,7 @@ class EditHabitViewController: UIViewController, UITableViewDelegate, UITableVie
         }
         return cell
     }
-    
     // MARK: - Table view delegate
     
 }
+
