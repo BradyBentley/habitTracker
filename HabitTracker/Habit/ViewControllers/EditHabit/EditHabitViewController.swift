@@ -51,6 +51,14 @@ class EditHabitViewController: UIViewController, UITableViewDelegate, UITableVie
         weeks = habit.weeks
         dayPickerView.selectRow(days - 1, inComponent: 0, animated: true)
         weekPickerView.selectRow(weeks - 1, inComponent: 0, animated: true)
+        // adds tap to dismiss keyboard
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
+        tapGesture.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {
+        self.view.endEditing(true)
     }
     
     // MARK: - Action

@@ -23,27 +23,12 @@ class LoadingScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //dismiss(animated: true, completion: nil)
-        
-
-        // Do any additional setup after loading the view.
-        Auth.auth().addStateDidChangeListener { (auth, user) in
-            if let user = user {
-                let uuid = user.uid
-                UserController.shared.currentUser = User(uuid: uuid)
-                self.performSegue(withIdentifier: "ToMainHabitScreen", sender: nil)
-            }
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         animateOpeningPage()
         animatingOfShadow()
-        //self.present(loginPage!, animated: true, completion: nil)
-        //let homeVC = self.storyboard?.instantiateViewController(withIdentifier: "AddHabitViewController") as! AddHabitViewController
-        //self.present(homeVC, animated: true, completion: nil)
-        //self.presentingViewController?.dismiss(animated: false, completion:nil)
     }
     
     func animateOpeningPage(){
@@ -58,7 +43,15 @@ class LoadingScreenViewController: UIViewController {
     func animatingOfShadow() {
         
         Timer.scheduledTimer(withTimeInterval: 10, repeats: false) { (_) in
-            self.present(self.loginPage!, animated: true, completion: nil)
+            Auth.auth().addStateDidChangeListener { (auth, user) in
+                if let user = user {
+                    let uuid = user.uid
+                    UserController.shared.currentUser = User(uuid: uuid)
+                    self.performSegue(withIdentifier: "ToMainHabitScreen", sender: nil)
+                } else {
+                    self.present(self.loginPage!, animated: true, completion: nil)
+                }
+            }
         }
     
         shadowWidth.constant = 100
@@ -73,21 +66,10 @@ class LoadingScreenViewController: UIViewController {
             self.shrinkingShadowAnimation.layoutIfNeeded()
      
         }), completion: { success in
-//
             print("Successfully loaded login screen")
         })
         
         
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
