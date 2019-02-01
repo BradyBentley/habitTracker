@@ -27,7 +27,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="90" estimatedRowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5LP-iL-TMH">
-                                <rect key="frame" x="0.0" y="59" width="375" height="629"/>
+                                <rect key="frame" x="0.0" y="103" width="375" height="585"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="HabitCell" id="fv2-UX-RPD" customClass="HabitTableViewCell" customModule="HabitTracker" customModuleProvider="target">
@@ -67,7 +67,7 @@
                                                     <rect key="frame" x="2" y="0.0" width="90" height="90"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uQn-eX-ARU">
-                                                            <rect key="frame" x="18" y="15" width="60" height="60"/>
+                                                            <rect key="frame" x="4" y="2" width="90" height="90"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="uQn-eX-ARU" secondAttribute="height" multiplier="1:1" id="iox-Cs-2Tk"/>
                                                             </constraints>
@@ -75,11 +75,11 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstItem="uQn-eX-ARU" firstAttribute="centerY" secondItem="jXS-vP-Xr7" secondAttribute="centerY" id="FvE-Zs-N6f"/>
+                                                        <constraint firstItem="uQn-eX-ARU" firstAttribute="centerY" secondItem="jXS-vP-Xr7" secondAttribute="centerY" constant="2" id="FvE-Zs-N6f"/>
                                                         <constraint firstAttribute="height" constant="90" id="Gj0-JL-EV0"/>
                                                         <constraint firstAttribute="width" constant="90" id="Ktd-yR-nuJ"/>
-                                                        <constraint firstItem="uQn-eX-ARU" firstAttribute="top" secondItem="jXS-vP-Xr7" secondAttribute="top" constant="15" id="df9-hp-MX0"/>
-                                                        <constraint firstAttribute="trailing" secondItem="uQn-eX-ARU" secondAttribute="trailing" constant="12" id="lbo-VL-8fq"/>
+                                                        <constraint firstItem="uQn-eX-ARU" firstAttribute="top" secondItem="jXS-vP-Xr7" secondAttribute="top" constant="2" id="ZLV-pV-7BB"/>
+                                                        <constraint firstItem="uQn-eX-ARU" firstAttribute="centerX" secondItem="jXS-vP-Xr7" secondAttribute="centerX" constant="4" id="y4i-cB-c5y"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
