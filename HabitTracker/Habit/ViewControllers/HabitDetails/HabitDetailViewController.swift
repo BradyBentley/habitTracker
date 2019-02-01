@@ -49,6 +49,7 @@ class HabitDetailViewController: UIViewController {
         habitReminderTableView.delegate = self
         checkInsTableView.dataSource = self
         checkInsTableView.delegate = self
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadTableView), name: Notification.Name(rawValue: "habitsUpdatedNotification"), object: nil)
         habitReminderTableView.tableFooterView = UIView()
         updateViews()
     }
@@ -119,6 +120,16 @@ class HabitDetailViewController: UIViewController {
         basicAnimation.isRemovedOnCompletion = false
         
         outerShapeLayer.add(basicAnimation, forKey: "basic")
+    }
+    
+    @objc func reloadTableView() {
+        DispatchQueue.main.async {
+            guard let habit = self.habit else { return }
+            self.setChartData(completionPercent: habit.completionPercent)
+            self.percentageCompletionLabel.text = "\(Int(habit.completion))%"
+            self.animation()
+            self.checkInsTableView.reloadData()
+        }
     }
 
     
