@@ -153,7 +153,7 @@
                     <connections>
                         <outlet property="activityIndicator" destination="lpr-GZ-YWK" id="gba-oN-oQU"/>
                         <outlet property="habitsTableView" destination="5LP-iL-TMH" id="37a-mj-iD1"/>
-                        <segue destination="cRC-js-KBt" kind="unwind" identifier="unwindToLogInVC" unwindAction="unwindToLogInVCWithSegue:" id="uZj-Kj-EXY"/>
+                        <segue destination="cRC-js-KBt" kind="unwind" identifier="unwindToLogInVC" unwindAction="unwindToLogInVCWithSegue:" id="R27-hE-Bly"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EUG-0F-L1X" userLabel="First Responder" sceneMemberID="firstResponder"/>

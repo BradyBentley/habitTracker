@@ -23,6 +23,7 @@ class AddHabitViewController: UIViewController, TimeReminderScheduler, LocationR
         super.viewDidLoad()
         habitsTableView.delegate = self
         habitsTableView.dataSource = self
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadTableView), name: Notification.Name("habitsUpdatedNotification"), object: nil)
         
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         activityIndicator.startAnimating()
@@ -40,6 +41,12 @@ class AddHabitViewController: UIViewController, TimeReminderScheduler, LocationR
                 self.activityIndicator.stopAnimating()
                 self.habitsTableView.reloadData()
             }
+        }
+    }
+    
+    @objc func reloadTableView() {
+        DispatchQueue.main.async {
+            self.habitsTableView.reloadData()
         }
     }
     
