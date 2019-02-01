@@ -182,6 +182,26 @@ class EditHabitViewController: UIViewController, UITableViewDelegate, UITableVie
     
     // MARK: - Table view delegate
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        guard let habit = habit else { return }
+        
+        if editingStyle == .delete {
+            if indexPath.section == 0 {
+                let timeReminder = habit.timeReminder[indexPath.row]
+                HabitController.shared.deleteTimeReminder(timeReminder: timeReminder, from: habit, completion: { (_) in
+                    self.cancelTimeNotifications(for: timeReminder.uuid)
+                    tableView.deleteRows(at: [indexPath], with: .fade)
+                })
+            } else {
+                let locationReminder = habit.locationReminder[indexPath.row]
+                HabitController.shared.deleteLocationReminder(locationReminder: locationReminder, from: habit, completion: { (_) in
+                    self.cancelLocationNotifications(for: locationReminder.uuid)
+                    tableView.deleteRows(at: [indexPath], with: .fade)
+                })
+            }
+        }
+    }
+    
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {

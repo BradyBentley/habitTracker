@@ -706,6 +706,32 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="Reminder Text" id="hdj-Rj-MED">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="TextCell" id="2UA-jq-hYD">
+                                        <rect key="frame" x="0.0" y="694.33333333333326" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2UA-jq-hYD" id="mhz-Re-02e">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter reminder text" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dQx-Qm-WAL">
+                                                    <rect key="frame" x="25" y="5" width="364" height="33.666666666666664"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="dQx-Qm-WAL" secondAttribute="trailing" constant="25" id="FeC-1k-RPv"/>
+                                                <constraint firstItem="dQx-Qm-WAL" firstAttribute="leading" secondItem="mhz-Re-02e" secondAttribute="leading" constant="25" id="VC0-Dq-BTn"/>
+                                                <constraint firstAttribute="bottom" secondItem="dQx-Qm-WAL" secondAttribute="bottom" constant="5" id="fna-kl-nm5"/>
+                                                <constraint firstItem="dQx-Qm-WAL" firstAttribute="top" secondItem="mhz-Re-02e" secondAttribute="top" constant="5" id="zA8-sT-nsN"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="7oP-x4-pSK" id="6aI-fo-92E"/>
@@ -720,6 +746,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="reminderTextField" destination="dQx-Qm-WAL" id="Y34-yd-LiA"/>
                         <outlet property="timePicker" destination="OYq-EI-O6H" id="wwz-Gn-TzJ"/>
                     </connections>
                 </tableViewController>

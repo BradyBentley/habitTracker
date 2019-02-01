@@ -9,16 +9,18 @@
 import UIKit
 import UserNotifications
 
-class SetReminderTableViewController: UITableViewController, TimeReminderScheduler {
+class SetReminderTableViewController: UITableViewController, UITextFieldDelegate, TimeReminderScheduler {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        reminderTextField.delegate = self
         updateView()
     }
 
     // MARK: - Properties
     
     @IBOutlet weak var timePicker: UIDatePicker!
+    @IBOutlet weak var reminderTextField: UITextField!
     
     var habit: Habit?
     var reminder: TimeReminder?
@@ -29,25 +31,29 @@ class SetReminderTableViewController: UITableViewController, TimeReminderSchedul
         guard let timeReminder = reminder else { return }
         timePicker.date = timeReminder.time
         weekdays = timeReminder.day
+        reminderTextField.text = timeReminder.reminderText
     }
     
     // MARK: - Button actions
     
     @IBAction func saveButtonPushed(_ sender: Any) {
-        guard let habit = habit, weekdays.count != 0, let addingNewHabit = addingNewHabit else { return }
+        guard let habit = habit, weekdays.count != 0,
+            let addingNewHabit = addingNewHabit,
+            let reminderText = reminderTextField.text else { return }
         
         let time = timePicker.date
-        let timeReminder = TimeReminder(time: time, day: weekdays, reminderText: "")
+        let timeReminder = TimeReminder(time: time, day: weekdays, reminderText: reminderText)
         
         if !addingNewHabit {
             if let reminder = reminder {
                 reminder.time = timePicker.date
                 reminder.day = weekdays
+                reminder.reminderText = reminderText
                 HabitController.shared.updateTimeReminder(habit: habit, timeReminder: reminder) { (_) in
                     self.scheduleUserNotifications(for: timeReminder)
                 }
             } else {
-                HabitController.shared.createTimeReminder(habit: habit, day: weekdays, time: time, reminderText: "", completion: { (_) in
+                HabitController.shared.createTimeReminder(habit: habit, day: weekdays, time: time, reminderText: reminderText, completion: { (_) in
                     self.scheduleUserNotifications(for: timeReminder)
                 })
             }
@@ -82,6 +88,13 @@ class SetReminderTableViewController: UITableViewController, TimeReminderSchedul
             weekdays.append(indexPath.row)
             tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
         }
+    }
+    
+    // MARK: - Textfield delegate
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 
 }
