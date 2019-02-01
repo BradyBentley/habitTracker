@@ -49,9 +49,9 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="159" height="40"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f2u-XJ-ba2">
-                                                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="36" height="40"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="40" id="Ast-Qc-yfs"/>
+                                                                    <constraint firstAttribute="width" constant="36" id="Ast-Qc-yfs"/>
                                                                 </constraints>
                                                                 <state key="normal" image="checked"/>
                                                                 <connections>
@@ -59,7 +59,7 @@
                                                                 </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="start a new habit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYN-Fs-6u4">
-                                                                <rect key="frame" x="48" y="0.0" width="111" height="40"/>
+                                                                <rect key="frame" x="44" y="0.0" width="115" height="40"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -75,17 +75,17 @@
                                                         <rect key="frame" x="175" y="0.0" width="159" height="40"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7fu-mC-dBL">
-                                                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="36" height="40"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="40" id="zDs-62-bow"/>
+                                                                    <constraint firstAttribute="width" constant="36" id="zDs-62-bow"/>
                                                                 </constraints>
-                                                                <state key="normal" title="Button" image="unchecked"/>
+                                                                <state key="normal" image="unchecked"/>
                                                                 <connections>
                                                                     <action selector="kickHabitClicked:" destination="n4u-tH-FK3" eventType="touchUpInside" id="5cX-cR-fZn"/>
                                                                 </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kick an old habit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bOw-DY-DcK">
-                                                                <rect key="frame" x="48" y="0.0" width="111" height="40"/>
+                                                                <rect key="frame" x="44" y="0.0" width="115" height="40"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
