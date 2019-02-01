@@ -551,6 +551,7 @@
                         <outlet property="otherButton" destination="PwH-bd-HRi" id="OEw-Id-jkg"/>
                         <outlet property="productivityButton" destination="vRw-gF-tL5" id="Gyk-N7-iHX"/>
                         <outlet property="relationshipButton" destination="eDM-uM-vtQ" id="0yi-rt-abF"/>
+                        <outlet property="scrollView" destination="E3H-IN-ffY" id="umr-AB-ekY"/>
                         <outlet property="startHabitButton" destination="f2u-XJ-ba2" id="Si0-QR-aKc"/>
                         <outlet property="weekPickerView" destination="dNS-vL-oJo" id="vo1-ji-se0"/>
                         <outlet property="wellnessButton" destination="Tyf-LA-qXq" id="bkq-Sm-a1p"/>
@@ -1061,6 +1062,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="locationBasedRemindersTableView" destination="5jR-E0-twM" id="q0y-Qh-7jH"/>
+                        <outlet property="scrollView" destination="WwV-m0-4am" id="ycz-Xq-txX"/>
                         <outlet property="timeBasedRemindersTableView" destination="Rq8-a6-JhE" id="ekN-yz-Goo"/>
                     </connections>
                 </viewController>
