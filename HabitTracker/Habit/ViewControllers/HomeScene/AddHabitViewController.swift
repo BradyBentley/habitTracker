@@ -48,6 +48,16 @@ class AddHabitViewController: UIViewController, TimeReminderScheduler, LocationR
         habitsTableView.reloadData()
     }
     
+    // MARK: - Actions
+    @IBAction func logOutButtonTapped(_ sender: Any) {
+        UserController.shared.signOutUser { (success) in
+            if success {
+                self.performSegue(withIdentifier: "unwindToLogInVC", sender: self)
+            }
+        }
+    }
+    
+    
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ToHabitDetail" {

@@ -440,6 +440,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="checkInsTableView" destination="skv-mi-1DI" id="PZJ-x8-Sw5"/>
                         <outlet property="detailProgressChartView" destination="pgN-LE-uM7" id="0WH-ys-DOu"/>
                         <outlet property="habitDescriptionLabel" destination="d4u-aA-1lL" id="EBx-D5-X7P"/>
                         <outlet property="habitReminderTableView" destination="4RE-I0-8lM" id="mZk-tq-gkO"/>
