@@ -9,6 +9,14 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Text-Medium.otf">
+            <string>SFProText-Medium</string>
+        </array>
+        <array key="SF-Pro-Text-Regular.otf">
+            <string>SFProText-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--AddHabit-->
         <scene sceneID="idU-2u-82H">
@@ -40,28 +48,25 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Nzj-Ps-asz">
                                                     <rect key="frame" x="100" y="8" width="217" height="74"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(habit description)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x9X-xK-DL2">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(habit description)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="x9X-xK-DL2">
                                                             <rect key="frame" x="0.0" y="0.0" width="217" height="22"/>
-                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                            <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(success)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erb-ac-VU2">
                                                             <rect key="frame" x="0.0" y="26" width="217" height="22"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(percentage)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QEV-d9-DIq">
                                                             <rect key="frame" x="0.0" y="52" width="217" height="22"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="74" id="ut3-TS-H4n"/>
-                                                    </constraints>
                                                 </stackView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jXS-vP-Xr7">
                                                     <rect key="frame" x="2" y="0.0" width="90" height="90"/>
@@ -85,7 +90,9 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="jXS-vP-Xr7" firstAttribute="top" secondItem="3ag-9N-QpZ" secondAttribute="top" id="4gh-j0-COF"/>
+                                                <constraint firstAttribute="bottom" secondItem="Nzj-Ps-asz" secondAttribute="bottom" constant="8" id="Bnf-bV-TCB"/>
                                                 <constraint firstItem="jXS-vP-Xr7" firstAttribute="centerY" secondItem="3ag-9N-QpZ" secondAttribute="centerY" id="C4g-gq-C1G"/>
+                                                <constraint firstItem="Nzj-Ps-asz" firstAttribute="top" secondItem="3ag-9N-QpZ" secondAttribute="top" constant="8" id="HAL-Nm-onH"/>
                                                 <constraint firstAttribute="trailing" secondItem="Nzj-Ps-asz" secondAttribute="trailing" constant="25" id="Ylf-t2-aTC"/>
                                                 <constraint firstItem="Nzj-Ps-asz" firstAttribute="centerY" secondItem="3ag-9N-QpZ" secondAttribute="centerY" id="Zuf-xo-yUw"/>
                                                 <constraint firstItem="jXS-vP-Xr7" firstAttribute="leading" secondItem="3ag-9N-QpZ" secondAttribute="leading" constant="2" id="dlm-b5-iK1"/>
@@ -108,11 +115,11 @@
                                 <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mCT-g6-QgE">
-                                <rect key="frame" x="25" y="698" width="79" height="30"/>
+                                <rect key="frame" x="25" y="698" width="87" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Y7-eV-tBu">
-                                        <rect key="frame" x="0.0" y="0.0" width="79" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="87" height="30"/>
+                                        <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="25"/>
                                         <state key="normal" title="+ Habit"/>
                                         <connections>
                                             <segue destination="19x-aH-i59" kind="show" identifier="ToAddHabit" id="0fi-0M-zPq"/>
@@ -145,7 +152,7 @@
                     <navigationItem key="navigationItem" title="Habits" id="RDV-v0-fL2">
                         <barButtonItem key="leftBarButtonItem" title="Log Out" id="OPh-yA-vdF">
                             <connections>
-                                <action selector="logOutButtonTapped:" destination="1NV-ND-516" id="gww-nv-MM5"/>
+                                <action selector="logOutButtonTapped:" destination="1NV-ND-516" id="Wvx-zi-8Li"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -153,11 +160,9 @@
                     <connections>
                         <outlet property="activityIndicator" destination="lpr-GZ-YWK" id="gba-oN-oQU"/>
                         <outlet property="habitsTableView" destination="5LP-iL-TMH" id="37a-mj-iD1"/>
-                        <segue destination="cRC-js-KBt" kind="unwind" identifier="unwindToLogInVC" unwindAction="unwindToLogInVCWithSegue:" id="R27-hE-Bly"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EUG-0F-L1X" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="cRC-js-KBt" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="948" y="875.61576354679812"/>
         </scene>
