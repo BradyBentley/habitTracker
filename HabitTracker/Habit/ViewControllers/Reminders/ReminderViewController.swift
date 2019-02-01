@@ -181,6 +181,7 @@ class ReminderViewController: UIViewController, UITableViewDataSource, UITableVi
             if let destinationVC = segue.destination as? SetReminderTableViewController {
                 if let habit = habit {
                     destinationVC.habit = habit
+                    destinationVC.addingNewHabit = true
                 }
             }
         }
@@ -188,6 +189,7 @@ class ReminderViewController: UIViewController, UITableViewDataSource, UITableVi
             if let destinationVC = segue.destination as? LocationBasedReminderViewController {
                 if let habit = habit {
                     destinationVC.habit = habit
+                    destinationVC.addingNewHabit = true
                 }
             }
         }
