@@ -19,6 +19,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var alreadyHaveAnLabel: UILabel!
     @IBOutlet weak var switchPageButton: UIButton!
+    @IBOutlet weak var welcomeTextLabel: UILabel!
     
     // MARK: - ViewLifeCycle
     override func viewDidLoad() {
@@ -76,6 +77,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         signInButton.setTitle("Sign Up", for: .normal)
         switchPageButton.setTitle("Log In", for: .normal)
         confirmPasswordTextField.isHidden = false
+        welcomeTextLabel.text = "Welcome To Habitual"
     }
     
     func logInPage() {
@@ -84,6 +86,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         signInButton.setTitle("Log In", for: .normal)
         switchPageButton.setTitle("Sign Up", for: .normal)
         confirmPasswordTextField.isHidden = true
+        welcomeTextLabel.text = "Welcome Back To Habitual"
     }
     
     func updateViews() {

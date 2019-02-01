@@ -172,8 +172,8 @@
                                 <rect key="frame" x="25" y="782" width="364" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vom-1P-0V3">
-                                        <rect key="frame" x="0.0" y="0.0" width="47" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="49" height="30"/>
+                                        <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="16"/>
                                         <state key="normal" title="Delete">
                                             <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -182,15 +182,16 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0R5-iQ-9qh">
-                                        <rect key="frame" x="238" y="0.0" width="43" height="30"/>
+                                        <rect key="frame" x="232" y="0.0" width="47" height="30"/>
+                                        <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="16"/>
                                         <state key="normal" title="+Time"/>
                                         <connections>
                                             <segue destination="X3K-bh-Leu" kind="show" identifier="ToAddTime" id="EKx-DU-pYV"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bHe-Eq-d9J">
-                                        <rect key="frame" x="291" y="0.0" width="73" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <rect key="frame" x="289" y="0.0" width="75" height="30"/>
+                                        <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="16"/>
                                         <state key="normal" title="+Location"/>
                                         <connections>
                                             <segue destination="1Na-O0-cCQ" kind="presentation" identifier="ToAddLocation" id="gBA-jZ-osx"/>
