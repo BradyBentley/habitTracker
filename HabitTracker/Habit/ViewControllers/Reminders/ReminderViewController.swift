@@ -9,7 +9,7 @@
 import UIKit
 import UserNotifications
 
-class ReminderViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, DeleteButtonTableViewCellDelegate, TextFieldTableViewCellDelegate, TimeReminderScheduler, LocationReminderScheduler {
+class ReminderViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, DeleteButtonTableViewCellDelegate, TextFieldTableViewCellDelegate, TimeReminderScheduler, LocationReminderScheduler {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -101,6 +101,7 @@ class ReminderViewController: UIViewController, UITableViewDataSource, UITableVi
                     cell.timeReminder = timeReminder
                     cell.deleteButtonDelegate = self
                     cell.textFieldDelegate = self
+                    cell.timeReminderTextField.delegate = self
                     return cell
                 }
             }
@@ -110,6 +111,7 @@ class ReminderViewController: UIViewController, UITableViewDataSource, UITableVi
                     cell.locationReminder = locationReminder
                     cell.deleteButtonDelegate = self
                     cell.textFieldDelegate = self
+                    cell.locationReminderTextField.delegate = self
                     return cell
                 }
             }
@@ -153,6 +155,13 @@ class ReminderViewController: UIViewController, UITableViewDataSource, UITableVi
                 locationBasedRemindersTableView.endUpdates()
             }
         }
+    }
+    
+    // MARK: - UITextfield delegate
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     // MARK: - Navigation
