@@ -37,9 +37,11 @@ class AddHabitViewController: UIViewController, TimeReminderScheduler, LocationR
                         habit.locationReminder = locationReminders
                     })
                 }
-                UIApplication.shared.isNetworkActivityIndicatorVisible = false
-                self.activityIndicator.stopAnimating()
-                self.habitsTableView.reloadData()
+                DispatchQueue.main.async {
+                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                    self.activityIndicator.stopAnimating()
+                    self.habitsTableView.reloadData()
+                }
             }
         }
     }
