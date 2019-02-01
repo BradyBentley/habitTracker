@@ -11,16 +11,12 @@ import UserNotifications
 
 class AddHabitViewController: UIViewController, TimeReminderScheduler, LocationReminderScheduler {
     
+    // MARK: - Properties
     var habit: Habit?
-    
-    let shapeLayer = CAShapeLayer()
-    let trackLayer = CAShapeLayer()
     
     // MARK: - IBOutlets
     @IBOutlet weak var habitsTableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    
-    // MARK: - Properties
     
     // MARK: - View LifeCycle
     override func viewDidLoad() {
@@ -51,6 +47,16 @@ class AddHabitViewController: UIViewController, TimeReminderScheduler, LocationR
         super.viewWillAppear(animated)
         habitsTableView.reloadData()
     }
+    
+    // MARK: - Actions
+    @IBAction func logOutButtonTapped(_ sender: Any) {
+        UserController.shared.signOutUser { (success) in
+            if success {
+                self.performSegue(withIdentifier: "unwindToLogInVC", sender: self)
+            }
+        }
+    }
+    
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -46,7 +46,7 @@ class EditHabitViewController: UIViewController, UITableViewDelegate, UITableVie
     func updateView() {
         guard let habit = habit else { return }
         nameTextField.text = habit.habitDescription
-        iconImageView.image = UIImage(named: "\(habit.category)Progress")
+        iconImageView.image = UIImage(named: "\(habit.category)Selected")
         days = habit.days
         weeks = habit.weeks
         dayPickerView.selectRow(days - 1, inComponent: 0, animated: true)

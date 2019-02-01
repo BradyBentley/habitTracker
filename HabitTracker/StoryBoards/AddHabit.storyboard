@@ -731,7 +731,7 @@
         <!--Reminders-->
         <scene sceneID="Uqy-gY-kwf">
             <objects>
-                <viewController id="KVo-Wa-Tfm" customClass="ReminderViewController" customModule="HabitTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ReminderViewController" id="KVo-Wa-Tfm" customClass="ReminderViewController" customModule="HabitTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zk4-ei-H55">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

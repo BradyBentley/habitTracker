@@ -25,6 +25,10 @@ class WelcomeViewController: UIViewController {
         super.viewDidAppear(animated)
     }
     
+    // MARK: - Actions
+    @IBAction func unwindToLogInVC(segue: UIStoryboardSegue){
+        
+    }
     
     
     // MARK: - Navigation
