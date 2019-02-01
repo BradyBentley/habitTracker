@@ -18,6 +18,7 @@ class ReminderViewController: UIViewController, UITableViewDataSource, UITableVi
         locationBasedRemindersTableView.dataSource = self
         locationBasedRemindersTableView.delegate = self
         getAuthorizationStatus()
+        registerKeyboardNotifications()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -26,13 +27,40 @@ class ReminderViewController: UIViewController, UITableViewDataSource, UITableVi
         locationBasedRemindersTableView.reloadData()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        unregisterKeyboardNotifications()
+    }
+    
     // MARK: - Properties
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var timeBasedRemindersTableView: UITableView!
     @IBOutlet weak var locationBasedRemindersTableView: UITableView!
     
     var habit: Habit?
     var authorizationStatus: UNAuthorizationStatus?
+    
+    // MARK: - Keyboard showing / hiding
+    
+    func registerKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    func unregisterKeyboardNotifications() {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        guard let keyboardFrame = notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
+        scrollView.contentInset.bottom = view.convert(keyboardFrame.cgRectValue, from: nil).size.height + 20
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        scrollView.contentInset.bottom = 0
+    }
     
     // MARK: - Button actions
     
