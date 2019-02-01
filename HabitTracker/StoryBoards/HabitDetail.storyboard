@@ -26,15 +26,15 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TdX-Qe-YdR">
                                 <rect key="frame" x="0.0" y="103" width="414" height="90"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="p0r-Xh-x7F">
-                                        <rect key="frame" x="25" y="8" width="74" height="74"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="p0r-Xh-x7F">
+                                        <rect key="frame" x="25" y="15" width="60" height="60"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="74" id="JNl-D2-FaB"/>
-                                            <constraint firstAttribute="width" constant="74" id="hoz-zo-yBk"/>
+                                            <constraint firstAttribute="height" constant="60" id="JNl-D2-FaB"/>
+                                            <constraint firstAttribute="width" constant="60" id="hoz-zo-yBk"/>
                                         </constraints>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Habit Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hL3-Bc-3GA">
-                                        <rect key="frame" x="114" y="33" width="275" height="24"/>
+                                        <rect key="frame" x="100" y="33" width="289" height="24"/>
                                         <rect key="contentStretch" x="0.0" y="0.0" width="1" height="0.55000000000000004"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="17I-xn-WRL"/>
@@ -253,22 +253,22 @@
                                 <rect key="frame" x="0.0" y="103" width="414" height="90"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="3Gr-YN-Suf">
-                                        <rect key="frame" x="114" y="13.333333333333332" width="275" height="63.333333333333343"/>
+                                        <rect key="frame" x="114" y="13" width="275" height="64.333333333333329"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(habit title)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4u-aA-1lL">
-                                                <rect key="frame" x="0.0" y="0.0" width="275" height="23.333333333333332"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="275" height="24"/>
                                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(habit success label)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XSM-Ej-zz4">
-                                                <rect key="frame" x="0.0" y="27.333333333333329" width="275" height="17.666666666666671"/>
+                                                <rect key="frame" x="0.0" y="28" width="275" height="18"/>
                                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="(habit percent completeness)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WNT-v9-GAa">
-                                                <rect key="frame" x="0.0" y="49.000000000000014" width="275" height="14.333333333333336"/>
+                                                <rect key="frame" x="0.0" y="50" width="275" height="14.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -312,13 +312,13 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Reminders" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qD3-C3-5cM">
-                                <rect key="frame" x="25" y="423" width="364" height="23.333333333333314"/>
+                                <rect key="frame" x="25" y="423" width="364" height="24"/>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="35" estimatedRowHeight="35" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4RE-I0-8lM">
-                                <rect key="frame" x="25" y="451.33333333333326" width="364" height="200"/>
+                                <rect key="frame" x="25" y="452" width="364" height="200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="1PE-3I-Jd7"/>
@@ -332,14 +332,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="W5J-bO-8m6">
-                                                    <rect key="frame" x="20" y="9.6666666666666661" width="26.333333333333332" height="16.333333333333332"/>
+                                                    <rect key="frame" x="20" y="9.6666666666666643" width="29" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fYu-aK-V90">
-                                                    <rect key="frame" x="20" y="28.333333333333329" width="41" height="14"/>
+                                                    <rect key="frame" x="19.999999999999996" y="28.999999999999996" width="43.666666666666664" height="14.333333333333334"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -375,7 +375,7 @@
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Check-Ins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N6P-YE-q0Y">
-                                <rect key="frame" x="25" y="666.33333333333337" width="364" height="23.333333333333371"/>
+                                <rect key="frame" x="25" y="667" width="364" height="24"/>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
