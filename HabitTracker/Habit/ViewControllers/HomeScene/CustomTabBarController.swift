@@ -10,6 +10,8 @@ import UIKit
 
 class CustomTabBarController: UITabBarController {
     
+    static let shared = CustomTabBarController()
+    
     var homeTabButton: UITabBarItem!
     var progressTabButton: UITabBarItem!
     var checkInTabButton: UIButton!
@@ -25,6 +27,7 @@ class CustomTabBarController: UITabBarController {
         progressTabButton.title = ""
 
         setUpTabBarElements()
+//        self.checkInTabButton.bringSubviewToFront(checkInTabButton)
 
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
