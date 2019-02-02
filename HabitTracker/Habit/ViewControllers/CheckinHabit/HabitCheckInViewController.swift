@@ -10,6 +10,8 @@ import UIKit
 
 class HabitCheckInViewController: UIViewController {
     
+    
+    
     // MARK: - IB Outlets
     @IBOutlet weak var CheckInTableView: UITableView!
 
@@ -21,6 +23,7 @@ class HabitCheckInViewController: UIViewController {
         super.viewDidLoad()
         CheckInTableView.delegate = self
         CheckInTableView.dataSource = self
+        //CustomTabBarController.shared.checkInTabButton.bringSubviewToFront(CheckInTableView)
     }
     
     // MARK: - Action

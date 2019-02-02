@@ -42,7 +42,7 @@ class LoadingScreenViewController: UIViewController {
     
     func animatingOfShadow() {
         
-        Timer.scheduledTimer(withTimeInterval: 10, repeats: false) { (_) in
+        Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { (_) in
             Auth.auth().addStateDidChangeListener { (auth, user) in
                 if let user = user {
                     let uuid = user.uid
