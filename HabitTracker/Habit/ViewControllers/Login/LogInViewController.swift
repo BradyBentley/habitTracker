@@ -77,7 +77,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         signInButton.setTitle("Sign Up", for: .normal)
         switchPageButton.setTitle("Log In", for: .normal)
         confirmPasswordTextField.isHidden = false
-        welcomeTextLabel.text = "Welcome To Habitual"
+        welcomeTextLabel.text = "Welcome To Habitwise"
     }
     
     func logInPage() {
@@ -86,7 +86,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         signInButton.setTitle("Log In", for: .normal)
         switchPageButton.setTitle("Sign Up", for: .normal)
         confirmPasswordTextField.isHidden = true
-        welcomeTextLabel.text = "Welcome Back To Habitual"
+        welcomeTextLabel.text = "Welcome Back To Habitwise"
     }
     
     func updateViews() {
