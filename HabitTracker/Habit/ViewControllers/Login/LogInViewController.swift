@@ -41,7 +41,10 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     // MARK: - Actions
     @IBAction func signInButtonTapped(_ sender: Any) {
 //        self.performSegue(withIdentifier: "ToMainPage", sender: self) // This line is to bypass login, delete later
-        guard let email = emailTextField.text, let password = passwordTextField.text, let isLogInPage = isLogInPage, !email.isEmpty, !password.isEmpty else { return }
+        guard let email = emailTextField.text, let password = passwordTextField.text, let isLogInPage = isLogInPage, !email.isEmpty, !password.isEmpty else {
+          presentSimpleAlertWith(title: "Whoops", body: "Please fill in your email and password")
+          return
+      }
         if isLogInPage == false {
             guard passwordTextField.text == confirmPasswordTextField.text else { return }
             UserController.shared.createUser(email: email, password: password) { (success) in
@@ -49,7 +52,11 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
                     DispatchQueue.main.async {
                         self.performSegue(withIdentifier: "ToMainPage", sender: self)
                     }
-                }
+                }else {
+                  DispatchQueue.main.async {
+                    self.presentSimpleAlertWith(title: "Whoops", body: "Something went wrong.  Please try again.")
+                  }
+              }
             }
         } else {
             UserController.shared.signInUser(email: email, password: password) { (success) in
@@ -58,6 +65,9 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
                         self.performSegue(withIdentifier: "ToMainPage", sender: self)
                     }
                 } else {
+                  DispatchQueue.main.async {
+                    self.presentSimpleAlertWith(title: "Whoops", body: "Something went wrong.  Please try again.")
+                  }
                     print("Error")
                 }
             }

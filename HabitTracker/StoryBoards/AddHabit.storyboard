@@ -1148,20 +1148,9 @@
                                     <segment title="Both"/>
                                 </segments>
                             </segmentedControl>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter location name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nhJ-1h-ebe">
-                                <rect key="frame" x="87" y="750" width="240" height="36"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="PW7-OH-Yp2"/>
-                                    <constraint firstAttribute="width" constant="240" id="ou0-O8-J3c"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="RFQ-NC-BiC" firstAttribute="top" secondItem="nhJ-1h-ebe" secondAttribute="bottom" constant="8" id="JQ0-ri-xSV"/>
                             <constraint firstItem="LRe-JD-LZD" firstAttribute="top" secondItem="v6e-sg-zQX" secondAttribute="bottom" constant="20" id="Ug0-b6-IuD"/>
                             <constraint firstItem="v6e-sg-zQX" firstAttribute="top" secondItem="Trf-VZ-eI1" secondAttribute="top" constant="100" id="VOb-Xu-Uv0"/>
                             <constraint firstAttribute="trailing" secondItem="tLE-Qu-MHy" secondAttribute="trailing" id="YGI-FX-llK"/>
@@ -1173,7 +1162,6 @@
                             <constraint firstItem="Trf-VZ-eI1" firstAttribute="bottom" secondItem="RFQ-NC-BiC" secondAttribute="bottom" constant="32" id="ekV-ZO-Dfg"/>
                             <constraint firstItem="tLE-Qu-MHy" firstAttribute="leading" secondItem="aQi-Aa-lzQ" secondAttribute="leading" id="k2m-mV-NtF"/>
                             <constraint firstItem="Trf-VZ-eI1" firstAttribute="trailing" secondItem="Flc-nK-Hag" secondAttribute="trailing" constant="24" id="kzz-91-MVC"/>
-                            <constraint firstItem="nhJ-1h-ebe" firstAttribute="centerX" secondItem="aQi-Aa-lzQ" secondAttribute="centerX" id="p2v-Yb-drI"/>
                             <constraint firstAttribute="bottom" secondItem="tLE-Qu-MHy" secondAttribute="bottom" id="xFU-f4-Xod"/>
                             <constraint firstItem="v6e-sg-zQX" firstAttribute="leading" secondItem="Trf-VZ-eI1" secondAttribute="leading" constant="24" id="ycF-iH-eO0"/>
                             <constraint firstItem="RFQ-NC-BiC" firstAttribute="centerX" secondItem="aQi-Aa-lzQ" secondAttribute="centerX" id="yxH-mQ-lU0"/>
@@ -1181,7 +1169,6 @@
                         <viewLayoutGuide key="safeArea" id="Trf-VZ-eI1"/>
                     </view>
                     <connections>
-                        <outlet property="locationNameTextField" destination="nhJ-1h-ebe" id="Ihj-Bo-an1"/>
                         <outlet property="locationSearchBar" destination="v6e-sg-zQX" id="4V4-pB-W0Y"/>
                         <outlet property="mapView" destination="tLE-Qu-MHy" id="s05-am-3qR"/>
                         <outlet property="saveButton" destination="RFQ-NC-BiC" id="9dl-3l-XPy"/>

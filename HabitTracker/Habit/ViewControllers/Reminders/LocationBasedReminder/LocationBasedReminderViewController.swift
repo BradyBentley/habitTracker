@@ -17,11 +17,9 @@ class LocationBasedReminderViewController: UIViewController, CLLocationManagerDe
         super.viewDidLoad()
         updateView()
         enableLocationServices()
-        registerKeyboardNotifications()
         
         locationManager.delegate = self
         locationSearchBar.delegate = self
-        locationNameTextField.delegate = self
         mapView.delegate = self
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
@@ -29,21 +27,17 @@ class LocationBasedReminderViewController: UIViewController, CLLocationManagerDe
         self.view.addGestureRecognizer(tapGesture)
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        unregisterKeyboardNotifications()
-    }
-    
     // MARK: - Properties
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var locationSearchBar: UISearchBar!
     @IBOutlet weak var segmentControl: UISegmentedControl!
-    @IBOutlet weak var locationNameTextField: UITextField!
     @IBOutlet weak var saveButton: UIButton!
     
     var habit: Habit?
     var reminder: LocationReminder?
+  var locationName = "DevMountain"
+  var annotation: MKAnnotation?
     var addingNewHabit: Bool?
     var savedCoordinate: CLLocationCoordinate2D?
     var locationManager = CLLocationManager()
@@ -69,27 +63,7 @@ class LocationBasedReminderViewController: UIViewController, CLLocationManagerDe
         
         mapView.addGestureRecognizer(longPressRecognizer)
     }
-    
-    // MARK: - Keyboard showing / hiding
-    
-    func registerKeyboardNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-    
-    func unregisterKeyboardNotifications() {
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-    
-    @objc func keyboardWillShow(notification: NSNotification){
-        guard let keyboardFrame = notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
-        self.view.frame.origin.y -= view.convert(keyboardFrame.cgRectValue, from: nil).size.height
-    }
-    
-    @objc func keyboardWillHide(notification: NSNotification){
-        self.view.frame.origin.y = 0
-    }
+
     // MARK: Gesture recognizer
     
     @objc func handleLongPress(recognizer: UILongPressGestureRecognizer) {
@@ -107,13 +81,11 @@ class LocationBasedReminderViewController: UIViewController, CLLocationManagerDe
                 self.mapView.removeOverlays(allOverlays)
             }
             mapView.addAnnotation(pointAnnotation)
+            self.annotation = pointAnnotation
             let circle = MKCircle(center: coordinate, radius: geoFenceRadius)
             self.mapView.addOverlay(circle)
-            
-            if let locationName = locationNameTextField.text, !locationName.isEmpty {
-                saveButton.backgroundColor = .green
-                saveButton.titleLabel?.textColor = .black
-            }
+                saveButton.backgroundColor = .habitBlue
+                saveButton.tintColor = .white
         }
     }
     
@@ -161,11 +133,10 @@ class LocationBasedReminderViewController: UIViewController, CLLocationManagerDe
     // MARK: - Button actions
     
     @IBAction func mapSaveButtonTapped(_ sender: Any) {
-        guard let savedCoordinate = savedCoordinate, let habit = habit,
-            let addingNewHabit = addingNewHabit,
-            let locationName = locationNameTextField.text, !locationName.isEmpty else { return }
+        guard let savedCoordinate = annotation?.coordinate, let habit = habit,
+            let addingNewHabit = addingNewHabit else { return }
         
-        let locationReminder = LocationReminder(latitude: savedCoordinate.latitude, longitude: savedCoordinate.longitude, locationName: locationName, remindOnEntryOrExit: segmentControl.selectedSegmentIndex, reminderText: "")
+        let locationReminder = LocationReminder(latitude: savedCoordinate.latitude, longitude: savedCoordinate.longitude, locationName: "DevMountain", remindOnEntryOrExit: segmentControl.selectedSegmentIndex, reminderText: "")
         
         if !addingNewHabit {
             if let reminder = reminder {
