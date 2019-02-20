@@ -35,12 +35,11 @@ class CustomTabBarController: UITabBarController {
         
         let habitVC = storyboard.instantiateViewController(withIdentifier: "AddHabitViewController") as! AddHabitViewController
         habitVC.tabBarItem = homeTabButton
-        let embedHabitVC = UINavigationController(rootViewController: habitVC)
-
+      
+        let embedHabitVC = TransparentNavigationController(rootViewController: habitVC)
         let checkInVC = checkInPopUpSB.instantiateViewController(withIdentifier: "HabitCheckInViewController") as! HabitCheckInViewController
 
-        let progressVC = progressSB.instantiateViewController(withIdentifier: "HabitProgressDetailViewController") as! HabitProgressDetailViewController
-        progressVC.tabBarItem = progressTabButton
+        let progressVC = progressSB.instantiateInitialViewController() as! UINavigationController
         
         self.viewControllers = [embedHabitVC, checkInVC, progressVC]
 

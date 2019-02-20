@@ -39,7 +39,10 @@ class SetReminderTableViewController: UITableViewController, UITextFieldDelegate
     @IBAction func saveButtonPushed(_ sender: Any) {
         guard let habit = habit, weekdays.count != 0,
             let addingNewHabit = addingNewHabit,
-            let reminderText = reminderTextField.text else { return }
+            let reminderText = reminderTextField.text else {
+              self.presentSimpleAlertWith(title: "Whoops", body: "You must select at least one day")
+              return
+      }
         
         let time = timePicker.date
         let timeReminder = TimeReminder(time: time, day: weekdays, reminderText: reminderText)

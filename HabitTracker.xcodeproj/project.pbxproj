@@ -31,7 +31,6 @@
 		26F0D95321F2365700D4ADA1 /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F0D95221F2365700D4ADA1 /* Firebase.swift */; };
 		C8A39C70BFA96E27673A9F0C /* Pods_HabitTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04028353B060E92AB9235DCF /* Pods_HabitTracker.framework */; };
 		CB0F6DC721FAD58B0031740A /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0F6DC621FAD58B0031740A /* WelcomeViewController.swift */; };
-		CBABDF1B2203DAC900AA1979 /* NewHabitNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBABDF1A2203DAC900AA1979 /* NewHabitNavigationController.swift */; };
 		CBB9A23D21F7CA9B00995F73 /* NewHabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB9A23C21F7CA9B00995F73 /* NewHabitViewController.swift */; };
 		CBD52D2821FC4171005A92D7 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBD52D2721FC4171005A92D7 /* MapKit.framework */; };
 		CBD7EC7A21F830FA0074A6D2 /* SetReminderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD7EC7921F830FA0074A6D2 /* SetReminderTableViewController.swift */; };
@@ -39,8 +38,10 @@
 		F73213CE21F2546C009A47F0 /* ReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73213CD21F2546C009A47F0 /* ReminderViewController.swift */; };
 		F73213D421F25584009A47F0 /* LocationBasedReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73213D321F25584009A47F0 /* LocationBasedReminderViewController.swift */; };
 		F73C046B21FA680200CEF0BB /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F73C046A21FA680200CEF0BB /* Login.storyboard */; };
+		F7425CBE221DF89D00C84EC5 /* TabBarIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7425CBD221DF89D00C84EC5 /* TabBarIcons.xcassets */; };
 		F7791C5621F52DDB00337D10 /* HabitCheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7791C5521F52DDB00337D10 /* HabitCheckInViewController.swift */; };
 		F7791C5A21F52E3000337D10 /* HabitProgressDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7791C5921F52E3000337D10 /* HabitProgressDetailViewController.swift */; };
+		F7836338221DFE07000DB236 /* TransparentNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7836337221DFE07000DB236 /* TransparentNavigationController.swift */; };
 		F7A51E182201623700C1356A /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A51E172201623700C1356A /* CustomTabBarController.swift */; };
 		F7A51E1A2203634100C1356A /* LoadingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A51E192203634100C1356A /* LoadingScreenViewController.swift */; };
 		F7A51E1C22036FC800C1356A /* Loading.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7A51E1B22036FC800C1356A /* Loading.storyboard */; };
@@ -89,7 +90,6 @@
 		64796CE9C6B23F336BA88293 /* Pods-HabitTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitTracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-HabitTracker/Pods-HabitTracker.release.xcconfig"; sourceTree = "<group>"; };
 		7E430CF4D2DF39A2F832288E /* Pods-HabitTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitTracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HabitTracker/Pods-HabitTracker.debug.xcconfig"; sourceTree = "<group>"; };
 		CB0F6DC621FAD58B0031740A /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
-		CBABDF1A2203DAC900AA1979 /* NewHabitNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHabitNavigationController.swift; sourceTree = "<group>"; };
 		CBB9A23C21F7CA9B00995F73 /* NewHabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHabitViewController.swift; sourceTree = "<group>"; };
 		CBBC71ED21FE4DBF00AEE51F /* SF-Pro-Text-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Light.otf"; sourceTree = "<group>"; };
 		CBBC71EE21FE4DBF00AEE51F /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
@@ -100,8 +100,10 @@
 		F73213CD21F2546C009A47F0 /* ReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderViewController.swift; sourceTree = "<group>"; };
 		F73213D321F25584009A47F0 /* LocationBasedReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationBasedReminderViewController.swift; sourceTree = "<group>"; };
 		F73C046A21FA680200CEF0BB /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		F7425CBD221DF89D00C84EC5 /* TabBarIcons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TabBarIcons.xcassets; sourceTree = "<group>"; };
 		F7791C5521F52DDB00337D10 /* HabitCheckInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCheckInViewController.swift; sourceTree = "<group>"; };
 		F7791C5921F52E3000337D10 /* HabitProgressDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitProgressDetailViewController.swift; sourceTree = "<group>"; };
+		F7836337221DFE07000DB236 /* TransparentNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransparentNavigationController.swift; sourceTree = "<group>"; };
 		F7A51E172201623700C1356A /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		F7A51E192203634100C1356A /* LoadingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreenViewController.swift; sourceTree = "<group>"; };
 		F7A51E1B22036FC800C1356A /* Loading.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Loading.storyboard; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				F7C034E1221CB9F0003D31A0 /* HabitIcons.xcassets */,
+				F7425CBD221DF89D00C84EC5 /* TabBarIcons.xcassets */,
 				260AAD6721EFAD9200461C1E /* Assets.xcassets */,
 				F7C034DA221CB073003D31A0 /* Color.xcassets */,
 				CBBC71E621FE4D4F00AEE51F /* Fonts */,
@@ -227,6 +230,7 @@
 				F7791C5721F52DE000337D10 /* CheckinHabit */,
 				F7791C5821F52E0400337D10 /* HabitProgress */,
 				266DCE0721F8E99E00CDC0F9 /* Login */,
+				F7836337221DFE07000DB236 /* TransparentNavigationController.swift */,
 			);
 			name = ViewControllers;
 			path = Habit/ViewControllers;
@@ -280,7 +284,6 @@
 			isa = PBXGroup;
 			children = (
 				CBB9A23C21F7CA9B00995F73 /* NewHabitViewController.swift */,
-				CBABDF1A2203DAC900AA1979 /* NewHabitNavigationController.swift */,
 			);
 			path = NewHabit;
 			sourceTree = "<group>";
@@ -440,6 +443,7 @@
 				26F0D92C21EFBD3F00D4ADA1 /* GoogleService-Info.plist in Resources */,
 				F7C034DB221CB073003D31A0 /* Color.xcassets in Resources */,
 				F7C034E0221CB357003D31A0 /* SF-Pro-Text-Regular.otf in Resources */,
+				F7425CBE221DF89D00C84EC5 /* TabBarIcons.xcassets in Resources */,
 				26084A3A21F7B9980037A221 /* Progress.storyboard in Resources */,
 				267F039D22036E1200372480 /* CheckInPopUp.storyboard in Resources */,
 				F7C034DE221CB351003D31A0 /* SF-Pro-Text-Medium.otf in Resources */,
@@ -528,6 +532,7 @@
 				F7C034DD221CB213003D31A0 /* CustomLabel.swift in Sources */,
 				F7AA119521F63627000B16C6 /* ProgressTableViewCell.swift in Sources */,
 				26F0D94F21F14D5E00D4ADA1 /* TimeReminder.swift in Sources */,
+				F7836338221DFE07000DB236 /* TransparentNavigationController.swift in Sources */,
 				F7AA118F21F6311A000B16C6 /* EditHabitViewController.swift in Sources */,
 				260AAD6121EFAD9000461C1E /* AppDelegate.swift in Sources */,
 				26A2E44821FFB3FF002B6EE6 /* LineChartController.swift in Sources */,
@@ -548,7 +553,6 @@
 				26F0D94D21F145BF00D4ADA1 /* HabitController.swift in Sources */,
 				266DCE0521F8E98A00CDC0F9 /* LogInViewController.swift in Sources */,
 				26F0D95321F2365700D4ADA1 /* Firebase.swift in Sources */,
-				CBABDF1B2203DAC900AA1979 /* NewHabitNavigationController.swift in Sources */,
 				F7A51E182201623700C1356A /* CustomTabBarController.swift in Sources */,
 				F7C034D9221CAF24003D31A0 /* ViewControllerExtension.swift in Sources */,
 				26084A4221F7D5F40037A221 /* UserController.swift in Sources */,

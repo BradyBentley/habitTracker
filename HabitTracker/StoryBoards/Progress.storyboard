@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pKR-oq-W70">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DE0-of-hKt">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -24,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="CSm-zc-DSR">
-                                <rect key="frame" x="8" y="171.5" width="398" height="287.5"/>
+                                <rect key="frame" x="8" y="215.5" width="398" height="287.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check-In Percentage Report" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L2v-TU-jL4" customClass="CustomLabel" customModule="HabitTracker" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="268" height="24"/>
@@ -57,7 +57,7 @@
                                 </constraints>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rg2-Gf-YpI">
-                                <rect key="frame" x="8" y="474" width="398" height="320"/>
+                                <rect key="frame" x="8" y="518" width="398" height="276"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProgressHabitCell" rowHeight="106" id="UZi-3r-8F5" customClass="ProgressTableViewCell" customModule="HabitTracker" customModuleProvider="target">
@@ -323,7 +323,7 @@
                                 </prototypes>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="gFS-fT-scU">
-                                <rect key="frame" x="20" y="114" width="374" height="30"/>
+                                <rect key="frame" x="20" y="158" width="374" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="gHw-8d-4Xy"/>
                                 </constraints>
@@ -352,7 +352,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jUv-Fg-DQm"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Progress" image="performanceIncrease" id="5Ko-VI-Ly2" userLabel="Progress"/>
+                    <navigationItem key="navigationItem" title="Title" id="nuH-g2-cIx">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="PIT-zt-QTP"/>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="checkInPercentageReportLabel" destination="L2v-TU-jL4" id="UAL-Z9-qRR"/>
@@ -362,6 +364,25 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TPo-dp-199" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1818.840579710145" y="-235.71428571428569"/>
+        </scene>
+        <!--Progress-->
+        <scene sceneID="mJh-b5-41G">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DE0-of-hKt" customClass="TransparentNavigationController" customModule="HabitTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Progress" image="performanceIncrease" id="5Ko-VI-Ly2" userLabel="Progress"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Mzu-fa-Xvb">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="pKR-oq-W70" kind="relationship" relationship="rootViewController" id="mh6-Er-jg6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XiR-j1-6tC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="908.69565217391312" y="-235.71428571428569"/>
         </scene>

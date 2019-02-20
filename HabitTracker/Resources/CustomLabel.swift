@@ -21,3 +21,13 @@ class CustomLabel: UILabel {
       self.font = UIFont(name: fontName, size: size)!
     }
 }
+
+
+class LightLabel: CustomLabel {
+  
+  override func awakeFromNib() {
+    super.awakeFromNib()
+    self.updateFontTo(fontName: "SFProText-Light")
+    self.textColor = .habitDarkGray
+  }
+}

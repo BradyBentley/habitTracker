@@ -478,10 +478,10 @@
             </objects>
             <point key="canvasLocation" x="9153.6231884057979" y="1118.9732142857142"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Transparent Navigation Controller-->
         <scene sceneID="gBt-o0-dLC">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="P01-8r-n4k" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="P01-8r-n4k" customClass="TransparentNavigationController" customModule="HabitTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tCj-sp-zdd">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
