@@ -57,6 +57,7 @@
 		F7C034DE221CB351003D31A0 /* SF-Pro-Text-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = CBBC71EF21FE4DBF00AEE51F /* SF-Pro-Text-Medium.otf */; };
 		F7C034DF221CB355003D31A0 /* SF-Pro-Text-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = CBBC71ED21FE4DBF00AEE51F /* SF-Pro-Text-Light.otf */; };
 		F7C034E0221CB357003D31A0 /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = CBBC71EE21FE4DBF00AEE51F /* SF-Pro-Text-Regular.otf */; };
+		F7C034E2221CB9F0003D31A0 /* HabitIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7C034E1221CB9F0003D31A0 /* HabitIcons.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -117,6 +118,7 @@
 		F7C034D8221CAF24003D31A0 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 		F7C034DA221CB073003D31A0 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		F7C034DC221CB213003D31A0 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
+		F7C034E1221CB9F0003D31A0 /* HabitIcons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = HabitIcons.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 		26084A3E21F7BA890037A221 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F7C034E1221CB9F0003D31A0 /* HabitIcons.xcassets */,
 				260AAD6721EFAD9200461C1E /* Assets.xcassets */,
 				F7C034DA221CB073003D31A0 /* Color.xcassets */,
 				CBBC71E621FE4D4F00AEE51F /* Fonts */,
@@ -430,6 +433,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26084A3821F7B7BB0037A221 /* HabitDetail.storyboard in Resources */,
+				F7C034E2221CB9F0003D31A0 /* HabitIcons.xcassets in Resources */,
 				260AAD6B21EFAD9200461C1E /* LaunchScreen.storyboard in Resources */,
 				26084A3621F799440037A221 /* AddHabit.storyboard in Resources */,
 				F7A51E1C22036FC800C1356A /* Loading.storyboard in Resources */,
